@@ -6,6 +6,8 @@ import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import bogwarden.cards.Defend;
+import bogwarden.cards.Jinx;
+import bogwarden.cards.ShadowFont;
 import bogwarden.cards.Strike;
 import bogwarden.relics.SwampTalisman;
 import com.badlogic.gdx.graphics.Color;
@@ -59,12 +61,12 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
             retVal.add(Strike.ID);
-        }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
             retVal.add(Defend.ID);
-        }
+        retVal.add(Jinx.ID);
+        retVal.add(ShadowFont.ID);
         return retVal;
     }
 

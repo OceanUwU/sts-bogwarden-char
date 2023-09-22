@@ -1,11 +1,20 @@
 {
   "${ModID}:SwampTalisman": {
     "NAME": "Swamp Talisman",
-    "FLAVOR": "A ward against the many evils lurking in the Foglands",
+    "FLAVOR": "A ward against the many evils lurking in the Foglands.",
     "DESCRIPTIONS": [
       "The first #b",
       " times you draw an #yUnplayable card each combat, draw #b",
       " card."
+    ]
+  },
+  "${ModID}:PaperCrokh": {
+    "NAME": "Paper Crokh",
+    "FLAVOR": "The paper is warm to the touch.",
+    "DESCRIPTIONS": [
+      "Enemies with #y${ModID}:Maledict take #b",
+      "% more damage rather than #b",
+      "%."
     ]
   }
 }

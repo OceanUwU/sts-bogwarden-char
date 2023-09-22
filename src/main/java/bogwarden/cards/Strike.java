@@ -8,20 +8,15 @@ import static bogwarden.BogMod.makeID;
 
 public class Strike extends AbstractBogCard {
     public final static String ID = makeID("Strike");
-    // intellij stuff attack, enemy, basic, 6, 3,  , , , 
 
     public Strike() {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 6;
+        setDamage(6, +3);
         tags.add(CardTags.STRIKE);
         tags.add(CardTags.STARTER_STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
-    }
-
-    public void upp() {
-        upgradeDamage(3);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
     }
 }

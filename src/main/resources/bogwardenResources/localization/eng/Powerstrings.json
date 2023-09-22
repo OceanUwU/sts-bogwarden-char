@@ -1,10 +1,33 @@
 {
-  "${ModID}:ExampleTwoAmountPower": {
-    "NAME": "Example 2",
+  "${ModID}:Mojo": {
+    "NAME": "Mojo",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yStrength and #b",
-      " #yDexterity."
+      "Increases non-attack damage by #b",
+      "."
+    ]
+  },
+  "${ModID}:Maledict": {
+    "NAME": "Maledict",
+    "DESCRIPTIONS": [
+      "Receives #b",
+      "% more non-attack damage for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+  "${ModID}:Spines": {
+    "NAME": "Spines",
+    "DESCRIPTIONS": [
+      "Whenever an enemy performs a non-attack action, they take #b",
+      " damage."
+    ]
+  },
+  "${ModID}:Venom": {
+    "NAME": "Venom",
+    "DESCRIPTIONS": [
+      "For #b",
+      " turn, whenever this enemy takes damage, it loses #b1 HP.",
+      " turns, whenever this enemy takes damage, it loses #b1 HP."
     ]
   }
 }

@@ -5,7 +5,7 @@
       "trap",
       "traps"
     ],
-    "DESCRIPTION": "#yUnplayable #yRetaining cards. The effect of the leftmost #yTrap in your hand is triggered when you take unblocked damage."
+    "DESCRIPTION": "#yUnplayable #yRetaining cards. The effect of the leftmost Trap in your hand is triggered when you take unblocked damage."
   },
   {
     "PROPER_NAME": "Trigger",
@@ -13,5 +13,33 @@
       "trigger"
     ],
     "DESCRIPTION": "Activate the leftmost #yTrap in your hand."
+  },
+  {
+    "PROPER_NAME": "Mojo",
+    "NAMES": [
+      "mojo"
+    ],
+    "DESCRIPTION": "Mojo increases non-attack damage."
+  },
+  {
+    "PROPER_NAME": "Maledict",
+    "NAMES": [
+      "maledict"
+    ],
+    "DESCRIPTION": "Enemies with Maledict take #b50% more non-attack damage."
+  },
+  {
+    "PROPER_NAME": "Spines",
+    "NAMES": [
+      "spines"
+    ],
+    "DESCRIPTION": "When an enemy performs a non-attack action, they take damage equal to your Spines."
+  },
+  {
+    "PROPER_NAME": "Venom",
+    "NAMES": [
+      "venom"
+    ],
+    "DESCRIPTION": "Enemies affected by Venom lose #b1 HP whenever they take damage."
   }
 ]

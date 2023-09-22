@@ -9,7 +9,7 @@
   },
   "${ModID}:SnapperTrap": {
     "NAME": "Snapper Trap",
-    "DESCRIPTION": "${ModID}:Trap: Deal !M! damage."
+    "DESCRIPTION": "${ModID}:Trap: Deal !D! damage."
   },
   "${ModID}:TrapCard": {
     "NAME": "",
@@ -17,5 +17,29 @@
     "EXTENDED_DESCRIPTION": [
       "Can't play #rTraps!"
     ]
+  },
+  "${ModID}:Jinx": {
+    "NAME": "Jinx",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! ${ModID}:Maledict{!Upgrades!|>0= to ALL enemies}."
+  },
+  "${ModID}:Attunement": {
+    "NAME": "Attunement",
+    "DESCRIPTION": "Gain !M! ${ModID}:Mojo."
+  },
+  "${ModID}:Blast": {
+    "NAME": "Blast",
+    "DESCRIPTION": "Retain. NL A random enemy loses !D! HP. NL Exhaust."
+  },
+  "${ModID}:ShadowFont": {
+    "NAME": "Shadow Font",
+    "DESCRIPTION": "{@@}Scry !M!. NL Add a *Blast{!Upgrades!|>0=+} into your hand."
+  },
+  "${ModID}:SpinyShawl": {
+    "NAME": "Spiny Shawl",
+    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Spines.{!${ModID}:m2!|>0= NL Gain !${ModID}:m2! Dexterity.}"
+  },
+  "${ModID}:ViperStrike": {
+    "NAME": "Viper Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Venom."
   }
 }

@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 import basemod.abstracts.CustomCard;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.patches.NonAttackDamagePatches;
 import bogwarden.util.CardArtRoller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -306,11 +307,30 @@ public abstract class AbstractBogCard extends CustomCard {
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
     protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
+        NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
+        atb(new DamageAction(m, info, fx));
     }
 
     protected void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
+        NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
+        att(new DamageAction(m, info, fx));
+    }
+
+    protected void dmgRandom(AbstractGameAction.AttackEffect fx) {
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                if (target != null) {
+                    calculateCardDamage(target);
+                    DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
+                    NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
+                    att(new DamageAction(target, info, fx));
+                }
+            }
+        });
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {
