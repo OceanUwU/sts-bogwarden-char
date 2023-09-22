@@ -1,0 +1,14 @@
+{
+  "${ModID}:character": {
+    "NAMES": [
+      "The Bogwarden",
+      "the Bogwarden"
+    ],
+    "TEXT": [
+      "A primordial shaman from the Foglands. NL Deceives and demolishes her foes with traps and elemental magic.",
+      "You bog your warden...",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~sister,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~",
+      "#g~AWAKE.~ NL NL You are awake again, to the dull sting and soothing incantations of your tribe's healers mending your wounds. As you come to, you realize the futility of your sacred mission, to ensure that no soul leaves the Foglands - this haunted place of exile. It matters very little to you that #gshe eluded your watch so handily. NL NL ...where was she going?"
+    ]
+  }
+}

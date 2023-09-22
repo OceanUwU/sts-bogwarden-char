@@ -3,11 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>UnimportantInfo</groupId>
 
-    <artifactId>TheTodo</artifactId>
+    <artifactId>bogwarden</artifactId>
     <version>0.0.1</version>
-    <name>The Todo</name>
-    <description>TODO: Change this description</description>
-    <!-- Change the above for mod information. -->
+    <name>Bogwarden (The)</name>
+    <description>a slay the spire character! surprise!</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,13 +15,9 @@
         <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>
         <ModTheSpire.version>3.18.2</ModTheSpire.version>
 
-        <!-- CHANGE THIS TO MATCH YOUR MODID FIELD IN THE MAIN TodoMod CLASS FILE -->
-        <ModID>todomod</ModID>
-        <!-- CHANGE THIS TO MATCH YOUR MODID FIELD IN THE MAIN TodoMod CLASS FILE -->
+        <ModID>bogwarden</ModID>
 
-        <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>
-
     </properties>
 
     <dependencies>
@@ -78,6 +73,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>${*}</delimiter>
+                    </delimiters>
+                </configuration>
             </plugin>
         </plugins>
 

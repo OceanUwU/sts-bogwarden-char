@@ -1,0 +1,11 @@
+{
+  "${ModID}:SwampTalisman": {
+    "NAME": "Swamp Talisman",
+    "FLAVOR": "A ward against the many evils lurking in the Foglands",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " times you draw an #yUnplayable card each combat, draw #b",
+      " card."
+    ]
+  }
+}

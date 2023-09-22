@@ -1,0 +1,21 @@
+{
+  "${ModID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:SnapperTrap": {
+    "NAME": "Snapper Trap",
+    "DESCRIPTION": "${ModID}:Trap: Deal !M! damage."
+  },
+  "${ModID}:TrapCard": {
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Can't play #rTraps!"
+    ]
+  }
+}

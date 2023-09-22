@@ -1,0 +1,17 @@
+[
+  {
+    "PROPER_NAME": "Trap",
+    "NAMES": [
+      "trap",
+      "traps"
+    ],
+    "DESCRIPTION": "#yUnplayable #yRetaining cards. The effect of the leftmost #yTrap in your hand is triggered when you take unblocked damage."
+  },
+  {
+    "PROPER_NAME": "Trigger",
+    "NAMES": [
+      "trigger"
+    ],
+    "DESCRIPTION": "Activate the leftmost #yTrap in your hand."
+  }
+]
