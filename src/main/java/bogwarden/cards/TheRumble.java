@@ -2,7 +2,6 @@ package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
@@ -18,11 +17,7 @@ public class TheRumble extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean isEliteOrBoss = (AbstractDungeon.getCurrRoom()).eliteTrigger;
-        for (AbstractMonster mo : (AbstractDungeon.getMonsters()).monsters)
-            if (mo.type == AbstractMonster.EnemyType.BOSS)
-                isEliteOrBoss = true;
-        for (int i = 0; i < (isEliteOrBoss ? 1 + magicNumber : 1); i++)
+        for (int i = 0; i < (isEliteOrBoss() ? 1 + magicNumber : 1); i++)
             allDmg(AbstractGameAction.AttackEffect.LIGHTNING);
     }
 }

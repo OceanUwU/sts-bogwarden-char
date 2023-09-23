@@ -14,7 +14,7 @@ public class Walkabout extends AbstractBogCard {
     public Walkabout() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         setMagic(5);
-        setSecondDamage(5, -1);
+        setSecondMagic(5, -1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

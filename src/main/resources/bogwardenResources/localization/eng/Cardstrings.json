@@ -9,13 +9,13 @@
   },
   "${ModID}:SnapperTrap": {
     "NAME": "Snapper Trap",
-    "DESCRIPTION": "${ModID}:Trap: Deal !D! damage."
+    "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage."
   },
   "${ModID}:TrapCard": {
     "NAME": "",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "Can't play #rTraps!"
+      "Can't #rTrap myself!"
     ]
   },
   "${ModID}:Jinx": {
@@ -28,11 +28,15 @@
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
-    "DESCRIPTION": "Retain. NL A random enemy loses !D! HP. NL Exhaust."
+    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Exhaust."
+  },
+  "${ModID}:RefinedBlast": {
+    "NAME": "Refined Blast",
+    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust."
   },
   "${ModID}:ShadowFont": {
     "NAME": "Shadow Font",
-    "DESCRIPTION": "{@@}Scry !M!. NL Add a *Blast{!Upgrades!|>0=+} into your hand."
+    "DESCRIPTION": "{@@}Add a *Blast{!Upgrades!|>0=+} into your hand. NL Scry !M!."
   },
   "${ModID}:SpinyShawl": {
     "NAME": "Spiny Shawl",
@@ -44,19 +48,19 @@
   },
   "${ModID}:SnareTrap": {
     "NAME": "Snare Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap: Apply !M! Weak{!Upgrades!|>0= to ALL enemies}."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply !M! Weak{!Upgrades!|>0= to ALL enemies}."
   },
   "${ModID}:FirebombTrap": {
     "NAME": "Firebomb Trap",
-    "DESCRIPTION": "${ModID}:Trap: At the end of your next turn, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "${ModID}:Trap. NL At the end of your next turn, deal !M! damage to ALL enemies."
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "${ModID}:Trap: Gain !B! Block and ALL enemies lose !M! Strength this turn."
+    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block. NL ALL enemies lose !M! Strength this turn."
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
-    "DESCRIPTION": "${ModID}:Trap: Apply !M! Mark and ALL enemies lose HP equal to their Mark."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
   },
   "${ModID}:EntanglingVines": {
     "NAME": "Entangling Vines",
@@ -64,7 +68,7 @@
   },
   "${ModID}:Walkabout": {
     "NAME": "Walkabout",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Discard !${ModID}:m2! card{!${ModID:m2}!|>1=s}."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Discard !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
@@ -80,7 +84,7 @@
   },
   "${ModID}:Bushwhack": {
     "NAME": "Bushwhack",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
   },
   "${ModID}:LineUp": {
     "NAME": "Line Up",
@@ -96,7 +100,7 @@
   },
   "${ModID}:TheRumble": {
     "NAME": "The Rumble",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL During Boss and Elite combats, repeats !M! additional times."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL During Boss and Elite combats, repeat{!M!|>1= !M! times}."
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
@@ -108,7 +112,7 @@
   },
   "${ModID}:Blunderbuss": {
     "NAME": "Blunderbuss",
-    "DESCRIPTION": "Deal !D! damage. NL  Deals !M! additional damage for each card in hand. Unplayable cards count as !${ModID}:m2! cards."
+    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your hand times !M!. Unplayable cards count as !${ModID}:m2! cards.{!Location!|0= NL (Deals !D! damage.)}"
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
@@ -126,24 +130,192 @@
     "NAME": "Sinister Ritual",
     "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, take !${ModID}:m2! damage."
   },
-  "${ModID}:BlendingIn": {
-    "NAME": "Blending In",
-    "DESCRIPTION": "At the end of your turn, gain !M! block, plus !${ModID}:m2! for each enemy that doesn't intend to attack."
-  },
   "${ModID}:SwarmOfBeetles": {
     "NAME": "Swarm of Beetles",
     "DESCRIPTION": "Whenever you gain Block, deal !M! damage to ALL enemies."
   },
   "${ModID}:BadMedicine": {
     "NAME": "Bad Medicine",
-    "DESCRIPTION": "Whenever you heal, a random enemy loses twice as much HP. Heal !M! HP."
+    "DESCRIPTION": "Whenever you heal, a random enemy loses twice as much HP. NL Heal !M! HP."
   },
   "${ModID}:RestlessSpirits": {
     "NAME": "Restless Spirits",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }At the start of your turn, add a *Blast to your hand."
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }At the start of your turn, add a *Blast into your hand."
   },
   "${ModID}:StickerbrushStrike": {
     "NAME": "Stickerbrush Strike",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Spines."
+  },
+  "${ModID}:CursedCask": {
+    "NAME": "Cursed Cask",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Maledict."
+  },
+  "${ModID}:Darkvision": {
+    "NAME": "Darkvision",
+    "DESCRIPTION": "At the start of your turn, Scry !M! and gain !M! Block for each card discarded this way."
+  },
+  "${ModID}:Portents": {
+    "NAME": "Portents",
+    "DESCRIPTION": "Whenever you discard a card via Scry, deal !M! damage to a random enemy."
+  },
+  "${ModID}:IllIntendedSchemes": {
+    "NAME": "Ill Intended Schemes",
+    "DESCRIPTION": "Whenever a ${ModID}:Trap is triggered, gain !M! Block."
+  },
+  "${ModID}:OthersiderForm": {
+    "NAME": "Othersider Form",
+    "DESCRIPTION": "At the start of your turn, gain !M! ${ModID}:Mojo and lose !${ModID}:m2! Strength."
+  },
+  "${ModID}:SpiritualJourney": {
+    "NAME": "Spiritual Journey",
+    "DESCRIPTION": "{@@}Innate.{!Upgrades!|0= Ethereal.} NL At the end of combat, raise your Max HP by !M!. Playing an Attack reduces gain by 1."
+  },
+  "${ModID}:TrapperMaster": {
+    "NAME": "Trapper Master",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }The first time a ${ModID}:Trap is triggered each turn, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:DeathWard": {
+    "NAME": "Death Ward",
+    "DESCRIPTION": "At the end of your turn, deal !${ModID}:m2! damage to a random enemy !M! times."
+  },
+  "${ModID}:PoisonNova": {
+    "NAME": "Poison Nova",
+    "DESCRIPTION": "*Blasts apply !M! Poison."
+  },
+  "${ModID}:BriarPatch": {
+    "NAME": "Briar Patch",
+    "DESCRIPTION": "Gain !M! ${ModID}:Spines. NL Whenever you are attacked, deal damage back equal to !${ModID}:m2!% of your total ${ModID}:Spines."
+  },
+  "${ModID}:CampOut": {
+    "NAME": "Camp Out",
+    "DESCRIPTION": "Choose one: Gain !M! Regen, or Upgrade all cards in your hand at the start of your next !${ModID}:m2! turns. NL Exhaust."
+  },
+  "${ModID}:Bonfire": {
+    "NAME": "Bonfire",
+    "DESCRIPTION": "Gain !M! Regen."
+  },
+  "${ModID}:Forge": {
+    "NAME": "Forge",
+    "DESCRIPTION": "Upgrade all cards in your hand at the start of your next !M! turns."
+  },
+  "${ModID}:BlendingIn": {
+    "NAME": "Blending In",
+    "DESCRIPTION": "At the end of your turn, if any enemy intends to use a non-attack move, gain !M! ${ModID}:Blur."
+  },
+  "${ModID}:SpinningBlades": {
+    "NAME": "Spinning Blades",
+    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block. NL Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:VengefulTotem": {
+    "NAME": "Vengeful Totem",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal 7 damage. NL Add a *Blast into your hand. NL During Boss and Elite combats, repeat{!M!|>1= !M! times}."
+  },
+  "${ModID}:HexingTotem": {
+    "NAME": "Hexing Totem",
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Maledict. NL Gain !${ModID}:m2! temporary ${ModID}:Mojo. NL Exhaust."
+  },
+  "${ModID}:WardingTotem": {
+    "NAME": "Warding Totem",
+    "DESCRIPTION": "${ModID}:Trap. NL Gain !${ModID}:m2! Artifact. NL Gain !M! *Plated *Armor. NL Exhaust."
+  },
+  "${ModID}:CageOfSerpents": {
+    "NAME": "Cage of Serpents",
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !${ModID}:m2! ${ModID}:Venom. NL Deal !D! damage to a random enemy !M! times."
+  },
+  "${ModID}:Minefield": {
+    "NAME": "Minefield",
+    "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage. NL Can be Upgraded any number of times."
+  },
+  "${ModID}:WatchAndLearn": {
+    "NAME": "Watch and Learn",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Trigger all traps in your hand."
+  },
+  "${ModID}:AcidCloud": {
+    "NAME": "Acid Cloud",
+    "DESCRIPTION": "Apply !M! ${ModID}:Venom to ALL enemies. NL ALL enemies lose !D! HP. NL Exhaust."
+  },
+  "${ModID}:BrambleShield": {
+    "NAME": "Bramble Shield",
+    "DESCRIPTION": "{@@}Gain Block equal to your ${ModID}:Spines + ${ModID}:Mojo + !M!.{!Location!|0= NL (Gains !B! Block.)}"
+  },
+  "${ModID}:EagleEyes": {
+    "NAME": "Eagle Eyes",
+    "DESCRIPTION": "Gain !B! Block. NL Scry !M! for each enemy in combat."
+  },
+  "${ModID}:BarbedLasso": {
+    "NAME": "Barbed Lasso",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a Skill this turn, the enemy loses !M! HP."
+  },
+  "${ModID}:SpitefulStaff": {
+    "NAME": "Spiteful Staff",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Maledict. NL Apply !M! ${ModID}:Venom."
+  },
+  "${ModID}:Stalker": {
+    "NAME": "Stalker",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it twice."
+  },
+  "${ModID}:Incarcerate": {
+    "NAME": "Incarcerate",
+    "DESCRIPTION": "{@@}Deal !D! damage X{!M!|>0=+!M!} times. NL ${ModID}:Trigger your next ${ModID}:Trap X times."
+  },
+  "${ModID}:HairTrigger": {
+    "NAME": "Hair Trigger",
+    "DESCRIPTION": "{@@}Lose !${ModID}:m2! HP. NL Deal !D! damage. NL Draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:BroilingFlames": {
+    "NAME": "Broiling Flames",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *Burn into your hand."
+  },
+  "${ModID}:Shank": {
+    "NAME": "Shank",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard !M! card{!M!|>1=s} at random."
+  },
+  "${ModID}:Geyser": {
+    "NAME": "Geyser",
+    "DESCRIPTION": "{@@}Deal !D! damage. Add !M! *Blast{!M!|>1=s} into your hand."
+  },
+  "${ModID}:JarOfSpiders": {
+    "NAME": "Jar of Spiders",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. If this dealt unblocked damge, the enemy loses !M! HP at the start of their next turn."
+  },
+  "${ModID}:BoulderTrap": {
+    "NAME": "Boulder Trap",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL First !${ModID}:m2! triggers do nothing, then deal !D! damage to ALL enemies.{!Location!|0= NL (Triggered !M! times.)}"
+  },
+  "${ModID}:SludgeBomb": {
+    "NAME": "Sludge Bomb",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply Slow to ALL enemies.{!D!|>0= NL ALL enemies lose !D! HP.} NL Exhaust."
+  },
+  "${ModID}:NightTerror": {
+    "NAME": "Night Terror",
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies. NL Exhaust."
+  },
+  "${ModID}:NaturesWrath": {
+    "NAME": "Nature's Wrath",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Repeat until no enemy has block."
+  },
+  "${ModID}:GoForTheThroat": {
+    "NAME": "Go For The Throat",
+    "DESCRIPTION": "Deal !M! damage X times. NL During Elite and Boss combats, also deal !${ModID}:sd! damage once."
+  },
+  "${ModID}:UnstableConcoction": {
+    "NAME": "Unstable Concoction",
+    "DESCRIPTION": "Deal !D! damage. NL Gain an *Explosive *Potion NL Exhaust."
+  },
+  "${ModID}:CorpseFlies": {
+    "NAME": "Corpse Flies",
+    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Put a random Corpse Flies from your draw pile into your hand.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies into your deck}. NL Exhaust."
+  },
+  "${ModID}:WildMagic": {
+    "NAME": "Wild Magic",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL For each card not discarded, Exhaust it and put an {!Upgrades!|>0= Upgraded} Skill of any color on top of your draw pile."
+  },
+  "${ModID}:Hoodwink": {
+    "NAME": "Hoodwink",
+    "DESCRIPTION": "{@@}stslib:Snecko. NL Deal !D! damage to a random enemy {!M!|-1=equal to this card's cost + !${ModID}:m2!|@=!M! times}."
+  },
+  "${ModID}:RabbitPunch": {
+    "NAME": "Rabbit Punch",
+    "DESCRIPTION": "Deal !D! damage."
   }
 }

@@ -20,6 +20,7 @@ public class BadMedicine extends AbstractBogCard {
     public BadMedicine() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         setMagic(4, +2);
+        tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

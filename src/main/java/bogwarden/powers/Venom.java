@@ -15,7 +15,7 @@ import static bogwarden.BogMod.makeID;
 public class Venom extends AbstractBogPower {
     public static final String POWER_ID = makeID("Venom");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private static final int HP_LOSS = 1;
+    private static final int HP_LOSS = 2;
 
     public Venom(AbstractCreature owner, int amount) {
         super(POWER_ID, powerStrings.NAME, PowerType.DEBUFF, true, owner, amount);

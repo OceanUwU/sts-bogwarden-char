@@ -13,12 +13,12 @@ public class Submerge extends AbstractBogCard {
 
     public Submerge() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        setBlock(11, 14);
+        setBlock(11, +4);
         cardsToPreview = new VoidCard();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        atb(new MakeTempCardInDiscardAction(cardsToPreview.makeStatEquivalentCopy(), 1));
+        atb(new MakeTempCardInDiscardAction(cardsToPreview, 1));
     }
 }

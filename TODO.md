@@ -3,7 +3,7 @@ Design:
     Choose a character colour code
 
 Code:
-    Check if snapper trap is still affected twice by mojo/maledict
+    Are AOE trap cards affected twice by mojo?
     Cards
     Relics
     Potions

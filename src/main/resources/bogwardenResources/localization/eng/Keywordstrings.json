@@ -33,13 +33,20 @@
     "NAMES": [
       "spines"
     ],
-    "DESCRIPTION": "When an enemy performs a non-attack action, they take damage equal to your Spines."
+    "DESCRIPTION": "When an enemy uses a non-attack move, they take damage equal to your Spines."
   },
   {
     "PROPER_NAME": "Venom",
     "NAMES": [
       "venom"
     ],
-    "DESCRIPTION": "Enemies affected by Venom lose #b1 HP whenever they take damage."
+    "DESCRIPTION": "Enemies affected by Venom lose #b2 HP whenever they take damage."
+  },
+  {
+    "PROPER_NAME": "Blur",
+    "NAMES": [
+      "blur"
+    ],
+    "DESCRIPTION": "#yBlock is not removed at the start of your turn."
   }
 ]

@@ -16,12 +16,8 @@ public class Incantation extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            Blast c = new Blast();
-            if (upgraded)
-                c.upgrade();
-            makeInHand(c);
-        }
+        for (int i = 0; i < magicNumber; i++)
+            makeInHand(cardsToPreview);
     }
 
     @Override

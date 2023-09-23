@@ -18,7 +18,7 @@ public class Blunderbuss extends AbstractBogCard {
         setSecondMagic(2, +1);
     }
   
-    public int getAdditionalDamage() {
+    public int getDamage() {
         int count = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.cost == -2)
@@ -31,7 +31,7 @@ public class Blunderbuss extends AbstractBogCard {
   
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = baseDamage;
-        baseDamage += getAdditionalDamage();
+        baseDamage = getDamage();
         super.calculateCardDamage(mo);
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;
@@ -39,7 +39,7 @@ public class Blunderbuss extends AbstractBogCard {
     
     public void applyPowers() {
         int realBaseDamage = baseDamage;
-        baseDamage += getAdditionalDamage();
+        baseDamage = getDamage();
         super.applyPowers();
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;

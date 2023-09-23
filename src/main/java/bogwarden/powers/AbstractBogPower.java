@@ -1,6 +1,7 @@
 package bogwarden.powers;
 
 import bogwarden.BogMod;
+import bogwarden.cards.AbstractTrapCard;
 import bogwarden.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -59,4 +60,6 @@ public abstract class AbstractBogPower extends AbstractPower {
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
         }
     }
+
+    public void onTriggerTrap(AbstractTrapCard c) {}
 }

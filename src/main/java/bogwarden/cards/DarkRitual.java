@@ -23,6 +23,7 @@ public class DarkRitual extends AbstractBogCard {
         setMagic(3);    
         setSecondMagic(1);
         setUpgradedCost(0);
+        tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

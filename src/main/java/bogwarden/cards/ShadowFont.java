@@ -17,11 +17,8 @@ public class ShadowFont extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Blast c = new Blast();
-        if (upgraded)
-            c.upgrade();
+        makeInHand(cardsToPreview);
         atb(new ScryAction(magicNumber));
-        makeInHand(c);
     }
 
     @Override

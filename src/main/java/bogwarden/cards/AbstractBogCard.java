@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import java.util.function.Consumer;
 
 import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.BogMod.modID;
@@ -327,8 +328,8 @@ public abstract class AbstractBogCard extends CustomCard {
         att(new DamageAction(m, info, fx));
     }
 
-    protected void dmgRandom(AbstractGameAction.AttackEffect fx) {
-        atb(new AbstractGameAction() {
+    private AbstractGameAction dmgRandomAction(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget) {
+        return new AbstractGameAction() {
             public void update() {
                 isDone = true;
                 AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
@@ -336,10 +337,28 @@ public abstract class AbstractBogCard extends CustomCard {
                     calculateCardDamage(target);
                     DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
                     NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
+                    if (extraEffectToTarget != null)
+                        extraEffectToTarget.accept(target);
                     att(new DamageAction(target, info, fx));
                 }
             }
-        });
+        };
+    }
+
+    protected void dmgRandom(AbstractGameAction.AttackEffect fx) {
+        dmgRandom(fx, null);
+    }
+
+    protected void dmgRandom(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget) {
+        atb(dmgRandomAction(fx, extraEffectToTarget));
+    }
+
+    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx) {
+        dmgRandomTop(fx, null);
+    }
+
+    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget) {
+        att(dmgRandomAction(fx, extraEffectToTarget));
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {
@@ -360,6 +379,18 @@ public abstract class AbstractBogCard extends CustomCard {
 
     protected void blckTop() {
         att(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+    }
+
+    protected boolean isEliteOrBoss() {
+        boolean retVal = (AbstractDungeon.getCurrRoom()).eliteTrigger;
+        for (AbstractMonster mo : (AbstractDungeon.getMonsters()).monsters)
+            if (mo.type == AbstractMonster.EnemyType.BOSS)
+                retVal = true;
+        return retVal;
+    }
+
+    public void onDiscardedViaScry() {
+        
     }
 
     public String cardArtCopy() {

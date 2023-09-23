@@ -76,8 +76,8 @@
   "${ModID}:BlendingInPower": {
     "NAME": "Blending In",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain #b",
-      " #yBlock for each enemy that doesn't intend to attack."
+      "At the end of your turn, if any enemy intends to use a non-attack move, gain #b",
+      " #yBlur."
     ]
   },
   "${ModID}:SwarmOfBeetlesPower": {
@@ -100,6 +100,102 @@
       "At the start of your turn, add #b",
       " #yBlast into your hand.",
       " #yBlasts into your hand."
+    ]
+  },
+  "${ModID}:DarkvisionPower": {
+    "NAME": "Darkvision",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yScry #b",
+      " and gain #b",
+      " #yBlock for each card discarded."
+    ]
+  },
+  "${ModID}:PortentsPower": {
+    "NAME": "Portents",
+    "DESCRIPTIONS": [
+      "Whenever you discard a card via #yScry, deal #b",
+      " damage to a random enemy."
+    ]
+  },
+  "${ModID}:IllIntendedSchemesPower": {
+    "NAME": "Ill Intended Schemes",
+    "DESCRIPTIONS": [
+      "Whenever a #yTrap is triggered, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${ModID}:OthersiderFormMojoPower": {
+    "NAME": "Othersider Form",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " #yMojo."
+    ]
+  },
+  "${ModID}:OthersiderFormStrengthPower": {
+    "NAME": "Losing What You Had",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      " #yStrength."
+    ]
+  },
+  "${ModID}:SpiritualJourneyPower": {
+    "NAME": "Spiritual Journey",
+    "DESCRIPTIONS": [
+      "At the end of combat, raise your Max HP by #b",
+      ". Whenever you play an Attack, reduce this by #b1."
+    ]
+  },
+  "${ModID}:TrapperMasterPower": {
+    "NAME": "Trapper Master",
+    "DESCRIPTIONS": [
+      "The first time a #yTrap is triggered each turn, draw #b",
+      " card and gain #b",
+      " cards and gain #b",
+      " [E]."
+    ]
+  },
+  "${ModID}:DeathWardPower": {
+    "NAME": "Death Ward",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal #b",
+      " damage to a random enemy #b",
+      " times."
+    ]
+  },
+  "${ModID}:PoisonNovaPower": {
+    "NAME": "Poison Nova",
+    "DESCRIPTIONS": [
+      "#yBlasts apply #b",
+      " #yPoison."
+    ]
+  },
+  "${ModID}:BriarPatchPower": {
+    "NAME": "Briar Patch",
+    "DESCRIPTIONS": [
+      "Whenever you are attacked, deal damage back equal to #b",
+      "% of your total #ySpines."
+    ]
+  },
+  "${ModID}:ForgePower": {
+    "NAME": "Forge",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, upgrade all cards in your hand.",
+      "At the start of your next #b",
+      " turns, upgrade all cards in your hand."
+    ]
+  },
+  "${ModID}:BarbedLassoPower": {
+    "NAME": "Lassoed",
+    "DESCRIPTIONS": [
+      "Whenever you play a skill, loses #b",
+      " HP."
+    ]
+  },
+  "${ModID}:JarOfSpidersPower": {
+    "NAME": "Spider Bite",
+    "DESCRIPTIONS": [
+      "At the start of its next turn, loses #b",
+      " HP."
     ]
   }
 }
