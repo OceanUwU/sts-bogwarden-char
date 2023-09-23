@@ -12,6 +12,8 @@ import static bogwarden.BogMod.makeID;
 public abstract class AbstractTrapCard extends AbstractBogCard {
     private static final CardStrings trapStrings = CardCrawlGame.languagePack.getCardStrings(makeID("TrapCard"));
 
+    public int timesToTrigger;
+
     public AbstractTrapCard(String cardID, CardRarity rarity) {
         super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE);
         setRetain(true);
@@ -25,7 +27,8 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.actions.addAll(TriggerTrapAction.saveActions);
-            trigger(p, m);
+            for (int i = 0; i < timesToTrigger; i++)
+                trigger(p, m);
         }
     }
 

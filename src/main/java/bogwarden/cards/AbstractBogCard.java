@@ -48,6 +48,8 @@ public abstract class AbstractBogCard extends CustomCard {
     private int secondMagicUpgrade;
     private boolean upgradesSecondDamage = false;
     private int secondDamageUpgrade;
+    private boolean upgradesCost = false;
+    private int costUpgrade;
     private boolean upgradesExhaust = false;
     private boolean upgradedExhaust;
     private boolean upgradesEthereal = false;
@@ -277,6 +279,11 @@ public abstract class AbstractBogCard extends CustomCard {
         selfRetain = retains;
     }
 
+    protected void setUpgradedCost(int newCost) {
+        upgradesCost = true;
+        costUpgrade = newCost;
+    }
+
     public void upp() {
         if (upgradesDamage)
             upgradeDamage(damageUpgrade);
@@ -288,6 +295,8 @@ public abstract class AbstractBogCard extends CustomCard {
             upgradeSecondMagic(secondMagicUpgrade);
         if (upgradesSecondDamage)
             upgradeSecondDamage(secondDamageUpgrade);
+        if (upgradesCost)
+            upgradeBaseCost(costUpgrade);
         if (upgradesExhaust)
             exhaust = upgradedExhaust;
         if (upgradesEthereal)
@@ -347,6 +356,10 @@ public abstract class AbstractBogCard extends CustomCard {
 
     protected void blck() {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+    }
+
+    protected void blckTop() {
+        att(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
     }
 
     public String cardArtCopy() {

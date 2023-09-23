@@ -29,5 +29,77 @@
       " turn, whenever this enemy takes damage, it loses #b1 HP.",
       " turns, whenever this enemy takes damage, it loses #b1 HP."
     ]
+  },
+  "${ModID}:LoseSpinesPower": {
+    "NAME": "Spines Down",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose #b",
+      " #ySpines."
+    ]
+  },
+  "${ModID}:LoseMojoPower": {
+    "NAME": "Mojo Down",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose #b",
+      " #yMojo."
+    ]
+  },
+  "${ModID}:FlockOfBatsPower": {
+    "NAME": "Flock of Bats",
+    "DESCRIPTIONS": [
+      "Whenever you are attacked this turn, deal #b",
+      " damage to ALL enemies."
+    ]
+  },
+  "${ModID}:EnergizedBogPower": {
+    "NAME": "Energized",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " additional [E] next turn."
+    ]
+  },
+  "${ModID}:NextTurnTriggerTwice": {
+    "NAME": "Primed",
+    "DESCRIPTIONS": [
+      "Next turn, #yTrigger your next #b",
+      " #yTrap twice.",
+      " #yTraps twice."
+    ]
+  },
+  "${ModID}:TakeDamagePower": {
+    "NAME": "Sinister Ritual",
+    "DESCRIPTIONS": [
+      "At the start of your turn, take #b",
+      " damage."
+    ]
+  },
+  "${ModID}:BlendingInPower": {
+    "NAME": "Blending In",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock for each enemy that doesn't intend to attack."
+    ]
+  },
+  "${ModID}:SwarmOfBeetlesPower": {
+    "NAME": "Swarm of Beetles",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock for each enemy that doesn't intend to attack."
+    ]
+  },
+  "${ModID}:BadMedicinePower": {
+    "NAME": "Bad Medicine",
+    "DESCRIPTIONS": [
+      "Whenever you heal, a random enemy loses #b",
+      " times as much HP."
+    ]
+  },
+  "${ModID}:RestlessSpiritsPower": {
+    "NAME": "Restless Spirits",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " #yBlast into your hand.",
+      " #yBlasts into your hand."
+    ]
   }
 }

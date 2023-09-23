@@ -41,5 +41,109 @@
   "${ModID}:ViperStrike": {
     "NAME": "Viper Strike",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Venom."
+  },
+  "${ModID}:SnareTrap": {
+    "NAME": "Snare Trap",
+    "DESCRIPTION": "{@@}${ModID}:Trap: Apply !M! Weak{!Upgrades!|>0= to ALL enemies}."
+  },
+  "${ModID}:FirebombTrap": {
+    "NAME": "Firebomb Trap",
+    "DESCRIPTION": "${ModID}:Trap: At the end of your next turn, deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Tripwire": {
+    "NAME": "Tripwire",
+    "DESCRIPTION": "${ModID}:Trap: Gain !B! Block and ALL enemies lose !M! Strength this turn."
+  },
+  "${ModID}:PressurePlate": {
+    "NAME": "Pressure Plate",
+    "DESCRIPTION": "${ModID}:Trap: Apply !M! Mark and ALL enemies lose HP equal to their Mark."
+  },
+  "${ModID}:EntanglingVines": {
+    "NAME": "Entangling Vines",
+    "DESCRIPTION": "Retain. NL Gain !M! temporary ${ModID}:Spines."
+  },
+  "${ModID}:Walkabout": {
+    "NAME": "Walkabout",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Discard !${ModID}:m2! card{!${ModID:m2}!|>1=s}."
+  },
+  "${ModID}:Incantation": {
+    "NAME": "Incantation",
+    "DESCRIPTION": "{@@}Add !M! *Blasts{!Upgrades!|>0=+} into your hand."
+  },
+  "${ModID}:DarkPact": {
+    "NAME": "Dark Pact",
+    "DESCRIPTION": "Gain !M! temporary ${ModID}:Mojo."
+  },
+  "${ModID}:FlockOfBats": {
+    "NAME": "Flock of Bats",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Bushwhack": {
+    "NAME": "Bushwhack",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
+  },
+  "${ModID}:LineUp": {
+    "NAME": "Line Up",
+    "DESCRIPTION": "{@@}Next turn, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and ${ModID}:Trigger your next ${ModID}:Trap twice."
+  },
+  "${ModID}:Submerge": {
+    "NAME": "Submerge",
+    "DESCRIPTION": "Gain !B! Block. NL Add a *Void into your discard pile."
+  },
+  "${ModID}:VilePowder": {
+    "NAME": "Vile Powder",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Maledict to ALL enemies."
+  },
+  "${ModID}:TheRumble": {
+    "NAME": "The Rumble",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL During Boss and Elite combats, repeats !M! additional times."
+  },
+  "${ModID}:BagAndTag": {
+    "NAME": "Bag and Tag",
+    "DESCRIPTION": "Deal !D! damage. NL Trigger your next ${ModID}:Trap twice."
+  },
+  "${ModID}:PlagueOfToads": {
+    "NAME": "Plague of Toads",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
+  },
+  "${ModID}:Blunderbuss": {
+    "NAME": "Blunderbuss",
+    "DESCRIPTION": "Deal !D! damage. NL  Deals !M! additional damage for each card in hand. Unplayable cards count as !${ModID}:m2! cards."
+  },
+  "${ModID}:HeavyStick": {
+    "NAME": "Heavy Stick",
+    "DESCRIPTION": "Deal !D! damage. NL  Deals additional damage equal to !M! times your Mojo."
+  },
+  "${ModID}:Blowpipe": {
+    "NAME": "Blowpipe",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Put !M! random Unplayable card{!M!|>1=s} from your draw pile into your hand."
+  },
+  "${ModID}:SneakierStrike": {
+    "NAME": "Sneakier Strike",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If you have Scried this turn, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and apply !${ModID}:m2! ${ModID}:Venom."
+  },
+  "${ModID}:DarkRitual": {
+    "NAME": "Sinister Ritual",
+    "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, take !${ModID}:m2! damage."
+  },
+  "${ModID}:BlendingIn": {
+    "NAME": "Blending In",
+    "DESCRIPTION": "At the end of your turn, gain !M! block, plus !${ModID}:m2! for each enemy that doesn't intend to attack."
+  },
+  "${ModID}:SwarmOfBeetles": {
+    "NAME": "Swarm of Beetles",
+    "DESCRIPTION": "Whenever you gain Block, deal !M! damage to ALL enemies."
+  },
+  "${ModID}:BadMedicine": {
+    "NAME": "Bad Medicine",
+    "DESCRIPTION": "Whenever you heal, a random enemy loses twice as much HP. Heal !M! HP."
+  },
+  "${ModID}:RestlessSpirits": {
+    "NAME": "Restless Spirits",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }At the start of your turn, add a *Blast to your hand."
+  },
+  "${ModID}:StickerbrushStrike": {
+    "NAME": "Stickerbrush Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Spines."
   }
 }

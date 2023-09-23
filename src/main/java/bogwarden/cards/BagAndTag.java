@@ -7,20 +7,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
-import bogwarden.powers.Venom;
+import bogwarden.actions.TriggerTrapAction;
 
-public class ViperStrike extends AbstractBogCard {
-    public final static String ID = makeID("ViperStrike");
+public class BagAndTag extends AbstractBogCard {
+    public final static String ID = makeID("BagAndTag");
 
-    public ViperStrike() {
+    public BagAndTag() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(6, +2);
-        setMagic(1, +1);
-        tags.add(CardTags.STRIKE);
+        setDamage(7, +3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        applyToEnemy(m, new Venom(m, magicNumber));
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        atb(new TriggerTrapAction(2));
     }
 }

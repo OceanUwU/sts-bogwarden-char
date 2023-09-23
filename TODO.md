@@ -3,6 +3,7 @@ Design:
     Choose a character colour code
 
 Code:
+    Check if snapper trap is still affected twice by mojo/maledict
     Cards
     Relics
     Potions

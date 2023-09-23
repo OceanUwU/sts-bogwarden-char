@@ -14,13 +14,27 @@ import java.util.ArrayList;
 public class TriggerTrapAction extends AbstractGameAction {
     public static ArrayList<AbstractGameAction> saveActions;
     private AbstractMonster target;
+    private int times;
 
-    public TriggerTrapAction(AbstractCreature target) {
+    public TriggerTrapAction(AbstractCreature target, int times) {
+        this(times);
         if (target instanceof AbstractMonster)
             this.target = (AbstractMonster)target;
     }
 
-    public TriggerTrapAction() {}
+    public TriggerTrapAction(int times) {
+        this.times = times;
+    }
+
+    public TriggerTrapAction(AbstractCreature target) {
+        this(1);
+        if (target instanceof AbstractMonster)
+            this.target = (AbstractMonster)target;
+    }
+
+    public TriggerTrapAction() {
+        this(1);
+    }
 
     public void update() {
         isDone = true;
@@ -29,6 +43,7 @@ public class TriggerTrapAction extends AbstractGameAction {
         for (AbstractCard c : AbstractDungeon.player.hand.group)
             if (c instanceof AbstractTrapCard) {
                 c.dontTriggerOnUseCard = true;
+                ((AbstractTrapCard)c).timesToTrigger = times;
                 CardQueueItem q = new CardQueueItem(c, true);
                 q.monster = target;
                 AbstractDungeon.actionManager.cardQueue.add(q);
