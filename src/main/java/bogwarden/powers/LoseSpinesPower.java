@@ -1,5 +1,6 @@
 package bogwarden.powers;
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,7 +24,7 @@ public class LoseSpinesPower extends AbstractBogPower {
 
     public void atEndOfTurn(boolean isPlayer) {
         flash();
-        applyToSelf(new Spines(owner, -amount));
+        atb(new ReducePowerAction(owner, owner, Spines.POWER_ID, amount));
         atb(new RemoveSpecificPowerAction(owner, owner, this));
     }
 }

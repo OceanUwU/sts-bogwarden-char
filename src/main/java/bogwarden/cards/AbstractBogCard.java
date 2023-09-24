@@ -76,9 +76,9 @@ public abstract class AbstractBogCard extends CustomCard {
         initializeDescription();
 
         if (textureImg.contains("ui/missing.png")) {
-            if (CardLibrary.cards != null && !CardLibrary.cards.isEmpty()) {
+            if (CardLibrary.cards != null && !CardLibrary.cards.isEmpty())
                 CardArtRoller.computeCard(this);
-            } else
+            else
                 needsArtRefresh = true;
         }
     }
@@ -93,23 +93,10 @@ public abstract class AbstractBogCard extends CustomCard {
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
-        String textureString;
-
-        switch (cardType) {
-            case ATTACK:
-            case POWER:
-            case SKILL:
-                textureString = makeImagePath("cards/" + cardName + ".png");
-                break;
-            default:
-                textureString = makeImagePath("ui/missing.png");
-                break;
-        }
-
+        String textureString = makeImagePath("cards/" + cardName + ".png");
         FileHandle h = Gdx.files.internal(textureString);
-        if (!h.exists()) {
+        if (!h.exists())
             textureString = makeImagePath("ui/missing.png");
-        }
         return textureString;
     }
 

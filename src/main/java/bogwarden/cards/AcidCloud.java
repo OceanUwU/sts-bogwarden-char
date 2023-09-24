@@ -22,7 +22,7 @@ public class AcidCloud extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        forAllMonstersLiving(mo -> applyToEnemy(m, new Venom(m, magicNumber)));
+        forAllMonstersLiving(mo -> applyToEnemy(mo, new Venom(mo, magicNumber)));
         allDmg(AbstractGameAction.AttackEffect.POISON);
     }
 }
