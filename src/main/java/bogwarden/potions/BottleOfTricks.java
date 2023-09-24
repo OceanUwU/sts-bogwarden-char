@@ -1,10 +1,12 @@
 package bogwarden.potions;
 
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomPotion;
 import bogwarden.BogMod;
 import bogwarden.actions.TriggerTrapAction;
 import bogwarden.cards.AbstractTrapCard;
+import bogwarden.util.TexLoader;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.util.Wiz.*;
 
 public class BottleOfTricks extends CustomPotion {
@@ -30,6 +33,7 @@ public class BottleOfTricks extends CustomPotion {
 
     public BottleOfTricks() {
         super(potionStrings.NAME, POTION_ID, PotionRarity.RARE, PotionSize.BOTTLE, PotionColor.SWIFT);
+        ReflectionHacks.setPrivate(this, AbstractPotion.class, "containerImg", TexLoader.getTexture(makeImagePath("potions/BottleOfTricks.png")));
         labOutlineColor = BogMod.characterColor;
     }
 
@@ -76,28 +80,19 @@ public class BottleOfTricks extends CustomPotion {
                 tickDuration();
             } else {
                 if (!retrieveCard) {
-                    if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
+                    if (AbstractDungeon.cardRewardScreen.discoveryCard != null)
                         for (int i = 0; i < count; i++) {
-
-
                             AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
                             disCard.setCostForTurn(0);
-
                             disCard.current_x = -1000.0F * Settings.scale;
-                            if (AbstractDungeon.player.hand.size() < 10) {
+                            if (AbstractDungeon.player.hand.size() < 10)
                                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                            } else {
+                            else
                                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                            }
-
                         }
-                    }
-
                     AbstractDungeon.cardRewardScreen.discoveryCard = null;
-
                     retrieveCard = true;
                 }
-
                 tickDuration();
             }
         }
@@ -106,7 +101,7 @@ public class BottleOfTricks extends CustomPotion {
             ArrayList<AbstractCard> cardsList = new ArrayList<>();
             ArrayList<AbstractCard> selectionsList = new ArrayList<>();
             for (AbstractCard q : CardLibrary.getAllCards())
-                if (q instanceof AbstractTrapCard) {
+                if (q instanceof AbstractTrapCard && !q.hasTag(AbstractCard.CardTags.HEALING) && !(q.color == AbstractCard.CardColor.COLORLESS || q.color == AbstractCard.CardColor.CURSE)) {
                     AbstractCard r = q.makeCopy();
                     cardsList.add(r);
                 }

@@ -300,7 +300,7 @@
   },
   "${ModID}:UnstableConcoction": {
     "NAME": "Unstable Concoction",
-    "DESCRIPTION": "Deal !D! damage. NL Gain an *Explosive *Potion. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Obtain an *Explosive *Potion. NL Exhaust."
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",

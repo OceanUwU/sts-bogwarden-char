@@ -121,7 +121,7 @@ public class BogMod implements
         //liquidColor, hybridColor, spotsColor
         BaseMod.addPotion(MojoPotion.class, new Color(0.47f, 0.12f, 0.66f, 1f), new Color(0.79f, 0.34f, 0.90f, 1f), new Color(1f, 0.73f, 0.01f, 1f), MojoPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
         BaseMod.addPotion(BogWater.class, new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.41f, 0.25f, 0.13f, 0.6f), BogWater.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
-        BaseMod.addPotion(BottleOfTricks.class, new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), BottleOfTricks.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(BottleOfTricks.class, new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), BottleOfTricks.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
     }
 
     @Override

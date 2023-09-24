@@ -22,10 +22,22 @@ import static bogwarden.util.Wiz.*;
 public class CorpseFlies extends AbstractBogCard {
     public final static String ID = makeID("CorpseFlies");
 
+    private boolean real;
+
     public CorpseFlies() {
+        this(true);
+    }
+
+    public CorpseFlies(boolean real) {
         super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         setDamage(6, +2);
         setExhaust(true);
+        this.real = real;
+        tags.add(CardTags.HEALING);
+        if (real) {
+            cardsToPreview = new CorpseFlies(false);
+            cardsToPreview.upgrade();
+        }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,7 +58,8 @@ public class CorpseFlies extends AbstractBogCard {
     @Override
     public void upp() {
         super.upp();
-        cardsToPreview = new CorpseFlies();
+        if (real)
+            cardsToPreview = new CorpseFlies(false);
     }
 
     public static class CorpseFliesAction extends AbstractGameAction {
@@ -64,7 +77,8 @@ public class CorpseFlies extends AbstractBogCard {
         }
         
         public void update() {
-            AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.NONE));
+            isDone = true;
+            AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             target.damage(info);
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower("Minion")) {
                 if (upgraded)
@@ -79,6 +93,8 @@ public class CorpseFlies extends AbstractBogCard {
                             addToTop(new WaitAction(Settings.ACTION_DUR_MED));
                             break;
                         }
+                    if (from.canUpgrade())
+                        from.upgrade();
                 }
             }
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
