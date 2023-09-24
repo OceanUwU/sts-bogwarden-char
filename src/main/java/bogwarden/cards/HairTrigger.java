@@ -20,7 +20,7 @@ public class HairTrigger extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new LoseHPAction(p, p, this.secondMagic));
+        atb(new LoseHPAction(p, p, secondMagic));
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         atb(new DrawCardAction(magicNumber));
     }

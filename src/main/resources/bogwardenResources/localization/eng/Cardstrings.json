@@ -296,7 +296,7 @@
   },
   "${ModID}:GoForTheThroat": {
     "NAME": "Go For The Throat",
-    "DESCRIPTION": "Deal !M! damage X times. NL During Elite and Boss combats, also deal !${ModID}:sd! damage once."
+    "DESCRIPTION": "Deal !M! damage X times. NL During Boss and Elite combats, also deal !${ModID}:sd! damage once."
   },
   "${ModID}:UnstableConcoction": {
     "NAME": "Unstable Concoction",
@@ -317,5 +317,13 @@
   "${ModID}:RabbitPunch": {
     "NAME": "Rabbit Punch",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:BackfiringTrap": {
+    "NAME": "Backfiring Trap",
+    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP."
+  },
+  "${ModID}:DollsCurse": {
+    "NAME": "Doll's Curse",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose !${ModID}:m2! HP and gain !M! ${ModID}:Mojo. NL There is no escape from this Curse."
   }
 }

@@ -15,7 +15,7 @@ public class SwampTalisman extends AbstractBogRelic {
     public static final int DRAW = 1;
 
     public SwampTalisman() {
-        super(ID, RelicTier.STARTER, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        super(ID, RelicTier.STARTER, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
     }
 
     public String getUpdatedDescription() {

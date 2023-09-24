@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 import bogwarden.actions.TriggerTrapAction;
 import bogwarden.powers.AbstractBogPower;
+import bogwarden.relics.AbstractBogRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static bogwarden.BogMod.makeID;
 
@@ -38,6 +40,9 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
                 for (AbstractPower po : p.powers)
                     if (po instanceof AbstractBogPower)
                         ((AbstractBogPower)po).onTriggerTrap(this);
+                for (AbstractRelic r : p.relics)
+                    if (r instanceof AbstractBogRelic)
+                        ((AbstractBogRelic)r).onTriggerTrap(this);
             }
         }
     }

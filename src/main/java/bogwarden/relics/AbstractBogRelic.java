@@ -4,6 +4,7 @@ import static bogwarden.BogMod.makeRelicPath;
 import static bogwarden.BogMod.modID;
 
 import basemod.abstracts.CustomRelic;
+import bogwarden.cards.AbstractTrapCard;
 import bogwarden.util.TexLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -24,4 +25,6 @@ public abstract class AbstractBogRelic extends CustomRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
+
+    public void onTriggerTrap(AbstractTrapCard c) {}
 }

@@ -1,7 +1,7 @@
 {
   "${ModID}:SwampTalisman": {
     "NAME": "Swamp Talisman",
-    "FLAVOR": "A ward against the many evils lurking in the Foglands.",
+    "FLAVOR": "A ward against the many evils of the Foglands.",
     "DESCRIPTIONS": [
       "The first #b",
       " times you draw an #yUnplayable card each combat, draw #b",
@@ -15,6 +15,80 @@
       "Enemies with #y${ModID}:Maledict take #b",
       "% more damage rather than #b",
       "%."
+    ]
+  },
+  "${ModID:}DuVuNeedle": {
+    "NAME": "Du-Vu Needle",
+    "FLAVOR": "The bog-dwelling shamans use these to lay powerful curses.",
+    "DESCRIPTIONS": [
+      "For each #rCurse in your deck, start each combat with #b",
+      " #y${ModID}:Mojo. NL Upon pickup, obtain a special #rCurse. NL ",
+      " You have no #rCurses.",
+      " You have #b",
+      " #rCurses."
+    ]
+  },
+  "${ModID}:TinningKit": {
+    "NAME": "Tinning Kit",
+    "FLAVOR": "To survive in the wild, you have to be willing to eat anything.",
+    "DESCRIPTIONS": [
+      "The first time you draw a #rCurse or #yStatus card each combat, #yExhaust it and add a #ySnapper #yTrap into your hand."
+    ]
+  },
+  "${ModID}:RustyOlClunker": {
+    "NAME": "Rusty Ol' Clunker",
+    "FLAVOR": "Not my best work!",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, shuffle a #rBackfiring #rTrap into your draw pile."
+    ]
+  },
+  "${ModID}:JasperTalisman": {
+    "NAME": "Jasper Talisman",
+    "FLAVOR": "An utterly gorgeous piece of jewelry, crafted by a sister of the Foglands.",
+    "DESCRIPTIONS": [
+      "Replaces [#45818e]Swamp Talisman[]. The first time you draw an #yUnplayable card each turn, draw #b",
+      " card and gain #b",
+      " temporary #y${ModID}:Mojo."
+    ]
+  },
+  "${ModID}:ShadowMansHat": {
+    "NAME": "Shadow Man's Hat",
+    "FLAVOR": "Are you reeeeady?",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #y${ModID}:Mojo."
+    ]
+  },
+  "${ModID}:PurpleRose": {
+    "NAME": "Purple Rose",
+    "FLAVOR": "\"Beautiful, but very prickly - OUCH!!! See what I mean!?\" -Ranwid",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #y${ModID}:Spines."
+    ]
+  },
+  "${ModID}:PrimordialFocus": {
+    "NAME": "Primordial Focus",
+    "FLAVOR": "A sinister embalmed skull capable of channeling swamp magicks.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add #b",
+      " #yBlasts into your hand."
+    ]
+  },
+  "${ModID}:ExiledRoster": {
+    "NAME": "Exile Roster",
+    "FLAVOR": "A list of those forbidden to ever leave the Foglands.",
+    "DESCRIPTIONS": [
+      "At the start of Boss and Elite combats, apply #b",
+      " #y${ModID}:Maledict and ${ModID}:Venom to ALL enemies."
+    ]
+  },
+  "${ModID}:TrailCam": {
+    "NAME": "Trail Cam",
+    "FLAVOR": "A strange gadget that won't turn on. What was its use?",
+    "DESCRIPTIONS": [
+      "Every time you trigger #b",
+      " ${ModID}:Traps, gain [E]."
     ]
   }
 }
