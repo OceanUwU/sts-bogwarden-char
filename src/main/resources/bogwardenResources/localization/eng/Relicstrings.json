@@ -25,6 +25,7 @@
       " #y${ModID}:Mojo. Upon pickup, obtain a #rDoll's #rCurse.",
       " You have no #rCurses.",
       " You have #b",
+      " #rCurse.",
       " #rCurses."
     ]
   },
@@ -44,7 +45,7 @@
   },
   "${ModID}:JasperTalisman": {
     "NAME": "Jasper Talisman",
-    "FLAVOR": "An utterly gorgeous piece of jewelry, crafted by a sister of the Foglands.",
+    "FLAVOR": "A menacing carving, crafted by a sister of the Foglands",
     "DESCRIPTIONS": [
       "Replaces [#45818e]Swamp[] [#45818e]Talisman[]. The first time you draw an #yUnplayable card each turn, draw #b",
       " card and gain #b",
@@ -88,7 +89,7 @@
     "FLAVOR": "A strange gadget that won't turn on. What was its use?",
     "DESCRIPTIONS": [
       "Every time you trigger #b",
-      " #y${ModID}:Traps, gain [E] ."
+      " #y${ModID}:Traps, gain [E] next turn ."
     ]
   }
 }

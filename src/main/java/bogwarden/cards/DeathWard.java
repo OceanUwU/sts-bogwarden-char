@@ -18,7 +18,7 @@ public class DeathWard extends AbstractBogCard {
     private final static int DAMAGE = 3;
 
     public DeathWard() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         setMagic(3, +1);
         setSecondMagic(DAMAGE);
     }
@@ -42,7 +42,7 @@ public class DeathWard extends AbstractBogCard {
         public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
             flash();
             for (int i = 0; i < amount; i++)
-                atb(new DamageRandomEnemyAction(new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                atb(new DamageRandomEnemyAction(new DamageInfo(owner, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
 }

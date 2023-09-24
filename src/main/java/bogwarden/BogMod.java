@@ -12,6 +12,7 @@ import bogwarden.potions.BogWater;
 import bogwarden.potions.BottleOfTricks;
 import bogwarden.potions.MojoPotion;
 import bogwarden.relics.AbstractBogRelic;
+import bogwarden.util.BogAudio;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -34,6 +35,7 @@ public class BogMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
+        AddAudioSubscriber,
         EditCharactersSubscriber {
 
     public static final String modID = "bogwarden";
@@ -136,6 +138,11 @@ public class BogMod implements
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                     }
                 });
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BogAudio.addAudio();
     }
 
     @Override

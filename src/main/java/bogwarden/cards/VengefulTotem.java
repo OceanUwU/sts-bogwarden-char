@@ -17,6 +17,7 @@ public class VengefulTotem extends AbstractTrapCard {
         setMagic(1, +1);
         setExhaust(true);
         cardsToPreview = new Blast();
+        totem = true;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

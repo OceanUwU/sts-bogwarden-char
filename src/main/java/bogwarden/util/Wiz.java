@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -47,6 +48,14 @@ public class Wiz {
 
     public static void forAllMonstersLiving(Consumer<AbstractMonster> consumer) {
         for (AbstractMonster m : getEnemies()) {
+            consumer.accept(m);
+        }
+    }
+
+    public static void forAllMonstersLivingTop(Consumer<AbstractMonster> consumer) {
+        ArrayList<AbstractMonster> enemies = getEnemies();
+        Collections.reverse(enemies);
+        for (AbstractMonster m : enemies) {
             consumer.accept(m);
         }
     }

@@ -54,7 +54,7 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                80, 80, 0, 99, 5, this, getStartingRelics(),
+                78, 78, 0, 99, 5, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 
@@ -104,7 +104,7 @@ public class TheBogwarden extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return 8;
+        return 5;
     }
 
     @Override

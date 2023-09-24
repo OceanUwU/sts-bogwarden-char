@@ -349,11 +349,15 @@ public abstract class AbstractBogCard extends CustomCard {
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
+        DamageAllEnemiesAction action = new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx);
+        NonAttackDamagePatches.DamageAllFields.fromCard.set(action, true);
+        atb(action);
     }
 
     protected void allDmgTop(AbstractGameAction.AttackEffect fx) {
-        att(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
+        DamageAllEnemiesAction action = new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx);
+        NonAttackDamagePatches.DamageAllFields.fromCard.set(action, true);
+        att(action);
     }
 
     protected void altDmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {

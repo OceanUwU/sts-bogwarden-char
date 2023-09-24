@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -12,8 +13,8 @@ public class Stalker extends AbstractBogCard {
     public final static String ID = makeID("Stalker");
 
     public Stalker() {
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(5, +2);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        setDamage(9, +3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -21,7 +22,15 @@ public class Stalker extends AbstractBogCard {
     }
 
     public void onDiscardedViaScry() {
-        for (int i = 0; i < 2; i++)
-            atb(new NewQueueCardAction(this, true, false, true));
+        AbstractCard self = this;
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                if (adp().discardPile.contains(self)) {
+                    adp().discardPile.removeCard(self);
+                    att(new NewQueueCardAction(self, true, false, true));
+                }
+            }
+        });
     }
 }

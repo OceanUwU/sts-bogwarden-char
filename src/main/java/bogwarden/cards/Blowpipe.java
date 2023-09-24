@@ -1,14 +1,15 @@
 package bogwarden.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
+
+import basemod.BaseMod;
 
 public class Blowpipe extends AbstractBogCard {
     public final static String ID = makeID("Blowpipe");
@@ -26,11 +27,16 @@ public class Blowpipe extends AbstractBogCard {
                 isDone = true;
                 CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 p.drawPile.group.stream().filter(c -> c.cost == -2).forEach(c -> cards.addToRandomSpot(c));
-                cards.shuffle(AbstractDungeon.cardRandomRng);
                 for (int i = 0; i < magicNumber; i++)
-                    if (cards.size() > 0) {
-                        att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getTopCard()));
-                        cards.removeTopCard();
+                    if (!cards.isEmpty()) {
+                        cards.shuffle();
+                        AbstractCard card = cards.getBottomCard();
+                        cards.removeCard(card);
+                        if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+                            p.drawPile.moveToDiscardPile(card);
+                            p.createHandIsFullDialog();
+                        } else
+                            p.hand.moveToHand(card, p.drawPile);
                     }
             }
         });

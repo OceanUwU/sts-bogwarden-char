@@ -23,9 +23,8 @@ public class Blast extends AbstractBogCard {
 
     public void applyPowers() {
         super.applyPowers();
-        secondMagic = baseSecondMagic;
-        secondMagic += pwrAmt(adp(), PoisonNova.PoisonNovaPower.POWER_ID);
-        isMagicNumberModified = true;
+        baseSecondMagic = secondMagic = pwrAmt(adp(), PoisonNova.PoisonNovaPower.POWER_ID);
+        isSecondMagicModified = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

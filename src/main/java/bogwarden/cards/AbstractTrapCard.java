@@ -3,6 +3,7 @@ package bogwarden.cards;
 import bogwarden.actions.TriggerTrapAction;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.relics.AbstractBogRelic;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,6 +19,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     private static final CardStrings trapStrings = CardCrawlGame.languagePack.getCardStrings(makeID("TrapCard"));
 
     public int timesToTrigger;
+    protected boolean totem = false;
 
     public AbstractTrapCard(String cardID, CardRarity rarity) {
         super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE);
@@ -33,6 +35,12 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.actions.addAll(TriggerTrapAction.saveActions);
+            if (this instanceof BackfiringTrap)
+                CardCrawlGame.sound.play(BogAudio.BACKFIRE_TRIGGER);
+            else if (totem)
+                CardCrawlGame.sound.play(BogAudio.TOTEM_TRIGGER);
+            else
+                CardCrawlGame.sound.play(BogAudio.TRAP_TRIGGER);
             for (int i = 0; i < timesToTrigger; i++) {
                 applyPowers();
                 calculateCardDamage(m);

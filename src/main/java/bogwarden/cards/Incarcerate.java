@@ -20,7 +20,8 @@ public class Incarcerate extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new EasyXCostAction(this, (effect, params) -> {
-            att(new TriggerTrapAction(effect));
+            if (effect > 0)
+                att(new TriggerTrapAction(effect));
             for (int i = 0; i < effect + magicNumber; i++)
                 dmgTop(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
             return true;

@@ -31,7 +31,7 @@ public class MojoPotion extends CustomPotion {
     }
 
     public void use(AbstractCreature abstractCreature) {
-        applyToSelf(new Mojo(abstractCreature, potency));
+        applyToSelf(new Mojo(adp(), potency));
     }
 
     public int getPotency(int ascensionlevel) {

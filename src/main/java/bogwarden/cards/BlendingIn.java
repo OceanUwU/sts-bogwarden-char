@@ -21,7 +21,7 @@ public class BlendingIn extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new BlendingInPower(p, secondMagic));
+        applyToSelf(new BlendingInPower(p, magicNumber));
     }
 
     public static class BlendingInPower extends AbstractBogPower {

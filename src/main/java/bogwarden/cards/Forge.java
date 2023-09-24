@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -21,7 +22,12 @@ public class Forge extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new ForgePower(p, magicNumber));
+        onChoseThisOption();
+    }
+
+    public void onChoseThisOption() {
+        vfx(new UpgradeShineEffect(adp().hb.cX, adp().hb.cY));
+        applyToSelf(new ForgePower(adp(), magicNumber));
     }
 
     public static class ForgePower extends AbstractBogPower {

@@ -39,7 +39,7 @@
     "DESCRIPTION": "{@@}Add a *Blast{!Upgrades!|>0=+} into your hand. NL Scry !M!."
   },
   "${ModID}:SpinyShawl": {
-    "NAME": "Spiny Shawl",
+    "NAME": "Urticating Spines",
     "DESCRIPTION": "{@@}Gain !M! ${ModID}:Spines.{!${ModID}:m2!|>0= NL Gain !${ModID}:m2! Dexterity.}"
   },
   "${ModID}:ViperStrike": {
@@ -252,7 +252,7 @@
   },
   "${ModID}:Stalker": {
     "NAME": "Stalker",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it twice."
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it."
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
@@ -280,7 +280,7 @@
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL First !${ModID}:m2! triggers do nothing, then deal !D! damage to ALL enemies.{!Location!|0= NL (Triggered !M! times.)}"
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL First !${ModID}:m2! triggers do nothing, then deal !D! damage to ALL enemies.{!Location!|>-1= NL (Triggered !M! times.)}"
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
@@ -312,7 +312,7 @@
   },
   "${ModID}:Hoodwink": {
     "NAME": "Hoodwink",
-    "DESCRIPTION": "{@@}stslib:Snecko. NL Deal !D! damage to a random enemy {!M!|-1=equal to this card's cost + !${ModID}:m2!|@=!M! times}."
+    "DESCRIPTION": "{@@}stslib:Snecko. NL Deal !D! damage to a random enemy {!M!|-1=a number of times equal to this card's cost + !${ModID}:m2!|@=!M! times}."
   },
   "${ModID}:RabbitPunch": {
     "NAME": "Rabbit Punch",

@@ -18,6 +18,6 @@ public class NightTerror extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        forAllMonstersLiving(mo -> applyToEnemy(m, new VulnerablePower(m, magicNumber, false)));
+        forAllMonstersLiving(mo -> applyToEnemy(mo, new VulnerablePower(mo, magicNumber, false)));
     }
 }

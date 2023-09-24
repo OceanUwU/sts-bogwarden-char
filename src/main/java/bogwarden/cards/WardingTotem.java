@@ -16,6 +16,7 @@ public class WardingTotem extends AbstractTrapCard {
         setMagic(3, +1);
         setSecondMagic(1);
         setExhaust(true);
+        totem = true;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

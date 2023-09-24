@@ -1,7 +1,8 @@
 package bogwarden.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.watcher.TriggerMarksAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
@@ -19,7 +20,15 @@ public class PressurePlate extends AbstractTrapCard {
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        att(new TriggerMarksAction(this));
+        att(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                forAllMonstersLivingTop(mo -> {
+                    if (mo.hasPower(MarkPower.POWER_ID))
+                        att(new LoseHPAction(mo, null, pwrAmt(mo, MarkPower.POWER_ID), AbstractGameAction.AttackEffect.FIRE)); 
+                });
+            }
+        });
         applyToEnemyTop(m, new MarkPower(m, magicNumber));
         if (m != null)
             att(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));

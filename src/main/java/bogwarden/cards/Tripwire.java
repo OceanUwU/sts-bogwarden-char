@@ -19,10 +19,10 @@ public class Tripwire extends AbstractTrapCard {
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        forAllMonstersLiving(mo -> {
+        forAllMonstersLivingTop(mo -> {
             if (!mo.hasPower(ArtifactPower.POWER_ID))
-                applyToEnemyTop(m, new GainStrengthPower(m, magicNumber));
-            applyToEnemyTop(mo, new StrengthPower(m, -magicNumber));
+                applyToEnemyTop(mo, new GainStrengthPower(mo, magicNumber));
+            applyToEnemyTop(mo, new StrengthPower(mo, -magicNumber));
         });
         blckTop();
     }

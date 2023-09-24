@@ -18,6 +18,6 @@ public class VilePowder extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        forAllMonstersLiving(mo -> applyToEnemy(mo, new Maledict(m, magicNumber)));
+        forAllMonstersLiving(mo -> applyToEnemy(mo, new Maledict(mo, magicNumber)));
     }
 }

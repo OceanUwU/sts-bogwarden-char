@@ -17,7 +17,7 @@ public class SnareTrap extends AbstractTrapCard {
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         if (upgraded)
-            forAllMonstersLiving(mo -> applyToEnemyTop(mo, new WeakPower(mo, magicNumber, false)));
+            forAllMonstersLivingTop(mo -> applyToEnemyTop(mo, new WeakPower(mo, magicNumber, false)));
         else
             applyToEnemyTop(m, new WeakPower(m, magicNumber, false));
     }

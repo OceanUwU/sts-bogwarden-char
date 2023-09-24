@@ -38,7 +38,7 @@ public class CorpseFlies extends AbstractBogCard {
                     p.drawPile.group.stream().filter(c -> c instanceof CorpseFlies).forEach(c -> cards.addToRandomSpot(c));
                     cards.shuffle(AbstractDungeon.cardRandomRng);
                     if (cards.size() > 0)
-                        att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getTopCard()));
+                        att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getBottomCard(), 1));
                 }
             });
     }

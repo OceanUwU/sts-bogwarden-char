@@ -2,11 +2,12 @@ package bogwarden.relics;
 
 import bogwarden.cards.AbstractTrapCard;
 import bogwarden.characters.TheBogwarden;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import bogwarden.powers.EnergizedBogPower;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.util.Wiz.*;
 
 public class TrailCam extends AbstractBogRelic {
     public static final String ID = makeID("TrailCam");
@@ -25,8 +26,8 @@ public class TrailCam extends AbstractBogRelic {
         if (++counter % TRAPS_NEEDED == 0) {
             counter = 0;
             flash();
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new GainEnergyAction(1));
+            atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            applyToSelf(new EnergizedBogPower(adp(), 1));
         }
     }
 }

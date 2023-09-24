@@ -47,7 +47,7 @@ public class FlockOfBats extends AbstractBogCard {
 
         public int onAttacked(DamageInfo info, int damageAmount) {
             flash();
-            addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToTop(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             return damageAmount;
         }
     }

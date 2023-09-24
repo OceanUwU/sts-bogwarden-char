@@ -30,22 +30,18 @@ public class Blunderbuss extends AbstractBogCard {
     }
   
     public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = baseDamage;
         baseDamage = getDamage();
         super.calculateCardDamage(mo);
-        baseDamage = realBaseDamage;
-        isDamageModified = damage != baseDamage;
     }
     
     public void applyPowers() {
-        int realBaseDamage = baseDamage;
         baseDamage = getDamage();
         super.applyPowers();
-        baseDamage = realBaseDamage;
-        isDamageModified = damage != baseDamage;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        baseDamage = getDamage();
+        calculateCardDamage(m);
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
     }
 }

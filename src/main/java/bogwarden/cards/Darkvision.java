@@ -50,9 +50,9 @@ public class Darkvision extends AbstractBogCard {
                 public void update() {
                     isDone = true;
                     fromDarkVision = true;
-                    att(new ScryAction(amount));
                 }
             });
+            atb(new ScryAction(amount));
         }
 
         public void gainTheBlock(int discarded) {

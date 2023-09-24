@@ -151,7 +151,9 @@
       "The first time a #yTrap is triggered each turn, draw #b",
       " card and gain #b",
       " cards and gain #b",
-      " [E]."
+      " [E] .",
+      " Has triggered this turn.",
+      " Has not yet triggered this turn."
     ]
   },
   "${ModID}:DeathWardPower": {

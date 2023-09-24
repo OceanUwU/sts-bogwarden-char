@@ -44,6 +44,8 @@ public class WildMagic extends AbstractBogCard {
                 else
                     cardRarity = AbstractCard.CardRarity.RARE;
                 AbstractCard generated = CardLibrary.getAnyColorCard(AbstractCard.CardType.SKILL, cardRarity);
+                if (upgraded && generated.canUpgrade())
+                    generated.upgrade();
                 att(new MakeTempCardInDrawPileAction(generated, 1, false, true));
                 att(new ExhaustSpecificCardAction(c, adp().drawPile, true));
             }

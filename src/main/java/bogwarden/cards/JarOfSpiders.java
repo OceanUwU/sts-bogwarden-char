@@ -32,26 +32,27 @@ public class JarOfSpiders extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new VFXAction(p, new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.1F));
-        allDmg(AbstractGameAction.AttackEffect.NONE);
-        DamageInfo info = new DamageInfo(p, damage, damageTypeForTurn);
-        forAllMonstersLiving(mo -> atb(new AbstractGameAction() {
-            public void update() {
-                isDone = true;
-                actionType = AbstractGameAction.ActionType.DAMAGE;
-                setValues(target, info);
-                if (shouldCancelAction())
-                    return;
-                AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
-                mo.damage(info);
-                if (mo.lastDamageTaken > 0)
-                    applyToEnemy(m, new JarOfSpidersPower(m, magicNumber));
-                if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
-                    AbstractDungeon.actionManager.clearPostCombatActions();
-                } else {
-                    addToTop((AbstractGameAction)new WaitAction(0.1F));
-                } 
-            }
-        }));
+        forAllMonstersLiving(mo -> {
+            calculateCardDamage(mo);
+            DamageInfo info = new DamageInfo(p, damage, damageTypeForTurn);
+            atb(new AbstractGameAction() {
+                public void update() {
+                    isDone = true;
+                    actionType = AbstractGameAction.ActionType.DAMAGE;
+                    setValues(mo, info);
+                    if (shouldCancelAction())
+                        return;
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.NONE));
+                    target.damage(info);
+                    if (target.lastDamageTaken > 0)
+                        applyToEnemyTop((AbstractMonster)target, new JarOfSpidersPower(target, magicNumber));
+                    if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
+                        AbstractDungeon.actionManager.clearPostCombatActions();
+                    else
+                        addToTop(new WaitAction(0.1F));
+                }
+            });
+        });
     }
 
     public static class JarOfSpidersPower extends AbstractBogPower {
@@ -70,7 +71,7 @@ public class JarOfSpiders extends AbstractBogCard {
         public void atStartOfTurn() {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 flashWithoutSound();
-                att((AbstractGameAction)new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
+                atb(new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
                 atb(new RemoveSpecificPowerAction(owner, owner, this));
             }
         }

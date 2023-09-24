@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -18,11 +19,10 @@ public class Hoodwink extends AbstractBogCard {
 
     public void applyPowers() {
         baseMagicNumber = magicNumber = cost + secondMagic;
-        isMagicNumberModified = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
-            dmgRandom(null);
+            dmgRandom(AbstractGameAction.AttackEffect.SLASH_VERTICAL);
     }
 }

@@ -36,16 +36,18 @@ public class TrapperMaster extends AbstractBogCard {
         }
         
         public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2] + amount + powerStrings.DESCRIPTIONS[3];
+            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2] + amount + powerStrings.DESCRIPTIONS[3] + powerStrings.DESCRIPTIONS[triggeredYet ? 4 : 5];
         }
 
         public void atStartOfTurn() {
             triggeredYet = false;
+            updateDescription();
         }
   
         public void onTriggerTrap(AbstractTrapCard c) {
             if (!triggeredYet) {
                 triggeredYet = true;
+                updateDescription();
                 flash();
                 atb(new GainEnergyAction(amount));
                 atb(new DrawCardAction(amount));

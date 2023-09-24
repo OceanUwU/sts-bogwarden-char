@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
+import bogwarden.powers.Venom;
+
 public class CageOfSerpents extends AbstractTrapCard {
     public final static String ID = makeID("CageOfSerpents");
 
@@ -20,6 +22,6 @@ public class CageOfSerpents extends AbstractTrapCard {
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
             dmgRandomTop(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        applyToEnemyTop(m, null);
+        applyToEnemyTop(m, new Venom(m, secondMagic));
     }
 }

@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import bogwarden.powers.AbstractBogPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,8 +13,6 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
-
-import bogwarden.powers.AbstractBogPower;
 
 public class DarkRitual extends AbstractBogCard {
     public final static String ID = makeID("DarkRitual");
@@ -28,7 +27,7 @@ public class DarkRitual extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new RegenPower(p, magicNumber));
-        applyToSelf(new TakeDamagePower(p, magicNumber));
+        applyToSelf(new TakeDamagePower(p, secondMagic));
     }
 
     public static class TakeDamagePower extends AbstractBogPower {
@@ -40,7 +39,7 @@ public class DarkRitual extends AbstractBogCard {
         }
         
         public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2];
+            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
   
         public void atStartOfTurn() {

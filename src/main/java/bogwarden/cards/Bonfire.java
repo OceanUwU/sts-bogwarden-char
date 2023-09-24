@@ -1,6 +1,5 @@
 package bogwarden.cards;
 
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
@@ -22,7 +21,7 @@ public class Bonfire extends AbstractBogCard {
     }
 
     public void onChoseThisOption() {
-        atb(new VFXAction(adp(), new InflameEffect(adp()), 1f));
+        vfx(new InflameEffect(adp()));
         applyToSelf(new RegenPower(adp(), magicNumber));
     }
 }

@@ -2,11 +2,11 @@ package bogwarden.cards;
 
 import bogwarden.actions.TriggerTrapAction;
 import bogwarden.powers.AbstractBogPower;
+import bogwarden.powers.EnergizedBogPower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -26,25 +26,6 @@ public class LineUp extends AbstractBogCard {
         applyToSelf(new NextTurnTriggerTwice(p, 1));
     }
 
-    public static class EnergizedBogPower extends AbstractBogPower {
-        public static String POWER_ID = makeID("EnergizedBogPower");
-        private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    
-        public EnergizedBogPower(AbstractCreature owner, int amount) {
-            super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
-        }
-        
-        public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
-        }
-  
-        public void onEnergyRecharge() {
-            flash();
-            AbstractDungeon.player.gainEnergy(this.amount);
-            atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-        }
-    }
-
     public static class NextTurnTriggerTwice extends AbstractBogPower {
         public static String POWER_ID = makeID("NextTurnTriggerTwice");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -57,7 +38,7 @@ public class LineUp extends AbstractBogCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2];
         }
   
-        public void atStartOfTurn() {
+        public void atStartOfTurnPostDraw() {
             flash();
             for (int i = 0; i < amount; i++)
                 atb(new TriggerTrapAction(2));

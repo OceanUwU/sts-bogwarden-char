@@ -17,6 +17,8 @@ public class HexingTotem extends AbstractTrapCard {
         super(ID, CardRarity.UNCOMMON);
         setMagic(2, +1);
         setSecondMagic(2, +2);
+        setExhaust(true);
+        totem = true;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

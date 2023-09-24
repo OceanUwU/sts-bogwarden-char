@@ -18,12 +18,9 @@ public class BrambleShield extends AbstractBogCard {
         setMagic(3, +3);
     }
     
-    public void applyPowersToBlock() {
-        int realBaseBlock = baseBlock;
+    public void applyPowers() {
         baseBlock = pwrAmt(adp(), Spines.POWER_ID) + pwrAmt(adp(), Mojo.POWER_ID) + magicNumber;
         super.applyPowers();
-        baseBlock = realBaseBlock;
-        isBlockModified = block != magicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

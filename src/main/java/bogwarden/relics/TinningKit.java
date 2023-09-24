@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static bogwarden.BogMod.makeID;
@@ -17,6 +18,8 @@ public class TinningKit extends AbstractBogRelic {
 
     public TinningKit() {
         super(ID, RelicTier.SHOP, LandingSound.SOLID, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        tips.clear();
+        tips.add(new PowerTip(name, description));
         tips.add(new CardPowerTip(new SnapperTrap()));
     }
 
