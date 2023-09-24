@@ -284,7 +284,7 @@
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply Slow to ALL enemies.{!D!|>0= NL ALL enemies lose !D! HP.} NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply *Slow to ALL enemies.{!D!|>0= NL ALL enemies lose !D! HP.} NL Exhaust."
   },
   "${ModID}:NightTerror": {
     "NAME": "Night Terror",
@@ -296,19 +296,19 @@
   },
   "${ModID}:GoForTheThroat": {
     "NAME": "Go For The Throat",
-    "DESCRIPTION": "Deal !M! damage X times. NL During Boss and Elite combats, also deal !${ModID}:sd! damage once."
+    "DESCRIPTION": "Deal !D! damage X times. NL During Boss and Elite combats, also deal !${ModID}:sd! damage once."
   },
   "${ModID}:UnstableConcoction": {
     "NAME": "Unstable Concoction",
-    "DESCRIPTION": "Deal !D! damage. NL Gain an *Explosive *Potion NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain an *Explosive *Potion. NL Exhaust."
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
-    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Put a random Corpse Flies from your draw pile into your hand.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies into your deck}. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Put a random *Corpse *Flies from your draw pile into your hand.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies into your deck}. NL Exhaust."
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL For each card not discarded, Exhaust it and put an {!Upgrades!|>0= Upgraded} Skill of any color on top of your draw pile."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL For each card not discarded, Exhaust it and put a random{!Upgrades!|>0= Upgraded} Skill of any color on top of your draw pile."
   },
   "${ModID}:Hoodwink": {
     "NAME": "Hoodwink",

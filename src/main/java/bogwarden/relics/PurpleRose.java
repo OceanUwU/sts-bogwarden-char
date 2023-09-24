@@ -13,7 +13,7 @@ public class PurpleRose extends AbstractBogRelic {
     private static final int SPINES = 8;
 
     public PurpleRose() {
-        super(ID, RelicTier.BOSS, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        super(ID, RelicTier.COMMON, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
     }
 
     public String getUpdatedDescription() {

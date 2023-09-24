@@ -13,12 +13,12 @@ public class TrailCam extends AbstractBogRelic {
     private static int TRAPS_NEEDED = 5;
 
     public TrailCam() {
-        super(ID, RelicTier.RARE, LandingSound.HEAVY, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        super(ID, RelicTier.UNCOMMON, LandingSound.HEAVY, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
         counter = 0;
     }
 
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + TRAPS_NEEDED + DESCRIPTIONS[2];
+        return DESCRIPTIONS[0] + TRAPS_NEEDED + DESCRIPTIONS[1];
     }
 
     public void onTriggerTrap(AbstractTrapCard c) {

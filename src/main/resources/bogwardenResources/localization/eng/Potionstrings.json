@@ -1,0 +1,25 @@
+{
+    "${ModID}:MojoPotion": {
+        "NAME": "Mojo Potion",
+        "DESCRIPTIONS": [
+            "Gain #b",
+            " #yMojo."
+        ]
+    },
+    "${ModID}:BogWater": {
+        "NAME": "Bog Water",
+        "DESCRIPTIONS": [
+            "Add #b",
+            " #yBlasts+ into your hand."
+        ]
+    },
+    "${ModID}:BottleOfTricks": {
+        "NAME": "Bottle of Tricks",
+        "DESCRIPTIONS": [
+            "Choose #b1 of #b3 random #yTraps to add to your hand.",
+            "Choose #b1 of #b3 random #yTraps and add #b",
+            " copies to your hand.",
+            " #yTrigger all #yTraps in your hand."
+        ]
+    }
+}

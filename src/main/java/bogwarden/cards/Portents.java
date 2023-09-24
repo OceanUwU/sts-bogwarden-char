@@ -18,7 +18,7 @@ import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
 public class Portents extends AbstractBogCard {
-    public final static String ID = makeID("Darkvision");
+    public final static String ID = makeID("Portents");
 
     public Portents() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);

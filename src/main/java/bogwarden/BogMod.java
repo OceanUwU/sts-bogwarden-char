@@ -8,6 +8,9 @@ import bogwarden.cards.AbstractBogCard;
 import bogwarden.cards.cardvars.SecondDamage;
 import bogwarden.cards.cardvars.SecondMagicNumber;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.potions.BogWater;
+import bogwarden.potions.BottleOfTricks;
+import bogwarden.potions.MojoPotion;
 import bogwarden.relics.AbstractBogRelic;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -18,6 +21,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -111,6 +115,11 @@ public class BogMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheBogwarden(TheBogwarden.NAMES[1], TheBogwarden.Enums.THE_BOGWARDEN_OCEAN),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        
+        //liquidColor, hybridColor, spotsColor
+        BaseMod.addPotion(MojoPotion.class, new Color(0.47f, 0.12f, 0.66f, 1f), new Color(0.79f, 0.34f, 0.90f, 1f), new Color(1f, 0.73f, 0.01f, 1f), MojoPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(BogWater.class, new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.41f, 0.25f, 0.13f, 0.6f), BogWater.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(BottleOfTricks.class, new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), BottleOfTricks.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
     }
 
     @Override
@@ -145,6 +154,7 @@ public class BogMod implements
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/" + getLangString() + "/Cardstrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/" + getLangString() + "/Relicstrings.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/" + getLangString() + "/Charstrings.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
     }
 

@@ -49,8 +49,8 @@ public class ScryPatches {
 
     @SpirePatch(clz=ScryAction.class, method="update")
     public static class WildMagicTransform {
-        @SpireInsertPatch(rloc=43, localvars={"tmpGroup"})
-        public static void getGroup(ScryAction __instance, CardGroup tmpGroup) {
+        @SpireInsertPatch(rloc=24, localvars={"tmpGroup"})
+        public static void Insert(ScryAction __instance, CardGroup tmpGroup) {
             ActionFields.group.set(__instance, tmpGroup);
         }
 
