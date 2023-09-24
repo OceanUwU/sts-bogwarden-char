@@ -308,7 +308,7 @@
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL For each card not discarded, Exhaust it and put a random{!Upgrades!|>0= Upgraded} Skill of any color on top of your draw pile."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL Transform all non-discarded cards into{!Upgrades!|>0= Upgraded} Skills of any color."
   },
   "${ModID}:Hoodwink": {
     "NAME": "Hoodwink",

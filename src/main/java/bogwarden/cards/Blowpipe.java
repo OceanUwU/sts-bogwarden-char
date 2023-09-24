@@ -1,7 +1,7 @@
 package bogwarden.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,7 +29,7 @@ public class Blowpipe extends AbstractBogCard {
                 cards.shuffle(AbstractDungeon.cardRandomRng);
                 for (int i = 0; i < magicNumber; i++)
                     if (cards.size() > 0) {
-                        att(new DiscardToHandAction(cards.getTopCard()));
+                        att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getTopCard()));
                         cards.removeTopCard();
                     }
             }
