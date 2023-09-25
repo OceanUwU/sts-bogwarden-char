@@ -81,3 +81,5 @@ $RECYCLE.BIN/
 
 # Spriter files
 *.autosave.scml
+
+/patchnotes.txt

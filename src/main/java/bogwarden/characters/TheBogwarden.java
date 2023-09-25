@@ -202,9 +202,9 @@ public class TheBogwarden extends CustomPlayer {
     public static class Enums {
         @SpireEnum
         public static AbstractPlayer.PlayerClass THE_BOGWARDEN_OCEAN;
-        @SpireEnum(name = "TODO_COLOR")
+        @SpireEnum(name = "OCEAN_BOGWARDEN_COLOR")
         public static AbstractCard.CardColor OCEAN_BOGWARDEN_COLOR;
-        @SpireEnum(name = "TODO_COLOR")
+        @SpireEnum(name = "OCEAN_BOGWARDEN_COLOR")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }

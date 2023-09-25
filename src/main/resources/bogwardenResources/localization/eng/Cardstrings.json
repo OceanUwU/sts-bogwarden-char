@@ -116,7 +116,7 @@
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
-    "DESCRIPTION": "Deal !D! damage. NL  Deals additional damage equal to !M! times your Mojo."
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times your Mojo."
   },
   "${ModID}:Blowpipe": {
     "NAME": "Blowpipe",
