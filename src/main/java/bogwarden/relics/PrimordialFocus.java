@@ -15,8 +15,10 @@ public class PrimordialFocus extends AbstractBogRelic {
     private static final int BLASTS = 2;
 
     public PrimordialFocus() {
-        super(ID, RelicTier.UNCOMMON, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
-        tips.add(new CardPowerTip(new Blast()));
+        super(ID, RelicTier.RARE, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        Blast blast = new Blast();
+        blast.upgrade();
+        tips.add(new CardPowerTip(blast));
     }
 
     public String getUpdatedDescription() {
@@ -26,6 +28,8 @@ public class PrimordialFocus extends AbstractBogRelic {
     public void atBattleStartPreDraw() {
         flash();
         atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        atb(new MakeTempCardInHandAction(new Blast(), BLASTS, false));
+        Blast blast = new Blast();
+        blast.upgrade();
+        atb(new MakeTempCardInHandAction(blast, BLASTS, false));
     }
 }

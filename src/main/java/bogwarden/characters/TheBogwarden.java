@@ -10,6 +10,7 @@ import bogwarden.cards.Jinx;
 import bogwarden.cards.ShadowFont;
 import bogwarden.cards.Strike;
 import bogwarden.relics.SwampTalisman;
+import bogwarden.util.BogAudio;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -78,7 +79,7 @@ public class TheBogwarden extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA(BogAudio.TOTEM_TRIGGER, MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }
@@ -99,7 +100,7 @@ public class TheBogwarden extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "UNLOCK_PING";
+        return BogAudio.TOTEM_TRIGGER;
     }
 
     @Override

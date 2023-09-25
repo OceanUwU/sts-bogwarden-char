@@ -9,7 +9,7 @@ public class PaperCrokh extends AbstractBogRelic {
     public static final String ID = makeID("PaperCrokh");
 
     public PaperCrokh() {
-        super(ID, RelicTier.RARE, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
     }
 
     public String getUpdatedDescription() {

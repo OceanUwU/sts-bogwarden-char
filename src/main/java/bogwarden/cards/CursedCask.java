@@ -5,6 +5,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.util.Wiz.*;
+
+import bogwarden.powers.Maledict;
 
 public class CursedCask extends AbstractBogCard {
     public final static String ID = makeID("CursedCask");
@@ -17,5 +20,6 @@ public class CursedCask extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
+        applyToEnemy(m, new Maledict(m, magicNumber));
     }
 }
