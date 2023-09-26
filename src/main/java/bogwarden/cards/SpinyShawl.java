@@ -14,7 +14,7 @@ public class SpinyShawl extends AbstractBogCard {
     public SpinyShawl() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         setMagic(7, +2);
-        setSecondMagic(0, +1);
+        setSecondMagic(1, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

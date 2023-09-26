@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +18,7 @@ public class VengefulTotem extends AbstractTrapCard {
         setMagic(1, +1);
         setExhaust(true);
         cardsToPreview = new Blast();
-        totem = true;
+        sfx = BogAudio.TOTEM_TRIGGER;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

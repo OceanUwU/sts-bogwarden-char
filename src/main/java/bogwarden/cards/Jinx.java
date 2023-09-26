@@ -19,10 +19,19 @@ public class Jinx extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        if (upgraded)
+        if (upgraded) {
+            allDmg(AbstractGameAction.AttackEffect.BLUNT_LIGHT);
             forAllMonstersLiving(mo -> applyToEnemy(mo, new Maledict(mo, magicNumber)));
-        else
+        } else {
+            dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
             applyToEnemy(m, new Maledict(m, magicNumber));
+        }
+    }
+
+    @Override
+    public void upp() {
+        super.upp();
+        isMultiDamage = true;
+        target = CardTarget.ALL_ENEMY;
     }
 }

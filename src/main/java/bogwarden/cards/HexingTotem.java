@@ -1,14 +1,15 @@
 package bogwarden.cards;
 
+
+import bogwarden.powers.LoseMojoPower;
+import bogwarden.powers.Maledict;
+import bogwarden.powers.Mojo;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
-
-import bogwarden.powers.LoseMojoPower;
-import bogwarden.powers.Maledict;
-import bogwarden.powers.Mojo;
 
 public class HexingTotem extends AbstractTrapCard {
     public final static String ID = makeID("HexingTotem");
@@ -18,7 +19,7 @@ public class HexingTotem extends AbstractTrapCard {
         setMagic(2, +1);
         setSecondMagic(2, +2);
         setExhaust(true);
-        totem = true;
+        sfx = BogAudio.TOTEM_TRIGGER;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

@@ -19,7 +19,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     private static final CardStrings trapStrings = CardCrawlGame.languagePack.getCardStrings(makeID("TrapCard"));
 
     public int timesToTrigger;
-    protected boolean totem = false;
+    protected String sfx = BogAudio.TRAP_TRIGGER;
 
     public AbstractTrapCard(String cardID, CardRarity rarity) {
         super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE);
@@ -35,12 +35,6 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.actions.addAll(TriggerTrapAction.saveActions);
-            if (this instanceof BackfiringTrap)
-                CardCrawlGame.sound.play(BogAudio.BACKFIRE_TRIGGER);
-            else if (totem)
-                CardCrawlGame.sound.play(BogAudio.TOTEM_TRIGGER);
-            else
-                CardCrawlGame.sound.play(BogAudio.TRAP_TRIGGER);
             for (int i = 0; i < timesToTrigger; i++) {
                 applyPowers();
                 calculateCardDamage(m);
@@ -52,6 +46,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
                     if (r instanceof AbstractBogRelic)
                         ((AbstractBogRelic)r).onTriggerTrap(this);
             }
+            CardCrawlGame.sound.play(sfx);
         }
     }
 

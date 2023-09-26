@@ -20,7 +20,7 @@
   },
   "${ModID}:Jinx": {
     "NAME": "Jinx",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! ${ModID}:Maledict{!Upgrades!|>0= to ALL enemies}."
+    "DESCRIPTION": "{@@}Deal !D! damage{!Upgrades!|>0= and apply !M! ${ModID}:Maledict to ALL enemies|@=. NL Apply !M! ${ModID}:Maledict}."
   },
   "${ModID}:Attunement": {
     "NAME": "Attunement",
@@ -56,7 +56,7 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block. NL ALL enemies lose !M! Strength this turn."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Gain !B! Block. NL Next turn, draw !M! additional card{!M!|>1=s}."
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
@@ -112,11 +112,11 @@
   },
   "${ModID}:Blunderbuss": {
     "NAME": "Blunderbuss",
-    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your hand times !M!. Unplayable cards count as !${ModID}:m2! cards.{!Location!|0= NL (Deals !D! damage.)}"
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional equal to the number of cards in your hand times !M!. Unplayable cards count as !${ModID}:m2! cards."
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times your Mojo."
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your ${ModID}:Spines."
   },
   "${ModID}:Blowpipe": {
     "NAME": "Blowpipe",
@@ -204,7 +204,7 @@
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
-    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block and deal !D! damage to ALL enemies, twice."
   },
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
@@ -276,7 +276,7 @@
   },
   "${ModID}:JarOfSpiders": {
     "NAME": "Jar of Spiders",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. If this dealt unblocked damge, the enemy loses !M! HP at the start of their next turn."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. They lose !M! HP at the start of their next turn."
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
@@ -284,7 +284,7 @@
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply *Slow to ALL enemies.{!D!|>0= NL ALL enemies lose !D! HP.} NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. ALL enemies lose !D! HP and !M! Strength. NL Exhaust."
   },
   "${ModID}:NightTerror": {
     "NAME": "Night Terror",

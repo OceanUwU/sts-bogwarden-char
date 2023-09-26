@@ -3,9 +3,9 @@
     "NAME": "Swamp Talisman",
     "FLAVOR": "A ward against the many evils of the Foglands.",
     "DESCRIPTIONS": [
-      "The first #b",
-      " times you draw an #yUnplayable card each combat, draw #b",
-      " card."
+      "At the start of your 2nd turn, draw #b",
+      " card and gain #b",
+      " temporary #y${ModID}:Mojo."
     ]
   },
   "${ModID}:PaperCrokh": {

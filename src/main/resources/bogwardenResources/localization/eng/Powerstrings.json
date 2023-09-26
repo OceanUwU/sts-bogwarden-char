@@ -26,8 +26,9 @@
     "NAME": "Venom",
     "DESCRIPTIONS": [
       "For #b",
-      " turn, whenever this enemy takes damage, it loses #b1 HP.",
-      " turns, whenever this enemy takes damage, it loses #b1 HP."
+      " turn, whenever this enemy takes damage, it loses #b",
+      " turns, whenever this enemy takes damage, it loses #b",
+      " HP."
     ]
   },
   "${ModID}:LoseSpinesPower": {

@@ -22,7 +22,7 @@ public class Venom extends AbstractBogPower {
     }
     
     public void updateDescription() {
-        description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2];
+        description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2] + HP_LOSS + powerStrings.DESCRIPTIONS[3];
     }
   
     public void atEndOfRound() {

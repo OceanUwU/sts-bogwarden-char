@@ -13,7 +13,7 @@ public class Blunderbuss extends AbstractBogCard {
 
     public Blunderbuss() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(0);
+        setDamage(5);
         setMagic(2);
         setSecondMagic(2, +1);
     }
@@ -30,17 +30,22 @@ public class Blunderbuss extends AbstractBogCard {
     }
   
     public void calculateCardDamage(AbstractMonster mo) {
-        baseDamage = getDamage();
+        int realBase = baseDamage;
+        baseDamage += getDamage();
         super.calculateCardDamage(mo);
+        baseDamage = realBase;
+        isDamageModified = damage != realBase;
     }
     
     public void applyPowers() {
-        baseDamage = getDamage();
+        int realBase = baseDamage;
+        baseDamage += getDamage();
         super.applyPowers();
+        baseDamage = realBase;
+        isDamageModified = damage != realBase;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        baseDamage = getDamage();
         calculateCardDamage(m);
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
     }

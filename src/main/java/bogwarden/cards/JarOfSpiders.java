@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -15,7 +14,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -32,27 +30,8 @@ public class JarOfSpiders extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new VFXAction(p, new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.1F));
-        forAllMonstersLiving(mo -> {
-            calculateCardDamage(mo);
-            DamageInfo info = new DamageInfo(p, damage, damageTypeForTurn);
-            atb(new AbstractGameAction() {
-                public void update() {
-                    isDone = true;
-                    actionType = AbstractGameAction.ActionType.DAMAGE;
-                    setValues(mo, info);
-                    if (shouldCancelAction())
-                        return;
-                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.NONE));
-                    target.damage(info);
-                    if (target.lastDamageTaken > 0)
-                        applyToEnemyTop((AbstractMonster)target, new JarOfSpidersPower(target, magicNumber));
-                    if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
-                        AbstractDungeon.actionManager.clearPostCombatActions();
-                    else
-                        addToTop(new WaitAction(0.1F));
-                }
-            });
-        });
+        allDmg(AbstractGameAction.AttackEffect.NONE);
+        forAllMonstersLiving(mo -> applyToEnemy(mo, new JarOfSpidersPower(mo, magicNumber)));
     }
 
     public static class JarOfSpidersPower extends AbstractBogPower {

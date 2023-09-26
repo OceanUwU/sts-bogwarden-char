@@ -14,7 +14,7 @@ public class HairTrigger extends AbstractBogCard {
 
     public HairTrigger() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(3);
+        setDamage(6);
         setMagic(1, +1);
         setSecondMagic(2);
     }
