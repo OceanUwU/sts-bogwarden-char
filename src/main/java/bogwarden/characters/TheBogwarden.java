@@ -4,6 +4,7 @@ import static bogwarden.BogMod.*;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
@@ -14,9 +15,11 @@ import bogwarden.util.BogAudio;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -36,20 +39,25 @@ public class TheBogwarden extends CustomPlayer {
     static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     public static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
+    private static final float SIZE_SCALE = 1.25f;
+    public static final Float ANIMATION_SPEED = 1.0F;
 
 
     public TheBogwarden(String name, PlayerClass setClass) {
-        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpriterAnimation(
-                makeCharacterPath("mainChar/static.scml")));
+        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpineAnimation(
+                makeCharacterPath("mainChar/bogwarden.atlas"), makeCharacterPath("mainChar/bogwarden.json"), 1f / SIZE_SCALE));
         initializeClass(null,
                 SHOULDER1,
                 SHOULDER2,
                 CORPSE,
-                getLoadout(), 20.0F, -10.0F, 166.0F, 327.0F, new EnergyManager(3));
+                getLoadout(), 0f, -20f, 260f, 260f, new EnergyManager(3));
 
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
+        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
+        stateData.setMix("hit", "idle", 0.5F);
+        e.setTimeScale(ANIMATION_SPEED);
     }
 
     @Override
@@ -75,6 +83,17 @@ public class TheBogwarden extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(SwampTalisman.ID);
         return retVal;
+    }
+
+    public void damage(DamageInfo info) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - currentBlock > 0) {
+            AnimationState.TrackEntry e = state.setAnimation(0, "hit", false);
+            AnimationState.TrackEntry e2 = state.addAnimation(0, "idle", true, 0.0F);
+            e.setTimeScale(ANIMATION_SPEED);
+            e2.setTimeScale(ANIMATION_SPEED);
+        }
+
+        super.damage(info);
     }
 
     @Override

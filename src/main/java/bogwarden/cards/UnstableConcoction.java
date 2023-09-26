@@ -16,6 +16,7 @@ public class UnstableConcoction extends AbstractBogCard {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         setDamage(4, +5);
         setExhaust(true);
+        tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

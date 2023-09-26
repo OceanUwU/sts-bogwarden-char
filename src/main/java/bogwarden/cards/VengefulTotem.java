@@ -16,7 +16,6 @@ public class VengefulTotem extends AbstractTrapCard {
         super(ID, CardRarity.UNCOMMON);
         setDamage(7);
         setMagic(1, +1);
-        setExhaust(true);
         cardsToPreview = new Blast();
         sfx = BogAudio.TOTEM_TRIGGER;
     }

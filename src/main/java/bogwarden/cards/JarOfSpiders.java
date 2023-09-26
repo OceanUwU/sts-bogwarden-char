@@ -40,7 +40,6 @@ public class JarOfSpiders extends AbstractBogCard {
     
         public JarOfSpidersPower(AbstractCreature owner, int amount) {
             super(POWER_ID, powerStrings.NAME, PowerType.DEBUFF, false, owner, amount);
-            priority = 1;
         }
         
         public void updateDescription() {
