@@ -19,6 +19,7 @@
     "NAME": "Spines",
     "DESCRIPTIONS": [
       "Whenever an enemy performs a non-attack action, they take #b",
+      " damage. Whenever an enemy performs a half-attack action, they take #b",
       " damage."
     ]
   },
@@ -119,7 +120,7 @@
     ]
   },
   "${ModID}:IllIntendedSchemesPower": {
-    "NAME": "Ill Intended Schemes",
+    "NAME": "Cruel Schemes",
     "DESCRIPTIONS": [
       "Whenever a #yTrap is triggered, gain #b",
       " #yBlock."

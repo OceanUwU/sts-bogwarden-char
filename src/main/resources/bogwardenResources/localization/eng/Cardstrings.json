@@ -159,7 +159,7 @@
     "DESCRIPTION": "Whenever you discard a card via Scry, deal !M! damage to a random enemy."
   },
   "${ModID}:IllIntendedSchemes": {
-    "NAME": "Ill Intended Schemes",
+    "NAME": "Cruel Schemes",
     "DESCRIPTION": "Whenever a ${ModID}:Trap is triggered, gain !M! Block."
   },
   "${ModID}:OthersiderForm": {

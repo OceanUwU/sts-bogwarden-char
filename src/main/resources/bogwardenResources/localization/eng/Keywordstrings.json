@@ -33,7 +33,7 @@
     "NAMES": [
       "spines"
     ],
-    "DESCRIPTION": "When an enemy uses a non-attack move, they take damage equal to your Spines."
+    "DESCRIPTION": "Whenever an enemy doesn't attack, deals damage. Halved effect against partial attacks."
   },
   {
     "PROPER_NAME": "Venom",
