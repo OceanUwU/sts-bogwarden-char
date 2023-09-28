@@ -21,7 +21,7 @@ public class WardingTotem extends AbstractTrapCard {
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new PlatedArmorPower(p, magicNumber));
-        applyToSelf(new ArtifactPower(p, secondMagic));
+        applyToSelfTop(new PlatedArmorPower(p, magicNumber));
+        applyToSelfTop(new ArtifactPower(p, secondMagic));
     }
 }

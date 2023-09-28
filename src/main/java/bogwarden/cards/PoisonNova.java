@@ -16,7 +16,7 @@ public class PoisonNova extends AbstractBogCard {
 
     public PoisonNova() {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        setMagic(1, +1);
+        setMagic(2, +1);
         cardsToPreview = new Blast();
         ((Blast)cardsToPreview).baseSecondMagic = magicNumber;
         ((Blast)cardsToPreview).secondMagic = magicNumber;

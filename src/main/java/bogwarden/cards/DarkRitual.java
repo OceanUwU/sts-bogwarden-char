@@ -42,7 +42,7 @@ public class DarkRitual extends AbstractBogCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
   
-        public void atStartOfTurn() {
+        public void atStartOfTurnPostDraw() {
             flash();
             atb(new DamageAction(owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }

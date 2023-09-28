@@ -10,9 +10,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.ExplosivePotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
+import javassist.CannotCompileException;
+import javassist.expr.ExprEditor;
+import javassist.expr.NewExpr;
 
 public class NonAttackDamagePatches {
     @SpirePatch(clz=DamageInfo.class, method=SpirePatch.CLASS)
@@ -61,6 +65,18 @@ public class NonAttackDamagePatches {
                 DamageInfoFields.fromCard.set(__instance, true);
                 fromCard = false;
             }
+        }
+    }
+
+    @SpirePatch(clz=ExplosivePotion.class, method="use")
+    public static class ExplosivePotionUsesThornsDamage {
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                public void edit(NewExpr e) throws CannotCompileException {
+                    if (e.getClassName().equals(DamageAllEnemiesAction.class.getName()))
+                        e.replace("$_ = new "+DamageAllEnemiesAction.class.getName()+"($1, $2, "+DamageInfo.DamageType.class.getName()+".THORNS, $4);");
+                }
+            };
         }
     }
 }

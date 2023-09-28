@@ -22,7 +22,7 @@ public class LoseMojoPower extends AbstractBogPower {
         description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfRound() {
         flash();
         atb(new ReducePowerAction(owner, owner, Mojo.POWER_ID, amount));
         atb(new RemoveSpecificPowerAction(owner, owner, this));

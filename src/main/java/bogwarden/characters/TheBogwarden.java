@@ -70,9 +70,9 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++)
-            retVal.add(Strike.ID);
         for (int i = 0; i < 5; i++)
+            retVal.add(Strike.ID);
+        for (int i = 0; i < 4; i++)
             retVal.add(Defend.ID);
         retVal.add(Jinx.ID);
         retVal.add(ShadowFont.ID);

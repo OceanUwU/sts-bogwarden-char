@@ -14,7 +14,7 @@ public class CageOfSerpents extends AbstractTrapCard {
 
     public CageOfSerpents() {
         super(ID, CardRarity.UNCOMMON);
-        setDamage(3, +1);
+        setDamage(1);
         setMagic(3, +1);
         setSecondMagic(1);
     }

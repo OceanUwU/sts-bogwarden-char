@@ -14,8 +14,8 @@ public class ViperStrike extends AbstractBogCard {
 
     public ViperStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(6, +2);
-        setMagic(1, +1);
+        setDamage(5, +3);
+        setMagic(2);
         tags.add(CardTags.STRIKE);
     }
 

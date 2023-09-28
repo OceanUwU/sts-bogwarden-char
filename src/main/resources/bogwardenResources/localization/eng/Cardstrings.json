@@ -188,7 +188,7 @@
   },
   "${ModID}:CampOut": {
     "NAME": "Camp Out",
-    "DESCRIPTION": "Choose one: Gain !M! Regen, or Upgrade all cards in your hand at the start of your next !${ModID}:m2! turns. NL Exhaust."
+    "DESCRIPTION": "{@@}Choose one: NL Light a *Bonfire{!Upgrades!|>0=+} NL or use the *Forge{!Upgrades!|>0=+}. NL Exhaust."
   },
   "${ModID}:Bonfire": {
     "NAME": "Bonfire",
