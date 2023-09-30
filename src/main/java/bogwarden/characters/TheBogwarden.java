@@ -5,7 +5,6 @@ import static bogwarden.BogMod.*;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
 import bogwarden.cards.ShadowFont;
@@ -41,7 +40,6 @@ public class TheBogwarden extends CustomPlayer {
     static final String[] TEXT = characterStrings.TEXT;
     private static final float SIZE_SCALE = 1.25f;
     public static final Float ANIMATION_SPEED = 1.0F;
-
 
     public TheBogwarden(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpineAnimation(

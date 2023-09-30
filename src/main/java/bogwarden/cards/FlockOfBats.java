@@ -21,7 +21,7 @@ public class FlockOfBats extends AbstractBogCard {
     public FlockOfBats() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         setBlock(6, +3);
-        setMagic(2);
+        setMagic(2, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

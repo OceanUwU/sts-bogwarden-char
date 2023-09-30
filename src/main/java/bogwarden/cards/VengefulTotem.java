@@ -1,8 +1,10 @@
 package bogwarden.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
+import bogwarden.powers.Maledict;
 import bogwarden.util.BogAudio;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -14,16 +16,20 @@ public class VengefulTotem extends AbstractTrapCard {
 
     public VengefulTotem() {
         super(ID, CardRarity.UNCOMMON);
-        setDamage(7);
-        setMagic(1, +1);
-        cardsToPreview = new Blast();
+        setMagic(2);
+        setSecondMagic(1, +1);
+        setExhaust(true);
+        Blast blastUp = new Blast();
+        blastUp.upgrade();
+        MultiCardPreview.add(this, new Blast(), blastUp);
         sfx = BogAudio.TOTEM_TRIGGER;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < (isEliteOrBoss() ? 1 + magicNumber : 1); i++) {
-            att(new MakeTempCardInHandAction(cardsToPreview, 1));
-            dmgTop(m, AbstractGameAction.AttackEffect.LIGHTNING);
-        }
+        AbstractCard c = new Blast();
+        if (isEliteOrBoss())
+            c.upgrade();
+        att(new MakeTempCardInHandAction(c, secondMagic));
+        applyToEnemyTop(m, new Maledict(m, magicNumber));
     }
 }

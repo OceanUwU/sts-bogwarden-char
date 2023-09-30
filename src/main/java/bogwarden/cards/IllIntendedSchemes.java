@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,8 +16,8 @@ public class IllIntendedSchemes extends AbstractBogCard {
     public final static String ID = makeID("IllIntendedSchemes");
 
     public IllIntendedSchemes() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(7, +3);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        setMagic(2, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,6 +34,13 @@ public class IllIntendedSchemes extends AbstractBogCard {
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        }
+
+        public void onCardDraw(AbstractCard card) {
+            if (card instanceof AbstractTrapCard) {
+                flash();
+                atb(new GainBlockAction(owner, owner, amount, true));
+            }
         }
   
         public void onTriggerTrap(AbstractTrapCard c) {

@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,12 +17,14 @@ public class BlendingIn extends AbstractBogCard {
 
     public BlendingIn() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(1);
+        setMagic(3);
+        setSecondMagic(1);
         setUpgradedCost(1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new BlendingInPower(p, magicNumber));
+        applyToSelf(new BlendingInBlockPower(p, magicNumber));
+        applyToSelf(new BlendingInPower(p, secondMagic));
     }
 
     public static class BlendingInPower extends AbstractBogPower {
@@ -42,6 +45,29 @@ public class BlendingIn extends AbstractBogCard {
             if (trigger) {
                 flash();
                 applyToSelf(new BlurPower(owner, amount));
+                trigger = false;
+            }
+        }
+    }
+
+    public static class BlendingInBlockPower extends AbstractBogPower {
+        public static String POWER_ID = makeID("BlendingInBlockPower");
+        private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+        private static boolean trigger = false;
+    
+        public BlendingInBlockPower(AbstractCreature owner, int amount) {
+            super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+        }
+        
+        public void updateDescription() {
+            description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        }
+  
+        public void atEndOfTurn(boolean isPlayer) {
+            forAllMonstersLiving(mo -> {if (mo.getIntentBaseDmg() <= 0) trigger = true;});
+            if (trigger) {
+                flash();
+                atb(new GainBlockAction(owner, owner, amount));
                 trigger = false;
             }
         }

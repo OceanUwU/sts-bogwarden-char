@@ -23,8 +23,8 @@ public class JarOfSpiders extends AbstractBogCard {
 
     public JarOfSpiders() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        setDamage(4, +1);
-        setMagic(4, +1);
+        setDamage(3);
+        setMagic(3, +3);
         isMultiDamage = true;
     }
 

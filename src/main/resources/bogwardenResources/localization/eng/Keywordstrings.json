@@ -48,5 +48,38 @@
       "blur"
     ],
     "DESCRIPTION": "#yBlock is not removed at the start of your turn."
+  },
+  {
+    "PROPER_NAME": "Constricted",
+    "NAMES": [
+      "constricted"
+    ],
+    "DESCRIPTION": "Constricted creatures take damage at the END of their turn."
+  },
+  {
+    "PROPER_NAME": "Big Game",
+    "NAMES": [
+      "big game",
+      "big_game"
+    ],
+    "DESCRIPTION": "Effect applies during Boss and Elite combats."
+  },
+  {
+    "PROPER_NAME": "Fire Potion+",
+    "NAMES": [
+      "fire potion",
+      "fire_potion",
+      "fire_potion+"
+    ],
+    "DESCRIPTION": "Deals 24 damage."
+  },
+  {
+    "PROPER_NAME": "Explosive Potion+",
+    "NAMES": [
+      "explosive potion",
+      "explosive_potion",
+      "explosive_potion+"
+    ],
+    "DESCRIPTION": "Deals 12 damage to ALL enemies."
   }
 ]

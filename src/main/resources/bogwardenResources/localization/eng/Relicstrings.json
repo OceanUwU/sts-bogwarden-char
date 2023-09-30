@@ -70,7 +70,7 @@
   },
   "${ModID}:PrimordialFocus": {
     "NAME": "Primordial Focus",
-    "FLAVOR": "A sinister embalmed skull capable of channeling swamp magicks.",
+    "FLAVOR": "Property of Big Brute Benny.",
     "DESCRIPTIONS": [
       "At the start of each combat, add #b",
       " #yBlasts+ into your hand."

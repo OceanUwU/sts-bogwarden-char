@@ -18,7 +18,7 @@ public class OthersiderForm extends AbstractBogCard {
 
     public OthersiderForm() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        setMagic(3, +1);
+        setMagic(2, +1);
         setSecondMagic(1);
         tags.add(BaseModCardTags.FORM);
     }

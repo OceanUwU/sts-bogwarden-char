@@ -75,8 +75,15 @@
       " damage."
     ]
   },
-  "${ModID}:BlendingInPower": {
+  "${ModID}:BlendingInBlockPower": {
     "NAME": "Blending In",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if any enemy intends to use a non-attack move, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${ModID}:BlendingInPower": {
+    "NAME": "Deep Cover",
     "DESCRIPTIONS": [
       "At the end of your turn, if any enemy intends to use a non-attack move, gain #b",
       " #yBlur."
@@ -107,9 +114,8 @@
   "${ModID}:DarkvisionPower": {
     "NAME": "Darkvision",
     "DESCRIPTIONS": [
-      "At the start of your turn, #yScry #b",
-      " and gain #b",
-      " #yBlock for each card discarded."
+      "Whenever you discard a card via #yScry, gain #b",
+      " #yBlock."
     ]
   },
   "${ModID}:PortentsPower": {
@@ -122,7 +128,7 @@
   "${ModID}:IllIntendedSchemesPower": {
     "NAME": "Cruel Schemes",
     "DESCRIPTIONS": [
-      "Whenever a #yTrap is triggered, gain #b",
+      "Whenever a #yTrap is drawn or triggered, gain #b",
       " #yBlock."
     ]
   },
@@ -200,6 +206,43 @@
     "DESCRIPTIONS": [
       "At the start of its next turn, loses #b",
       " HP."
+    ]
+  },
+  "${ModID}:WitchingHourPower": {
+    "NAME": "Witching Hour",
+    "DESCRIPTIONS": [
+      "Whenever you apply a debuff to an enemy, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${ModID}:NextTurnIntangible": {
+    "NAME": "Soul Shieldin' Sally",
+    "DESCRIPTIONS": [
+      "Next turn, gain #b",
+      " #yIntangible."
+    ]
+  },
+  "${ModID}:LoseMaxHPLater": {
+    "NAME": "Debt Collectin' Dennis",
+    "DESCRIPTIONS": [
+      "In #b",
+      " turn, lose #b",
+      " turns, lose #b",
+      " Max HP."
+    ]
+  },
+  "${ModID}:NextTurnTemporaryMojo": {
+    "NAME": "Temporary Mojo Next Turn",
+    "DESCRIPTIONS": [
+      "Next turn, gain #b",
+      " temporary #yMojo."
+    ]
+  },
+  "${ModID}:SnaredPower": {
+    "NAME": "Snared",
+    "DESCRIPTIONS": [
+      "Decreases attack damage by #b",
+      " until after its next attack."
     ]
   }
 }

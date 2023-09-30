@@ -18,10 +18,8 @@ public class Hoodwink extends AbstractBogCard {
     }
 
     public void applyPowers() {
-        if (cost < 0)
-            cost = 0;
         super.applyPowers();
-        baseMagicNumber = magicNumber = cost + secondMagic;
+        baseMagicNumber = magicNumber = Math.max(cost, 0) + secondMagic;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

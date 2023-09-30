@@ -13,7 +13,7 @@ public class BagAndTag extends AbstractBogCard {
     public final static String ID = makeID("BagAndTag");
 
     public BagAndTag() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setDamage(7, +3);
     }
 

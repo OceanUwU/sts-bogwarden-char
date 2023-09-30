@@ -14,7 +14,8 @@ public class AcidCloud extends AbstractBogCard {
 
     public AcidCloud() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        setMagic(3, +2);
+        setMagic(3, +1);
+        setSecondMagic(1, +1);
         setDamage(1);
         setExhaust(true);
         damageType = damageTypeForTurn = DamageInfo.DamageType.HP_LOSS;
@@ -23,6 +24,7 @@ public class AcidCloud extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         forAllMonstersLiving(mo -> applyToEnemy(mo, new Venom(mo, magicNumber)));
-        allDmg(AbstractGameAction.AttackEffect.POISON);
+        for (int i = 0; i < secondMagic; i++)
+            allDmg(AbstractGameAction.AttackEffect.POISON);
     }
 }

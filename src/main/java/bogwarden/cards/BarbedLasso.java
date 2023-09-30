@@ -19,7 +19,7 @@ public class BarbedLasso extends AbstractBogCard {
     public final static String ID = makeID("BarbedLasso");
 
     public BarbedLasso() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setDamage(5, +1);
         setMagic(3, +1);
     }
