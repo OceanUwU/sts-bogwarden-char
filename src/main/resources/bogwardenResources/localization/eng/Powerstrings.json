@@ -209,9 +209,9 @@
     ]
   },
   "${ModID}:WitchingHourPower": {
-    "NAME": "Witching Hour",
+    "NAME": "Bewitched",
     "DESCRIPTIONS": [
-      "Whenever you apply a debuff to an enemy, gain #b",
+      "Whenever you debuff this enemy, gain #b",
       " #yBlock."
     ]
   },
@@ -228,7 +228,7 @@
       "In #b",
       " turn, lose #b",
       " turns, lose #b",
-      " Max HP."
+      " Max HP. NL Better pay your dues!"
     ]
   },
   "${ModID}:NextTurnTemporaryMojo": {
@@ -243,6 +243,14 @@
     "DESCRIPTIONS": [
       "Decreases attack damage by #b",
       " until after its next attack."
+    ]
+  },
+  "${ModID}:BidePower": {
+    "NAME": "Biding Time",
+    "DESCRIPTIONS": [
+      "For #b",
+      " turns, gain #b",
+      " #yBlock at the end of your turn."
     ]
   }
 }

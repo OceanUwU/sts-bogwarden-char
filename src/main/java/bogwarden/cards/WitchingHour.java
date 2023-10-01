@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -18,31 +19,33 @@ public class WitchingHour extends AbstractBogCard {
     public final static String ID = makeID("WitchingHour");
 
     public WitchingHour() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setMagic(3, +1);
+        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new WitchingHourPower(p, magicNumber));
+        applyToEnemy(m, new WitchingHourPower(m, magicNumber));
     }
 
-    public static class WitchingHourPower extends AbstractBogPower {
+    public static class WitchingHourPower extends AbstractBogPower implements OnReceivePowerPower {
         public static String POWER_ID = makeID("WitchingHourPower");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     
         public WitchingHourPower(AbstractCreature owner, int amount) {
-            super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+            super(POWER_ID, powerStrings.NAME, PowerType.DEBUFF, false, owner, amount);
         }
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
   
-        public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-            if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals(GainStrengthPower.POWER_ID) && source == owner && target != owner && !target.hasPower(ArtifactPower.POWER_ID)) {
+        public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+            if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals(GainStrengthPower.POWER_ID) && target == owner && source != owner && !target.hasPower(ArtifactPower.POWER_ID)) {
                 flash();
-                atb(new GainBlockAction(owner, owner, amount));
+                atb(new GainBlockAction(adp(), adp(), amount));
             } 
+            return true;
         }
     }
 }

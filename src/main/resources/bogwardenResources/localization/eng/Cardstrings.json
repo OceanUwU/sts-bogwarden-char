@@ -64,7 +64,7 @@
   },
   "${ModID}:EntanglingVines": {
     "NAME": "Entangling Vines",
-    "DESCRIPTION": "Retain. NL Gain !M! temporary ${ModID}:Spines."
+    "DESCRIPTION": "Apply !${ModID}:m2! Weak. NL Gain !M! temporary ${ModID}:Spines."
   },
   "${ModID}:Walkabout": {
     "NAME": "Walkabout",
@@ -84,7 +84,7 @@
   },
   "${ModID}:Bushwhack": {
     "NAME": "Bushwhack",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! *Plated *Armor. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:LineUp": {
     "NAME": "Line Up",
@@ -104,7 +104,7 @@
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
-    "DESCRIPTION": "Deal !D! damage. NL Trigger your next ${ModID}:Trap twice."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Trigger your next ${ModID}:Trap twice."
   },
   "${ModID}:PlagueOfToads": {
     "NAME": "Plague of Toads",
@@ -128,7 +128,7 @@
   },
   "${ModID}:DarkRitual": {
     "NAME": "Sinister Ritual",
-    "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, take !${ModID}:m2! damage."
+    "DESCRIPTION": "Lose !${ModID}:m2! HP. NL Gain !M! Regen. NL Exhaust."
   },
   "${ModID}:SwarmOfBeetles": {
     "NAME": "Swarm of Beetles",
@@ -136,7 +136,7 @@
   },
   "${ModID}:BadMedicine": {
     "NAME": "Bad Medicine",
-    "DESCRIPTION": "Whenever you heal, a random enemy loses twice as much HP. NL Heal !M! HP."
+    "DESCRIPTION": "Deal !D! damage twice. NL Apply !M! Regen."
   },
   "${ModID}:RestlessSpirits": {
     "NAME": "Restless Spirits",
@@ -168,11 +168,11 @@
   },
   "${ModID}:SpiritualJourney": {
     "NAME": "Spiritual Journey",
-    "DESCRIPTION": "{@@}Innate.{!Upgrades!|0= Ethereal.} NL At the end of combat, raise your Max HP by !M!. Playing an Attack reduces gain by 1."
+    "DESCRIPTION": "{@@}{!Upgrades!|0=Ethereal. NL } Raise your Max HP by !M!. The next !M! times you play an Attack, lose 1 Max HP. NL Exhaust."
   },
   "${ModID}:TrapperMaster": {
     "NAME": "Trapper Master",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }The first time a ${ModID}:Trap is triggered each turn, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Gain [E] for each ${ModID}:Trap in your hand. NL Exhaust."
   },
   "${ModID}:DeathWard": {
     "NAME": "Death Ward",
@@ -236,7 +236,7 @@
   },
   "${ModID}:BrambleShield": {
     "NAME": "Bramble Shield",
-    "DESCRIPTION": "{@@}Gain Block equal to your ${ModID}:Spines + ${ModID}:Mojo + !M!.{!Location!|0= NL (Gains !B! Block.)}"
+    "DESCRIPTION": "{@@}Gain Block equal to your ${ModID}:Spines + !M!.{!Location!|0= NL (Gains !B! Block.)}"
   },
   "${ModID}:EagleEyes": {
     "NAME": "Eagle Eyes",
@@ -256,7 +256,7 @@
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
-    "DESCRIPTION": "{@@}Deal !D! damage X{!M!|>0=+!M!} times. NL ${ModID}:Trigger your next ${ModID}:Trap X times."
+    "DESCRIPTION": "{@@}Deal !D! damage X times. NL ${ModID}:Trigger your next ${ModID}:Trap X{!M!|>0=+!M!} times."
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
@@ -288,7 +288,10 @@
   },
   "${ModID}:NightTerror": {
     "NAME": "Night Terror",
-    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Drawn butter... NL Boiling water... NL @Lemon@ @Wedges..!@"
+    ]
   },
   "${ModID}:NaturesWrath": {
     "NAME": "Nature's Wrath",
@@ -331,11 +334,31 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Constricted."
   },
   "${ModID}:WitchingHour": {
-    "NAME": "Witching Hour",
-    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Block."
+    "NAME": "Bewitch",
+    "DESCRIPTION": "Whenever you apply a debuff to this enemy, gain !M! Block. NL Exhaust."
   },
   "${ModID}:Friends": {
     "NAME": "Friends",
     "DESCRIPTION": "Prevent the next time you would lose HP. NL Next turn, gain !M! Intangible. NL In 2 turns, lose !${ModID}:m2! Max HP."
+  },
+  "${ModID}:Snip": {
+    "NAME": "Snip",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }${ModID}:Trigger your next ${ModID}:Trap."
+  },
+  "${ModID}:Bide": {
+    "NAME": "Bide",
+    "DESCRIPTION": "For X turns, gain !B! Block at the end of your turn."
+  },
+  "${ModID}:Survey": {
+    "NAME": "Survey",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL For each Skill drawn, gain !B! Block."
+  },
+  "${ModID}:Sap": {
+    "NAME": "Sap",
+    "DESCRIPTION": "Gain [E] for each unique debuff the enemy has. NL Exhaust."
+  },
+  "${ModID}:Implode": {
+    "NAME": "Implode",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Gain !B! Block. NL A random enemy gains !${ModID}:m2! Block."
   }
 }

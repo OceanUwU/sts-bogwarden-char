@@ -12,8 +12,8 @@ public class LineUp extends AbstractBogCard {
     public final static String ID = makeID("LineUp");
 
     public LineUp() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        setMagic(3, +1);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        setMagic(4, +1);
         setSecondMagic(1, +1);
     }
 

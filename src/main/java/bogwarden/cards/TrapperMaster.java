@@ -1,12 +1,9 @@
 package bogwarden.cards;
 
-import bogwarden.powers.AbstractBogPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
@@ -16,16 +13,22 @@ public class TrapperMaster extends AbstractBogCard {
     public final static String ID = makeID("TrapperMaster");
 
     public TrapperMaster() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        setMagic(1);
-        setInnate(false, true);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        setMagic(2, +1);
+        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TrapperMasterPower(p, magicNumber));
+        atb(new DrawCardAction(magicNumber));
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                att(new GainEnergyAction((int)p.hand.group.stream().filter(c -> c instanceof AbstractTrapCard).count()));
+            }
+        });
     }
 
-    public static class TrapperMasterPower extends AbstractBogPower {
+    /*public static class TrapperMasterPower extends AbstractBogPower {
         public static String POWER_ID = makeID("TrapperMasterPower");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
@@ -53,5 +56,5 @@ public class TrapperMaster extends AbstractBogCard {
                 atb(new DrawCardAction(amount));
             }
         }
-    }
+    }*/
 }

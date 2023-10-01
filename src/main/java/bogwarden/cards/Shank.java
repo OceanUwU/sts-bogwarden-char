@@ -12,8 +12,8 @@ public class Shank extends AbstractBogCard {
     public final static String ID = makeID("Shank");
 
     public Shank() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(12, +5);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        setDamage(11, +4);
         setMagic(1);
     }
 

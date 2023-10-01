@@ -88,8 +88,8 @@
     "NAME": "Trail Cam",
     "FLAVOR": "A strange gadget that won't turn on. What was its use?",
     "DESCRIPTIONS": [
-      "Every time you trigger #b",
-      " #y${ModID}:Traps, gain [E] next turn ."
+      "The first time you draw a #y${ModID}:Trap each combat, #y${ModID}:Trigger it and draw #b",
+      " card."
     ]
   }
 }

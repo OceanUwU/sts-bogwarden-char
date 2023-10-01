@@ -12,8 +12,8 @@ public class VilePowder extends AbstractBogCard {
 
     public VilePowder() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL);
-        setBlock(5, +2);
-        setMagic(1, +1);
+        setBlock(5, +3);
+        setMagic(1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

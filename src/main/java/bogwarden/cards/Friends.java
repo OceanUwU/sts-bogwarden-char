@@ -79,6 +79,7 @@ public class Friends extends AbstractBogCard {
                 atb(new AbstractGameAction() {
                     public void update() {
                         isDone = true;
+                        CardCrawlGame.sound.play("NECRONOMICON");
                         owner.decreaseMaxHealth(maxHPToLose);
                         AbstractDungeon.effectsQueue.add(new DamageNumberEffect(owner, owner.hb.cX, owner.hb.cY, maxHPToLose));
                         for(int i = 0; i < 50; i++)

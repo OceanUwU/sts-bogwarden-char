@@ -13,18 +13,18 @@ public class Incarcerate extends AbstractBogCard {
     public final static String ID = makeID("Incarcerate");
 
     public Incarcerate() {
-        super(ID, -1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(5);
+        super(ID, -1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        setDamage(6);
         setMagic(0, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new EasyXCostAction(this, (effect, params) -> {
-            if (effect > 0)
-                att(new TriggerTrapAction(effect));
-            for (int i = 0; i < effect + magicNumber; i++)
+            if (effect + params[0] > 0)
+                att(new TriggerTrapAction(effect + params[0]));
+            for (int i = 0; i < effect; i++)
                 dmgTop(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
             return true;
-        }));
+        }, magicNumber));
     }
 }

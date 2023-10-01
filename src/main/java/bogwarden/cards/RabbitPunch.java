@@ -11,7 +11,7 @@ public class RabbitPunch extends AbstractBogCard {
 
     public RabbitPunch() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        setDamage(21, +4);
+        setDamage(16, +4);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
