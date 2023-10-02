@@ -20,7 +20,9 @@ public class SnapperTrap extends AbstractTrapCard {
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        dmgTop(m, AbstractGameAction.AttackEffect.NONE);
-        att(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40f * Settings.scale, Color.GRAY.cpy()), 0.1f));
+        if (m != null) {
+            dmgTop(m, AbstractGameAction.AttackEffect.NONE);
+            att(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40f * Settings.scale, Color.GRAY.cpy()), 0.1f));
+        }
     }
 }

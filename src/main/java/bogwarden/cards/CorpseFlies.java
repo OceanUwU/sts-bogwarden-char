@@ -78,6 +78,8 @@ public class CorpseFlies extends AbstractBogCard {
         
         public void update() {
             isDone = true;
+            if (target == null || target.isDeadOrEscaped())
+                return;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             target.damage(info);
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower("Minion")) {
