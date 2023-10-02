@@ -42,11 +42,12 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
                 att(new AbstractGameAction() {
                     public void update() {
                         isDone = true;
-                        if (m == null)
-                            AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                        target = m;
+                        if (target == null)
+                            target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
                         applyPowers();
-                        calculateCardDamage(m);
-                        trigger(p, m);
+                        calculateCardDamage((AbstractMonster)target);
+                        trigger(p, (AbstractMonster)target);
                         for (AbstractPower po : p.powers)
                             if (po instanceof AbstractBogPower)
                                 ((AbstractBogPower)po).onTriggerTrap(trap);

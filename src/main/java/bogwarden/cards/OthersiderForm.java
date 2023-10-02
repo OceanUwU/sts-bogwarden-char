@@ -1,7 +1,6 @@
 package bogwarden.cards;
 
 import basemod.helpers.BaseModCardTags;
-import bogwarden.characters.TheBogwarden;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.powers.Mojo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
