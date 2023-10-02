@@ -1,14 +1,13 @@
 package bogwarden.cards;
 
+import bogwarden.powers.LoseSpinesPower;
+import bogwarden.powers.Spines;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
-
-import bogwarden.powers.LoseSpinesPower;
-import bogwarden.powers.Spines;
 
 public class EntanglingVines extends AbstractBogCard {
     public final static String ID = makeID("EntanglingVines");

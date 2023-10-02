@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.util.Wiz.*;
 
 public class Venom extends AbstractBogPower {
     public static final String POWER_ID = makeID("Venom");
@@ -32,7 +33,7 @@ public class Venom extends AbstractBogPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (!NonAttackDamagePatches.DamageInfoFields.fromVenom.get(info)) {
             flash();
-            DamageInfo venomInfo = new DamageInfo(info.owner, HP_LOSS, DamageType.HP_LOSS);
+            DamageInfo venomInfo = new DamageInfo(info.owner == null ? adp() : info.owner, HP_LOSS, DamageType.HP_LOSS);
             NonAttackDamagePatches.DamageInfoFields.fromVenom.set(venomInfo, true);
             addToTop(new DamageAction(owner, venomInfo, AbstractGameAction.AttackEffect.POISON));
         }
