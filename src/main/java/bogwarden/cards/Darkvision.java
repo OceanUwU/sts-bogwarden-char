@@ -22,7 +22,7 @@ public class Darkvision extends AbstractBogCard {
     public Darkvision() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         setMagic(3, +1);
-        setSecondMagic(3);
+        setSecondMagic(2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

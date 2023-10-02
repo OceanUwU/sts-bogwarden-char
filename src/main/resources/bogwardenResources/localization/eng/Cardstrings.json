@@ -84,7 +84,7 @@
   },
   "${ModID}:Bushwhack": {
     "NAME": "Bushwhack",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! *Plated *Armor. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. If you have played less than !${ModID}:m3! cards this combat, gain !${ModID}:m2! *Plated *Armor.{!M!|1= NL (!M! card played.)|0,>1= NL (!M! cards played.)}"
   },
   "${ModID}:LineUp": {
     "NAME": "Line Up",
@@ -204,7 +204,7 @@
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
-    "DESCRIPTION": "${ModID}:Trap. NL Gain !B! Block and deal !D! damage to ALL enemies, twice."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal !D! damage to ALL enemies !M! time{!M!|>1=s}."
   },
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
@@ -220,7 +220,7 @@
   },
   "${ModID}:CageOfSerpents": {
     "NAME": "Cage of Serpents",
-    "DESCRIPTION": "${ModID}:Trap. NL Apply !${ModID}:m2! ${ModID}:Venom. NL Deal !D! damage to a random enemy !M! times."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !${ModID}:m2! ${ModID}:Venom. NL Enemy loses !D! HP !M! times."
   },
   "${ModID}:Minefield": {
     "NAME": "Minefield",
@@ -284,7 +284,7 @@
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
-    "DESCRIPTION": "{@@}${ModID}:Trap. ALL enemies lose !D! HP and !M! Strength. NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL ALL enemies lose !D! HP and !M! Strength. NL Exhaust."
   },
   "${ModID}:NightTerror": {
     "NAME": "Night Terror",

@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,6 +18,7 @@ public class CageOfSerpents extends AbstractTrapCard {
         setDamage(1);
         setMagic(3, +1);
         setSecondMagic(1);
+        damageType = damageTypeForTurn = DamageType.HP_LOSS;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

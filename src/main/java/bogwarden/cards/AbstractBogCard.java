@@ -26,16 +26,20 @@ import static bogwarden.util.Wiz.atb;
 import static bogwarden.util.Wiz.att;
 
 public abstract class AbstractBogCard extends CustomCard {
-
     protected final CardStrings cardStrings;
 
-    public int secondMagic;
-    public int baseSecondMagic;
+    public int secondMagic = -1;
+    public int baseSecondMagic = -1;
     public boolean upgradedSecondMagic;
     public boolean isSecondMagicModified;
 
-    public int secondDamage;
-    public int baseSecondDamage;
+    public int thirdMagic = -1;
+    public int baseThirdMagic = -1;
+    public boolean upgradedThirdMagic;
+    public boolean isThirdMagicModified;
+
+    public int secondDamage = -1;
+    public int baseSecondDamage = -1;
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
 
@@ -47,6 +51,8 @@ public abstract class AbstractBogCard extends CustomCard {
     private int magicUpgrade;
     private boolean upgradesSecondMagic = false;
     private int secondMagicUpgrade;
+    private boolean upgradesThirdMagic = false;
+    private int thirdMagicUpgrade;
     private boolean upgradesSecondDamage = false;
     private int secondDamageUpgrade;
     private boolean upgradesCost = false;
@@ -142,6 +148,8 @@ public abstract class AbstractBogCard extends CustomCard {
         super.resetAttributes();
         secondMagic = baseSecondMagic;
         isSecondMagicModified = false;
+        thirdMagic = baseThirdMagic;
+        isThirdMagicModified = false;
         secondDamage = baseSecondDamage;
         isSecondDamageModified = false;
     }
@@ -151,6 +159,10 @@ public abstract class AbstractBogCard extends CustomCard {
         if (upgradedSecondMagic) {
             secondMagic = baseSecondMagic;
             isSecondMagicModified = true;
+        }
+        if (upgradedThirdMagic) {
+            thirdMagic = baseThirdMagic;
+            isThirdMagicModified = true;
         }
         if (upgradedSecondDamage) {
             secondDamage = baseSecondDamage;
@@ -162,6 +174,12 @@ public abstract class AbstractBogCard extends CustomCard {
         baseSecondMagic += amount;
         secondMagic = baseSecondMagic;
         upgradedSecondMagic = true;
+    }
+
+    protected void upgradeThirdMagic(int amount) {
+        baseThirdMagic += amount;
+        thirdMagic = baseThirdMagic;
+        upgradedThirdMagic = true;
     }
 
     protected void upgradeSecondDamage(int amount) {
@@ -215,6 +233,16 @@ public abstract class AbstractBogCard extends CustomCard {
 
     protected void setSecondMagic(int base) {
         baseSecondMagic = secondMagic = base; 
+    }
+
+    protected void setThirdMagic(int base, int up) {
+        setThirdMagic(base);
+        upgradesThirdMagic = true;
+        thirdMagicUpgrade = up;
+    }
+
+    protected void setThirdMagic(int base) {
+        baseThirdMagic = thirdMagic = base; 
     }
 
     protected void setSecondDamage(int base, int up) {
@@ -281,6 +309,8 @@ public abstract class AbstractBogCard extends CustomCard {
             upgradeMagicNumber(magicUpgrade);
         if (upgradesSecondMagic)
             upgradeSecondMagic(secondMagicUpgrade);
+        if (upgradesThirdMagic)
+            upgradeThirdMagic(thirdMagicUpgrade);
         if (upgradesSecondDamage)
             upgradeSecondDamage(secondDamageUpgrade);
         if (upgradesCost)

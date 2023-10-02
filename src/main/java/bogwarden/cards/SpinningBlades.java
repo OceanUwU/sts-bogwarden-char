@@ -15,16 +15,15 @@ public class SpinningBlades extends AbstractTrapCard {
 
     public SpinningBlades() {
         super(ID, CardRarity.UNCOMMON);
-        setBlock(3, +1);
-        setDamage(3, +1);
+        setDamage(4);
+        setMagic(2, +1);
         isMultiDamage = true;
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i< 2; i++) {
+        for (int i = 0; i < magicNumber; i++) {
             allDmgTop(AbstractGameAction.AttackEffect.NONE);
             att(new VFXAction(p, new CleaveEffect(), 0.0F));
-            blckTop();
         }
         att(new VFXAction(new WhirlwindEffect(), 0.0F));
     }

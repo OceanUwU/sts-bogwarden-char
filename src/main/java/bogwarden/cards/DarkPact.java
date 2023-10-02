@@ -14,7 +14,7 @@ public class DarkPact extends AbstractBogCard {
 
     public DarkPact() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        setMagic(3, +2);
+        setMagic(2, +2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

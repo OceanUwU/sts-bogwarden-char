@@ -5,8 +5,7 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import bogwarden.cards.AbstractBogCard;
-import bogwarden.cards.cardvars.SecondDamage;
-import bogwarden.cards.cardvars.SecondMagicNumber;
+import bogwarden.cards.cardvars.*;
 import bogwarden.characters.TheBogwarden;
 import bogwarden.potions.BogWater;
 import bogwarden.potions.BottleOfTricks;
@@ -152,6 +151,7 @@ public class BogMod implements
     @Override
     public void receiveEditCards() {
         BaseMod.addDynamicVariable(new SecondMagicNumber());
+        BaseMod.addDynamicVariable(new ThirdMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         new AutoAdd(modID)
                 .packageFilter(AbstractBogCard.class)
