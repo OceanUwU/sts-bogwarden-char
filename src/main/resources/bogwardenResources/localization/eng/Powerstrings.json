@@ -149,8 +149,8 @@
   "${ModID}:SpiritualJourneyPower": {
     "NAME": "Spiritual Journey",
     "DESCRIPTIONS": [
-      "At the end of combat, raise your Max HP by #b",
-      ". Whenever you play an Attack, reduce this by #b1."
+      "The next #b",
+      " times you play an attack, lose #b1 Max HP."
     ]
   },
   "${ModID}:TrapperMasterPower": {

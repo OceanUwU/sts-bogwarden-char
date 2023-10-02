@@ -64,9 +64,5 @@ public class SpiritualJourney extends AbstractBogCard {
                 });
             }
         }
-
-        public void onVictory() {
-            AbstractDungeon.player.increaseMaxHp(amount, true);
-        }
     }
 }

@@ -3,6 +3,7 @@ package bogwarden.cards;
 import bogwarden.powers.AbstractBogPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -44,8 +45,12 @@ public class BarbedLasso extends AbstractBogCard {
         public void onUseCard(AbstractCard card, UseCardAction action) {
             if (card.type == AbstractCard.CardType.SKILL) {
                 flash();
-                addToTop((AbstractGameAction)new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                addToTop(new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
             } 
+        }
+  
+        public void atStartOfTurn() {
+            atb(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
 }
