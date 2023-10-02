@@ -38,8 +38,8 @@ public class TriggerTrapAction extends AbstractGameAction {
 
     public void update() {
         isDone = true;
-        if (target == null || target.isDeadOrEscaped())
-            target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        if (target.isDeadOrEscaped())
+            target = null;
         for (AbstractCard c : AbstractDungeon.player.hand.group)
             if (c instanceof AbstractTrapCard) {
                 c.dontTriggerOnUseCard = true;

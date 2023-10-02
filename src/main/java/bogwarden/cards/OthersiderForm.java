@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import basemod.helpers.BaseModCardTags;
+import bogwarden.characters.TheBogwarden;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.powers.Mojo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -57,6 +58,18 @@ public class OthersiderForm extends AbstractBogCard {
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        }
+
+        public void onInitialApplication() {
+            owner.flipHorizontal = true;
+        }
+
+        public void onRemove() {
+            owner.flipHorizontal = false;
+        }
+
+        public void onVictory() {
+            owner.flipHorizontal = false;
         }
   
         public void atStartOfTurnPostDraw() {

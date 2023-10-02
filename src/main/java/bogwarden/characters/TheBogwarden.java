@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -56,6 +57,10 @@ public class TheBogwarden extends CustomPlayer {
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         stateData.setMix("hit", "idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
+    }
+
+    public Skeleton getSkeleton() {
+        return skeleton;
     }
 
     @Override
@@ -114,6 +119,12 @@ public class TheBogwarden extends CustomPlayer {
             makeCharacterPath("mainChar/orb/layer4d.png"),
             makeCharacterPath("mainChar/orb/layer5d.png"),
     };
+
+    @Override
+    public void playDeathAnimation() {
+        super.playDeathAnimation();
+        drawY -= 30f * Settings.scale;
+    }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {

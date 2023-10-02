@@ -22,7 +22,6 @@ public class SpiritualJourney extends AbstractBogCard {
     public SpiritualJourney() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         setMagic(4, +1);
-        setInnate(true);
         setEthereal(true, false);
         setExhaust(true);
         tags.add(CardTags.HEALING);

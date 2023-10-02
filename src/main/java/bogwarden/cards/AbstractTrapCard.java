@@ -4,6 +4,7 @@ import bogwarden.actions.TriggerTrapAction;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.relics.AbstractBogRelic;
 import bogwarden.util.BogAudio;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.util.Wiz.*;
 
 public abstract class AbstractTrapCard extends AbstractBogCard {
     private static final CardStrings trapStrings = CardCrawlGame.languagePack.getCardStrings(makeID("TrapCard"));
@@ -36,15 +38,23 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
         if (dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.actions.addAll(TriggerTrapAction.saveActions);
             for (int i = 0; i < timesToTrigger; i++) {
-                applyPowers();
-                calculateCardDamage(m);
-                trigger(p, m);
-                for (AbstractPower po : p.powers)
-                    if (po instanceof AbstractBogPower)
-                        ((AbstractBogPower)po).onTriggerTrap(this);
-                for (AbstractRelic r : p.relics)
-                    if (r instanceof AbstractBogRelic)
-                        ((AbstractBogRelic)r).onTriggerTrap(this);
+                AbstractTrapCard trap = this;
+                att(new AbstractGameAction() {
+                    public void update() {
+                        isDone = true;
+                        if (m == null)
+                            AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                        applyPowers();
+                        calculateCardDamage(m);
+                        trigger(p, m);
+                        for (AbstractPower po : p.powers)
+                            if (po instanceof AbstractBogPower)
+                                ((AbstractBogPower)po).onTriggerTrap(trap);
+                        for (AbstractRelic r : p.relics)
+                            if (r instanceof AbstractBogRelic)
+                                ((AbstractBogRelic)r).onTriggerTrap(trap);
+                    }
+                });
             }
             CardCrawlGame.sound.play(sfx);
         }
