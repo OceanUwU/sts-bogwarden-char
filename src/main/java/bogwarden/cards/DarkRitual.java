@@ -16,6 +16,7 @@ public class DarkRitual extends AbstractBogCard {
         setMagic(3);    
         setSecondMagic(3);
         setUpgradedCost(0);
+        setExhaust(true);
         tags.add(CardTags.HEALING);
     }
 

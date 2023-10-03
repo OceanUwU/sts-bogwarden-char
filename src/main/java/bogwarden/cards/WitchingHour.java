@@ -43,7 +43,7 @@ public class WitchingHour extends AbstractBogCard {
         public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
             if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals(GainStrengthPower.POWER_ID) && target == owner && source != owner && !target.hasPower(ArtifactPower.POWER_ID)) {
                 flash();
-                atb(new GainBlockAction(adp(), adp(), amount));
+                att(new GainBlockAction(adp(), adp(), amount));
             } 
             return true;
         }

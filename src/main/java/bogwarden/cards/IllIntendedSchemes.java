@@ -39,13 +39,13 @@ public class IllIntendedSchemes extends AbstractBogCard {
         public void onCardDraw(AbstractCard card) {
             if (card instanceof AbstractTrapCard) {
                 flash();
-                atb(new GainBlockAction(owner, owner, amount, true));
+                att(new GainBlockAction(owner, owner, amount, true));
             }
         }
   
         public void onTriggerTrap(AbstractTrapCard c) {
             flash();
-            atb(new GainBlockAction(owner, owner, amount, true));
+            att(new GainBlockAction(owner, owner, amount, true));
         }
     }
 }

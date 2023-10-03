@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,8 @@ import static bogwarden.util.Wiz.*;
 public class Stalker extends AbstractBogCard {
     public final static String ID = makeID("Stalker");
 
+    private boolean shouldDraw = false;
+
     public Stalker() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setDamage(9, +3);
@@ -19,6 +22,10 @@ public class Stalker extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
+        if (shouldDraw) {
+            shouldDraw = false;
+            atb(new DrawCardAction(1));
+        }
     }
 
     public void onDiscardedViaScry() {
@@ -28,6 +35,13 @@ public class Stalker extends AbstractBogCard {
                 isDone = true;
                 if (adp().discardPile.contains(self)) {
                     adp().discardPile.removeCard(self);
+                    att(new NewQueueCardAction(self, true, false, true));
+                } else if (adp().drawPile.contains(self)) {
+                    adp().drawPile.removeCard(self);
+                    att(new NewQueueCardAction(self, true, false, true));
+                } else if (adp().hand.contains(self)) {
+                    adp().hand.removeCard(self);
+                    shouldDraw = true;
                     att(new NewQueueCardAction(self, true, false, true));
                 }
             }
