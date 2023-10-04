@@ -13,6 +13,7 @@ import bogwarden.relics.SwampTalisman;
 import bogwarden.util.BogAudio;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.esotericsoftware.spine.Skeleton;
@@ -43,7 +44,7 @@ public class TheBogwarden extends CustomPlayer {
     public static final Float ANIMATION_SPEED = 1.0F;
 
     public TheBogwarden(String name, PlayerClass setClass) {
-        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpineAnimation(
+        super(name, setClass, new BogEnergyOrb(), new SpineAnimation(
                 makeCharacterPath("mainChar/bogwarden.atlas"), makeCharacterPath("mainChar/bogwarden.json"), 1f / SIZE_SCALE));
         initializeClass(null,
                 SHOULDER1,
@@ -57,6 +58,39 @@ public class TheBogwarden extends CustomPlayer {
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         stateData.setMix("hit", "idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
+    }
+
+    private static class BogEnergyOrb extends CustomEnergyOrb {
+        private static final float ORB_IMG_SCALE = 1.15F * Settings.scale;
+        private static final String[] orbTextures = {
+            makeCharacterPath("mainChar/orb/layer1.png"),
+            makeCharacterPath("mainChar/orb/layer2.png"),
+            makeCharacterPath("mainChar/orb/layer3.png"),
+            makeCharacterPath("mainChar/orb/layer4.png"),
+            makeCharacterPath("mainChar/orb/layer5.png"),
+            makeCharacterPath("mainChar/orb/layer6.png"),
+            makeCharacterPath("mainChar/orb/layer1d.png"),
+            makeCharacterPath("mainChar/orb/layer2d.png"),
+            makeCharacterPath("mainChar/orb/layer3d.png"),
+            makeCharacterPath("mainChar/orb/layer4d.png"),
+            makeCharacterPath("mainChar/orb/layer5d.png"),
+        };
+
+        public BogEnergyOrb() {
+            super(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), new float[]{-20f, 20f, -40f, 40f, 0f});
+        }
+
+        @Override
+        public void renderOrb(SpriteBatch sb, boolean enabled, float current_x, float current_y) {
+            sb.setColor(Color.WHITE);
+            if (enabled)
+                for(int i = 0; i < noEnergyLayers.length; ++i)
+                    sb.draw(energyLayers[i], current_x - 64f, current_y - 64f, 64.0F, 64.0F, 128.0F, 128.0F, ORB_IMG_SCALE, ORB_IMG_SCALE, angles[i], 0, 0, 128, 128, false, false);
+            else
+                for(int i = 0; i < noEnergyLayers.length; ++i)
+                    sb.draw(noEnergyLayers[i], current_x - 64.0F, current_y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, ORB_IMG_SCALE, ORB_IMG_SCALE, angles[i], 0, 0, 128, 128, false, false);
+            sb.draw(baseLayer, current_x - 128f, current_y - 128f, 128f, 128f, 256f, 256f, ORB_IMG_SCALE, ORB_IMG_SCALE, 0.0F, 0, 0, 256, 256, false, false);
+        }
     }
 
     public Skeleton getSkeleton() {
@@ -105,20 +139,6 @@ public class TheBogwarden extends CustomPlayer {
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }
-
-    private static final String[] orbTextures = {
-            makeCharacterPath("mainChar/orb/layer1.png"),
-            makeCharacterPath("mainChar/orb/layer2.png"),
-            makeCharacterPath("mainChar/orb/layer3.png"),
-            makeCharacterPath("mainChar/orb/layer4.png"),
-            makeCharacterPath("mainChar/orb/layer4.png"),
-            makeCharacterPath("mainChar/orb/layer6.png"),
-            makeCharacterPath("mainChar/orb/layer1d.png"),
-            makeCharacterPath("mainChar/orb/layer2d.png"),
-            makeCharacterPath("mainChar/orb/layer3d.png"),
-            makeCharacterPath("mainChar/orb/layer4d.png"),
-            makeCharacterPath("mainChar/orb/layer5d.png"),
-    };
 
     @Override
     public void playDeathAnimation() {

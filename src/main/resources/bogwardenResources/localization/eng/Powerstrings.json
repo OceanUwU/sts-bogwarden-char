@@ -232,7 +232,7 @@
     ]
   },
   "${ModID}:NextTurnTemporaryMojo": {
-    "NAME": "Temporary Mojo Next Turn",
+    "NAME": "Temp Mojo Next Turn",
     "DESCRIPTIONS": [
       "Next turn, gain #b",
       " temporary #yMojo."

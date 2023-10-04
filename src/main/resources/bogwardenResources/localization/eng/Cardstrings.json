@@ -346,7 +346,7 @@
     "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }${ModID}:Trigger your next ${ModID}:Trap."
   },
   "${ModID}:Bide": {
-    "NAME": "BideTime",
+    "NAME": "Bide Time",
     "DESCRIPTION": "For X turns, gain !B! Block at the end of your turn."
   },
   "${ModID}:Survey": {
