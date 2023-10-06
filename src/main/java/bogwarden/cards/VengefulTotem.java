@@ -24,6 +24,10 @@ public class VengefulTotem extends AbstractTrapCard {
         MultiCardPreview.add(this, new Blast(), blastUp);
         sfx = BogAudio.TOTEM_TRIGGER;
     }
+  
+    public void triggerOnGlowCheck() {
+        this.glowColor = isEliteOrBoss() ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+    }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = new Blast();

@@ -18,7 +18,7 @@ public class BogWater extends CustomPotion {
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public BogWater() {
-        super(potionStrings.NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.M, PotionColor.SWIFT);
+        super(potionStrings.NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionColor.SWIFT);
         labOutlineColor = BogMod.characterColor;
     }
 
@@ -39,7 +39,7 @@ public class BogWater extends CustomPotion {
     }
 
     public int getPotency(int ascensionlevel) {
-        return 2;
+        return 3;
     }
 
     public AbstractPotion makeCopy() {

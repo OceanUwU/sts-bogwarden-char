@@ -17,7 +17,7 @@ public class PressurePlate extends AbstractTrapCard {
 
     public PressurePlate() {
         super(ID, CardRarity.COMMON);
-        setMagic(6, +3);
+        setMagic(5, +2);
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

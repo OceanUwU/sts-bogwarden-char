@@ -1,7 +1,6 @@
 package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -14,7 +13,7 @@ public class NaturesWrath extends AbstractBogCard {
 
     public NaturesWrath() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        setDamage(6, +2);
+        setDamage(10, +3);
         isMultiDamage = true;
     }
 
@@ -31,15 +30,17 @@ public class NaturesWrath extends AbstractBogCard {
         att(new AbstractGameAction() {
             public void update() {
                 isDone = true;
-                redo = false;
-                forAllMonstersLiving(mo -> {if (mo.currentBlock > 0) redo = true;});
-                if (redo) {
+                if (redo)
                     doIt();
-                    att(new WaitAction(0.25f));
-                }
             }
         });
-        for (int i = 0; i < 2; i++)
-            allDmgTop(AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        allDmgTop(AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        att(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                redo = false;
+                forAllMonstersLiving(mo -> {if (mo.currentBlock > 0) redo = true;});
+            }
+        });
     }
 }

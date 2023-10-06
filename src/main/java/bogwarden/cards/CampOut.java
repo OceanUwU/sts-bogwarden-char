@@ -21,6 +21,13 @@ public class CampOut extends AbstractBogCard {
         MultiCardPreview.add(this, new Bonfire(), new Forge());
     }
 
+    @Override
+    public void initializeDescription() {
+        super.initializeDescription();
+        keywords.addAll(new Bonfire().keywords);
+        keywords.addAll(new Forge().keywords);
+    }
+
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         stanceChoices.add(new Bonfire());

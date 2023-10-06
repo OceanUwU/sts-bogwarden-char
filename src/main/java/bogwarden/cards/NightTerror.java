@@ -14,9 +14,9 @@ public class NightTerror extends AbstractBogCard {
     public final static String ID = makeID("NightTerror");
 
     public NightTerror() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
         setMagic(99);
-        setUpgradedCost(1);
+        setUpgradedCost(0);
         setExhaust(true);
     }
 

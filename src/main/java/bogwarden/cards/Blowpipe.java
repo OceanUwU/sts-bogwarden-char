@@ -16,7 +16,7 @@ public class Blowpipe extends AbstractBogCard {
 
     public Blowpipe() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(6, +3);
+        setDamage(8, +1);
         setMagic(1, +1);
     }
 

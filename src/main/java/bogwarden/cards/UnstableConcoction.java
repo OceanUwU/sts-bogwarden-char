@@ -4,6 +4,7 @@ import bogwarden.potions.ExplosivePotionPlus;
 import bogwarden.potions.FirePotionPlus;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.ExplosivePotion;
@@ -20,6 +21,10 @@ public class UnstableConcoction extends AbstractBogCard {
         setDamage(4);
         setExhaust(true);
         tags.add(CardTags.HEALING);
+    }
+  
+    public void triggerOnGlowCheck() {
+        this.glowColor = isEliteOrBoss() ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

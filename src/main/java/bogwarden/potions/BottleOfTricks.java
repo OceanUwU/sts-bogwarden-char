@@ -32,7 +32,7 @@ public class BottleOfTricks extends CustomPotion {
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public BottleOfTricks() {
-        super(potionStrings.NAME, POTION_ID, PotionRarity.RARE, PotionSize.BOTTLE, PotionColor.SWIFT);
+        super(potionStrings.NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.BOTTLE, PotionColor.SWIFT);
         ReflectionHacks.setPrivate(this, AbstractPotion.class, "containerImg", TexLoader.getTexture(makeImagePath("potions/BottleOfTricks.png")));
         labOutlineColor = BogMod.characterColor;
     }

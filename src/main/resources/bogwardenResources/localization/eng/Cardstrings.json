@@ -44,7 +44,7 @@
   },
   "${ModID}:ViperStrike": {
     "NAME": "Viper Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Venom."
+    "DESCRIPTION": "Apply !M! ${ModID}:Venom. NL Deal !D! damage twice."
   },
   "${ModID}:SnareTrap": {
     "NAME": "Snare Trap",
@@ -100,7 +100,7 @@
   },
   "${ModID}:TheRumble": {
     "NAME": "The Rumble",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL ${ModID}:Big_Game: Repeat{!M!|>1= !M! times}."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Big_Game: Repeat."
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
@@ -192,11 +192,11 @@
   },
   "${ModID}:Bonfire": {
     "NAME": "Bonfire",
-    "DESCRIPTION": "Gain !M! Regen."
+    "DESCRIPTION": "Gain !M! stslib:Temporary_HP."
   },
   "${ModID}:Forge": {
     "NAME": "Forge",
-    "DESCRIPTION": "Upgrade all cards in your hand at the start of your next !M! turns."
+    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! for the rest of combat."
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
@@ -232,7 +232,7 @@
   },
   "${ModID}:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Venom to ALL enemies. NL ALL enemies lose !D! HP{!${ModID}:m2!|1=|2= twice|@= !${ModID}:m2! times}. NL Exhaust."
+    "DESCRIPTION": "Apply !M! ${ModID}:Venom to ALL enemies. NL ALL enemies lose !${ModID}:m2! Strength this turn. NL Exhaust."
   },
   "${ModID}:BrambleShield": {
     "NAME": "Bramble Shield",
@@ -295,7 +295,7 @@
   },
   "${ModID}:NaturesWrath": {
     "NAME": "Nature's Wrath",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Repeat until no enemy has block."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies until this deals no blocked damage."
   },
   "${ModID}:GoForTheThroat": {
     "NAME": "Go For The Throat",
@@ -311,7 +311,10 @@
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Scry !M!. NL Transform all non-discarded cards into{!Upgrades!|>0= Upgraded} Skills of any color."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Transform up to !M! cards in your draw pile into{!Upgrades!|>0= Upgraded} Skills of any color.",
+    "EXTENDED_DESCRIPTION": [
+      "Select cards to Transform."
+    ]
   },
   "${ModID}:Hoodwink": {
     "NAME": "Hoodwink",

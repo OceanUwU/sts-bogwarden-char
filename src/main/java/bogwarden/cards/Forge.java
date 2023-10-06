@@ -1,12 +1,9 @@
 package bogwarden.cards;
 
-import bogwarden.powers.AbstractBogPower;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 
@@ -17,8 +14,8 @@ public class Forge extends AbstractBogCard {
     public final static String ID = makeID("Forge");
 
     public Forge() {
-        super(ID, -2, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
-        setMagic(2, +1);
+        super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
+        setMagic(8, +2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -27,10 +24,18 @@ public class Forge extends AbstractBogCard {
 
     public void onChoseThisOption() {
         vfx(new UpgradeShineEffect(adp().hb.cX, adp().hb.cY));
-        applyToSelf(new ForgePower(adp(), magicNumber));
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                for (AbstractCard c : adp().hand.getAttacks().group) {
+                    c.superFlash();
+                    att(new ModifyDamageAction(c.uuid, magicNumber));
+                }
+            }
+        });
     }
 
-    public static class ForgePower extends AbstractBogPower {
+    /*public static class ForgePower extends AbstractBogPower {
         public static String POWER_ID = makeID("ForgePower");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     
@@ -47,5 +52,5 @@ public class Forge extends AbstractBogCard {
             atb(new ArmamentsAction(true));
             atb(new ReducePowerAction(owner, owner, this, 1));
         }
-    }
+    }*/
 }

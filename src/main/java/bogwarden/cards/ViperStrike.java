@@ -14,13 +14,14 @@ public class ViperStrike extends AbstractBogCard {
 
     public ViperStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(5, +3);
-        setMagic(2);
+        setDamage(2, +2);
+        setMagic(1);
         tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
         applyToEnemy(m, new Venom(m, magicNumber));
+        for (int i = 0; i < 2; i++)
+            dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
     }
 }

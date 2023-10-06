@@ -20,7 +20,7 @@ public class FlockOfBats extends AbstractBogCard {
 
     public FlockOfBats() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        setBlock(6, +3);
+        setBlock(6, +2);
         setMagic(2, +1);
     }
 
@@ -46,8 +46,10 @@ public class FlockOfBats extends AbstractBogCard {
         }
 
         public int onAttacked(DamageInfo info, int damageAmount) {
-            flash();
-            addToTop(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            if (info.type != DamageType.THORNS && info.type != DamageType.HP_LOSS && info.owner != null && info.owner != owner) {
+                flash();
+                addToTop(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            }
             return damageAmount;
         }
     }
