@@ -26,13 +26,14 @@ public class LoseMojoPower extends AbstractBogPower {
 
     public void atEndOfRound() {
         flash();
+        int toLose = amount;
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
                 if (owner.hasPower(ArtifactPower.POWER_ID))
-                    applyToSelfTop(new LoseMojoPower(owner, amount));
+                    applyToSelfTop(new LoseMojoPower(owner, toLose));
                 else
-                    att(new ReducePowerAction(owner, owner, Mojo.POWER_ID, amount));
+                    att(new ReducePowerAction(owner, owner, Mojo.POWER_ID, toLose));
             }
         });
         atb(new RemoveSpecificPowerAction(owner, owner, this));

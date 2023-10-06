@@ -196,7 +196,7 @@
   },
   "${ModID}:Forge": {
     "NAME": "Forge",
-    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! for the rest of combat."
+    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! this combat."
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
