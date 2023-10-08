@@ -10,12 +10,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
+
+import bogwarden.patches.FlashAtkImgPatches;
 
 public class WildMagic extends AbstractBogCard {
     public final static String ID = makeID("WildMagic");
@@ -26,8 +29,9 @@ public class WildMagic extends AbstractBogCard {
         setMagic(3);
     }
 
+    @SuppressWarnings("unchecked")
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.LIGHTNING);
+        dmg(m, FlashAtkImgPatches.BOGWARDEN_WILD_MAGIC_EFFECT);
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
@@ -44,6 +48,7 @@ public class WildMagic extends AbstractBogCard {
                         else
                             cardRarity = AbstractCard.CardRarity.RARE;
                         AbstractCard generated = CardLibrary.getAnyColorCard(AbstractCard.CardType.SKILL, cardRarity).makeStatEquivalentCopy();
+                        UnlockTracker.markCardAsSeen(generated.cardID);
                         if ((upgraded || AbstractDungeon.player.hasPower(MasterReality.ID)) && generated.canUpgrade())
                             generated.upgrade();
                         int cPos = adp().drawPile.group.indexOf(c);

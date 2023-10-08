@@ -11,6 +11,7 @@ import bogwarden.cards.ShadowFont;
 import bogwarden.cards.Strike;
 import bogwarden.relics.SwampTalisman;
 import bogwarden.util.BogAudio;
+import bogwarden.vfx.BogwardenVictoryEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -243,7 +244,7 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
         if (!endEffectStarted) {
-            //effects.add(new BogwardenVictoryEffect());
+            effects.add(new BogwardenVictoryEffect());
             endEffectStarted = true;
         }
     }

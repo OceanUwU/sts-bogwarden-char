@@ -1,6 +1,5 @@
 package bogwarden.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,7 +29,7 @@ public class RefinedBlast extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmgRandom(AbstractGameAction.AttackEffect.FIRE, secondMagic > 0 ? mo -> {
+        dmgRandom(BLAST_EFFECT, secondMagic > 0 ? mo -> {
             p.getPower(PoisonNova.PoisonNovaPower.POWER_ID).flash();
             applyToEnemyTop(mo, new PoisonPower(mo, p, secondMagic));
         } : null);

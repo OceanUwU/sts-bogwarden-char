@@ -1,5 +1,7 @@
 package bogwarden.cards;
 
+import bogwarden.util.TexLoader;
+import bogwarden.vfx.BugSwarmEffect;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -17,6 +19,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static bogwarden.BogMod.makeID;
+import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.util.Wiz.*;
 
 public class CorpseFlies extends AbstractBogCard {
@@ -82,6 +85,7 @@ public class CorpseFlies extends AbstractBogCard {
                 return;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             target.damage(info);
+            vfxTop(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, target.hb.cX, target.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), true));
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower("Minion")) {
                 if (upgraded)
                     AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(new CorpseFlies(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));

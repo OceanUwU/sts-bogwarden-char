@@ -129,6 +129,10 @@ public class Wiz {
         atb(new VFXAction(gameEffect, duration));
     }
 
+    public static void vfxTop(AbstractGameEffect gameEffect) {
+        att(new VFXAction(gameEffect));
+    }
+
     public static void tfx(AbstractGameEffect gameEffect) {
         atb(new TimedVFXAction(gameEffect));
     }

@@ -2,11 +2,10 @@ package bogwarden.cards;
 
 import basemod.abstracts.CustomCard;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.patches.NonAttackDamagePatches;
-import bogwarden.util.CardArtRoller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -15,7 +14,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Consumer;
@@ -26,6 +24,7 @@ import static bogwarden.util.Wiz.atb;
 import static bogwarden.util.Wiz.att;
 
 public abstract class AbstractBogCard extends CustomCard {
+    protected static AbstractGameAction.AttackEffect BLAST_EFFECT = FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT;
     protected final CardStrings cardStrings;
 
     public int secondMagic = -1;
@@ -66,8 +65,6 @@ public abstract class AbstractBogCard extends CustomCard {
     private boolean upgradesRetain = false;
     private boolean upgradedRetain;
 
-    private boolean needsArtRefresh = false;
-
     public AbstractBogCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
     }
@@ -80,29 +77,23 @@ public abstract class AbstractBogCard extends CustomCard {
         name = originalName = cardStrings.NAME;
         initializeTitle();
         initializeDescription();
-
-        if (textureImg.contains("ui/missing.png")) {
-            if (CardLibrary.cards != null && !CardLibrary.cards.isEmpty())
-                CardArtRoller.computeCard(this);
-            else
-                needsArtRefresh = true;
-        }
-    }
-
-    @Override
-    protected Texture getPortraitImage() {
-        if (textureImg.contains("ui/missing.png")) {
-            return CardArtRoller.getPortraitTexture(this);
-        } else {
-            return super.getPortraitImage();
-        }
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
         String textureString = makeImagePath("cards/" + cardName + ".png");
         FileHandle h = Gdx.files.internal(textureString);
         if (!h.exists())
-            textureString = makeImagePath("ui/missing.png");
+            switch (cardType) {
+                case ATTACK:
+                    textureString = makeImagePath("cards/betaattack.png");
+                    break;
+                case POWER:
+                    textureString = makeImagePath("cards/betapower.png");
+                    break;
+                default:
+                    textureString = makeImagePath("cards/betaskill.png");
+                    break;
+            }
         return textureString;
     }
 
@@ -325,13 +316,6 @@ public abstract class AbstractBogCard extends CustomCard {
             selfRetain = upgradedRetain;
     };
 
-    public void update() {
-        super.update();
-        if (needsArtRefresh) {
-            CardArtRoller.computeCard(this);
-        }
-    }
-
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
     protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
@@ -415,10 +399,6 @@ public abstract class AbstractBogCard extends CustomCard {
     }
 
     public String cardArtCopy() {
-        return null;
-    }
-
-    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
         return null;
     }
 

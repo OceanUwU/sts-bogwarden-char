@@ -1,5 +1,6 @@
 package bogwarden.powers;
 
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,11 @@ public class Mojo extends AbstractBogPower {
 
     public Mojo(AbstractCreature owner, int amount) {
         super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+    }
+  
+    @Override
+    public void playApplyPowerSfx() {
+        CardCrawlGame.sound.play(BogAudio.MOJO, 0.05F);
     }
     
     public void updateDescription() {

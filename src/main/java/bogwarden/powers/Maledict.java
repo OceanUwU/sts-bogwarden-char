@@ -1,6 +1,7 @@
 package bogwarden.powers;
 
 import bogwarden.relics.PaperCrokh;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -18,6 +19,11 @@ public class Maledict extends AbstractBogPower {
 
     public Maledict(AbstractCreature owner, int amount) {
         super(POWER_ID, powerStrings.NAME, PowerType.DEBUFF, true, owner, amount);
+    }
+  
+    @Override
+    public void playApplyPowerSfx() {
+        CardCrawlGame.sound.play(BogAudio.MALEDICT, 0.05F);
     }
     
     public void updateDescription() {

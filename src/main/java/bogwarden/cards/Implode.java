@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -19,6 +20,7 @@ public class Implode extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        vfx(new FlashAtkImgEffect(p.hb.cX, p.hb.cY, BLAST_EFFECT));
         blck();
         atb(new GainBlockAction(AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng), p, secondMagic));
     }

@@ -22,6 +22,6 @@ public class TheRumble extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < (isEliteOrBoss() ? 2 : 1); i++)
-            allDmg(AbstractGameAction.AttackEffect.LIGHTNING);
+            allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
     }
 }
