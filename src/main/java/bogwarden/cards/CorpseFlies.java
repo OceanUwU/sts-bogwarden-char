@@ -44,6 +44,7 @@ public class CorpseFlies extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        vfx(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, m.hb.cX, m.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), true));
         atb(new CorpseFliesAction(m, new DamageInfo(p, damage, damageTypeForTurn), upgraded, this));
         if (upgraded)
             atb(new AbstractGameAction() {
@@ -85,7 +86,6 @@ public class CorpseFlies extends AbstractBogCard {
                 return;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             target.damage(info);
-            vfxTop(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, target.hb.cX, target.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), true));
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower("Minion")) {
                 if (upgraded)
                     AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(new CorpseFlies(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));

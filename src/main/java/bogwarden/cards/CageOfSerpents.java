@@ -23,7 +23,7 @@ public class CageOfSerpents extends AbstractTrapCard {
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
-            dmgRandomTop(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+            dmgTop(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         applyToEnemyTop(m, new Venom(m, secondMagic));
     }
 }

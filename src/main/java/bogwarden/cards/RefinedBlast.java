@@ -32,7 +32,7 @@ public class RefinedBlast extends AbstractBogCard {
         dmgRandom(BLAST_EFFECT, secondMagic > 0 ? mo -> {
             p.getPower(PoisonNova.PoisonNovaPower.POWER_ID).flash();
             applyToEnemyTop(mo, new PoisonPower(mo, p, secondMagic));
-        } : null);
+        } : null, false);
         atb(new DrawCardAction(magicNumber));
     }
 }

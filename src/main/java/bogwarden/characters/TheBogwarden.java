@@ -1,7 +1,5 @@
 package bogwarden.characters;
 
-import static bogwarden.BogMod.*;
-
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
@@ -9,10 +7,13 @@ import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
 import bogwarden.cards.ShadowFont;
 import bogwarden.cards.Strike;
+import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.relics.SwampTalisman;
 import bogwarden.util.BogAudio;
+import bogwarden.util.TexLoader;
 import bogwarden.vfx.BogwardenVictoryEffect;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -35,6 +36,8 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 import java.util.List;
+
+import static bogwarden.BogMod.*;
 
 public class TheBogwarden extends CustomPlayer {
     static final String ID = makeID("character");
@@ -205,9 +208,9 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.FIRE,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.FIRE};
+                FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT,
+                FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT,
+                FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT};
     }
 
     @Override
@@ -225,18 +228,18 @@ public class TheBogwarden extends CustomPlayer {
         return TEXT[3];
     }
 
-    /*@Override
+    @Override
     public Texture getCutsceneBg() {
         return TexLoader.getTexture(makeImagePath("ending/bg.png"));
-    }*/
+    }
 
     private static boolean endEffectStarted = false;
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         endEffectStarted = false;
         List<CutscenePanel> panels = new ArrayList<>();
-        panels.add(new CutscenePanel(makeImagePath("ending/1.png"), "POWER_FLIGHT"));
-        panels.add(new CutscenePanel(makeImagePath("ending/2.png"), "WATCHER_HEART_PUNCH"));
+        panels.add(new CutscenePanel(makeImagePath("ending/1.png"), BogAudio.MALEDICT));
+        panels.add(new CutscenePanel(makeImagePath("ending/2.png"), "RELIC_DROP_CLINK"));
         panels.add(new CutscenePanel(makeImagePath("ending/3.png")));
         return panels;
     }
