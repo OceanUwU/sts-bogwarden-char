@@ -1,0 +1,33 @@
+{
+    "${ModID}:NonAttackPack": {
+      "TEXT": ["Step Back", "Defeat enemies from a range using non-attack damage.", "occultpyromancer, ocean"]
+    },
+    "${ModID}:NonAttackPackHat": {
+      "TEXT": ["Keep out of reach of children.", "Fire Potion"]
+    },
+    "${ModID}:TrapPack": {
+      "TEXT": ["Trapper Master", "${ModID}:Trap your enemies!", "occultpyromancer, ocean"]
+    },
+    "${ModID}:TrapPackHat": {
+      "TEXT": ["A legendary item, best of its kind at concealing from even the best snipers.", "Bush"]
+    },
+    "${ModID}:ScryPack": {
+      "TEXT": ["Sifting", "Sift through your deck with Scry cards.", "occultpyromancer, ocean"]
+    },
+    "${ModID}:ScryPackHat": {
+      "TEXT": ["Peering into the sphere, you see visions of Du-Vu spirits.", "Crystal Ball"]
+    },
+
+    "${ModID}:NonAttackMod": {
+      "TEXT": ["Fairy ", "", "Deals non-attack damage instead of attack damage."],
+      "EXTRA_TEXT": ["damage", "non-attack damage"]
+    },
+    "${ModID}:SpinyMod": {
+      "TEXT": ["Spiny ", "", "Grants #b2 #ySpines."],
+      "EXTRA_TEXT": [" NL Gain %d ${ModID}:Spines."]
+    },
+    "${ModID}:DrainingMod": {
+      "TEXT": ["Draining ", "", "Reduces cost by #b1. NL Gains #b2 #yDrained."],
+      "EXTRA_TEXT": [" NL Gain %d ${ModID}:Drained."]
+    }
+}

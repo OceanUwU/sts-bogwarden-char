@@ -41,10 +41,10 @@ import static bogwarden.BogMod.*;
 
 public class TheBogwarden extends CustomPlayer {
     static final String ID = makeID("character");
-    static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
+    public static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     public static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
-    private static final float SIZE_SCALE = 1.25f;
+    public static final float SIZE_SCALE = 1.25f;
     public static final Float ANIMATION_SPEED = 1.0F;
 
     public TheBogwarden(String name, PlayerClass setClass) {
@@ -56,17 +56,20 @@ public class TheBogwarden extends CustomPlayer {
                 CORPSE,
                 getLoadout(), 0f, -20f, 260f, 260f, new EnergyManager(3));
 
-
+        setupAnimation();
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
+    }
+    
+    public void setupAnimation() {
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         stateData.setMix("hit", "idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);
     }
 
-    private static class BogEnergyOrb extends CustomEnergyOrb {
+    public static class BogEnergyOrb extends CustomEnergyOrb {
         private static final float ORB_IMG_SCALE = 1.15F * Settings.scale;
-        private static final String[] orbTextures = {
+        public static final String[] orbTextures = {
             makeCharacterPath("mainChar/orb/layer1.png"),
             makeCharacterPath("mainChar/orb/layer2.png"),
             makeCharacterPath("mainChar/orb/layer3.png"),
@@ -79,9 +82,10 @@ public class TheBogwarden extends CustomPlayer {
             makeCharacterPath("mainChar/orb/layer4d.png"),
             makeCharacterPath("mainChar/orb/layer5d.png"),
         };
+        public static final float[] rotationValues = new float[]{-20f, 20f, -40f, 40f, 0f};
 
         public BogEnergyOrb() {
-            super(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), new float[]{-20f, 20f, -40f, 40f, 0f});
+            super(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), rotationValues);
         }
 
         @Override

@@ -14,6 +14,9 @@ import bogwarden.potions.FirePotionPlus;
 import bogwarden.potions.MojoPotion;
 import bogwarden.relics.AbstractBogRelic;
 import bogwarden.util.BogAudio;
+import bogwarden.util.CardAugmentsLoader;
+import bogwarden.util.ModManager;
+import bogwarden.util.PackLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -26,8 +29,10 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.nio.charset.StandardCharsets;
+import thePackmaster.SpireAnniversary5Mod;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -37,7 +42,8 @@ public class BogMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        EditCharactersSubscriber {
+        EditCharactersSubscriber,
+        PostInitializeSubscriber {
 
     public static final String modID = "bogwarden";
 
@@ -77,6 +83,8 @@ public class BogMod implements
 
     public BogMod() {
         BaseMod.subscribe(this);
+        if (ModManager.isPackmasterLoaded)
+            SpireAnniversary5Mod.subscribe(new PackLoader());
 
         BaseMod.addColor(TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
@@ -167,6 +175,7 @@ public class BogMod implements
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/" + getLangString() + "/Charstrings.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/" + getLangString() + "/UIstrings.json");
     }
 
     @Override
@@ -180,5 +189,11 @@ public class BogMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        if (ModManager.isChimeraLoaded)
+            CardAugmentsLoader.load();
     }
 }

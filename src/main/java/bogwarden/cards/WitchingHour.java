@@ -19,12 +19,14 @@ public class WitchingHour extends AbstractBogCard {
     public final static String ID = makeID("WitchingHour");
 
     public WitchingHour() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        setDamage(5, +2);
         setMagic(3, +1);
         setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, BLAST_EFFECT);
         applyToEnemy(m, new WitchingHourPower(m, magicNumber));
     }
 

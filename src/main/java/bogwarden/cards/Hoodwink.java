@@ -11,6 +11,8 @@ import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.util.Wiz.*;
 
+import bogwarden.util.BogAudio;
+
 public class Hoodwink extends AbstractBogCard {
     public final static String ID = makeID("Hoodwink");
 
@@ -29,7 +31,7 @@ public class Hoodwink extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
             final boolean first = i == 0;
-            dmgRandom(AbstractGameAction.AttackEffect.SLASH_VERTICAL, mo -> vfxTop(new BugSwarmEffect(5, mo.hb.cX, mo.hb.cY, TexLoader.getTexture(makeImagePath("vfx/bee.png")), first)), true);
+            dmgRandom(AbstractGameAction.AttackEffect.SLASH_VERTICAL, mo -> vfxTop(new BugSwarmEffect(5, mo.hb.cX, mo.hb.cY, TexLoader.getTexture(makeImagePath("vfx/bee.png")), first ? BogAudio.BUGS : null)), true);
         }
     }
 }

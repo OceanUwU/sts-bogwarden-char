@@ -338,7 +338,7 @@
   },
   "${ModID}:WitchingHour": {
     "NAME": "Bewitch",
-    "DESCRIPTION": "Whenever you apply a debuff to this enemy, gain !M! Block. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you apply a debuff to this enemy, gain !M! Block. NL Exhaust."
   },
   "${ModID}:Friends": {
     "NAME": "Friends",

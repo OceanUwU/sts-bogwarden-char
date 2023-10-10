@@ -29,6 +29,13 @@
     "DESCRIPTION": "Enemies with Maledict take #b50% more non-attack damage."
   },
   {
+    "PROPER_NAME": "Drained",
+    "NAMES": [
+      "drained"
+    ],
+    "DESCRIPTION": "While Drained, you deal #b25% less non-attack damage."
+  },
+  {
     "PROPER_NAME": "Spines",
     "NAMES": [
       "spines"

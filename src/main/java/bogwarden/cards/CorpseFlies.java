@@ -22,6 +22,8 @@ import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.util.Wiz.*;
 
+import bogwarden.util.BogAudio;
+
 public class CorpseFlies extends AbstractBogCard {
     public final static String ID = makeID("CorpseFlies");
 
@@ -44,7 +46,7 @@ public class CorpseFlies extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        vfx(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, m.hb.cX, m.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), true));
+        vfx(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, m.hb.cX, m.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), BogAudio.BUGS));
         atb(new CorpseFliesAction(m, new DamageInfo(p, damage, damageTypeForTurn), upgraded, this));
         if (upgraded)
             atb(new AbstractGameAction() {

@@ -12,11 +12,12 @@ public class BogAudio {
     public static String BACKFIRE_TRIGGER = makeID("BACKFIRETRIGGER");
     public static String BLAST = makeID("BLAST");
     public static String BUGS = makeID("BUGS");
+    public static String BATS = makeID("BATS");
     public static String MOJO = makeID("MOJO");
     public static String MALEDICT = makeID("MALEDICT");
 
     public static void addAudio() {
-        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, MOJO, MALEDICT})
+        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT})
             BaseMod.addAudio(i, makePath("audio/"+i.replace(BogMod.modID+":", "").toLowerCase()+".ogg"));
     }
 }

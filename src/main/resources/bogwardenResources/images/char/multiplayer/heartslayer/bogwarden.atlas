@@ -1,0 +1,97 @@
+
+bogwarden.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 1, 274
+  size: 181, 35
+  orig: 181, 35
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 1, 1
+  size: 110, 175
+  orig: 110, 175
+  offset: 0, 0
+  index: -1
+upperlegr
+  rotate: false
+  xy: 227, 125
+  size: 19, 52
+  orig: 19, 52
+  offset: 0, 0
+  index: -1
+torso
+  rotate: false
+  xy: 184, 274
+  size: 48, 89
+  orig: 48, 89
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 194, 1
+  size: 46, 64
+  orig: 46, 64
+  offset: 0, 0
+  index: -1
+lowerlegr
+  rotate: false
+  xy: 194, 67
+  size: 36, 56
+  orig: 36, 56
+  offset: 0, 0
+  index: -1
+upperlegl
+  rotate: false
+  xy: 232, 67
+  size: 19, 52
+  orig: 19, 52
+  offset: 0, 0
+  index: -1
+lowerlegl
+  rotate: false
+  xy: 194, 125
+  size: 31, 60
+  orig: 31, 60
+  offset: 0, 0
+  index: -1
+leftarmtop
+  rotate: false
+  xy: 194, 187
+  size: 15, 38
+  orig: 15, 38
+  offset: 0, 0
+  index: -1
+leftarmbottom
+  rotate: false
+  xy: 242, 28
+  size: 10, 31
+  orig: 10, 31
+  offset: 0, 0
+  index: -1
+rightarmtop
+  rotate: false
+  xy: 227, 179
+  size: 18, 33
+  orig: 18, 33
+  offset: 0, 0
+  index: -1
+rightarmbottom
+  rotate: false
+  xy: 242, 1
+  size: 13, 25
+  orig: 13, 25
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: false
+  xy: 1, 178
+  size: 191, 94
+  orig: 191, 94
+  offset: 0, 0
+  index: -1

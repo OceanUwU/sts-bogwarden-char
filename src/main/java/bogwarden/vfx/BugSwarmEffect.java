@@ -1,6 +1,5 @@
 package bogwarden.vfx;
 
-import bogwarden.util.BogAudio;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,12 +16,12 @@ public class BugSwarmEffect extends AbstractGameEffect {
     private float timer = 0f;
     private int numBugs, released;
     private float x, y;
-    private boolean playSound;
+    private String sound;
     private Texture bugImg;
 
-    public BugSwarmEffect(int numBugs, float x, float y, Texture bugImg, boolean playSound) {
+    public BugSwarmEffect(int numBugs, float x, float y, Texture bugImg, String sound) {
         this.numBugs = numBugs;
-        this.playSound = playSound;
+        this.sound = sound;
         this.x = x;
         this.y = y;
         this.bugImg = bugImg;
@@ -30,8 +29,8 @@ public class BugSwarmEffect extends AbstractGameEffect {
     }
 
     public void update() {
-        if (timer == 0f && playSound)
-            CardCrawlGame.sound.play(BogAudio.BUGS);
+        if (timer == 0f && sound != null)
+            CardCrawlGame.sound.play(sound);
         timer += Gdx.graphics.getDeltaTime();
         if (timer >= duration)
             isDone = true;

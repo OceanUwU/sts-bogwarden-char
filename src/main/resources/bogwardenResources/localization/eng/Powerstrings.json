@@ -252,5 +252,14 @@
       " turns, gain #b",
       " #yBlock at the end of your turn."
     ]
+  },
+  "${ModID}:Drained": {
+    "NAME": "Drained",
+    "DESCRIPTIONS": [
+      "Deal #b",
+      "% less non-attack damage for #b",
+      " turn.",
+      " turns."
+    ]
   }
 }
