@@ -52,7 +52,7 @@ public class TheRumble extends AbstractBogCard {
         private float vel = MathUtils.random(1200f, 1800f);
         private float wholeDuration = vel * 2f / -ACCELERATION;
         private float timer = 0f;
-        private float smoke_timer = SMOKE_GAP;
+        private float smokeTimer = SMOKE_GAP;
 
         public CreatureFlyEffect(AbstractCreature target) {
             this.target = target;
@@ -79,14 +79,14 @@ public class TheRumble extends AbstractBogCard {
                     return;
                 }
             }
-            while (smoke_timer >= SMOKE_GAP) {
-                smoke_timer -= SMOKE_GAP;
+            while (smokeTimer >= SMOKE_GAP) {
+                smokeTimer -= SMOKE_GAP;
                 AbstractDungeon.effectsQueue.add(new RumbleSmokeEffect(target.hb.cX, target.animY + target.drawY));
             }
             y += vel * Gdx.graphics.getDeltaTime() * Settings.scale;
             vel += ACCELERATION * Gdx.graphics.getDeltaTime();
             timer += Gdx.graphics.getDeltaTime();
-            smoke_timer += Gdx.graphics.getDeltaTime();
+            smokeTimer += Gdx.graphics.getDeltaTime();
             if (y <= 0f) {
                 target.animY = 0;
                 if (rootBone != null)

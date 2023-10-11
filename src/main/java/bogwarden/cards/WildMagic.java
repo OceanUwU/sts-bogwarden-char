@@ -1,5 +1,7 @@
 package bogwarden.cards;
 
+import bogwarden.patches.FlashAtkImgPatches;
+import bogwarden.vfx.SparkleHelixEffect;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -18,8 +20,6 @@ import java.util.Collections;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
-import bogwarden.patches.FlashAtkImgPatches;
-
 public class WildMagic extends AbstractBogCard {
     public final static String ID = makeID("WildMagic");
 
@@ -31,6 +31,7 @@ public class WildMagic extends AbstractBogCard {
 
     @SuppressWarnings("unchecked")
     public void use(AbstractPlayer p, AbstractMonster m) {
+        vfx(new SparkleHelixEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), SparkleHelixEffect.DURATION - 0.2f);
         dmg(m, FlashAtkImgPatches.BOGWARDEN_WILD_MAGIC_EFFECT);
         atb(new AbstractGameAction() {
             public void update() {

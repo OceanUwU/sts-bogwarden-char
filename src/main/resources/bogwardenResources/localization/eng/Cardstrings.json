@@ -236,7 +236,7 @@
   },
   "${ModID}:BrambleShield": {
     "NAME": "Bramble Shield",
-    "DESCRIPTION": "{@@}Gain Block equal to your ${ModID}:Spines + !M!.{!Location!|0= NL (Gains !B! Block.)}"
+    "DESCRIPTION": "Gain !B! Block. NL Gains additional Block equal to your ${ModID}:Spines."
   },
   "${ModID}:EagleEyes": {
     "NAME": "Eagle Eyes",

@@ -14,6 +14,8 @@ public class TimedVFXAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if (AbstractDungeon.effectList.contains(effect))
+            added = true;
         if (!added) {
             AbstractDungeon.effectList.add(effect);
             added = true;

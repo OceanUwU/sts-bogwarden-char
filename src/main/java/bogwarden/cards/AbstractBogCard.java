@@ -329,7 +329,7 @@ public abstract class AbstractBogCard extends CustomCard {
         att(new DamageAction(m, info, fx));
     }
 
-    private AbstractGameAction dmgRandomAction(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, boolean effectBefore) {
+    private AbstractGameAction dmgRandomAction(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
         return new AbstractGameAction() {
             public void update() {
                 isDone = true;
@@ -338,29 +338,29 @@ public abstract class AbstractBogCard extends CustomCard {
                     calculateCardDamage(target);
                     DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
                     NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
-                    if (!effectBefore && extraEffectToTarget != null)
+                    if (extraEffectToTarget != null)
                         extraEffectToTarget.accept(target);
                     att(new DamageAction(target, info, fx));
-                    if (effectBefore && extraEffectToTarget != null)
-                        extraEffectToTarget.accept(target);
+                    if (effectBefore != null)
+                        effectBefore.accept(target);
                 }
             }
         };
     }
 
     protected void dmgRandom(AbstractGameAction.AttackEffect fx) {
-        dmgRandom(fx, null, false);
+        dmgRandom(fx, null, null);
     }
 
-    protected void dmgRandom(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, boolean effectBefore) {
+    protected void dmgRandom(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
         atb(dmgRandomAction(fx, extraEffectToTarget, effectBefore));
     }
 
     protected void dmgRandomTop(AbstractGameAction.AttackEffect fx) {
-        dmgRandomTop(fx, null, false);
+        dmgRandomTop(fx, null, null);
     }
 
-    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, boolean effectBefore) {
+    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
         att(dmgRandomAction(fx, extraEffectToTarget, effectBefore));
     }
 

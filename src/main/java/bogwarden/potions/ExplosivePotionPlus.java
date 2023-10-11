@@ -3,6 +3,7 @@ package bogwarden.potions;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.ExplosivePotion;
 
 import static bogwarden.BogMod.makeID;
@@ -22,6 +23,11 @@ public class ExplosivePotionPlus extends ExplosivePotion {
     @Override
     public int getPotency(int ascensionlevel) {
         return 2 + super.getPotency(ascensionlevel);
+    }
+
+    @Override
+    public AbstractPotion makeCopy() {
+        return new ExplosivePotionPlus();
     }
 
     @SpirePatch(clz=PotionHelper.class, method="initialize")

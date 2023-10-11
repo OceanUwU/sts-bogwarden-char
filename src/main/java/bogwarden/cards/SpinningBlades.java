@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
@@ -24,6 +25,7 @@ public class SpinningBlades extends AbstractTrapCard {
         for (int i = 0; i < magicNumber; i++) {
             allDmgTop(AbstractGameAction.AttackEffect.NONE);
             att(new VFXAction(p, new CleaveEffect(), 0.0F));
+            att(new SFXAction("ATTACK_WHIRLWIND"));
         }
         att(new VFXAction(new WhirlwindEffect(), 0.0F));
     }

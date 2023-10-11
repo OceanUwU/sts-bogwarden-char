@@ -12,13 +12,15 @@ public class BrambleShield extends AbstractBogCard {
 
     public BrambleShield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        setBlock(0);
-        setMagic(4, +3);
+        setBlock(4, +3);
     }
     
     public void applyPowers() {
-        baseBlock = pwrAmt(adp(), Spines.POWER_ID) + magicNumber;
+        int realBaseBlock = baseBlock;
+        baseBlock += pwrAmt(adp(), Spines.POWER_ID);
         super.applyPowers();
+        baseBlock = realBaseBlock;
+        isBlockModified = block != baseBlock;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
