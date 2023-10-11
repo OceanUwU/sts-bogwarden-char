@@ -3,6 +3,7 @@ package bogwarden.cards;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import bogwarden.powers.Maledict;
 import bogwarden.util.BogAudio;
+import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,5 +36,6 @@ public class VengefulTotem extends AbstractTrapCard {
             c.upgrade();
         att(new MakeTempCardInHandAction(c, secondMagic));
         applyToEnemyTop(m, new Maledict(m, magicNumber));
+        vfxTop(new IncantationEffect());
     }
 }

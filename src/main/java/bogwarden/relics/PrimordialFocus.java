@@ -3,6 +3,7 @@ package bogwarden.relics;
 import basemod.helpers.CardPowerTip;
 import bogwarden.cards.Blast;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -28,6 +29,7 @@ public class PrimordialFocus extends AbstractBogRelic {
     public void atBattleStartPreDraw() {
         flash();
         atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        vfx(new IncantationEffect());
         Blast blast = new Blast();
         blast.upgrade();
         atb(new MakeTempCardInHandAction(blast, BLASTS, false));

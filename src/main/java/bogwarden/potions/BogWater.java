@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPotion;
 import basemod.helpers.CardPowerTip;
 import bogwarden.BogMod;
 import bogwarden.cards.Blast;
+import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -33,6 +34,7 @@ public class BogWater extends CustomPotion {
     }
 
     public void use(AbstractCreature abstractCreature) {
+        vfx(new IncantationEffect());
         Blast blast = new Blast();
         blast.upgrade();
         makeInHand(blast, potency);

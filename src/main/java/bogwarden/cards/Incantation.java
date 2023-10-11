@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import bogwarden.vfx.IncantationEffect;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -44,6 +45,7 @@ public class Incantation extends AbstractBogCard {
 
     private static void makeThem(int amt) {
         att(new MakeTempCardInHandAction(new Blast(), amt));
+        vfxTop(new IncantationEffect());
     }
 
     @SpirePatch(clz=ScryAction.class, method="update")

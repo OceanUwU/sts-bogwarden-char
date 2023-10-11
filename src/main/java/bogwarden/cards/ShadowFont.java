@@ -1,5 +1,7 @@
 package bogwarden.cards;
 
+
+import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,6 +19,7 @@ public class ShadowFont extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        vfx(new IncantationEffect());
         makeInHand(cardsToPreview);
         atb(new ScryAction(magicNumber));
     }

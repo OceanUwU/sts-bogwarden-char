@@ -2,6 +2,7 @@ package bogwarden.cards;
 
 
 import bogwarden.powers.AbstractBogPower;
+import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -39,6 +40,7 @@ public class RestlessSpirits extends AbstractBogCard {
   
         public void atStartOfTurn() {
             flash();
+            vfx(new IncantationEffect());
             atb(new MakeTempCardInHandAction(new Blast(), amount, false));
         }
     }
