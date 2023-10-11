@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 
 import static bogwarden.BogMod.makeID;
 
@@ -32,9 +33,9 @@ public class Spines extends AbstractBogPower {
             public void update() {
                 isDone = true;
                 flash();
+                addToTop(new DamageAction(m, new DamageInfo(owner, Spines.this.amount / div, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
         });
-        addToBot(new DamageAction(m, new DamageInfo(owner, amount / div, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @SpirePatch(clz=GameActionManager.class, method="getNextAction")
@@ -45,6 +46,8 @@ public class Spines extends AbstractBogPower {
         @SpireInsertPatch(rloc=210, localvars={"m"})
         public static void Insert(GameActionManager __instance, AbstractMonster m) {
             if (AbstractDungeon.player.hasPower(POWER_ID)) {
+                if (m instanceof AwakenedOne && m.nextMove == 3)
+                    return;
                 for (AbstractMonster.Intent i : excludedIntents)
                     if (m.intent == i)
                         return;
@@ -55,6 +58,14 @@ public class Spines extends AbstractBogPower {
                     }
                 ((Spines)AbstractDungeon.player.getPower(POWER_ID)).trigger(m, 1);
             }
+        }
+    }
+
+    @SpirePatch(clz=AwakenedOne.class, method="changeState")
+    public static class AwakenedOneTrigger {
+        public static void Postfix(AwakenedOne __instance, String key) {
+            if (key == "REBIRTH" && AbstractDungeon.player.hasPower(POWER_ID))
+                ((Spines)AbstractDungeon.player.getPower(POWER_ID)).trigger(__instance, 1);
         }
     }
 }
