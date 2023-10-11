@@ -1,14 +1,21 @@
 package bogwarden.cards;
 
+import basemod.ReflectionHacks;
 import bogwarden.powers.AbstractBogPower;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.HemokinesisParticle;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -42,7 +49,19 @@ public class DeathWard extends AbstractBogCard {
         public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
             flash();
             for (int i = 0; i < amount; i++)
-                atb(new DamageRandomEnemyAction(new DamageInfo(owner, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                atb(new AbstractGameAction() {
+                    public void update() {
+                        isDone = true;
+                        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                        if (target != null) {
+                            att(new DamageAction(target, new DamageInfo(owner, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                            HemokinesisParticle particle = new HemokinesisParticle(owner.hb.cX + MathUtils.random(-60f, 60f), owner.hb.cY + MathUtils.random(-60f, 60f), target.hb.cX, target.hb.cY, isPlayer);
+                            ReflectionHacks.setPrivate(particle, AbstractGameEffect.class, "color", new Color(1f, 0.13f, 0.96f, 0.6f));
+                            particle.renderBehind = false;
+                            att(new VFXAction(particle, 0.2f));
+                        }
+                    }
+                });
         }
     }
 }

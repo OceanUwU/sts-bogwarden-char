@@ -1,5 +1,6 @@
 package bogwarden.patches;
 
+import bogwarden.powers.Drained;
 import bogwarden.powers.Maledict;
 import bogwarden.powers.Mojo;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
@@ -41,6 +42,8 @@ public class NonAttackDamagePatches {
                 AbstractPower mojo = AbstractDungeon.player.getPower(Mojo.POWER_ID);
                 if (mojo != null)
                     info.output += mojo.amount;
+                if (AbstractDungeon.player.hasPower(Drained.POWER_ID))
+                    info.output *= Drained.MULT;
                 AbstractPower maledict = m.getPower(Maledict.POWER_ID);
                 if (maledict != null)
                     info.output *= ((Maledict)maledict).mult();

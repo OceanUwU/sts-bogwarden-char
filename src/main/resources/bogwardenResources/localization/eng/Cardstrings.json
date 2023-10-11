@@ -326,11 +326,11 @@
   },
   "${ModID}:BackfiringTrap": {
     "NAME": "Backfiring Trap",
-    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP."
+    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP. NL Exhaust."
   },
   "${ModID}:DollsCurse": {
     "NAME": "Doll's Curse",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose !${ModID}:m2! HP and gain !M! ${ModID}:Mojo. NL There is no escape from this Curse."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose !${ModID}:m2! HP. When drawn, gain !M! ${ModID}:Mojo. NL Cannot be removed from your deck."
   },
   "${ModID}:BolaToss": {
     "NAME": "Bola Toss",
