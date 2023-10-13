@@ -4,6 +4,7 @@ import bogwarden.util.TexLoader;
 import bogwarden.vfx.BugSwarmEffect;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -49,7 +50,8 @@ public class CorpseFlies extends AbstractBogCard {
         vfx(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, m.hb.cX, m.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), BogAudio.BUGS));
         atb(new CorpseFliesAction(m, new DamageInfo(p, damage, damageTypeForTurn), upgraded, this));
         if (upgraded)
-            atb(new AbstractGameAction() {
+            atb(new DrawCardAction(1));
+            /*atb(new AbstractGameAction() {
                 public void update() {
                     isDone = true;
                     CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
@@ -58,7 +60,7 @@ public class CorpseFlies extends AbstractBogCard {
                     if (cards.size() > 0)
                         att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getBottomCard(), 1));
                 }
-            });
+            });*/
     }
 
     @Override

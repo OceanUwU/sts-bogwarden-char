@@ -307,7 +307,7 @@
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL{!Upgrades!|>0= Put a random *Corpse *Flies from your draw pile into your hand.} Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Draw 1 card.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL Exhaust."
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",

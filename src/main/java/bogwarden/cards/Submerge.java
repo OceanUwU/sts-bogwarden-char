@@ -13,7 +13,7 @@ public class Submerge extends AbstractBogCard {
 
     public Submerge() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        setBlock(12, +3);
+        setBlock(12, +4);
         cardsToPreview = new VoidCard();
     }
 
