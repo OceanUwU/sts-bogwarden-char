@@ -1,6 +1,8 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import bogwarden.vfx.LassoEffect;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -26,7 +28,8 @@ public class BarbedLasso extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
+        vfx(new LassoEffect(p.hb.x + p.hb.width, p.hb.cY, m.hb.cX, m.hb.cY, new Color(0.15f, 0.2f, 0.3f, 1f)), LassoEffect.DURATION - 0.3f);
+        dmg(m, AbstractGameAction.AttackEffect.NONE);
         applyToEnemy(m, new BarbedLassoPower(m, magicNumber));
     }
 

@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import bogwarden.BogMod;
 import bogwarden.powers.Mojo;
+import bogwarden.vfx.MojoFlashEffect;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -31,6 +32,7 @@ public class MojoPotion extends CustomPotion {
     }
 
     public void use(AbstractCreature abstractCreature) {
+        vfx(new MojoFlashEffect(adp().hb.cX, adp().hb.cY));
         applyToSelf(new Mojo(adp(), potency));
     }
 

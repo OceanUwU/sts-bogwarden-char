@@ -14,15 +14,13 @@ public class Forge extends AbstractBogCard {
     public final static String ID = makeID("Forge");
 
     public Forge() {
-        super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         setMagic(8, +2);
+        setRetain(true);
+        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        onChoseThisOption();
-    }
-
-    public void onChoseThisOption() {
         vfx(new UpgradeShineEffect(adp().hb.cX, adp().hb.cY));
         atb(new AbstractGameAction() {
             public void update() {
@@ -33,6 +31,10 @@ public class Forge extends AbstractBogCard {
                 }
             }
         });
+    }
+
+    public void onChoseThisOption() {
+        makeInHand(this);
     }
 
     /*public static class ForgePower extends AbstractBogPower {

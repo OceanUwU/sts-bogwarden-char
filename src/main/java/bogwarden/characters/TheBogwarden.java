@@ -6,6 +6,7 @@ import basemod.animations.SpineAnimation;
 import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
 import bogwarden.cards.ShadowFont;
+import bogwarden.cards.SnapperTrap;
 import bogwarden.cards.Strike;
 import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.relics.SwampTalisman;
@@ -115,12 +116,13 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4; i++)
             retVal.add(Strike.ID);
         for (int i = 0; i < 4; i++)
             retVal.add(Defend.ID);
         retVal.add(Jinx.ID);
         retVal.add(ShadowFont.ID);
+        retVal.add(SnapperTrap.ID);
         return retVal;
     }
 

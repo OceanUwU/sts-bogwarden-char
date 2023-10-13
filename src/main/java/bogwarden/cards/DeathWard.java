@@ -55,7 +55,7 @@ public class DeathWard extends AbstractBogCard {
                         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
                         if (target != null) {
                             att(new DamageAction(target, new DamageInfo(owner, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                            HemokinesisParticle particle = new HemokinesisParticle(owner.hb.cX + MathUtils.random(-60f, 60f), owner.hb.cY + MathUtils.random(-60f, 60f), target.hb.cX, target.hb.cY, isPlayer);
+                            HemokinesisParticle particle = new HemokinesisParticle(owner.hb.cX + MathUtils.random(-60f, 60f), owner.hb.cY + MathUtils.random(-60f, 60f), target.hb.cX, target.hb.cY, target.hb.cX < owner.hb.cX);
                             ReflectionHacks.setPrivate(particle, AbstractGameEffect.class, "color", new Color(1f, 0.13f, 0.96f, 0.6f));
                             particle.renderBehind = false;
                             att(new VFXAction(particle, 0.2f));

@@ -47,7 +47,7 @@ public class Bide extends AbstractBogCard {
         }
         
         public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + amount2 + powerStrings.DESCRIPTIONS[1] + amount + powerStrings.DESCRIPTIONS[2];
+            description = powerStrings.DESCRIPTIONS[0] + amount2 + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2] + amount + powerStrings.DESCRIPTIONS[3];
         }
   
         public void atEndOfTurn(boolean isPlayer) {

@@ -12,7 +12,8 @@ public class Snip extends AbstractBogCard {
 
     public Snip() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        setRetain(false, true);
+        setRetain(true);
+        setExhaust(true, false);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

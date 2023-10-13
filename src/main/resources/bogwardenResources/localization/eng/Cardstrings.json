@@ -56,7 +56,7 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Gain !B! Block. NL Next turn, draw !M! additional card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s} and gain 50% more Block from cards."
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
@@ -188,15 +188,15 @@
   },
   "${ModID}:CampOut": {
     "NAME": "Camp Out",
-    "DESCRIPTION": "{@@}Choose one: NL Light a *Bonfire{!Upgrades!|>0=+} NL or use the *Forge{!Upgrades!|>0=+}. NL Exhaust."
+    "DESCRIPTION": "{@@}Choose *Bonfire{!Upgrades!|>0=+} or *Forge{!Upgrades!|>0=+} to add into your hand. NL Exhaust."
   },
   "${ModID}:Bonfire": {
     "NAME": "Bonfire",
-    "DESCRIPTION": "Gain !M! stslib:Temporary_HP."
+    "DESCRIPTION": "Retain. NL Gain !M! stslib:Temporary_HP. NL Exhaust."
   },
   "${ModID}:Forge": {
     "NAME": "Forge",
-    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! this combat."
+    "DESCRIPTION": "Retain. NL Increase the damage of all Attacks in your hand by !M! this combat. NL Exhaust."
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
@@ -280,7 +280,7 @@
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL First !${ModID}:m2! triggers do nothing, then deal !D! damage to ALL enemies.{!Location!|0,1,2,3= NL (Triggered !M! times.)}"
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!Location!|0,1,2,3= NL (Triggered !M! times.)}"
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
@@ -307,7 +307,7 @@
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
-    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Put a random *Corpse *Flies from your draw pile into your hand.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies into your deck}. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL{!Upgrades!|>0= Put a random *Corpse *Flies from your draw pile into your hand.} Exhaust."
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
@@ -342,11 +342,11 @@
   },
   "${ModID}:Friends": {
     "NAME": "Friends",
-    "DESCRIPTION": "Prevent the next time you would lose HP. NL Next turn, gain !M! Intangible. NL In 2 turns, lose !${ModID}:m2! Max HP."
+    "DESCRIPTION": "Gain 1 ${ModID}:Buffer. NL Next turn, gain !M! Intangible. In 2 turns, lose !${ModID}:m2! Max HP."
   },
   "${ModID}:Snip": {
     "NAME": "Snip",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }${ModID}:Trigger your next ${ModID}:Trap."
+    "DESCRIPTION": "{@@}Retain. NL ${ModID}:Trigger your next ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
   },
   "${ModID}:Bide": {
     "NAME": "Bide Time",

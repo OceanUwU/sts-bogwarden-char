@@ -12,16 +12,18 @@ public class Bonfire extends AbstractBogCard {
     public final static String ID = makeID("Bonfire");
 
     public Bonfire() {
-        super(ID, -2, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         setMagic(15, +3);
+        setRetain(true);
+        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        onChoseThisOption();
+        vfx(new InflameEffect(adp()));
+        atb(new AddTemporaryHPAction(adp(), adp(), magicNumber));
     }
 
     public void onChoseThisOption() {
-        vfx(new InflameEffect(adp()));
-        atb(new AddTemporaryHPAction(adp(), adp(), magicNumber));
+        makeInHand(this);
     }
 }

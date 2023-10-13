@@ -26,16 +26,21 @@ public class CampOut extends AbstractBogCard {
         super.initializeDescription();
         keywords.addAll(new Bonfire().keywords);
         keywords.addAll(new Forge().keywords);
+        ArrayList<String> foundKeywords = new ArrayList<>();
+        for (String keyword : keywords)
+            if (!foundKeywords.contains(keyword))
+                foundKeywords.add(keyword);
+        keywords = foundKeywords;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        stanceChoices.add(new Bonfire());
-        stanceChoices.add(new Forge());
+        ArrayList<AbstractCard> choices = new ArrayList<>();
+        choices.add(new Bonfire());
+        choices.add(new Forge());
         if (upgraded)
-            for (AbstractCard c : stanceChoices)
+            for (AbstractCard c : choices)
                 c.upgrade();
-        atb(new ChooseOneAction(stanceChoices));
+        atb(new ChooseOneAction(choices));
     }
 
     @Override

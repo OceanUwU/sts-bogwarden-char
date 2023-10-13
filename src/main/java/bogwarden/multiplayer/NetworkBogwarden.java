@@ -25,7 +25,6 @@ import spireTogether.monsters.playerChars.NetworkCharPreset;
 import spireTogether.skins.PlayerSkin;
 import spireTogether.ui.elements.presets.Nameplate;
 import spireTogether.util.BundleManager;
-import spireTogether.util.DevConfig;
 
 import static bogwarden.BogMod.makeImagePath;
 
@@ -120,7 +119,6 @@ public class NetworkBogwarden extends NetworkCharPreset {
     public static class Register {
         public static void Postfix() {
             SpireTogetherMod.allCharacterEntities.put(TheBogwarden.Enums.THE_BOGWARDEN_OCEAN, new NetworkBogwarden());
-            DevConfig.isDeveloper = true; //TODO: remove
         }
     }
 }

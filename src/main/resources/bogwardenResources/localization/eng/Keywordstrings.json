@@ -57,6 +57,13 @@
     "DESCRIPTION": "#yBlock is not removed at the start of your turn."
   },
   {
+    "PROPER_NAME": "Buffer",
+    "NAMES": [
+      "buffer"
+    ],
+    "DESCRIPTION": "Prevents the next time you would lose HP."
+  },
+  {
     "PROPER_NAME": "Constricted",
     "NAMES": [
       "constricted"

@@ -249,6 +249,7 @@
     "NAME": "Biding Time",
     "DESCRIPTIONS": [
       "For #b",
+      " turn, gain #b",
       " turns, gain #b",
       " #yBlock at the end of your turn."
     ]
@@ -260,6 +261,21 @@
       "% less non-attack damage for #b",
       " turn.",
       " turns."
+    ]
+  },
+  "${ModID}:NextTurnAgile": {
+    "NAME": "Tripped!",
+    "DESCRIPTIONS": [
+      "Next turn, gain #b",
+      " #yAgile."
+    ]
+  },
+  "${ModID}:Agile": {
+    "NAME": "Agile",
+    "DESCRIPTIONS": [
+      "For #b",
+      " turn, gain #b50% more #yBlock from cards.",
+      " turns, gain #b50% more #yBlock from cards."
     ]
   }
 }

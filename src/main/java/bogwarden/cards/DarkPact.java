@@ -8,6 +8,7 @@ import static bogwarden.util.Wiz.*;
 
 import bogwarden.powers.LoseMojoPower;
 import bogwarden.powers.Mojo;
+import bogwarden.vfx.MojoFlashEffect;
 
 public class DarkPact extends AbstractBogCard {
     public final static String ID = makeID("DarkPact");
@@ -18,6 +19,7 @@ public class DarkPact extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        vfx(new MojoFlashEffect(p.hb.cX, p.hb.cY));
         applyToSelf(new Mojo(p, magicNumber));
         applyToSelf(new LoseMojoPower(p, magicNumber));
     }

@@ -3,6 +3,7 @@ package bogwarden.cards;
 import basemod.helpers.BaseModCardTags;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.powers.Mojo;
+import bogwarden.vfx.MojoFlashEffect;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -40,9 +41,22 @@ public class OthersiderForm extends AbstractBogCard {
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
+
+        public void onInitialApplication() {
+            owner.flipHorizontal = !owner.flipHorizontal;
+        }
+
+        public void onRemove() {
+            owner.flipHorizontal = !owner.flipHorizontal;
+        }
+
+        public void onVictory() {
+            owner.flipHorizontal = false;
+        }
   
         public void atStartOfTurn() {
             flash();
+            vfx(new MojoFlashEffect(owner.hb.cX, owner.hb.cY));
             applyToSelf(new Mojo(owner, amount));
         }
     }
@@ -57,18 +71,6 @@ public class OthersiderForm extends AbstractBogCard {
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
-        }
-
-        public void onInitialApplication() {
-            owner.flipHorizontal = true;
-        }
-
-        public void onRemove() {
-            owner.flipHorizontal = false;
-        }
-
-        public void onVictory() {
-            owner.flipHorizontal = false;
         }
   
         public void atStartOfTurnPostDraw() {
