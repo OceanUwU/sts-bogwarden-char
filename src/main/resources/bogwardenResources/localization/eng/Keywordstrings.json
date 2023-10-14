@@ -5,14 +5,7 @@
       "trap",
       "traps"
     ],
-    "DESCRIPTION": "#yUnplayable #yRetaining cards. The effect of the leftmost Trap in your hand is triggered when you take unblocked damage."
-  },
-  {
-    "PROPER_NAME": "Trigger",
-    "NAMES": [
-      "trigger"
-    ],
-    "DESCRIPTION": "Activate the leftmost #yTrap in your hand on a random enemy."
+    "DESCRIPTION": "#yUnplayable #yRetaining cards. The leftmost Trap in your hand is triggered when you lose HP. If from an attack, targets the attacking enemy."
   },
   {
     "PROPER_NAME": "Mojo",
@@ -40,7 +33,7 @@
     "NAMES": [
       "spines"
     ],
-    "DESCRIPTION": "Whenever an enemy doesn't attack, deals damage. Halved effect against partial attacks."
+    "DESCRIPTION": "Whenever an enemy doesn't attack, deals damage. Deals half damage against attacks with other effects."
   },
   {
     "PROPER_NAME": "Venom",

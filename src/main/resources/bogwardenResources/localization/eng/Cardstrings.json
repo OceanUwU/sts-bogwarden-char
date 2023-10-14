@@ -104,7 +104,7 @@
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Trigger your next ${ModID}:Trap twice."
+    "DESCRIPTION": "Deal !D! damage. NL Trigger your next ${ModID}:Trap twice."
   },
   "${ModID}:PlagueOfToads": {
     "NAME": "Plague of Toads",
@@ -228,7 +228,7 @@
   },
   "${ModID}:WatchAndLearn": {
     "NAME": "Watch and Learn",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Trigger your next !M! ${ModID}:Trap{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Trigger your next !M! ${ModID}:Trap{!M!|>1=s}."
   },
   "${ModID}:AcidCloud": {
     "NAME": "Acid Cloud",
@@ -256,7 +256,7 @@
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
-    "DESCRIPTION": "{@@}Deal !D! damage X times. NL ${ModID}:Trigger your next ${ModID}:Trap X{!M!|>0=+!M!} times."
+    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your next ${ModID}:Trap X{!M!|>0=+!M!} times."
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
@@ -346,7 +346,7 @@
   },
   "${ModID}:Snip": {
     "NAME": "Snip",
-    "DESCRIPTION": "{@@}Retain. NL ${ModID}:Trigger your next ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
+    "DESCRIPTION": "{@@}Retain. NL Trigger your next ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
   },
   "${ModID}:Bide": {
     "NAME": "Bide Time",
