@@ -15,6 +15,7 @@ public class BrambleShield extends AbstractBogCard {
         setBlock(4, +3);
     }
     
+    @Override
     public void applyPowers() {
         int realBaseBlock = baseBlock;
         baseBlock += pwrAmt(adp(), Spines.POWER_ID);
@@ -24,6 +25,7 @@ public class BrambleShield extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        applyPowers();
         blck();
     }
 }
