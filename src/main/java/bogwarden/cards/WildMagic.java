@@ -1,5 +1,7 @@
 package bogwarden.cards;
 
+import bogwarden.BogMod;
+import bogwarden.characters.TheBogwarden;
 import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.vfx.SparkleHelixEffect;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
@@ -7,6 +9,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.colorless.HandOfGreed;
 import com.megacrit.cardcrawl.cards.purple.MasterReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,13 +19,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
 public class WildMagic extends AbstractBogCard {
     public final static String ID = makeID("WildMagic");
+    private static List<AbstractCard.CardColor> coloursAvailable = Arrays.asList(AbstractCard.CardColor.RED, AbstractCard.CardColor.BLUE, AbstractCard.CardColor.GREEN, AbstractCard.CardColor.PURPLE, AbstractCard.CardColor.COLORLESS, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
 
     public WildMagic() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
@@ -48,7 +55,14 @@ public class WildMagic extends AbstractBogCard {
                             cardRarity = AbstractCard.CardRarity.UNCOMMON;
                         else
                             cardRarity = AbstractCard.CardRarity.RARE;
-                        AbstractCard generated = CardLibrary.getAnyColorCard(AbstractCard.CardType.SKILL, cardRarity).makeStatEquivalentCopy();
+                        CardGroup anyCard = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+                        AbstractCard.CardColor colorrr = p.getCardColor();
+                        CardLibrary.cards.values().stream()
+                            .filter(c2 -> c2.rarity.equals(cardRarity) && c2.type != AbstractCard.CardType.CURSE && c2.type != AbstractCard.CardType.STATUS && !UnlockTracker.isCardLocked(c2.cardID) && !c2.hasTag(AbstractCard.CardTags.HEALING) && !c2.cardID.equals(HandOfGreed.ID))
+                            .filter(BogMod.useModdedPools ? c2 -> true : c2 -> coloursAvailable.contains(c2.color) || c2.color.equals(colorrr))
+                            .forEach(c2 -> anyCard.addToTop(c2));
+                        anyCard.shuffle(AbstractDungeon.cardRandomRng);
+                        AbstractCard generated = anyCard.getBottomCard().makeCopy();
                         UnlockTracker.markCardAsSeen(generated.cardID);
                         if ((upgraded || AbstractDungeon.player.hasPower(MasterReality.ID)) && generated.canUpgrade())
                             generated.upgrade();

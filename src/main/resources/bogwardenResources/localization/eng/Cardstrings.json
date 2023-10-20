@@ -28,11 +28,11 @@
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
-    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Exhaust."
+    "DESCRIPTION": "{@@}Retain. NL Deal !D! damage{!${ModID}:m2!|>0= and apply !${ModID}:m2! Poison} to a random enemy. NL Exhaust."
   },
   "${ModID}:RefinedBlast": {
     "NAME": "Refined Blast",
-    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust."
   },
   "${ModID}:ShadowFont": {
     "NAME": "Shadow Font",
@@ -112,7 +112,7 @@
   },
   "${ModID}:Blunderbuss": {
     "NAME": "Blunderbuss",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each card in your hand. Unplayable cards count as !${ModID}:m2! cards."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each Retain card in your hand."
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
@@ -120,7 +120,11 @@
   },
   "${ModID}:Blowpipe": {
     "NAME": "Blowpipe",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Put !M! random Unplayable card{!M!|>1=s} from your draw pile into your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Put !M! Unplayable card{!M!|>1=s} from your draw or discard pile into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Select a card to move to your hand.",
+      "Select cards to move to your hand."
+    ]
   },
   "${ModID}:SneakierStrike": {
     "NAME": "Sneakier Strike",
@@ -152,15 +156,15 @@
   },
   "${ModID}:Darkvision": {
     "NAME": "Darkvision",
-    "DESCRIPTION": "Whenever you discard a card via Scry, gain !M! Block. NL At the start of your turn, Scry !${ModID}:m2!."
+    "DESCRIPTION": "{@@}At the start of your turn, Scry !M!. If you discard at least !${ModID}:m2! card{!${ModID}:m2!|>1=s} this way, gain [E]."
   },
   "${ModID}:Portents": {
     "NAME": "Portents",
-    "DESCRIPTION": "Whenever you discard a card via Scry, deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you discard a card via Scry, gain !M! Block."
   },
   "${ModID}:IllIntendedSchemes": {
     "NAME": "Cruel Schemes",
-    "DESCRIPTION": "Whenever you draw or trigger a ${ModID}:Trap, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block."
   },
   "${ModID}:OthersiderForm": {
     "NAME": "Othersider Form",
@@ -200,7 +204,7 @@
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
-    "DESCRIPTION": "At the end of your turn, if any enemy intends to use a non-attack move, gain !M! Block and !${ModID}:m2! ${ModID}:Blur."
+    "DESCRIPTION": "Now and at the start of your turn, if any enemy isn't attacking, gain !M! Block and !${ModID}:m2! ${ModID}:Blur."
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
@@ -295,7 +299,7 @@
   },
   "${ModID}:NaturesWrath": {
     "NAME": "Nature's Wrath",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies until this deals no blocked damage."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies for each of your unique buffs.{!M!|1= NL (You have !M! buff.)|>-1= NL (You have !M! buffs.)}"
   },
   "${ModID}:GoForTheThroat": {
     "NAME": "Go For The Throat",
@@ -303,7 +307,7 @@
   },
   "${ModID}:UnstableConcoction": {
     "NAME": "Unstable Concoction",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Obtain an NL {!Upgrades!|>0=${ModID}:Explosive_Potion+|@=*Explosive *Potion}. NL ${ModID}:Big_Game: Obtain a {!Upgrades!|>0=${ModID}:Fire_Potion+|@=*Fire *Potion} instead. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage. Obtain NL an {!Upgrades!|>0=${ModID}:Explosive_Potion+|@=*Explosive *Potion}. NL ${ModID}:Big_Game: Obtain a {!Upgrades!|>0=${ModID}:Fire_Potion+|@=*Fire *Potion} instead. NL Exhaust."
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
@@ -311,7 +315,7 @@
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Transform up to !M! cards in your draw pile into{!Upgrades!|>0= Upgraded} Skills of any color.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Transform up to !M! cards in your draw pile into{!Upgrades!|>0= Upgraded} cards of any color.",
     "EXTENDED_DESCRIPTION": [
       "Select cards to Transform."
     ]

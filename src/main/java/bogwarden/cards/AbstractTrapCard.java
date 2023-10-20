@@ -21,6 +21,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     private static final CardStrings trapStrings = CardCrawlGame.languagePack.getCardStrings(makeID("TrapCard"));
 
     public int timesToTrigger;
+    public boolean using = false;
     protected String sfx = BogAudio.TRAP_TRIGGER;
 
     public AbstractTrapCard(String cardID, CardRarity rarity) {
@@ -37,6 +38,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.actions.addAll(TriggerTrapAction.saveActions);
+            TriggerTrapAction.saveActions.clear();
             for (int i = 0; i < timesToTrigger; i++) {
                 AbstractTrapCard trap = this;
                 att(new AbstractGameAction() {
@@ -58,6 +60,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
                 });
             }
             CardCrawlGame.sound.play(sfx);
+            using = false;
         }
     }
 

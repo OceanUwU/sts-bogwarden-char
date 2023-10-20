@@ -17,7 +17,7 @@ public class Blast extends AbstractBogCard {
         setSecondMagic(0);
         setRetain(true);
         setExhaust(true);
-        damageType = damageTypeForTurn = DamageType.HP_LOSS;
+        damageType = damageTypeForTurn = DamageType.THORNS;
     }
 
     public void applyPowers() {

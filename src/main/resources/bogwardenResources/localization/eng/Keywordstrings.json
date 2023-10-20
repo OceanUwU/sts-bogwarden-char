@@ -5,7 +5,7 @@
       "trap",
       "traps"
     ],
-    "DESCRIPTION": "#yUnplayable #yRetaining cards. The leftmost Trap in your hand is triggered when you lose HP. If from an attack, targets the attacking enemy."
+    "DESCRIPTION": "#yUnplayable #yRetaining cards. The leftmost Trap in your hand is triggered when you lose HP. If from an enemy attack, targets the attacker."
   },
   {
     "PROPER_NAME": "Mojo",

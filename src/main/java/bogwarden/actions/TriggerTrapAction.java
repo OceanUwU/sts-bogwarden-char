@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public class TriggerTrapAction extends AbstractGameAction {
-    public static ArrayList<AbstractGameAction> saveActions;
+    public static ArrayList<AbstractGameAction> saveActions = new ArrayList<>();
     private AbstractMonster target;
     private int times;
 
@@ -40,15 +40,18 @@ public class TriggerTrapAction extends AbstractGameAction {
         isDone = true;
         if (target != null && target.isDeadOrEscaped())
             target = null;
+        System.out.println("trying!");
+        System.out.println(this);
         for (AbstractCard c : AbstractDungeon.player.hand.group)
-            if (c instanceof AbstractTrapCard) {
+            if (c instanceof AbstractTrapCard && !((AbstractTrapCard)c).using) {
                 c.dontTriggerOnUseCard = true;
+                ((AbstractTrapCard)c).using = true;
                 ((AbstractTrapCard)c).timesToTrigger = times;
                 CardQueueItem q = new CardQueueItem(c, true);
                 q.monster = target;
-                AbstractDungeon.actionManager.cardQueue.add(q);
-                saveActions = AbstractDungeon.actionManager.actions;
-                AbstractDungeon.actionManager.actions = new ArrayList<>();
+                AbstractDungeon.actionManager.addCardQueueItem(q, true);
+                saveActions.addAll(AbstractDungeon.actionManager.actions);
+                AbstractDungeon.actionManager.actions.clear();
                 ReflectionHacks.privateMethod(GameActionManager.class, "getNextAction").invoke(AbstractDungeon.actionManager);
                 return;
             }

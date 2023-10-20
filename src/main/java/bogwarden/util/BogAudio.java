@@ -18,9 +18,10 @@ public class BogAudio {
     public static String FROGS = makeID("FROGS");
     public static String TOAD = makeID("TOAD");
     public static String BLOW_DART = makeID("BLOWDART");
+    public static String SHOTGUN = makeID("SHOTGUN");
 
     public static void addAudio() {
-        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT, FROGS, TOAD, BLOW_DART})
+        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT, FROGS, TOAD, BLOW_DART, SHOTGUN})
             BaseMod.addAudio(i, makePath("audio/"+i.replace(BogMod.modID+":", "").toLowerCase()+".ogg"));
     }
 }

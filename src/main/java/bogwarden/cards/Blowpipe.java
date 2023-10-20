@@ -7,8 +7,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupSelectAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,24 +31,21 @@ public class Blowpipe extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new DartEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY));
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        atb(new AbstractGameAction() {
-            public void update() {
-                isDone = true;
-                CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                p.drawPile.group.stream().filter(c -> c.cost == -2).forEach(c -> cards.addToRandomSpot(c));
-                for (int i = 0; i < magicNumber; i++)
-                    if (!cards.isEmpty()) {
-                        cards.shuffle();
-                        AbstractCard card = cards.getBottomCard();
-                        cards.removeCard(card);
-                        if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                            p.drawPile.moveToDiscardPile(card);
-                            p.createHandIsFullDialog();
-                        } else
-                            p.hand.moveToHand(card, p.drawPile);
-                    }
-            }
-        });
+        atb(new MultiGroupSelectAction(
+            cardStrings.EXTENDED_DESCRIPTION[magicNumber == 1 ? 0 : 1],
+            (cards, groups) -> cards.forEach(c -> att(new AbstractGameAction() {
+                public void update() {
+                    isDone = true;
+                    if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+                        if (groups.get(c) == p.drawPile)
+                            p.drawPile.moveToDiscardPile(c);
+                        p.createHandIsFullDialog();
+                    } else
+                        p.hand.moveToHand(c, groups.get(c));
+                }
+            })),
+            magicNumber, false, c -> c.cost == -2, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.DISCARD_PILE
+        ));
     }
 
     private static class DartEffect extends AbstractGameEffect {

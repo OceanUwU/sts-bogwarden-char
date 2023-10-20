@@ -2,6 +2,8 @@ package bogwarden;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import bogwarden.cards.AbstractBogCard;
@@ -17,13 +19,17 @@ import bogwarden.util.BogAudio;
 import bogwarden.util.CardAugmentsLoader;
 import bogwarden.util.ModManager;
 import bogwarden.util.PackLoader;
+import bogwarden.util.TexLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -31,7 +37,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 import thePackmaster.SpireAnniversary5Mod;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -67,6 +75,8 @@ public class BogMod implements
     private static final String CARD_ENERGY_L = makeImagePath("1024/energy.png");
     private static final String CHARSELECT_BUTTON = makeImagePath("charSelect/charButton.png");
     private static final String CHARSELECT_PORTRAIT = makeImagePath("charSelect/charBG.png");
+    private static SpireConfig config;
+    public static boolean useModdedPools;
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -118,7 +128,12 @@ public class BogMod implements
         return modID + "Resources/images/cards/" + resourcePath;
     }
 
-    public static void initialize() {
+    public static void initialize() throws IOException {
+        Properties defaults = new Properties();
+        defaults.setProperty("usemoddedpools", "true");
+        config = new SpireConfig(modID, "config", defaults);
+        useModdedPools = config.getBool("usemoddedpools");
+
         BogMod thismod = new BogMod();
     }
 
@@ -193,6 +208,15 @@ public class BogMod implements
 
     @Override
     public void receivePostInitialize() {
+        String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID("ConfigMenu")).TEXT;
+        ModPanel settingsPanel = new ModPanel();
+        settingsPanel.addUIElement(new ModLabeledToggleButton(TEXT[3], 350, 800, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool("usemoddedpools"), settingsPanel, label -> {}, button -> {
+            useModdedPools = button.enabled;
+            config.setBool("usemoddedpools", button.enabled);
+            try {config.save();} catch (Exception e) {}
+        }));
+        BaseMod.registerModBadge(TexLoader.getTexture(makeImagePath("ui/badge.png")), TEXT[0], TEXT[1], TEXT[2], settingsPanel);
+
         if (ModManager.isChimeraLoaded)
             CardAugmentsLoader.load();
     }

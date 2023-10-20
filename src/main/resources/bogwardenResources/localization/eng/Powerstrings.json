@@ -78,14 +78,14 @@
   "${ModID}:BlendingInBlockPower": {
     "NAME": "Blending In",
     "DESCRIPTIONS": [
-      "At the end of your turn, if any enemy intends to use a non-attack move, gain #b",
+      "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
       " #yBlock."
     ]
   },
   "${ModID}:BlendingInPower": {
     "NAME": "Deep Cover",
     "DESCRIPTIONS": [
-      "At the end of your turn, if any enemy intends to use a non-attack move, gain #b",
+      "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
       " #yBlur."
     ]
   },
@@ -114,21 +114,23 @@
   "${ModID}:DarkvisionPower": {
     "NAME": "Darkvision",
     "DESCRIPTIONS": [
-      "Whenever you discard a card via #yScry, gain #b",
-      " #yBlock."
+      "At the start of your turn, #yScry #b",
+      ". If you discard at least #b",
+      " card, gain [E] .",
+      " cards, gain [E] ."
     ]
   },
   "${ModID}:PortentsPower": {
     "NAME": "Portents",
     "DESCRIPTIONS": [
-      "Whenever you discard a card via #yScry, deal #b",
-      " damage to a random enemy."
+      "Whenever you discard a card via #yScry, gain #b",
+      " #yBlock."
     ]
   },
   "${ModID}:IllIntendedSchemesPower": {
     "NAME": "Cruel Schemes",
     "DESCRIPTIONS": [
-      "Whenever a #yTrap is drawn or triggered, gain #b",
+      "Whenever a card is #yRetained, gain #b",
       " #yBlock."
     ]
   },

@@ -22,7 +22,7 @@ public class HexingTotem extends AbstractTrapCard {
     public HexingTotem() {
         super(ID, CardRarity.UNCOMMON);
         setMagic(3, +2);
-        setSecondMagic(2);
+        setSecondMagic(2, +1);
         setExhaust(true);
         sfx = BogAudio.TOTEM_TRIGGER;
         tags.add(CardTags.HEALING);

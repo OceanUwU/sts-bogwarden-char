@@ -13,7 +13,7 @@ public class BroilingFlames extends AbstractBogCard {
 
     public BroilingFlames() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        setDamage(11, +3);
+        setDamage(12, +4);
         isMultiDamage = true;
         cardsToPreview = new Burn();
     }

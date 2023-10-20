@@ -31,9 +31,15 @@ public class SwampTalisman extends AbstractBogRelic {
             if (++counter == 2) {
                 flash();
                 atb(new RelicAboveCreatureAction(adp(), this));
-                atb(new DrawCardAction(DRAW));
                 applyToSelf(new Mojo(adp(), MOJO));
                 applyToSelf(new LoseMojoPower(adp(), MOJO));
+            }
+    }
+    
+    public void atTurnStartPostDraw() {
+        if (!grayscale)
+            if (counter == 2) {
+                atb(new DrawCardAction(DRAW));
                 counter = -1;
                 grayscale = true;
             }

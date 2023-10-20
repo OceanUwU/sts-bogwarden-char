@@ -1,8 +1,8 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,7 +17,7 @@ public class IllIntendedSchemes extends AbstractBogCard {
 
     public IllIntendedSchemes() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(2, +1);
+        setMagic(1, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,16 +36,16 @@ public class IllIntendedSchemes extends AbstractBogCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
 
-        public void onCardDraw(AbstractCard card) {
-            if (card instanceof AbstractTrapCard) {
-                flash();
-                att(new GainBlockAction(owner, owner, amount, true));
-            }
-        }
-  
-        public void onTriggerTrap(AbstractTrapCard c) {
+        public void atEndOfTurn(boolean isPlayer) {
             flash();
-            att(new GainBlockAction(owner, owner, amount, true));
+            atb(new AbstractGameAction() {
+                public void update() {
+                    isDone = true;
+                    adp().hand.group.stream()
+                        .filter(c -> c.selfRetain || c.retain)
+                        .forEach(c -> att(new GainBlockAction(owner, owner, IllIntendedSchemesPower.this.amount, true)));
+                }
+            });
         }
     }
 }
