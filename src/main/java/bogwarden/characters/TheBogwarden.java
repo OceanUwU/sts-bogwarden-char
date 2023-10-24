@@ -5,6 +5,7 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
+import bogwarden.cards.OthersiderForm;
 import bogwarden.cards.ShadowFont;
 import bogwarden.cards.SnapperTrap;
 import bogwarden.cards.Strike;
@@ -48,6 +49,9 @@ public class TheBogwarden extends CustomPlayer {
     public static final float SIZE_SCALE = 1.25f;
     public static final Float ANIMATION_SPEED = 1.0F;
 
+    public String currentSkin;
+    public String defaultSkin;
+
     public TheBogwarden(String name, PlayerClass setClass) {
         super(name, setClass, new BogEnergyOrb(), new SpineAnimation(
                 makeCharacterPath("mainChar/bogwarden.atlas"), makeCharacterPath("mainChar/bogwarden.json"), 1f / SIZE_SCALE));
@@ -57,12 +61,16 @@ public class TheBogwarden extends CustomPlayer {
                 CORPSE,
                 getLoadout(), 0f, -20f, 260f, 260f, new EnergyManager(3));
 
-        setupAnimation();
+        setupAnimation("mainChar");
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
     }
     
-    public void setupAnimation() {
+    public void setupAnimation(String folder) {
+        currentSkin = folder;
+        if (!currentSkin.equals(OthersiderForm.OthersiderTransformationEffect.OTHERSIDER_SKIN))
+            defaultSkin = currentSkin;
+        loadAnimation(makeCharacterPath(folder+"/bogwarden.atlas"), makeCharacterPath("mainChar/bogwarden.json"), 1f / SIZE_SCALE);
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         stateData.setMix("hit", "idle", 0.5F);
         e.setTimeScale(ANIMATION_SPEED);

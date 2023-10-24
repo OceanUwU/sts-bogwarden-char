@@ -9,11 +9,7 @@ import basemod.interfaces.*;
 import bogwarden.cards.AbstractBogCard;
 import bogwarden.cards.cardvars.*;
 import bogwarden.characters.TheBogwarden;
-import bogwarden.potions.BogWater;
-import bogwarden.potions.BottleOfTricks;
-import bogwarden.potions.ExplosivePotionPlus;
-import bogwarden.potions.FirePotionPlus;
-import bogwarden.potions.MojoPotion;
+import bogwarden.potions.*;
 import bogwarden.relics.AbstractBogRelic;
 import bogwarden.util.BogAudio;
 import bogwarden.util.CardAugmentsLoader;
@@ -146,6 +142,10 @@ public class BogMod implements
         BaseMod.addPotion(MojoPotion.class, new Color(0.47f, 0.12f, 0.66f, 1f), new Color(0.79f, 0.34f, 0.90f, 1f), new Color(1f, 0.73f, 0.01f, 1f), MojoPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
         BaseMod.addPotion(BogWater.class, new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.19f, 0.36f, 0.74f, 1f), new Color(0.41f, 0.25f, 0.13f, 0.6f), BogWater.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
         BaseMod.addPotion(BottleOfTricks.class, new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0f), BottleOfTricks.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(TempMojoPotion.class, new Color(0.79f, 0.34f, 0.90f, 1f), new Color(1f, 0.73f, 0.01f, 1f), new Color(1f, 1f, 1f, 0f), TempMojoPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(MaledictPotion.class, new Color(0.24f, 0.94f, 0.35f, 1f), new Color(0.17f, 0.81f, 0.28f, 1f), new Color(0.62f, 0.24f, 0.94f, 1f), MaledictPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+        BaseMod.addPotion(SpinesPotion.class, new Color(0.26f, 0.31f, 0.22f, 1f), new Color(0.65f, 0.55f, 0.24f, 1f), null, SpinesPotion.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
+
         BaseMod.addPotion(FirePotionPlus.class, Color.RED.cpy(), Color.ORANGE.cpy(), new Color(0.79f, 0.34f, 0.90f, 1f), FirePotionPlus.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
         BaseMod.addPotion(ExplosivePotionPlus.class, Color.ORANGE.cpy(), new Color(1f, 1f, 1f, 0f), new Color(0.79f, 0.34f, 0.90f, 1f), ExplosivePotionPlus.POTION_ID, TheBogwarden.Enums.THE_BOGWARDEN_OCEAN);
     }

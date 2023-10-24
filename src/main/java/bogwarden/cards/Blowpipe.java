@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import java.util.Collections;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
@@ -33,17 +34,20 @@ public class Blowpipe extends AbstractBogCard {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         atb(new MultiGroupSelectAction(
             cardStrings.EXTENDED_DESCRIPTION[magicNumber == 1 ? 0 : 1],
-            (cards, groups) -> cards.forEach(c -> att(new AbstractGameAction() {
-                public void update() {
-                    isDone = true;
-                    if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                        if (groups.get(c) == p.drawPile)
-                            p.drawPile.moveToDiscardPile(c);
-                        p.createHandIsFullDialog();
-                    } else
-                        p.hand.moveToHand(c, groups.get(c));
-                }
-            })),
+            (cards, groups) -> {
+                Collections.reverse(cards);
+                cards.forEach(c -> att(new AbstractGameAction() {
+                    public void update() {
+                        isDone = true;
+                        if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+                            if (groups.get(c) == p.drawPile)
+                                p.drawPile.moveToDiscardPile(c);
+                            p.createHandIsFullDialog();
+                        } else
+                            p.hand.moveToHand(c, groups.get(c));
+                    }
+                }));
+            },
             magicNumber, false, c -> c.cost == -2, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.DISCARD_PILE
         ));
     }

@@ -15,14 +15,14 @@ public class TrapPack extends AbstractBogPack {
 
     public ArrayList<String> getCards() {
         ArrayList<String> cards = new ArrayList<>();
-        cards.add(SnapperTrap.ID);
+        cards.add(Snip.ID);
         cards.add(SnareTrap.ID);
         cards.add(WatchAndLearn.ID);
+        cards.add(PressurePlate.ID);
 
         cards.add(BagAndTag.ID);
         cards.add(SpinningBlades.ID);
         cards.add(WardingTotem.ID);
-        cards.add(HairTrigger.ID);
         cards.add(Bide.ID);
 
         cards.add(SludgeBomb.ID);

@@ -204,7 +204,7 @@
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
-    "DESCRIPTION": "Now and at the start of your turn, if any enemy isn't attacking, gain !M! Block and !${ModID}:m2! ${ModID}:Blur."
+    "DESCRIPTION": "{@@}Now and at the start of your turn, if any enemy isn't attacking, gain {!M!|>0=!M! Block and }!${ModID}:m2! ${ModID}:Blur."
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",

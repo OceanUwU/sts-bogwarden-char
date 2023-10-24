@@ -19,7 +19,7 @@ public class BriarPatch extends AbstractBogCard {
 
     public BriarPatch() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        setMagic(6, +2);
+        setMagic(6, +4);
         setSecondMagic(50);
     }
 

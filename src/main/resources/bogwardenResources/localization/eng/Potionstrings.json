@@ -19,7 +19,29 @@
             "Choose #b1 of #b3 random #yTraps to add to your hand.",
             "Choose #b1 of #b3 random #yTraps and add #b",
             " copies to your hand.",
-            " #yTrigger all #yTraps in your hand."
+            " trigger all #yTraps in your hand."
+        ]
+    },
+    "${ModID}:MaledictPotion": {
+        "NAME": "Withering Potion",
+        "DESCRIPTIONS": [
+            "Apply #b",
+            " #yMaledict."
+        ]
+    },
+    "${ModID}:TempMojoPotion": {
+        "NAME": "Pact Potion",
+        "DESCRIPTIONS": [
+            "Gain #b",
+            " #yMojo. At the end of your turn, lose #b",
+            " #yMojo."
+        ]
+    },
+    "${ModID}:SpinesPotion": {
+        "NAME": "Briar Tonic",
+        "DESCRIPTIONS": [
+            "Gain #b",
+            " #ySpines."
         ]
     }
 }

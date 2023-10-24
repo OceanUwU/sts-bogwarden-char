@@ -76,14 +76,14 @@
     ]
   },
   "${ModID}:BlendingInBlockPower": {
-    "NAME": "Blending In",
+    "NAME": "Deep Cover",
     "DESCRIPTIONS": [
       "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
       " #yBlock."
     ]
   },
   "${ModID}:BlendingInPower": {
-    "NAME": "Deep Cover",
+    "NAME": "Blending In",
     "DESCRIPTIONS": [
       "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
       " #yBlur."

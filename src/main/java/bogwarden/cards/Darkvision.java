@@ -71,10 +71,13 @@ public class Darkvision extends AbstractBogCard {
         public static class GetBlock {
             @SpireInsertPatch(rloc=27)
             public static void Insert() {
-                if (fromDarkVision != null) {
+                if (fromDarkVision != null)
                     fromDarkVision.gainTheEnergy(AbstractDungeon.gridSelectScreen.selectedCards.size());
+            }
+
+            public static void Postfix(ScryAction __instance) {
+                if (__instance.isDone)
                     fromDarkVision = null;
-                }
             }
         }
     }

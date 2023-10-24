@@ -36,11 +36,12 @@ public class IllIntendedSchemes extends AbstractBogCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
         }
 
-        public void atEndOfTurn(boolean isPlayer) {
-            flash();
+        public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
             atb(new AbstractGameAction() {
                 public void update() {
                     isDone = true;
+                    if (adp().hand.group.stream().anyMatch(c -> c.selfRetain || c.retain))
+                        flash();
                     adp().hand.group.stream()
                         .filter(c -> c.selfRetain || c.retain)
                         .forEach(c -> att(new GainBlockAction(owner, owner, IllIntendedSchemesPower.this.amount, true)));

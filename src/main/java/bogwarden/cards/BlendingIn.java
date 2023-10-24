@@ -19,15 +19,15 @@ public class BlendingIn extends AbstractBogCard {
     private static boolean trigger;
 
     public BlendingIn() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(3);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        setMagic(0, +3);
         setSecondMagic(1);
-        setUpgradedCost(1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new BlendingInAction(p, magicNumber, secondMagic, null));
-        applyToSelf(new BlendingInBlockPower(p, magicNumber));
+        if (magicNumber > 0)
+            applyToSelf(new BlendingInBlockPower(p, magicNumber));
         applyToSelf(new BlendingInPower(p, secondMagic));
     }
 

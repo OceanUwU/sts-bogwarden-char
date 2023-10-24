@@ -9,7 +9,7 @@ public class ScryPack extends AbstractBogPack {
     public static final String ID = makeID("ScryPack");
 
     public ScryPack() {
-        super(ID, EagleEyes.ID, new PackSummary(2, 3, 4, 2, 4));
+        super(ID, Incantation.ID, new PackSummary(2, 3, 4, 2, 4));
     }
 
     public ArrayList<String> getCards() {

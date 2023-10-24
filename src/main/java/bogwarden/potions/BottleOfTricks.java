@@ -43,7 +43,6 @@ public class BottleOfTricks extends CustomPotion {
         tips.clear();
         tips.add(new PowerTip(name, description));
         tips.add(new PowerTip(BaseMod.getKeywordTitle(makeID("trap")), BaseMod.getKeywordDescription(makeID("trap"))));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle(makeID("trigger")), BaseMod.getKeywordDescription(makeID("trigger"))));
     }
 
     public void use(AbstractCreature abstractCreature) {

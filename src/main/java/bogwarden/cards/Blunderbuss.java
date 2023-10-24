@@ -28,8 +28,8 @@ public class Blunderbuss extends AbstractBogCard {
 
     public Blunderbuss() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(5);
-        setMagic(5, +2);
+        setDamage(10, +4);
+        setMagic(3);
     }
   
     public int getDamage() {

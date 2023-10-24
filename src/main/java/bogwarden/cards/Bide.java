@@ -50,7 +50,7 @@ public class Bide extends AbstractBogCard {
             description = powerStrings.DESCRIPTIONS[0] + amount2 + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2] + amount + powerStrings.DESCRIPTIONS[3];
         }
   
-        public void atEndOfTurn(boolean isPlayer) {
+        public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
             flash();
             atb(new GainBlockAction(owner, owner, amount));
             if (--amount2 <= 0)
