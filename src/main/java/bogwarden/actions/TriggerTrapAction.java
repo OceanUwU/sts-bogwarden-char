@@ -40,8 +40,6 @@ public class TriggerTrapAction extends AbstractGameAction {
         isDone = true;
         if (target != null && target.isDeadOrEscaped())
             target = null;
-        System.out.println("trying!");
-        System.out.println(this);
         for (AbstractCard c : AbstractDungeon.player.hand.group)
             if (c instanceof AbstractTrapCard && !((AbstractTrapCard)c).using) {
                 c.dontTriggerOnUseCard = true;

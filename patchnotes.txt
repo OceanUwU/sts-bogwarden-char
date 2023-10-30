@@ -1,0 +1,1 @@
+- Bugfix: Double rumbling opponents will no longer leave them skewed 

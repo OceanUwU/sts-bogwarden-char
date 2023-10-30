@@ -60,8 +60,6 @@ public class TheRumble extends AbstractBogCard {
                 Skeleton skeleton = ReflectionHacks.getPrivate(target, AbstractCreature.class, "skeleton");
                 if (skeleton != null) {
                     rootBone = skeleton.getRootBone();
-                    if (rootBone != null)
-                        initialRotation = rootBone.getRotation();
                 }
             }
         }
@@ -74,11 +72,11 @@ public class TheRumble extends AbstractBogCard {
             for (AbstractGameEffect effect : AbstractDungeon.effectList) {
                 if (effect == this)
                     break;
-                else if (effect instanceof CreatureFlyEffect && ((CreatureFlyEffect)effect).target == target) {
-                    isDone = true;
+                else if (effect instanceof CreatureFlyEffect && ((CreatureFlyEffect)effect).target == target)
                     return;
-                }
             }
+            if (timer == 0f && rootBone != null)
+                initialRotation = rootBone.getRotation();
             while (smokeTimer >= SMOKE_GAP) {
                 smokeTimer -= SMOKE_GAP;
                 AbstractDungeon.effectsQueue.add(new RumbleSmokeEffect(target.hb.cX, target.animY + target.drawY));
