@@ -9,8 +9,8 @@
   },
   "${ModID}:SnapperTrap": {
     "NAME": "Snapper Trap",
-    "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage."
-	 "FLAVOR": "A cruel device, turned against those who thought to tame the Fogland Wilds."
+    "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage.",
+	  "FLAVOR": "A cruel device, turned against those who thought to tame the Fogland Wilds."
   },
   "${ModID}:TrapCard": {
     "NAME": "",

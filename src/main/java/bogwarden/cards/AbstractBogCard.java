@@ -6,6 +6,8 @@ import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.patches.NonAttackDamagePatches;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText.AbstractCardFlavorFields;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -26,6 +28,7 @@ import static bogwarden.util.Wiz.att;
 public abstract class AbstractBogCard extends CustomCard {
     protected static AbstractGameAction.AttackEffect BLAST_EFFECT = FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT;
     protected final CardStrings cardStrings;
+    private static final Color FLAVOUR_BOX_COLOR = new Color(0.53f, 0.37f, 0.69f, 1f);
 
     public int secondMagic = -1;
     public int baseSecondMagic = -1;
@@ -77,6 +80,8 @@ public abstract class AbstractBogCard extends CustomCard {
         name = originalName = cardStrings.NAME;
         initializeTitle();
         initializeDescription();
+        AbstractCardFlavorFields.boxColor.set(this, FLAVOUR_BOX_COLOR);
+        AbstractCardFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
