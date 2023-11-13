@@ -19,8 +19,8 @@ public class BadMedicine extends AbstractBogCard {
 
     public BadMedicine() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(9, +1);
-        setMagic(5, -1);
+        setDamage(8, +2);
+        setMagic(4);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -1,4 +1,4 @@
-package bogwarden.multiplayer;
+/*package bogwarden.multiplayer;
 
 import basemod.ReflectionHacks;
 import bogwarden.characters.TheBogwarden;
@@ -41,4 +41,4 @@ public class BogwardenSkin extends AtlasSkin {
         }
         return false;
     }
-}
+}*/

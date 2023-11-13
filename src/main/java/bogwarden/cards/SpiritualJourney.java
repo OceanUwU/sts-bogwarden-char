@@ -21,8 +21,8 @@ public class SpiritualJourney extends AbstractBogCard {
 
     public SpiritualJourney() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        setMagic(4, +1);
-        setEthereal(true, false);
+        setMagic(4, +2);
+        setSecondMagic(2, +2);
         setExhaust(true);
         tags.add(CardTags.HEALING);
     }
@@ -34,7 +34,7 @@ public class SpiritualJourney extends AbstractBogCard {
                 p.increaseMaxHp(magicNumber, true);
             } 
         });
-        applyToSelf(new SpiritualJourneyPower(p, magicNumber));
+        applyToSelf(new SpiritualJourneyPower(p, secondMagic));
     }
 
     public static class SpiritualJourneyPower extends AbstractBogPower {

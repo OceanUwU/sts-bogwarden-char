@@ -25,7 +25,7 @@
   },
   "${ModID}:Attunement": {
     "NAME": "Attunement",
-    "DESCRIPTION": "Gain !M! ${ModID}:Mojo."
+    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Mojo.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Maledict to ALL enemies.}"
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
@@ -37,7 +37,7 @@
   },
   "${ModID}:ShadowFont": {
     "NAME": "Shadow Font",
-    "DESCRIPTION": "{@@}Add a *Blast{!Upgrades!|>0=+} into your hand. NL Scry !M!."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Add a *Blast{!Upgrades!|>0=+} into your hand."
   },
   "${ModID}:SpinyShawl": {
     "NAME": "Urticating Spines",
@@ -133,7 +133,7 @@
   },
   "${ModID}:DarkRitual": {
     "NAME": "Sinister Ritual",
-    "DESCRIPTION": "Lose !${ModID}:m2! HP. NL Gain !M! Regen. NL Exhaust."
+    "DESCRIPTION": "Lose !${ModID}:m2! HP. NL Next turn, heal !M! HP. NL Exhaust."
   },
   "${ModID}:SwarmOfBeetles": {
     "NAME": "Swarm of Beetles",
@@ -173,7 +173,7 @@
   },
   "${ModID}:SpiritualJourney": {
     "NAME": "Spiritual Journey",
-    "DESCRIPTION": "{@@}{!Upgrades!|0=Ethereal. NL } Raise your Max HP by !M!. The next !M! times you play an Attack, lose 1 Max HP. NL Exhaust."
+    "DESCRIPTION": "{@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. NL Exhaust."
   },
   "${ModID}:TrapperMaster": {
     "NAME": "Trapper Master",
@@ -217,7 +217,7 @@
   },
   "${ModID}:HexingTotem": {
     "NAME": "Ritual Totem",
-    "DESCRIPTION": "${ModID}:Trap. NL Heal !M! HP. NL Next turn, gain !${ModID}:m2! temporary ${ModID}:Mojo. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Trap. NL Heal !M! HP. NL Gain !${ModID}:m2! ${ModID}:Mojo. NL Exhaust."
   },
   "${ModID}:WardingTotem": {
     "NAME": "Warding Totem",
@@ -257,7 +257,7 @@
   },
   "${ModID}:Stalker": {
     "NAME": "Stalker",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it."
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it and increase its damage by !M! this combat."
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
@@ -273,7 +273,7 @@
   },
   "${ModID}:Shank": {
     "NAME": "Shank",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard !M! card{!M!|>1=s} at random."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard the rightmost card in your hand."
   },
   "${ModID}:Geyser": {
     "NAME": "Geyser",
@@ -367,6 +367,18 @@
   },
   "${ModID}:Implode": {
     "NAME": "Implode",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Gain !B! Block. NL A random enemy gains !${ModID}:m2! Block."
+    "DESCRIPTION": "Gain !B! Block and !M! ${ModID}:Blur. NL A random enemy gains !${ModID}:m2! Block and !${ModID}:m3! ${ModID}:Blur."
+  },
+  "${ModID}:TinShield": {
+    "NAME": "Canned Block",
+    "DESCRIPTION": "${ModID}:Trap. NL Next turn, NL gain !B! Block. NL Exhaust."
+  },
+  "${ModID}:Hurl": {
+    "NAME": "Hurl",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Choose a ${ModID}:Trap in your hand, draw pile or discard pile to trigger on an enemy.",
+    "EXTENDED_DESCRIPTION": [
+      "Select a Trap to trigger.",
+      "Select Traps to trigger."
+    ]
   }
 }

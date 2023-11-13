@@ -19,9 +19,8 @@ public class Incantation extends AbstractBogCard {
     private static int blastsToAdd;
 
     public Incantation() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        setUpgradedCost(0);
-        setMagic(2);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        setMagic(1, +1);
         setSecondMagic(2);
         cardsToPreview = new Blast();
     }

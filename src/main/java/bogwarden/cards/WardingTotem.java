@@ -14,7 +14,7 @@ public class WardingTotem extends AbstractTrapCard {
 
     public WardingTotem() {
         super(ID, CardRarity.UNCOMMON);
-        setMagic(3, +1);
+        setMagic(3, +2);
         setSecondMagic(1);
         setExhaust(true);
         sfx = BogAudio.TOTEM_TRIGGER;

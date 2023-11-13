@@ -1,4 +1,4 @@
-package bogwarden.multiplayer;
+/*package bogwarden.multiplayer;
 
 import basemod.ReflectionHacks;
 import bogwarden.BogMod;
@@ -121,4 +121,4 @@ public class NetworkBogwarden extends NetworkCharPreset {
             SpireTogetherMod.allCharacterEntities.put(TheBogwarden.Enums.THE_BOGWARDEN_OCEAN, new NetworkBogwarden());
         }
     }
-}
+}*/

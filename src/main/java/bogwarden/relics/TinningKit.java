@@ -1,7 +1,7 @@
 package bogwarden.relics;
 
 import basemod.helpers.CardPowerTip;
-import bogwarden.cards.SnapperTrap;
+import bogwarden.cards.TinShield;
 import bogwarden.characters.TheBogwarden;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -20,7 +20,7 @@ public class TinningKit extends AbstractBogRelic {
         super(ID, RelicTier.SHOP, LandingSound.SOLID, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new CardPowerTip(new SnapperTrap()));
+        tips.add(new CardPowerTip(new TinShield()));
     }
 
     public void onCardDraw(AbstractCard drawnCard) {
@@ -28,7 +28,7 @@ public class TinningKit extends AbstractBogRelic {
             flash();
             atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             atb(new ExhaustSpecificCardAction(drawnCard, adp().hand, false));
-            makeInHand(new SnapperTrap());
+            makeInHand(new TinShield());
             grayscale = true;
         }
     }

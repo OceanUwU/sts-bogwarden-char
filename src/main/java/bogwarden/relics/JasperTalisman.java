@@ -1,7 +1,6 @@
 package bogwarden.relics;
 
 import bogwarden.characters.TheBogwarden;
-import bogwarden.powers.LoseMojoPower;
 import bogwarden.powers.Mojo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -14,6 +13,7 @@ import static bogwarden.util.Wiz.*;
 
 public class JasperTalisman extends AbstractBogRelic {
     public static final String ID = makeID("JasperTalisman");
+    private static final int TRIGGERS = 3;
     private static final int DRAW = 1;
     private static final int MOJO = 1;
 
@@ -22,25 +22,28 @@ public class JasperTalisman extends AbstractBogRelic {
     }
 
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + DRAW + DESCRIPTIONS[1] + MOJO + DESCRIPTIONS[2];
+        return DESCRIPTIONS[0] + TRIGGERS + DESCRIPTIONS[1] + DRAW + DESCRIPTIONS[2] + MOJO + DESCRIPTIONS[3];
+    }
+  
+    public void atBattleStart() {
+        counter = TRIGGERS;
     }
 
     public void onCardDraw(AbstractCard drawnCard) {
-        if (!grayscale && drawnCard.cost == -2) {
+        if (counter > 0 && drawnCard.cost == -2) {
             flash();
             atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             atb(new DrawCardAction(DRAW));
             applyToSelf(new Mojo(adp(), MOJO));
-            applyToSelf(new LoseMojoPower(adp(), MOJO));
-            grayscale = true;
+            if (--counter <= 0) {
+                counter = -1;
+                grayscale = true;
+            }
         }
     }
 
-    public void atTurnStart() {
-        grayscale = false;
-    }
-
     public void onVictory() {
+        counter = -1;
         grayscale = false;
     }
     

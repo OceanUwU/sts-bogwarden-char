@@ -1,16 +1,9 @@
 package bogwarden.cards;
 
-
-import bogwarden.powers.AbstractBogPower;
-import bogwarden.powers.LoseMojoPower;
 import bogwarden.powers.Mojo;
 import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
@@ -21,19 +14,19 @@ public class HexingTotem extends AbstractTrapCard {
 
     public HexingTotem() {
         super(ID, CardRarity.UNCOMMON);
-        setMagic(3, +2);
-        setSecondMagic(2, +1);
+        setMagic(3, +3);
+        setSecondMagic(1);
         setExhaust(true);
         sfx = BogAudio.TOTEM_TRIGGER;
         tags.add(CardTags.HEALING);
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        applyToSelfTop(new NextTurnTemporaryMojo(p, secondMagic));
+        applyToSelfTop(new Mojo(p, secondMagic));
         att(new HealAction(p, p, magicNumber));
     }
 
-    public static class NextTurnTemporaryMojo extends AbstractBogPower {
+    /*public static class NextTurnTemporaryMojo extends AbstractBogPower {
         public static String POWER_ID = makeID("NextTurnTemporaryMojo");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     
@@ -52,5 +45,5 @@ public class HexingTotem extends AbstractTrapCard {
             applyToSelf(new LoseMojoPower(owner, amount));
             atb(new RemoveSpecificPowerAction(owner, owner, this));
         }
-    }
+    }*/
 }

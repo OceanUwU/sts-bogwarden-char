@@ -1,1 +1,28 @@
-- Bugfix: Double rumbling opponents will no longer leave them skewed 
+- New Uncommon 1 cost skill: (Retain.) Choose a Trap in your hand, draw pile or discard pile to trigger on an enemy.
+- Blunderbuss: Base damage 10 > 12
+- Shadow Font: No longer scries, now gives 4 (6) Block
+- Incantation: Cost 1 (0) > 0, Blasts given 2 > 1 (2)
+- Bad Medicine: Damage 9 (10) > 8 (10), Regen 5 (4) > 4
+- Cruel Schemes: Block 1 > 2
+- Hair Trigger: cards drawn 1 (2) > 2, damage 6 (8) > 6 (10)
+- Snapper Trap: damage upgrade +3 > +4
+- Ritual Totem: No longer grants temporary mojo, now grants 1 permanent mojo instead. Heal upgrade +2 > +3
+- Sludge Bomb: Strength loss 1 > 2
+- Spiritual Journey: No longer ethereal, Max hp gain 4 (5) > 4 (6), max max hp loss 4 (5) > 2 (4)
+- Warding Totem: Plated Armor upgrade +1 > +2
+- Attunement: Mojo 1 (2) > 2, upgrade now applies 1 maledict to ALL enemies
+- Shank: Now always discards the rightmost card in your hand.
+- Implode: Block 11 (12) > 12 (16), enemy block 11 > 8, now gives 1 blur to both you and the enemy, no longer retains on upgrade
+- Stalker: Upgrade no longer increases damage, when discarded by scry now also increases damage by 5 (8) for the rest of combat
+- Sinister Ritual: No longer applies regen, now heals 8 (11) HP next turn. No longer upgrades to 0 cost.
+
+- Rusty Ol' Clunker: Backfiring Trap HP loss 6 > 4
+- Tinning Kit: Now adds a Canned Block rather than a Snapper Trap. (Canned Block: Trap. Next turn, gain 30 (40) Block. Exhaust.)
+- Du-Vu needle: Moved to event relic, will be unused for now
+- New Boss Relic: Grabby Hand - Attacks deal non-attack damage.
+- Jasper Talisman: Can now trigger only 3 times per combat and has no turn limit. Now grants permanent Mojo rather than temporary.
+
+- Death Ward Buff: now displays a second number above the number showing hits to display the damage of the hits
+- Bugfix: Double rumbling opponents will no longer leave them skewed
+- Bugfix: Using Duplication Potion on Hoodwink will actually deal damage twice now
+- Added a buncha beta arts

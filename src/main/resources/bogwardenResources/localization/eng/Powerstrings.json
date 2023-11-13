@@ -71,8 +71,8 @@
   "${ModID}:TakeDamagePower": {
     "NAME": "Sinister Ritual",
     "DESCRIPTIONS": [
-      "At the start of your turn, take #b",
-      " damage."
+      "Next turn, heal #b",
+      " HP."
     ]
   },
   "${ModID}:BlendingInBlockPower": {

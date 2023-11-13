@@ -40,6 +40,8 @@ public class DeathWard extends AbstractBogCard {
     
         public DeathWardPower(AbstractCreature owner, int amount) {
             super(POWER_ID, powerStrings.NAME, PowerType.BUFF, false, owner, amount);
+            isTwoAmount = true;
+            amount2 = DAMAGE;
         }
         
         public void updateDescription() {

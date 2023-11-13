@@ -17,7 +17,7 @@ public class IllIntendedSchemes extends AbstractBogCard {
 
     public IllIntendedSchemes() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(1, +1);
+        setMagic(2, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

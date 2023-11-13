@@ -33,7 +33,7 @@
     "NAME": "Tinning Kit",
     "FLAVOR": "To survive in the wild, you have to be willing to eat anything.",
     "DESCRIPTIONS": [
-      "The first time you draw a #rCurse or #yStatus card each combat, #yExhaust it and add a #ySnapper #yTrap into your hand."
+      "The first time you draw a #rCurse or #yStatus card each combat, #yExhaust it and add a #yCanned #yBlock into your hand."
     ]
   },
   "${ModID}:RustyOlClunker": {
@@ -47,9 +47,10 @@
     "NAME": "Jasper Talisman",
     "FLAVOR": "A menacing carving, crafted by a sister of the Foglands.",
     "DESCRIPTIONS": [
-      "Replaces [#45818e]Swamp[] [#45818e]Talisman[]. The first time you draw an #yUnplayable card each turn, draw #b",
+      "Replaces [#45818e]Swamp[] [#45818e]Talisman[]. The first #b",
+      " times you draw an #yUnplayable card each combat, draw #b",
       " card and gain #b",
-      " temporary #y${ModID}:Mojo."
+      " #y${ModID}:Mojo."
     ]
   },
   "${ModID}:ShadowMansHat": {
@@ -90,6 +91,13 @@
     "DESCRIPTIONS": [
       "The first time you draw a #y${ModID}:Trap each combat, trigger it and draw #b",
       " card."
+    ]
+  },
+  "${ModID}:GrabbyHand": {
+    "NAME": "Grabby Hand",
+    "FLAVOR": "TODO",
+    "DESCRIPTIONS": [
+      "Attacks deal non-attack damage."
     ]
   }
 }
