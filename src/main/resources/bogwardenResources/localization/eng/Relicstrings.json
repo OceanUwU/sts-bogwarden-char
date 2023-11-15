@@ -93,9 +93,9 @@
       " card."
     ]
   },
-  "${ModID}:GrabbyHand": {
-    "NAME": "Grabby Hand",
-    "FLAVOR": "TODO",
+  "${ModID}:GloveOfZapping": {
+    "NAME": "Glove Of Zapping",
+    "FLAVOR": "Some Du-Vu spirits disguise themselves as ordinary objects, in search of prey.",
     "DESCRIPTIONS": [
       "Attacks deal non-attack damage."
     ]
