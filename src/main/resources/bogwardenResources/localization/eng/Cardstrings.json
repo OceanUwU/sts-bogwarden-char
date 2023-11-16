@@ -375,7 +375,7 @@
   },
   "${ModID}:Hurl": {
     "NAME": "Hurl",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Choose a ${ModID}:Trap in your hand, draw pile or discard pile to trigger on an enemy.",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Choose a ${ModID}:Trap in your hand, draw pile, or discard pile to trigger on an enemy.",
     "EXTENDED_DESCRIPTION": [
       "Select a Trap to trigger.",
       "Select Traps to trigger."
