@@ -19,7 +19,7 @@ public class DuVuNeedle extends AbstractBogRelic {
     private static int MOJO_PER_CURSE = 1;
 
     public DuVuNeedle() {
-        super(ID, RelicTier.SPECIAL, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+        super(ID, RelicTier.DEPRECATED, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
         tips.add(new CardPowerTip(new DollsCurse()));
     }
   

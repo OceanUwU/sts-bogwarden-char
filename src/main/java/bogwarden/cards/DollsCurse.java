@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import basemod.AutoAdd;
 import bogwarden.powers.Mojo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
+@AutoAdd.Ignore
 public class DollsCurse extends AbstractBogCard {
     public final static String ID = makeID("DollsCurse");
 

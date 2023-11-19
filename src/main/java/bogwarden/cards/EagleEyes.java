@@ -12,8 +12,8 @@ public class EagleEyes extends AbstractBogCard {
     private static int scryAmt = 0;
 
     public EagleEyes() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        setBlock(8, +3);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        setBlock(7, +3);
         setMagic(2);
     }
 

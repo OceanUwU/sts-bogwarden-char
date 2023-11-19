@@ -57,7 +57,7 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s} and gain 50% more Block from cards."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for your next !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
@@ -265,7 +265,7 @@
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
-    "DESCRIPTION": "{@@}Lose !${ModID}:m2! HP. NL Deal !D! damage. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Lose !${ModID}:m2! HP."
   },
   "${ModID}:BroilingFlames": {
     "NAME": "Broiling Flames",

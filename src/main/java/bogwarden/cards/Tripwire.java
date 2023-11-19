@@ -17,12 +17,13 @@ public class Tripwire extends AbstractTrapCard {
     public final static String ID = makeID("Tripwire");
 
     public Tripwire() {
-        super(ID, CardRarity.COMMON);
+        super(ID, CardRarity.UNCOMMON);
         setMagic(1, +1);
+        setSecondMagic(2);
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        applyToSelfTop(new NextTurnAgile(p, 1));
+        applyToSelfTop(new NextTurnAgile(p, secondMagic));
         applyToSelfTop(new DrawCardNextTurnPower(p, magicNumber));
     }
 
