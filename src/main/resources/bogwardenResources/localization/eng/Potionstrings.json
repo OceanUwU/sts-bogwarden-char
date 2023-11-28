@@ -19,7 +19,7 @@
             "Choose #b1 of #b3 random #yTraps to add to your hand.",
             "Choose #b1 of #b3 random #yTraps and add #b",
             " copies to your hand.",
-            " trigger all #yTraps in your hand."
+            " Trigger all #yTraps in your hand."
         ]
     },
     "${ModID}:MaledictPotion": {

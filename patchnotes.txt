@@ -1,5 +1,6 @@
-Eagle eyes: Uncommon > Common, block 8 > 7
-Tripwire: Common > Uncommon, agile applied 1 > 2
-Hair Trigger: Now loses HP AFTER dealing damage
+- Eagle eyes: Uncommon > Common, block 8 > 7
+- Tripwire: Common > Uncommon, agile applied 1 > 2
+- Hair Trigger: Now loses HP AFTER dealing damage
 
-Du-vu needle / Doll's curse: no longer show up in collection
+- Du-vu needle / Doll's curse: no longer show up in collection
+- T
