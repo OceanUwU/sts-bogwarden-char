@@ -21,7 +21,7 @@ public class HairTrigger extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        atb(new DrawCardAction(magicNumber));
         atb(new LoseHPAction(p, p, secondMagic));
+        atb(new DrawCardAction(magicNumber));
     }
 }

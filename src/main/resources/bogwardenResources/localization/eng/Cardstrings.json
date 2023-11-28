@@ -265,7 +265,7 @@
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Lose !${ModID}:m2! HP."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Lose !${ModID}:m2! HP. NL Draw !M! card{!M!|>1=s}."
   },
   "${ModID}:BroilingFlames": {
     "NAME": "Broiling Flames",
