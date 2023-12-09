@@ -45,16 +45,16 @@ public class DeathWard extends AbstractBogCard {
         }
         
         public void updateDescription() {
-            description = powerStrings.DESCRIPTIONS[0] + DAMAGE + powerStrings.DESCRIPTIONS[1] + amount + powerStrings.DESCRIPTIONS[2];
+            description = powerStrings.DESCRIPTIONS[owner instanceof AbstractPlayer ? 0 : 3] + DAMAGE + powerStrings.DESCRIPTIONS[owner instanceof AbstractPlayer ? 1 : 4] + amount + powerStrings.DESCRIPTIONS[2];
         }
-  
-        public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+
+        private void trigger(boolean isPlayer) {
             flash();
             for (int i = 0; i < amount; i++)
                 atb(new AbstractGameAction() {
                     public void update() {
                         isDone = true;
-                        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                        AbstractCreature target = isPlayer ? AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng) : adp();
                         if (target != null) {
                             att(new DamageAction(target, new DamageInfo(owner, DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                             HemokinesisParticle particle = new HemokinesisParticle(owner.hb.cX + MathUtils.random(-60f, 60f), owner.hb.cY + MathUtils.random(-60f, 60f), target.hb.cX, target.hb.cY, target.hb.cX < owner.hb.cX);
@@ -64,6 +64,16 @@ public class DeathWard extends AbstractBogCard {
                         }
                     }
                 });
+        }
+  
+        public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+            if (isPlayer)
+                trigger(isPlayer);
+        }
+
+        public void atStartOfTurn() {
+            if (owner instanceof AbstractMonster)
+                trigger(false);
         }
     }
 }

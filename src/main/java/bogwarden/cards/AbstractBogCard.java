@@ -45,28 +45,28 @@ public abstract class AbstractBogCard extends CustomCard {
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
 
-    private boolean upgradesDamage = false;
-    private int damageUpgrade;
-    private boolean upgradesBlock = false;
-    private int blockUpgrade;
-    private boolean upgradesMagic = false;
-    private int magicUpgrade;
-    private boolean upgradesSecondMagic = false;
-    private int secondMagicUpgrade;
-    private boolean upgradesThirdMagic = false;
-    private int thirdMagicUpgrade;
+    public boolean upgradesDamage = false;
+    public int damageUpgrade;
+    public boolean upgradesBlock = false;
+    public int blockUpgrade;
+    public boolean upgradesMagic = false;
+    public int magicUpgrade;
+    public boolean upgradesSecondMagic = false;
+    public int secondMagicUpgrade;
+    public boolean upgradesThirdMagic = false;
+    public int thirdMagicUpgrade;
     private boolean upgradesSecondDamage = false;
     private int secondDamageUpgrade;
-    private boolean upgradesCost = false;
-    private int costUpgrade;
-    private boolean upgradesExhaust = false;
-    private boolean upgradedExhaust;
-    private boolean upgradesEthereal = false;
-    private boolean upgradedEthereal;
-    private boolean upgradesInnate = false;
-    private boolean upgradedInnate;
-    private boolean upgradesRetain = false;
-    private boolean upgradedRetain;
+    public boolean upgradesCost = false;
+    public int costUpgrade;
+    public boolean upgradesExhaust = false;
+    public boolean upgradedExhaust;
+    public boolean upgradesEthereal = false;
+    public boolean upgradedEthereal;
+    public boolean upgradesInnate = false;
+    public boolean upgradedInnate;
+    public boolean upgradesRetain = false;
+    public boolean upgradedRetain;
 
     public AbstractBogCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);

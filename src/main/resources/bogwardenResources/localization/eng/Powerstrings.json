@@ -171,7 +171,9 @@
     "DESCRIPTIONS": [
       "At the end of your turn, deal #b",
       " damage to a random enemy #b",
-      " times."
+      " times.",
+      "At the start of its turn, deals #b",
+      " damage to you #b"
     ]
   },
   "${ModID}:PoisonNovaPower": {
@@ -278,6 +280,48 @@
       "For #b",
       " turn, gain #b50% more #yBlock from cards.",
       " turns, gain #b50% more #yBlock from cards."
+    ]
+  },
+
+
+
+  "${ModID}:NeowSpiritBogwarden": {
+    "Name": "Hero's Spirit",
+    "DESCRIPTIONS": [
+      " NL Gains #b",
+      " #yDeath #yWard. #y(Bogwarden)"
+    ]
+  },
+  "${ModID}:SpinesEnemy": {
+    "NAME": "Spines",
+    "DESCRIPTIONS": [
+      "Whenever you play a Skill, deals #b",
+      " damage."
+    ]
+  },
+  "${ModID}:OnDeathBogEveryone": {
+    "NAME": "Last Gasp: Bonfire+",
+    "DESCRIPTIONS": [
+      "When this character dies, ALL characters (including you) gain #b",
+      " #yTemporary #yHP."
+    ]
+  },
+  "${ModID}:Act1SpecialPower": {
+    "NAME": "TODO",
+    "DESCRIPTIONS": [
+      "TODO2"
+    ]
+  },
+  "${ModID}:Act2SpecialPower": {
+    "NAME": "TODO",
+    "DESCRIPTIONS": [
+      "TODO2"
+    ]
+  },
+  "${ModID}:Act3SpecialPower": {
+    "NAME": "TODO",
+    "DESCRIPTIONS": [
+      "TODO2"
     ]
   }
 }

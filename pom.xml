@@ -70,6 +70,13 @@
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/2920075378/ThePackmaster.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>evilwithin</groupId>
+            <artifactId>EvilWithin</artifactId>
+            <version>5.0.9</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1610056683/downfall.jar</systemPath>
+        </dependency>
     </dependencies>
 
 

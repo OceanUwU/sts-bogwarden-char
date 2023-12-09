@@ -48,6 +48,7 @@ public class TheBogwarden extends CustomPlayer {
     static final String[] TEXT = characterStrings.TEXT;
     public static final float SIZE_SCALE = 1.25f;
     public static final Float ANIMATION_SPEED = 1.0F;
+    public static final int MAX_HP = 78;
 
     public String currentSkin;
     public String defaultSkin;
@@ -117,7 +118,7 @@ public class TheBogwarden extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                78, 78, 0, 99, 5, this, getStartingRelics(),
+                MAX_HP, MAX_HP, 0, 99, 5, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 
