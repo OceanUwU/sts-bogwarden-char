@@ -27,6 +27,7 @@ import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 
 import basemod.BaseMod;
+import bogwarden.BogMod;
 import bogwarden.cards.Defend;
 import bogwarden.cards.Jinx;
 import bogwarden.cards.Strike;
@@ -111,7 +112,8 @@ public class CharBossBogwarden extends AbstractCharBoss {
     @SpirePatch(clz=downfallMod.class, method="resetBossList", requiredModId="downfall")
     public static class AddToList {
         public static void Postfix() {
-            downfallMod.possEncounterList.add(CharBossBogwarden.ID);
+            if (BogMod.doDownfallBoss)
+                downfallMod.possEncounterList.add(CharBossBogwarden.ID);
         }
     }
 

@@ -5,7 +5,8 @@
       "occultpyromancer, ocean",
       "Bogging wardens all over the town",
       
-      "Wild magic can give cards from modded characters"
+      "Wild magic can give cards from modded characters",
+      "Enable Downfall Bogwarden character boss"
     ]
   },
   "${ModID}:NonAttackPack": {

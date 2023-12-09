@@ -73,6 +73,7 @@ public class BogMod implements
     private static final String CHARSELECT_PORTRAIT = makeImagePath("charSelect/charBG.png");
     private static SpireConfig config;
     public static boolean useModdedPools;
+    public static boolean doDownfallBoss;
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -127,8 +128,10 @@ public class BogMod implements
     public static void initialize() throws IOException {
         Properties defaults = new Properties();
         defaults.setProperty("usemoddedpools", "true");
+        defaults.setProperty("downfallboss", "true");
         config = new SpireConfig(modID, "config", defaults);
         useModdedPools = config.getBool("usemoddedpools");
+        doDownfallBoss = config.getBool("downfallboss");
 
         BogMod thismod = new BogMod();
     }
@@ -213,6 +216,11 @@ public class BogMod implements
         settingsPanel.addUIElement(new ModLabeledToggleButton(TEXT[3], 350, 800, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool("usemoddedpools"), settingsPanel, label -> {}, button -> {
             useModdedPools = button.enabled;
             config.setBool("usemoddedpools", button.enabled);
+            try {config.save();} catch (Exception e) {}
+        }));
+        settingsPanel.addUIElement(new ModLabeledToggleButton(TEXT[4], 350, 800-80, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool("downfallboss"), settingsPanel, label -> {}, button -> {
+            doDownfallBoss = button.enabled;
+            config.setBool("downfallboss", button.enabled);
             try {config.save();} catch (Exception e) {}
         }));
         BaseMod.registerModBadge(TexLoader.getTexture(makeImagePath("ui/badge.png")), TEXT[0], TEXT[1], TEXT[2], settingsPanel);
