@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
 
@@ -14,9 +15,9 @@ public class NightTerror extends AbstractBogCard {
     public final static String ID = makeID("NightTerror");
 
     public NightTerror() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
         setMagic(99);
-        setUpgradedCost(0);
+        setSecondMagic(0, +5);
         setExhaust(true);
     }
 
@@ -30,5 +31,7 @@ public class NightTerror extends AbstractBogCard {
             if (mo.intent.equals(AbstractMonster.Intent.SLEEP))
                 atb(new TalkAction(mo, cardStrings.EXTENDED_DESCRIPTION[0], 4.0f, 4.0f));
         });
+        if (secondMagic > 0)
+            applyToSelf(new VigorPower(p, secondMagic));
     }
 }

@@ -19,7 +19,6 @@ public class Sap extends AbstractBogCard {
     public Sap() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setUpgradedCost(0);
-        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

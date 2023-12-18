@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.vfx.SparkleHelixEffect;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
@@ -30,7 +31,7 @@ public class RefinedBlast extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmgRandom(BLAST_EFFECT, secondMagic > 0 ? mo -> {
+        dmgRandom(FlashAtkImgPatches.BOGWARDEN_REFINED_BLAST_EFFECT, secondMagic > 0 ? mo -> {
             p.getPower(PoisonNova.PoisonNovaPower.POWER_ID).flash();
             applyToEnemyTop(mo, new PoisonPower(mo, p, secondMagic));
         } : null, mo -> vfxTop(new SparkleHelixEffect(p.hb.cX, p.hb.cY, mo.hb.cX, mo.hb.cY), SparkleHelixEffect.DURATION - 0.2f));

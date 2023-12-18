@@ -55,8 +55,6 @@ public class GauntletBogwarden extends GauntletBoss {
         type = EnemyType.ELITE;
 
         this.damage.add(new DamageInfo(this, 6));
-        this.damage.add(new DamageInfo(this, 6));
-        this.damage.add(new DamageInfo(this, 8));
     }
 
     @Override
@@ -71,13 +69,13 @@ public class GauntletBogwarden extends GauntletBoss {
         int dex = pwrAmt(this, DexterityPower.POWER_ID);
         switch (nextMove) {
             case 1:
-                atb(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                atb(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                atb(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                atb(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 if (hasPower(MonsterVigor.POWER_ID))
                     atb(new RemoveSpecificPowerAction(this, this, MonsterVigor.POWER_ID));
                 break;
             case 2:
-                atb(new DamageAction(AbstractDungeon.player, damage.get(1), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                atb(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 atb(new GainBlockAction(this, 5 + dex));
                 if (hasPower(MonsterVigor.POWER_ID))
                     atb(new RemoveSpecificPowerAction(this, this, MonsterVigor.POWER_ID));

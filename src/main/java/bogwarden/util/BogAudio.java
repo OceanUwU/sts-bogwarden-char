@@ -20,9 +20,11 @@ public class BogAudio {
     public static String BLOW_DART = makeID("BLOWDART");
     public static String SHOTGUN = makeID("SHOTGUN");
     public static String OTHERSIDER = makeID("OTHERSIDER");
+    public static String REFINED_BLAST = makeID("REFINEDBLAST");
+    public static String IMPLODE = makeID("IMPLODE");
 
     public static void addAudio() {
-        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT, FROGS, TOAD, BLOW_DART, SHOTGUN, OTHERSIDER})
+        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT, FROGS, TOAD, BLOW_DART, SHOTGUN, OTHERSIDER, REFINED_BLAST, IMPLODE})
             BaseMod.addAudio(i, makePath("audio/"+i.replace(BogMod.modID+":", "").toLowerCase()+".ogg"));
     }
 }

@@ -20,6 +20,10 @@ public class FlashAtkImgPatches {
     private static TextureAtlas.AtlasRegion BLAST_IMAGE;
 
     @SpireEnum
+    public static AbstractGameAction.AttackEffect BOGWARDEN_REFINED_BLAST_EFFECT;
+    private static TextureAtlas.AtlasRegion REFINED_BLAST_IMAGE;
+
+    @SpireEnum
     public static AbstractGameAction.AttackEffect BOGWARDEN_WILD_MAGIC_EFFECT;
     private static TextureAtlas.AtlasRegion WILD_MAGIC_IMAGE;
 
@@ -38,6 +42,10 @@ public class FlashAtkImgPatches {
                 if (BLAST_IMAGE == null)
                     BLAST_IMAGE = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/blast.png")), 0, 0, 512, 512);
                 return SpireReturn.Return(BLAST_IMAGE);
+            } else if (effectIs(__instance, BOGWARDEN_REFINED_BLAST_EFFECT)) {
+                if (REFINED_BLAST_IMAGE == null)
+                    REFINED_BLAST_IMAGE = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/refinedblast.png")), 0, 0, 512, 512);
+                return SpireReturn.Return(REFINED_BLAST_IMAGE);
             } else if (effectIs(__instance, BOGWARDEN_WILD_MAGIC_EFFECT)) {
                 if (WILD_MAGIC_IMAGE == null)
                     WILD_MAGIC_IMAGE = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/wildmagic.png")), 0, 0, 512, 512);
@@ -53,6 +61,9 @@ public class FlashAtkImgPatches {
         public static SpireReturn<Void> Prefix(Object __instance) {
             if (effectIs(__instance, BOGWARDEN_BLAST_EFFECT, BOGWARDEN_WILD_MAGIC_EFFECT)) {
                 CardCrawlGame.sound.play(BogAudio.BLAST);
+                return SpireReturn.Return();
+            } else if (effectIs(__instance, BOGWARDEN_REFINED_BLAST_EFFECT)) {
+                CardCrawlGame.sound.play(BogAudio.REFINED_BLAST);
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();

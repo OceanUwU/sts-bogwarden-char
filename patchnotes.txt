@@ -1,6 +1,19 @@
 - Eagle eyes: Uncommon > Common, block 8 > 7
 - Tripwire: Common > Uncommon, agile applied 1 > 2
 - Hair Trigger: Now loses HP AFTER dealing damage
+- Sap: No longer exhausts
+- Night Terror: Cost 1 > 0, upgrade now gives you 5 vigor
+- Implode: Block 12 (16) > 12 (14), Block to enemy 8 > 14 (10)
+- Entangling Vines: No longer grants temp spines, now applies 2 (3) Snared (the buff from Snare Trap)
+- Bramble Shield: Block 4 (7) > 4 (6), No longer increases block gained based on spines, now grants temp spines equal to your block.
+
+- Added downfall bosses (they dont have movesets rn)
+    - Added config option to disable these
 
 - Du-vu needle / Doll's curse: no longer show up in collection
+- Sludge bomb VFX is now faster
+- Implode: new VFX
+- "Refined" Refined Blast SFX & VFX
+- Added Hurl & Canned Block art
+- Added Pressure Plate & Forge beta art
 - T

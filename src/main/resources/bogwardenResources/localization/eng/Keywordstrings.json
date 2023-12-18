@@ -88,5 +88,19 @@
       "explosive_potion+"
     ],
     "DESCRIPTION": "Deals 12 damage to ALL enemies."
+  },
+  {
+    "PROPER_NAME": "Snared",
+    "NAMES": [
+      "snared"
+    ],
+    "DESCRIPTION": "Snared creatures deal less damage until after their next attack."
+  },
+  {
+    "PROPER_NAME": "Ocean",
+    "NAMES": [
+      "ocean"
+    ],
+    "DESCRIPTION": "Ocean is free! Ocean is free! Woohoo!"
   }
 ]

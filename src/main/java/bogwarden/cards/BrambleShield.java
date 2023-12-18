@@ -1,6 +1,8 @@
 package bogwarden.cards;
 
+import bogwarden.powers.LoseSpinesPower;
 import bogwarden.powers.Spines;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -12,20 +14,17 @@ public class BrambleShield extends AbstractBogCard {
 
     public BrambleShield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        setBlock(4, +3);
-    }
-    
-    @Override
-    public void applyPowers() {
-        int realBaseBlock = baseBlock;
-        baseBlock += pwrAmt(adp(), Spines.POWER_ID);
-        super.applyPowers();
-        baseBlock = realBaseBlock;
-        isBlockModified = block != baseBlock;
+        setBlock(4, +2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyPowers();
         blck();
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                applyToSelfTop(new LoseSpinesPower(p, p.currentBlock)); 
+                applyToSelfTop(new Spines(p, p.currentBlock)); 
+            }
+        });
     }
 }

@@ -41,7 +41,7 @@ public class SludgeBomb extends AbstractTrapCard {
     }
 
     private static class SludgeBombEffect extends AbstractGameEffect {
-        private static float DURATION = 1.2f;
+        private static float DURATION = 0.5f;
         private static float UPPIES = 300f * Settings.scale;
         private static float SMOKE_GAP = 0.03f;
 
