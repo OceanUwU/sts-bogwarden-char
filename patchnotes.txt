@@ -14,10 +14,6 @@
 - Blunderbuss: Upgrade no longer upgrades damage, now upgrades damage per retain card by 2
 - Barbed Lasso debuff: Now deals damage AFTER card effects resolve
 - Tripwire: now applies the agile buff to you this turn rather than next (still behaves the same when triggered during the enemy turn)
-- Reworded Blowpipe
-- Reworded Portents & Stalker
-- Reworded "trigger your next trap" to "Trigger your leftmost trap" on Snip, Watch & Learn, Bag & Tag, Incarcerate
-- When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
 
 - Eagle Eyes & Incantation & Line Up & Darkvision & Walkabout: VFX
 - Night Terror: Improved VFX
@@ -32,7 +28,12 @@
 - Restless Spirits: VFX (kinda sucks but w/e)
 - Poison Nova: VFX (when you play the blasts)
 - Camp Out: VFX (while you're choosing the card)
-- Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block
+- Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block & Entangling Vines
+- Added a few flavour texts
+- When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
+- Reworded Blowpipe
+- Reworded Portents & Stalker
+- Reworded "trigger your next trap" to "Trigger your leftmost trap" on Snip, Watch & Learn, Bag & Tag, Incarcerate
 
 - Bugfix: Ending a combat with Unstable Concoction now gives you the potion
 - Fairy Chimera Modifier can no longer show up when you have Glove of Zapping

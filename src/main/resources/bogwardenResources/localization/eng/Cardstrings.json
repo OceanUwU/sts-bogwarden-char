@@ -21,35 +21,43 @@
   },
   "${ModID}:Jinx": {
     "NAME": "Jinx",
-    "DESCRIPTION": "{@@}Deal !D! damage{!Upgrades!|>0= and apply !M! ${ModID}:Maledict to ALL enemies|@=. NL Apply !M! ${ModID}:Maledict}."
+    "DESCRIPTION": "{@@}Deal !D! damage{!Upgrades!|>0= and apply !M! ${ModID}:Maledict to ALL enemies|@=. NL Apply !M! ${ModID}:Maledict}.",
+    "FLAVOR": ""
   },
   "${ModID}:Attunement": {
     "NAME": "Attunement",
-    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Mojo.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Maledict to ALL enemies.}"
+    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Mojo.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Maledict to ALL enemies.}",
+    "FLAVOR": ""
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
-    "DESCRIPTION": "{@@}Retain. NL Deal !D! damage{!${ModID}:m2!|>0= and apply !${ModID}:m2! Poison} to a random enemy. NL Exhaust."
+    "DESCRIPTION": "{@@}Retain. NL Deal !D! damage{!${ModID}:m2!|>0= and apply !${ModID}:m2! Poison} to a random enemy. NL Exhaust.",
+    "FLAVOR": "With a touch of primordial magic, a splash of water can turn into a chaotic manifest of spirit energy."
   },
   "${ModID}:RefinedBlast": {
     "NAME": "Refined Blast",
-    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:ShadowFont": {
     "NAME": "Shadow Font",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Add a *Blast{!Upgrades!|>0=+} into your hand."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Add a *Blast{!Upgrades!|>0=+} into your hand.",
+    "FLAVOR": "Only the most skillful du-vu shamans can extract the raw power from these monuments."
   },
   "${ModID}:SpinyShawl": {
     "NAME": "Urticating Spines",
-    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Spines.{!${ModID}:m2!|>0= NL Gain !${ModID}:m2! Dexterity.}"
+    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Spines.{!${ModID}:m2!|>0= NL Gain !${ModID}:m2! Dexterity.}",
+    "FLAVOR": ""
   },
   "${ModID}:ViperStrike": {
     "NAME": "Viper Strike",
-    "DESCRIPTION": "Apply !M! ${ModID}:Venom. NL Deal !D! damage twice."
+    "DESCRIPTION": "Apply !M! ${ModID}:Venom. NL Deal !D! damage twice.",
+    "FLAVOR": ""
   },
   "${ModID}:SnareTrap": {
     "NAME": "Snare Trap",
-    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Snared."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Snared.",
+    "FLAVOR": ""
   },
   "${ModID}:FirebombTrap": {
     "NAME": "Firebomb Trap",
@@ -57,63 +65,78 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "FLAVOR": ""
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
-    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
+    "FLAVOR": "The schematics for this paralyzing dart trap were pilfered off fallen Watchers."
   },
   "${ModID}:EntanglingVines": {
     "NAME": "Entangling Vines",
-    "DESCRIPTION": "Apply !M! Weak and ${ModID}:Snared."
+    "DESCRIPTION": "Apply !M! Weak and ${ModID}:Snared.",
+    "FLAVOR": ""
   },
   "${ModID}:Walkabout": {
     "NAME": "Walkabout",
-    "DESCRIPTION": "{@@}Scry !M!. NL Draw 1 card for each card discarded."
+    "DESCRIPTION": "{@@}Scry !M!. NL Draw 1 card for each card discarded.",
+    "FLAVOR": ""
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL If all cards were discarded, add !M! *Blast{!M!|>1=s} into your hand."
+    "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL If all cards were discarded, add !M! *Blast{!M!|>1=s} into your hand.",
+    "FLAVOR": "An ancient du-vu ritual, turning material loss into spiritual power."
   },
   "${ModID}:DarkPact": {
     "NAME": "Dark Pact",
-    "DESCRIPTION": "Gain !M! temporary ${ModID}:Mojo."
+    "DESCRIPTION": "Gain !M! temporary ${ModID}:Mojo.",
+    "FLAVOR": ""
   },
   "${ModID}:FlockOfBats": {
     "NAME": "Flock of Bats",
-    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage to ALL enemies.",
+    "FLAVOR": ""
   },
   "${ModID}:Bushwhack": {
     "NAME": "Bushwhack",
-    "DESCRIPTION": "{@@}Gain !B! Block. If you have played less than !${ModID}:m3! cards this combat, gain !${ModID}:m2! *Plated *Armor.{!M!|1= NL (!M! card played.)|0,>1= NL (!M! cards played.)}"
+    "DESCRIPTION": "{@@}Gain !B! Block. If you have played less than !${ModID}:m3! cards this combat, gain !${ModID}:m2! *Plated *Armor.{!M!|1= NL (!M! card played.)|0,>1= NL (!M! cards played.)}",
+    "FLAVOR": "The Bogwarden makes traversing the Fogland Wilds look easy."
   },
   "${ModID}:LineUp": {
     "NAME": "Line Up",
-    "DESCRIPTION": "{@@}Scry !M!. NL Next turn, gain {!${ModID}:m2!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!${ModID}:m2! [E]}."
+    "DESCRIPTION": "{@@}Scry !M!. NL Next turn, gain {!${ModID}:m2!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!${ModID}:m2! [E]}.",
+    "FLAVOR": ""
   },
   "${ModID}:Submerge": {
     "NAME": "Submerge",
-    "DESCRIPTION": "Gain !B! Block. NL Add a *Void into your discard pile."
+    "DESCRIPTION": "Gain !B! Block. NL Add a *Void into your discard pile.",
+    "FLAVOR": ""
   },
   "${ModID}:VilePowder": {
     "NAME": "Vile Powder",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Maledict to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Maledict to ALL enemies.",
+    "FLAVOR": ""
   },
   "${ModID}:TheRumble": {
     "NAME": "The Rumble",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Big_Game: Repeat."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Big_Game: Repeat.",
+    "FLAVOR": "For a woman of her cunning, the Bogwarden is not afraid of a little rough-and-tumble."
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
-    "DESCRIPTION": "Deal !D! damage. NL Trigger your leftmost ${ModID}:Trap twice."
+    "DESCRIPTION": "Deal !D! damage. NL Trigger your leftmost ${ModID}:Trap twice.",
+    "FLAVOR": ""
   },
   "${ModID}:PlagueOfToads": {
     "NAME": "Plague of Toads",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
+    "FLAVOR": ""
   },
   "${ModID}:Blunderbuss": {
     "NAME": "Blunderbuss",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each Retain card in your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each Retain card in your hand.",
+    "FLAVOR": "Although learning how to use it absolutely terrified the Bogwarden, it remains a potent tool in her arsenal."
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
@@ -125,7 +148,8 @@
     "EXTENDED_DESCRIPTION": [
       "Select a card to move to your hand.",
       "Select cards to move to your hand."
-    ]
+    ],
+    "FLAVOR": ""
   },
   "${ModID}:SneakierStrike": {
     "NAME": "Sneakier Strike",
@@ -133,7 +157,8 @@
   },
   "${ModID}:DarkRitual": {
     "NAME": "Sinister Ritual",
-    "DESCRIPTION": "Lose !${ModID}:m2! HP. NL Next turn, heal !M! HP. NL Exhaust."
+    "DESCRIPTION": "Lose !${ModID}:m2! HP. NL Next turn, heal !M! HP. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:SwarmOfBeetles": {
     "NAME": "Swarm of Beetles",
@@ -145,11 +170,13 @@
   },
   "${ModID}:RestlessSpirits": {
     "NAME": "Restless Spirits",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }At the start of your turn, add a *Blast into your hand."
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Innate. NL }At the start of your turn, add a *Blast into your hand.",
+    "FLAVOR": ""
   },
   "${ModID}:StickerbrushStrike": {
     "NAME": "Stickerbush Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Spines."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Spines.",
+    "FLAVOR": ""
   },
   "${ModID}:CursedCask": {
     "NAME": "Cursed Cask",
@@ -157,23 +184,28 @@
   },
   "${ModID}:Darkvision": {
     "NAME": "Darkvision",
-    "DESCRIPTION": "{@@}At the start of your turn, Scry !M!. If you discard at least !${ModID}:m2! card{!${ModID}:m2!|>1=s} this way, gain [E]."
+    "DESCRIPTION": "{@@}At the start of your turn, Scry !M!. If you discard at least !${ModID}:m2! card{!${ModID}:m2!|>1=s} this way, gain [E].",
+    "FLAVOR": ""
   },
   "${ModID}:Portents": {
     "NAME": "Portents",
-    "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block.",
+    "FLAVOR": "LI: AWAKENED"
   },
   "${ModID}:IllIntendedSchemes": {
     "NAME": "Cruel Schemes",
-    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is Retained, gain !M! Block.",
+    "FLAVOR": "The ill-intended schemes of the Bogwarden require careful planning."
   },
   "${ModID}:OthersiderForm": {
     "NAME": "Othersider Form",
-    "DESCRIPTION": "At the start of your turn, gain !M! ${ModID}:Mojo and lose !${ModID}:m2! Strength."
+    "DESCRIPTION": "At the start of your turn, gain !M! ${ModID}:Mojo and lose !${ModID}:m2! Strength.",
+    "FLAVOR": ""
   },
   "${ModID}:SpiritualJourney": {
     "NAME": "Spiritual Journey",
-    "DESCRIPTION": "{@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. NL Exhaust."
+    "DESCRIPTION": "{@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:TrapperMaster": {
     "NAME": "Trapper Master",
@@ -181,51 +213,63 @@
   },
   "${ModID}:DeathWard": {
     "NAME": "Death Ward",
-    "DESCRIPTION": "At the end of your turn, deal !${ModID}:m2! damage to a random enemy !M! times."
+    "DESCRIPTION": "At the end of your turn, deal !${ModID}:m2! damage to a random enemy !M! times.",
+    "FLAVOR": ""
   },
   "${ModID}:PoisonNova": {
     "NAME": "Poison Nova",
-    "DESCRIPTION": "*Blasts apply !M! Poison."
+    "DESCRIPTION": "*Blasts apply !M! Poison.",
+    "FLAVOR": ""
   },
   "${ModID}:BriarPatch": {
     "NAME": "Briar Patch",
-    "DESCRIPTION": "Gain !M! ${ModID}:Spines. NL Whenever you are attacked, deal damage back equal to !${ModID}:m2!% of your total ${ModID}:Spines."
+    "DESCRIPTION": "Gain !M! ${ModID}:Spines. NL Whenever you are attacked, deal damage back equal to !${ModID}:m2!% of your total ${ModID}:Spines.",
+    "FLAVOR": "The Fogland Wilds are bordered by a nigh-impenetrable thicket of choking briars."
   },
   "${ModID}:CampOut": {
     "NAME": "Camp Out",
-    "DESCRIPTION": "{@@}Choose *Bonfire{!Upgrades!|>0=+} or *Forge{!Upgrades!|>0=+} to add into your hand. NL Exhaust."
+    "DESCRIPTION": "{@@}Choose *Bonfire{!Upgrades!|>0=+} or *Forge{!Upgrades!|>0=+} to add into your hand. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:Bonfire": {
     "NAME": "Bonfire",
-    "DESCRIPTION": "Retain. NL Gain !M! stslib:Temporary_HP. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain !M! stslib:Temporary_HP. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:Forge": {
     "NAME": "Forge",
-    "DESCRIPTION": "Retain. NL Increase the damage of all Attacks in your hand by !M! this combat. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Increase the damage of all Attacks in your hand by !M! this combat. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
-    "DESCRIPTION": "{@@}At the end of your turn, if you played no Attacks, gain {!M!|>0=!M! Block and }!${ModID}:m2! ${ModID}:Blur."
+    "DESCRIPTION": "{@@}At the end of your turn, if you played no Attacks, gain {!M!|>0=!M! Block and }!${ModID}:m2! ${ModID}:Blur.",
+    "FLAVOR": ""
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal !D! damage to ALL enemies !M! time{!M!|>1=s}."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal !D! damage to ALL enemies !M! time{!M!|>1=s}.",
+    "FLAVOR": ""
   },
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block or !${ModID}:m2! if ${ModID}:Big_Game. NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block or !${ModID}:m2! if ${ModID}:Big_Game. NL Exhaust.",
+    "FLAVOR": "Depicts a malicious du-vu spirit, known for its love of stabbing."
   },
   "${ModID}:HexingTotem": {
     "NAME": "Ritual Totem",
-    "DESCRIPTION": "${ModID}:Trap. NL Heal !M! HP. NL Gain !${ModID}:m2! ${ModID}:Mojo. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Trap. NL Heal !M! HP. NL Gain !${ModID}:m2! ${ModID}:Mojo. NL Exhaust.",
+    "FLAVOR": "The visage of impending doom."
   },
   "${ModID}:WardingTotem": {
     "NAME": "Warding Totem",
-    "DESCRIPTION": "${ModID}:Trap. NL Gain !${ModID}:m2! Artifact. NL Gain !M! *Plated *Armor. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Trap. NL Gain !${ModID}:m2! Artifact. NL Gain !M! *Plated *Armor. NL Exhaust.",
+    "FLAVOR": "This fearsome totem was carved in reverence of the Du-Vu tribe's armor-clad allies."
   },
   "${ModID}:CageOfSerpents": {
     "NAME": "Cage of Serpents",
-    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Venom. NL Enemy loses !D! HP !${ModID}:m2! times."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Venom. NL Enemy loses !D! HP !${ModID}:m2! times.",
+    "FLAVOR": ""
   },
   "${ModID}:Minefield": {
     "NAME": "Minefield",
@@ -233,74 +277,91 @@
   },
   "${ModID}:WatchAndLearn": {
     "NAME": "Watch and Learn",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Trigger your !M! leftmost ${ModID}:Trap{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Trigger your !M! leftmost ${ModID}:Trap{!M!|>1=s}.",
+    "FLAVOR": ""
   },
   "${ModID}:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "Apply !M! ${ModID}:Snared and ${ModID}:Venom to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! ${ModID}:Snared and ${ModID}:Venom to ALL enemies. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:BrambleShield": {
     "NAME": "Bramble Shield",
-    "DESCRIPTION": "Gain !B! Block. NL Gain temporary ${ModID}:Spines equal to your Block."
+    "DESCRIPTION": "Gain !B! Block. NL Gain temporary ${ModID}:Spines equal to your Block.",
+    "FLAVOR": ""
   },
   "${ModID}:EagleEyes": {
     "NAME": "Eagle Eyes",
-    "DESCRIPTION": "Gain !B! Block. NL Scry !M! for each enemy in combat."
+    "DESCRIPTION": "Gain !B! Block. NL Scry !M! for each enemy in combat.",
+    "FLAVOR": ""
   },
   "${ModID}:BarbedLasso": {
     "NAME": "Barbed Lasso",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a Skill this turn, the enemy loses !M! HP."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a Skill this turn, the enemy loses !M! HP.",
+    "FLAVOR": ""
   },
   "${ModID}:SpitefulStaff": {
     "NAME": "Spiteful Staff",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Maledict. NL Apply !M! ${ModID}:Venom."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Maledict. NL Apply !M! ${ModID}:Venom.",
+    "FLAVOR": ""
   },
   "${ModID}:Stalker": {
     "NAME": "Stalker",
-    "DESCRIPTION": "Deal !D! damage. NL If discarded via Scry, play this and increase its damage by !M!."
+    "DESCRIPTION": "Deal !D! damage. NL If discarded via Scry, play this and increase its damage by !M!.",
+    "FLAVOR": "I see you."
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
-    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your leftmost ${ModID}:Trap X{!M!|>0=+!M!} times."
+    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your leftmost ${ModID}:Trap X{!M!|>0=+!M!} times.",
+    "FLAVOR": ""
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Lose !${ModID}:m2! HP. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Lose !${ModID}:m2! HP. NL Draw !M! card{!M!|>1=s}.",
+    "FLAVOR": ""
   },
   "${ModID}:BroilingFlames": {
     "NAME": "Broiling Flames",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *Burn into your hand."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *Burn into your hand.",
+    "FLAVOR": ""
   },
   "${ModID}:Shank": {
     "NAME": "Shank",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard the rightmost card in your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard the rightmost card in your hand.",
+    "FLAVOR": ""
   },
   "${ModID}:Geyser": {
     "NAME": "Geyser",
-    "DESCRIPTION": "{@@}Deal !D! damage. Add !M! *Blast{!M!|>1=s} into your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. Add !M! *Blast{!M!|>1=s} into your hand.",
+    "FLAVOR": "Beneath the Fog-Shroud Crags, primordial energy lashes and churns as if it were molten lava."
   },
   "${ModID}:JarOfSpiders": {
     "NAME": "Jar of Spiders",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. They lose !M! HP at the start of their next turn."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. They lose !M! HP at the start of their next turn.",
+    "FLAVOR": "The spiders are highly territorial with an unspeakably painful bite."
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!Location!|0,1,2,3= NL (Triggered !M! times.)}"
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!Location!|0,1,2,3= NL (Triggered !M! times.)}",
+    "FLAVOR": ""
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL ALL enemies lose !D! HP and !M! Strength. NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL ALL enemies lose !D! HP and !M! Strength. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:NightTerror": {
     "NAME": "Night Terror",
     "DESCRIPTION": "{@@}Apply !M! Vulnerable to ALL enemies.{!${ModID}:m2!|>0= NL Gain !${ModID}:m2! Vigor.} NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Drawn butter... NL Boiling water... NL @Lemon@ @Wedges..!@"
-    ]
+    ],
+    "FLAVOR": ""
   },
   "${ModID}:NaturesWrath": {
     "NAME": "Nature's Wrath",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies for each of your unique buffs.{!M!|1= NL (You have !M! buff.)|>-1= NL (You have !M! buffs.)}"
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies for each of your unique buffs.{!M!|1= NL (You have !M! buff.)|>-1= NL (You have !M! buffs.)}",
+    "FLAVOR": ""
   },
   "${ModID}:GoForTheThroat": {
     "NAME": "Go For The Throat",
@@ -308,30 +369,36 @@
   },
   "${ModID}:UnstableConcoction": {
     "NAME": "Unstable Concoction",
-    "DESCRIPTION": "{@@}Deal !D! damage. Obtain NL an {!Upgrades!|>0=${ModID}:Explosive_Potion+|@=*Explosive *Potion}. NL ${ModID}:Big_Game: Obtain a {!Upgrades!|>0=${ModID}:Fire_Potion+|@=*Fire *Potion} instead. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage. Obtain NL an {!Upgrades!|>0=${ModID}:Explosive_Potion+|@=*Explosive *Potion}. NL ${ModID}:Big_Game: Obtain a {!Upgrades!|>0=${ModID}:Fire_Potion+|@=*Fire *Potion} instead. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
-    "DESCRIPTION": "{@@}Deal !D! damage.{!M!|1= NL Draw !M! card.|>1= NL Draw !M! cards.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage.{!M!|1= NL Draw !M! card.|>1= NL Draw !M! cards.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Transform ${ModID}:any !M! cards into{!Upgrades!|>0= Upgraded} cards of any color.",
     "EXTENDED_DESCRIPTION": [
       "Select cards to Transform."
-    ]
+    ],
+    "FLAVOR": ""
   },
   "${ModID}:Hoodwink": {
     "NAME": "Hoodwink",
-    "DESCRIPTION": "{@@}stslib:Snecko. NL Deal !D! damage to a random enemy {!M!|-1=a number of times equal to this card's cost + !${ModID}:m2!|@=!M! times}."
+    "DESCRIPTION": "{@@}stslib:Snecko. NL Deal !D! damage to a random enemy {!M!|-1=a number of times equal to this card's cost + !${ModID}:m2!|@=!M! times}.",
+    "FLAVOR": "The ol' beehive-to-the-head trick: unreliable, unpredictable, but so funny to watch."
   },
   "${ModID}:RabbitPunch": {
     "NAME": "Rabbit Punch",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage.",
+    "FLAVOR": ""
   },
   "${ModID}:BackfiringTrap": {
     "NAME": "Backfiring Trap",
-    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP. NL Exhaust.",
+    "FLAVOR": "The Bogwarden wasn't always so adept at reverse engineering."
   },
   "${ModID}:DollsCurse": {
     "NAME": "Doll's Curse",
@@ -339,39 +406,48 @@
   },
   "${ModID}:BolaToss": {
     "NAME": "Bola Toss",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Constricted."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Constricted.",
+    "FLAVOR": ""
   },
   "${ModID}:WitchingHour": {
     "NAME": "Bewitch",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you apply a debuff to this enemy, gain !M! Block. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you apply a debuff to this enemy, gain !M! Block. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:Friends": {
     "NAME": "Friends",
-    "DESCRIPTION": "Gain 1 ${ModID}:Buffer. NL Next turn, gain !M! Intangible. In 2 turns, lose !${ModID}:m2! Max HP."
+    "DESCRIPTION": "Gain 1 ${ModID}:Buffer. NL Next turn, gain !M! Intangible. In 2 turns, lose !${ModID}:m2! Max HP.",
+    "FLAVOR": ""
   },
   "${ModID}:Snip": {
     "NAME": "Snip",
-    "DESCRIPTION": "{@@}Retain. NL Trigger your leftmost ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
+    "DESCRIPTION": "{@@}Retain. NL Trigger your leftmost ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}",
+    "FLAVOR": ""
   },
   "${ModID}:Bide": {
     "NAME": "Bide Time",
-    "DESCRIPTION": "For X turns, gain !B! Block at the end of your turn."
+    "DESCRIPTION": "For X turns, gain !B! Block at the end of your turn.",
+    "FLAVOR": ""
   },
   "${ModID}:Survey": {
     "NAME": "Survey",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL For each Skill drawn, gain !B! Block."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL For each Skill drawn, gain !B! Block.",
+    "FLAVOR": ""
   },
   "${ModID}:Sap": {
     "NAME": "Sap",
-    "DESCRIPTION": "Gain [E] for each unique debuff the enemy has."
+    "DESCRIPTION": "Gain [E] for each unique debuff the enemy has.",
+    "FLAVOR": ""
   },
   "${ModID}:Implode": {
     "NAME": "Implode",
-    "DESCRIPTION": "Gain !B! Block and !M! ${ModID}:Blur. NL A random enemy gains !${ModID}:m2! Block and !${ModID}:m3! ${ModID}:Blur."
+    "DESCRIPTION": "Gain !B! Block and !M! ${ModID}:Blur. NL A random enemy gains !${ModID}:m2! Block and !${ModID}:m3! ${ModID}:Blur.",
+    "FLAVOR": "Even slightly adjusting the rituals that result in Blast creation can have drastically differing results."
   },
   "${ModID}:TinShield": {
     "NAME": "Canned Block",
-    "DESCRIPTION": "${ModID}:Trap. NL Next turn, NL gain !B! Block. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Trap. NL Next turn, NL gain !B! Block. NL Exhaust.",
+    "FLAVOR": ""
   },
   "${ModID}:Hurl": {
     "NAME": "Hurl",
@@ -379,6 +455,7 @@
     "EXTENDED_DESCRIPTION": [
       "Select a Trap to trigger.",
       "Select Traps to trigger."
-    ]
+    ],
+    "FLAVOR": ""
   }
 }
