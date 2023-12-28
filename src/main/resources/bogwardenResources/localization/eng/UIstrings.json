@@ -9,6 +9,12 @@
       "Enable Downfall Bogwarden character boss"
     ]
   },
+  "${ModID}:BetaArtCredits": {
+    "TEXT": [
+      " NL Beta Artist: "
+    ]
+  },
+
   "${ModID}:NonAttackPack": {
     "TEXT": ["Step Back", "Defeat enemies from a range using non-attack damage.", "occultpyromancer, ocean"]
   },

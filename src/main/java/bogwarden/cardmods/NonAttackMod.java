@@ -3,6 +3,7 @@ package bogwarden.cardmods;
 import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.relics.GrabbyHand;
 import CardAugments.cardmods.AbstractAugment;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
@@ -17,7 +18,7 @@ public class NonAttackMod extends AbstractAugment {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return isNormalCard(card) && characterCheck(p -> p instanceof TheBogwarden) && card.baseDamage >= 0 && card.damageTypeForTurn == DamageType.NORMAL;
+        return isNormalCard(card) && characterCheck(p -> p instanceof TheBogwarden && !p.hasRelic(GrabbyHand.ID)) && card.baseDamage >= 0 && card.damageTypeForTurn == DamageType.NORMAL;
     }
 
     @Override

@@ -78,14 +78,14 @@
   "${ModID}:BlendingInBlockPower": {
     "NAME": "Deep Cover",
     "DESCRIPTIONS": [
-      "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
+      "At the end of your turn, if you played no Attacks, gain #b",
       " #yBlock."
     ]
   },
   "${ModID}:BlendingInPower": {
     "NAME": "Blending In",
     "DESCRIPTIONS": [
-      "At the start of your turn, if any enemy intends to use a non-attack move, gain #b",
+      "At the end of your turn, if you played no Attacks, gain #b",
       " #yBlur."
     ]
   },
@@ -280,6 +280,13 @@
       "For #b",
       " turn, gain #b50% more #yBlock from cards.",
       " turns, gain #b50% more #yBlock from cards."
+    ]
+  },
+  "${ModID}:VengeancePower": {
+    "NAME": "Vengeance",
+    "DESCRIPTIONS": [
+      "Whenever it loses HP, gain #b",
+      " #yBlock."
     ]
   },
 

@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
+import bogwarden.vfx.OpenEyesEffect;
+
 public class Walkabout extends AbstractBogCard {
     public final static String ID = makeID("Walkabout");
     private static boolean fromWalkabout = false;
@@ -22,6 +25,8 @@ public class Walkabout extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        OpenEyesEffect eyes = new OpenEyesEffect(Color.BROWN, false, false, false, 1f);
+        vfx(eyes);
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
@@ -33,6 +38,7 @@ public class Walkabout extends AbstractBogCard {
             public void update() {
                 isDone = true;
                 fromWalkabout = false;
+                eyes.canGoPastHalf = true;
             }
         });
     }

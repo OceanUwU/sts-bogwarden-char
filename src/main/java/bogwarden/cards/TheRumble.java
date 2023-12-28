@@ -42,7 +42,7 @@ public class TheRumble extends AbstractBogCard {
         forAllMonstersLiving(mo -> vfx(new CreatureFlyEffect(mo)));
     }
 
-    private static class CreatureFlyEffect extends AbstractGameEffect {
+    public static class CreatureFlyEffect extends AbstractGameEffect {
         private static final float ACCELERATION = -2000f;
         private static final float SMOKE_GAP = 0.05f;
         public AbstractCreature target;

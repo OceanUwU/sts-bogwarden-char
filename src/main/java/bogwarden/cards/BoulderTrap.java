@@ -25,7 +25,7 @@ public class BoulderTrap extends AbstractTrapCard {
 
     public BoulderTrap() {
         super(ID, CardRarity.RARE);
-        setDamage(20, +5);
+        setDamage(25, +5);
         setSecondMagic(1);
         setMagic(0);
         isMultiDamage = true;

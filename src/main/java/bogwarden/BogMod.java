@@ -218,11 +218,11 @@ public class BogMod implements
             config.setBool("usemoddedpools", button.enabled);
             try {config.save();} catch (Exception e) {}
         }));
-        settingsPanel.addUIElement(new ModLabeledToggleButton(TEXT[4], 350, 800-80, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool("downfallboss"), settingsPanel, label -> {}, button -> {
+        /*settingsPanel.addUIElement(new ModLabeledToggleButton(TEXT[4], 350, 800-80, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool("downfallboss"), settingsPanel, label -> {}, button -> {
             doDownfallBoss = button.enabled;
             config.setBool("downfallboss", button.enabled);
             try {config.save();} catch (Exception e) {}
-        }));
+        }));*/
         BaseMod.registerModBadge(TexLoader.getTexture(makeImagePath("ui/badge.png")), TEXT[0], TEXT[1], TEXT[2], settingsPanel);
 
         if (ModManager.isChimeraLoaded)

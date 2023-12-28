@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -30,6 +31,6 @@ public class Blast extends AbstractBogCard {
         dmgRandom(BLAST_EFFECT, secondMagic > 0 ? mo -> {
             p.getPower(PoisonNova.PoisonNovaPower.POWER_ID).flash();
             applyToEnemyTop(mo, new PoisonPower(mo, p, secondMagic));
-        } : null, null);
+        } : null, secondMagic > 0 ? mo -> vfxTop(new ThrowDaggerEffect(mo.hb.cX, mo.hb.cY)) : null);
     }
 }

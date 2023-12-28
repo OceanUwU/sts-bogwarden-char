@@ -2,7 +2,9 @@ package bogwarden.cards;
 
 import bogwarden.powers.LoseSpinesPower;
 import bogwarden.powers.Spines;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -18,6 +20,8 @@ public class BrambleShield extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        atb(new SFXAction(BogAudio.PLANT_PULL));
+        vfx(new NaturesWrath.PlantMassacreEffect(p));
         blck();
         atb(new AbstractGameAction() {
             public void update() {

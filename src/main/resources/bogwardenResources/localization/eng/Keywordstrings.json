@@ -102,5 +102,12 @@
       "ocean"
     ],
     "DESCRIPTION": "Ocean is free! Ocean is free! Woohoo!"
+  },
+  {
+    "PROPER_NAME": "Any",
+    "NAMES": [
+      "any"
+    ],
+    "DESCRIPTION": "From your hand, draw pile, or discard pile."
   }
 ]

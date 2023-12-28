@@ -2,6 +2,7 @@ package bogwarden.util;
 
 import basemod.BaseMod;
 import bogwarden.BogMod;
+import java.lang.reflect.Field;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makePath;
@@ -22,9 +23,15 @@ public class BogAudio {
     public static String OTHERSIDER = makeID("OTHERSIDER");
     public static String REFINED_BLAST = makeID("REFINEDBLAST");
     public static String IMPLODE = makeID("IMPLODE");
+    public static String RUSTLE = makeID("RUSTLE");
+    public static String PLANT_PULL = makeID("PLANTPULL");
+    public static String WHOOSH = makeID("WHOOSH");
 
     public static void addAudio() {
-        for (String i : new String[] {TRAP_TRIGGER, TOTEM_TRIGGER, BACKFIRE_TRIGGER, BLAST, BUGS, BATS, MOJO, MALEDICT, FROGS, TOAD, BLOW_DART, SHOTGUN, OTHERSIDER, REFINED_BLAST, IMPLODE})
-            BaseMod.addAudio(i, makePath("audio/"+i.replace(BogMod.modID+":", "").toLowerCase()+".ogg"));
+        try {
+            for (Field field : BogAudio.class.getFields())
+                if (field.getType().equals(String.class))
+                    BaseMod.addAudio((String)field.get(null), makePath("audio/"+((String)field.get(null)).replace(BogMod.modID+":", "").toLowerCase()+".ogg"));
+        } catch (Exception e) {}
     }
 }

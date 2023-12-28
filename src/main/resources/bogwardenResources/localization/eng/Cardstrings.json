@@ -57,7 +57,7 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for your next !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
@@ -105,7 +105,7 @@
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
-    "DESCRIPTION": "Deal !D! damage. NL Trigger your next ${ModID}:Trap twice."
+    "DESCRIPTION": "Deal !D! damage. NL Trigger your leftmost ${ModID}:Trap twice."
   },
   "${ModID}:PlagueOfToads": {
     "NAME": "Plague of Toads",
@@ -121,7 +121,7 @@
   },
   "${ModID}:Blowpipe": {
     "NAME": "Blowpipe",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Put !M! Unplayable card{!M!|>1=s} from your draw or discard pile into your hand.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Put ${ModID}:any{!M!|1=|@= !M!} Unplayable card{!M!|>1=s} into your hand.",
     "EXTENDED_DESCRIPTION": [
       "Select a card to move to your hand.",
       "Select cards to move to your hand."
@@ -161,7 +161,7 @@
   },
   "${ModID}:Portents": {
     "NAME": "Portents",
-    "DESCRIPTION": "Whenever you discard a card via Scry, gain !M! Block."
+    "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block."
   },
   "${ModID}:IllIntendedSchemes": {
     "NAME": "Cruel Schemes",
@@ -205,7 +205,7 @@
   },
   "${ModID}:BlendingIn": {
     "NAME": "Blending In",
-    "DESCRIPTION": "{@@}Now and at the start of your turn, if any enemy isn't attacking, gain {!M!|>0=!M! Block and }!${ModID}:m2! ${ModID}:Blur."
+    "DESCRIPTION": "{@@}At the end of your turn, if you played no Attacks, gain {!M!|>0=!M! Block and }!${ModID}:m2! ${ModID}:Blur."
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
@@ -213,7 +213,7 @@
   },
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Apply !M! ${ModID}:Maledict. NL Add !${ModID}:m2! *Blast{!${ModID}:m2!|>1=s} into your hand. NL ${ModID}:Big_Game: Upgrade {!${ModID}:m2!|1=it|@=them}. NL Exhaust."
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block or !${ModID}:m2! if ${ModID}:Big_Game. NL Exhaust."
   },
   "${ModID}:HexingTotem": {
     "NAME": "Ritual Totem",
@@ -225,7 +225,7 @@
   },
   "${ModID}:CageOfSerpents": {
     "NAME": "Cage of Serpents",
-    "DESCRIPTION": "${ModID}:Trap. NL Apply !${ModID}:m2! ${ModID}:Venom. NL Enemy loses !D! HP !M! times."
+    "DESCRIPTION": "${ModID}:Trap. NL Apply !M! ${ModID}:Venom. NL Enemy loses !D! HP !${ModID}:m2! times."
   },
   "${ModID}:Minefield": {
     "NAME": "Minefield",
@@ -233,11 +233,11 @@
   },
   "${ModID}:WatchAndLearn": {
     "NAME": "Watch and Learn",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Trigger your next !M! ${ModID}:Trap{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Trigger your !M! leftmost ${ModID}:Trap{!M!|>1=s}."
   },
   "${ModID}:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "Apply !M! ${ModID}:Venom to ALL enemies. NL ALL enemies lose !${ModID}:m2! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "Apply !M! ${ModID}:Snared and ${ModID}:Venom to ALL enemies. NL Exhaust."
   },
   "${ModID}:BrambleShield": {
     "NAME": "Bramble Shield",
@@ -257,11 +257,11 @@
   },
   "${ModID}:Stalker": {
     "NAME": "Stalker",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded via Scry, play it and increase its damage by !M! this combat."
+    "DESCRIPTION": "Deal !D! damage. NL If discarded via Scry, play this and increase its damage by !M!."
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
-    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your next ${ModID}:Trap X{!M!|>0=+!M!} times."
+    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your leftmost ${ModID}:Trap X{!M!|>0=+!M!} times."
   },
   "${ModID}:HairTrigger": {
     "NAME": "Hair Trigger",
@@ -312,11 +312,11 @@
   },
   "${ModID}:CorpseFlies": {
     "NAME": "Corpse Flies",
-    "DESCRIPTION": "{@@}Deal !D! damage.{!Upgrades!|>0= NL Draw 1 card.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL Exhaust."
+    "DESCRIPTION": "{@@}Deal !D! damage.{!M!|1= NL Draw !M! card.|>1= NL Draw !M! cards.} NL If Fatal, {!Upgrades!|0=permanently Upgrade this card|@=add a *Corpse *Flies to your deck}. NL Exhaust."
   },
   "${ModID}:WildMagic": {
     "NAME": "Wild Magic",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Transform up to !M! cards in your draw pile into{!Upgrades!|>0= Upgraded} cards of any color.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Transform ${ModID}:any !M! cards into{!Upgrades!|>0= Upgraded} cards of any color.",
     "EXTENDED_DESCRIPTION": [
       "Select cards to Transform."
     ]
@@ -351,7 +351,7 @@
   },
   "${ModID}:Snip": {
     "NAME": "Snip",
-    "DESCRIPTION": "{@@}Retain. NL Trigger your next ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
+    "DESCRIPTION": "{@@}Retain. NL Trigger your leftmost ${ModID}:Trap.{!Upgrades!|0= NL Exhaust.}"
   },
   "${ModID}:Bide": {
     "NAME": "Bide Time",
@@ -375,7 +375,7 @@
   },
   "${ModID}:Hurl": {
     "NAME": "Hurl",
-    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain. NL }Choose a ${ModID}:Trap in your hand, draw pile, or discard pile to trigger on an enemy.",
+    "DESCRIPTION": "{@@}Trigger ${ModID}:any ${ModID}:Trap NL on an enemy.{!Upgrades!|>0= NL Unless it Exhausted, return it to your hand.}",
     "EXTENDED_DESCRIPTION": [
       "Select a Trap to trigger.",
       "Select Traps to trigger."

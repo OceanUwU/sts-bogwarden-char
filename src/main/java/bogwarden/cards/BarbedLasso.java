@@ -48,7 +48,7 @@ public class BarbedLasso extends AbstractBogCard {
         public void onUseCard(AbstractCard card, UseCardAction action) {
             if (card.type == AbstractCard.CardType.SKILL) {
                 flash();
-                addToTop(new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                addToBot(new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
             } 
         }
   

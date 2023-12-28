@@ -1,13 +1,15 @@
 package bogwarden.cards;
 
+import bogwarden.cards.NaturesWrath.PlantMassacreEffect;
+import bogwarden.powers.Spines;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
-
-import bogwarden.powers.Spines;
 
 public class StickerbrushStrike extends AbstractBogCard {
     public final static String ID = makeID("StickerbrushStrike");
@@ -20,7 +22,9 @@ public class StickerbrushStrike extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        atb(new SFXAction(BogAudio.PLANT_PULL));
+        vfx(new PlantMassacreEffect(m));
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
         applyToSelf(new Spines(p, magicNumber));
     }
 }

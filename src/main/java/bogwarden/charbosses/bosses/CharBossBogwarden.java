@@ -112,8 +112,8 @@ public class CharBossBogwarden extends AbstractCharBoss {
     @SpirePatch(clz=downfallMod.class, method="resetBossList", requiredModId="downfall")
     public static class AddToList {
         public static void Postfix() {
-            if (BogMod.doDownfallBoss)
-                downfallMod.possEncounterList.add(CharBossBogwarden.ID);
+            //if (BogMod.doDownfallBoss)
+            //    downfallMod.possEncounterList.add(CharBossBogwarden.ID);
         }
     }
 

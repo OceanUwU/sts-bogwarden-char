@@ -10,10 +10,12 @@ import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.ExplosivePotion;
 import com.megacrit.cardcrawl.potions.FirePotion;
+import com.megacrit.cardcrawl.relics.Sozu;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
@@ -42,8 +44,6 @@ public class UnstableConcoction extends AbstractBogCard {
         vfx(effect, 0.5f);
         vfx(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.2f);
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        tfx(effect);
-        atb(new ObtainPotionAction(potion));
     }
 
     private static class ThrowPotionAndFillItEffect extends AbstractGameEffect {
@@ -54,7 +54,7 @@ public class UnstableConcoction extends AbstractBogCard {
 
         private float x, y;
         private float startX, startY, endX, endY;
-        private AbstractPotion emptyPotion, filledPotion;
+        private AbstractPotion emptyPotion, filledPotion, potionToGive;
 
         public ThrowPotionAndFillItEffect(AbstractPotion potion, float startX, float startY, float endX, float endY) {
             duration = DURATION;
@@ -62,7 +62,8 @@ public class UnstableConcoction extends AbstractBogCard {
             this.startY = startY;
             this.endX = endX;
             this.endY = endY;
-            filledPotion = potion.makeCopy();
+            potionToGive = potion;
+            filledPotion = potionToGive.makeCopy();
             Color transparent = new Color(0f, 0f, 0f, 0f);
             emptyPotion = filledPotion.makeCopy();
             emptyPotion.liquidColor = transparent;
@@ -82,8 +83,13 @@ public class UnstableConcoction extends AbstractBogCard {
             else
                 scale = Settings.scale * SCALE_MULT;
             duration -= Gdx.graphics.getDeltaTime();
-            if (duration <= 0f)
+            if (duration <= 0f) {
+                if (AbstractDungeon.player.hasRelic(Sozu.ID))
+                    AbstractDungeon.player.getRelic(Sozu.ID).flash();
+                else
+                    AbstractDungeon.player.obtainPotion(potionToGive.makeCopy());
                 isDone = true;
+            }
         }
 
         public void render(SpriteBatch sb) {

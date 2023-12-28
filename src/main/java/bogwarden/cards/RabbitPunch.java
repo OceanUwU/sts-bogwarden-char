@@ -22,6 +22,7 @@ public class RabbitPunch extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new RabbitPunchEffect(m.hb.cX - p.hb.cX - 150f * Settings.scale), RabbitPunchEffect.MOVE_TIME - 0.1f);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        vfx(new TheRumble.CreatureFlyEffect(m));
     }
 
     private static class RabbitPunchEffect extends AbstractGameEffect {

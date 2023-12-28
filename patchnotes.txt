@@ -1,19 +1,38 @@
-- Eagle eyes: Uncommon > Common, block 8 > 7
-- Tripwire: Common > Uncommon, agile applied 1 > 2
-- Hair Trigger: Now loses HP AFTER dealing damage
-- Sap: No longer exhausts
-- Night Terror: Cost 1 > 0, upgrade now gives you 5 vigor
-- Implode: Block 12 (16) > 12 (14), Block to enemy 8 > 14 (10)
-- Entangling Vines: No longer grants temp spines, now applies 2 (3) Snared (the buff from Snare Trap)
-- Bramble Shield: Block 4 (7) > 4 (6), No longer increases block gained based on spines, now grants temp spines equal to your block.
+- Removed Bad Medicine
+- Vengeful Totem: Reworked. now reads "Trap. Whenever this enemy loses HP, gain 2 (3) Block. 3 (4) if Big Game."
+- Blending In: No longer looks at enemy intents, now activates at the end of your turn if you played no attacks during that turn
+- Snapper Trap: Damage 8 > 10
+- Spinning Blades: Damage 4 > 6
+- Pressure Plate: Mark 5 > 6
+- Boulder Trap: Damage 20 > 25
+- Cage of Serpents: Now also upgrades to apply +1 venom
+- Acid Cloud: no longer applies strength down, now applies 3 (5) Snared. Venom 3 (4) > 3 (5)
+- Wild Magic: Now also lets you transform cards in your discard pile or hand, now requires you to always select 3 cards again
+- Hurl: Wording changed + upgrade no longer retains, now returns the triggered trap to your hand unless it exhausted
+- Broiling Flames: Damage 12 > 14
+- Corpse Flies: Damage 6 (8) > 7 (8)
+- Blunderbuss: Upgrade no longer upgrades damage, now upgrades damage per retain card by 2
+- Barbed Lasso debuff: Now deals damage AFTER card effects resolve
+- Tripwire: now applies the agile buff to you this turn rather than next (still behaves the same when triggered during the enemy turn)
+- Reworded Blowpipe
+- Reworded Portents & Stalker
+- Reworded "trigger your next trap" to "Trigger your leftmost trap" on Snip, Watch & Learn, Bag & Tag, Incarcerate
+- When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
 
-- Added downfall bosses (they dont have movesets rn)
-    - Added config option to disable these
+- Eagle Eyes & Incantation & Line Up & Darkvision & Walkabout: VFX
+- Night Terror: Improved VFX
+- Rabbit Punch: Improved VFX
+- Shank: VFX
+- Incarcerate: VFX
+- Bushwhack: VFX
+- Blending In: VFX
+- Nature's Wrath & Stickerbush Strike & Bramble Shield: VFX
+- Broiling Flames: VFX
+- Restless Spirits: VFX (kinda sucks but w/e)
+- Poison Nova: VFX (when you play the blasts)
+- Camp Out: VFX (while you're choosing the card)
+- Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block
 
-- Du-vu needle / Doll's curse: no longer show up in collection
-- Sludge bomb VFX is now faster
-- Implode: new VFX
-- "Refined" Refined Blast SFX & VFX
-- Added Hurl & Canned Block art
-- Added Pressure Plate & Forge beta art
-- T
+- Bugfix: Ending a combat with Unstable Concoction now gives you the potion
+- Fairy Chimera Modifier can no longer show up when you have Glove of Zapping
+- Removed Downfall bosses for now (i cant be bothered to design them)

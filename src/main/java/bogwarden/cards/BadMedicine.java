@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import basemod.AutoAdd;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
 
+@AutoAdd.Ignore
 public class BadMedicine extends AbstractBogCard {
     public final static String ID = makeID("BadMedicine");
 

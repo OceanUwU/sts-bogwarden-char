@@ -23,7 +23,7 @@ public class Tripwire extends AbstractTrapCard {
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        applyToSelfTop(new NextTurnAgile(p, secondMagic));
+        applyToSelfTop(new Agile(p, secondMagic));
         applyToSelfTop(new DrawCardNextTurnPower(p, magicNumber));
     }
 
@@ -59,7 +59,7 @@ public class Tripwire extends AbstractTrapCard {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[amount == 1 ? 1 : 2];
         }
     
-        public void atEndOfRound() {
+        public void atEndOfTurn(boolean isPlayer) {
             addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
   

@@ -34,7 +34,8 @@ public class CorpseFlies extends AbstractBogCard {
 
     public CorpseFlies(boolean real) {
         super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        setDamage(6, +2);
+        setDamage(7, +1);
+        setMagic(0, +1);
         setExhaust(true);
         this.real = real;
         tags.add(CardTags.HEALING);
@@ -47,18 +48,8 @@ public class CorpseFlies extends AbstractBogCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new BugSwarmEffect((int)AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof CorpseFlies).count() * 3, m.hb.cX, m.hb.cY, TexLoader.getTexture(makeImagePath("vfx/corpsefly.png")), BogAudio.BUGS));
         atb(new CorpseFliesAction(m, new DamageInfo(p, damage, damageTypeForTurn), upgraded, this));
-        if (upgraded)
-            atb(new DrawCardAction(1));
-            /*atb(new AbstractGameAction() {
-                public void update() {
-                    isDone = true;
-                    CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                    p.drawPile.group.stream().filter(c -> c instanceof CorpseFlies).forEach(c -> cards.addToRandomSpot(c));
-                    cards.shuffle(AbstractDungeon.cardRandomRng);
-                    if (cards.size() > 0)
-                        att(new MoveCardsAction(p.hand, p.drawPile, c -> c == cards.getBottomCard(), 1));
-                }
-            });*/
+        if (magicNumber > 0)
+            atb(new DrawCardAction(magicNumber));
     }
 
     @Override

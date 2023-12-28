@@ -16,7 +16,7 @@ public class SnapperTrap extends AbstractTrapCard {
 
     public SnapperTrap() {
         super(ID, CardRarity.BASIC);
-        setDamage(8, +4);
+        setDamage(10, +4);
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
+
+import bogwarden.vfx.OpenEyesEffect;
 
 public class NightTerror extends AbstractBogCard {
     public final static String ID = makeID("NightTerror");
@@ -25,6 +28,7 @@ public class NightTerror extends AbstractBogCard {
         AbstractGameEffect effect = new HeartMegaDebuffEffect();
         effect.startingDuration = 1.6f;
         effect.duration = effect.startingDuration;
+        vfx(new OpenEyesEffect(Color.WHITE, false, true, true, 1f));
         vfx(effect, 0.8f);
         forAllMonstersLiving(mo -> {
             applyToEnemy(mo, new VulnerablePower(mo, magicNumber, false));

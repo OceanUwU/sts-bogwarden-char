@@ -1,6 +1,9 @@
 package bogwarden.cards;
 
 import bogwarden.powers.EnergizedBogPower;
+import bogwarden.vfx.OpenEyesEffect;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +21,15 @@ public class LineUp extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        OpenEyesEffect eyes = new OpenEyesEffect(new Color(0.73f, 0.94f, 0.36f, 1f), false, false, false, 1f);
+        vfx(eyes);
         atb(new ScryAction(magicNumber));
+        atb(new AbstractGameAction() {
+            public void update() {
+                isDone = true;
+                eyes.canGoPastHalf = true;
+            }
+        });
         applyToSelf(new EnergizedBogPower(p, secondMagic));
     }
 

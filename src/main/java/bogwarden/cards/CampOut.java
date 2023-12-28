@@ -1,9 +1,16 @@
 package bogwarden.cards;
 
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
+import com.badlogic.gdx.Gdx;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.screens.CardRewardScreen;
+import com.megacrit.cardcrawl.ui.buttons.PeekButton;
+import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 import java.util.ArrayList;
 
 import static bogwarden.BogMod.makeID;
@@ -40,7 +47,7 @@ public class CampOut extends AbstractBogCard {
         if (upgraded)
             for (AbstractCard c : choices)
                 c.upgrade();
-        atb(new ChooseOneAction(choices));
+        atb(new FieryChooseOneAction(choices));
     }
 
     @Override
@@ -48,5 +55,38 @@ public class CampOut extends AbstractBogCard {
         super.upp();
         for (AbstractCard c : MultiCardPreview.multiCardPreview.get(this))
             c.upgrade();
+    }
+
+    public static class FieryChooseOneAction extends AbstractGameAction {
+        private static ArrayList<AbstractCard> choicesLmao;
+        private ArrayList<AbstractCard> choices;
+
+        public FieryChooseOneAction(ArrayList<AbstractCard> choices) {
+            duration = Settings.ACTION_DUR_FAST;
+            this.choices = choices;
+            choicesLmao = choices;
+        }
+
+        public void update() {
+            if (duration == Settings.ACTION_DUR_FAST)
+                AbstractDungeon.cardRewardScreen.chooseOneOpen(choices);
+            tickDuration();
+        }
+
+        @SpirePatch(clz=CardRewardScreen.class, method="update")
+        public static class ShowFireOnReward {
+            private static float fireTimer = 0f;
+            
+            public static void Postfix(CardRewardScreen __instance) {
+                if (__instance.rewardGroup == choicesLmao && !PeekButton.isPeeking) {
+                    fireTimer -= Gdx.graphics.getDeltaTime();
+                    if (fireTimer <= 0f) {
+                        fireTimer += 0.05f;
+                        for (int i = 0; i < 4; i++)
+                            AbstractDungeon.effectList.add(new CampfireEndingBurningEffect());
+                    }
+                }
+            }
+        }
     }
 }
