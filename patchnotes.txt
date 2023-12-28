@@ -26,6 +26,7 @@
 - Incarcerate: VFX
 - Bushwhack: VFX
 - Blending In: VFX
+- Friends: 3 VFXs (1 for each friend!)
 - Nature's Wrath & Stickerbush Strike & Bramble Shield: VFX
 - Broiling Flames: VFX
 - Restless Spirits: VFX (kinda sucks but w/e)
