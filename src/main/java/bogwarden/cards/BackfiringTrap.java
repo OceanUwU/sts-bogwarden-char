@@ -17,7 +17,7 @@ public class BackfiringTrap extends AbstractTrapCard {
         super(ID, CardRarity.SPECIAL);
         type = CardType.STATUS;
         color = CardColor.COLORLESS;
-        setMagic(4);
+        setMagic(3);
         setExhaust(true);
         sfx = BogAudio.BACKFIRE_TRIGGER;
     }

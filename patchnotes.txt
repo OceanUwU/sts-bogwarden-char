@@ -11,6 +11,7 @@
 - Hurl: Wording changed + upgrade no longer retains, now returns the triggered trap to your hand unless it exhausted
 - Broiling Flames: Damage 12 > 14
 - Corpse Flies: Damage 6 (8) > 7 (8)
+- Backfiring Trap: HP Loss 4 > 3
 - Blunderbuss: Upgrade no longer upgrades damage, now upgrades damage per retain card by 2
 - Barbed Lasso debuff: Now deals damage AFTER card effects resolve
 - Tripwire: now applies the agile buff to you this turn rather than next (still behaves the same when triggered during the enemy turn)

@@ -50,7 +50,7 @@ public class VengefulTotem extends AbstractTrapCard {
         public void wasHPLost(DamageInfo info, int damageAmount) {
             if (damageAmount > 0) {
                 flash();
-                atb(new GainBlockAction(adp(), amount));
+                att(new GainBlockAction(adp(), amount, true));
             } 
         }
     }
