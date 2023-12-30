@@ -3,8 +3,10 @@ package bogwarden.relics;
 import bogwarden.characters.TheBogwarden;
 import bogwarden.powers.LoseMojoPower;
 import bogwarden.powers.Mojo;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
@@ -16,6 +18,11 @@ public class SwampTalisman extends AbstractBogRelic {
 
     public SwampTalisman() {
         super(ID, RelicTier.STARTER, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+    }
+
+    @Override
+    public void playLandingSFX() {
+        CardCrawlGame.sound.play(BogAudio.MOJO);
     }
 
     public String getUpdatedDescription() {

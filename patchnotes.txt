@@ -32,6 +32,7 @@
 - Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block & Entangling Vines
 - Added a few flavour texts for cards
 - Added placeholder flavour texts for all 8 potions
+- Changed the "landing sound" for 7 relics (the thing that plays when you click it)
 - When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
 - Reworded Blowpipe
 - Reworded Portents & Stalker

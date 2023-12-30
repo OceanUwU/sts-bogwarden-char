@@ -2,9 +2,11 @@ package bogwarden.relics;
 
 import bogwarden.characters.TheBogwarden;
 import bogwarden.powers.Mojo;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.commons.lang3.StringUtils;
 
@@ -19,6 +21,11 @@ public class JasperTalisman extends AbstractBogRelic {
 
     public JasperTalisman() {
         super(ID, RelicTier.BOSS, LandingSound.MAGICAL, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+    }
+
+    @Override
+    public void playLandingSFX() {
+        CardCrawlGame.sound.play(BogAudio.MOJO);
     }
 
     public String getUpdatedDescription() {

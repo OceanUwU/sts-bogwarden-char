@@ -3,9 +3,11 @@ package bogwarden.relics;
 import basemod.helpers.CardPowerTip;
 import bogwarden.cards.Blast;
 import bogwarden.characters.TheBogwarden;
+import bogwarden.util.BogAudio;
 import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static bogwarden.BogMod.makeID;
@@ -20,6 +22,11 @@ public class PrimordialFocus extends AbstractBogRelic {
         Blast blast = new Blast();
         blast.upgrade();
         tips.add(new CardPowerTip(blast));
+    }
+
+    @Override
+    public void playLandingSFX() {
+        CardCrawlGame.sound.play(BogAudio.TOTEM_TRIGGER);
     }
 
     public String getUpdatedDescription() {

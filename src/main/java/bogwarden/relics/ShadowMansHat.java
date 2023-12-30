@@ -2,7 +2,9 @@ package bogwarden.relics;
 
 import bogwarden.characters.TheBogwarden;
 import bogwarden.powers.Mojo;
+import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static bogwarden.BogMod.makeID;
@@ -14,6 +16,11 @@ public class ShadowMansHat extends AbstractBogRelic {
 
     public ShadowMansHat() {
         super(ID, RelicTier.COMMON, LandingSound.FLAT, TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR);
+    }
+
+    @Override
+    public void playLandingSFX() {
+        CardCrawlGame.sound.play(BogAudio.MALEDICT);
     }
 
     public String getUpdatedDescription() {
