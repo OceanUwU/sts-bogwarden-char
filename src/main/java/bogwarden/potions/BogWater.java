@@ -3,8 +3,11 @@ package bogwarden.potions;
 import basemod.abstracts.CustomPotion;
 import basemod.helpers.CardPowerTip;
 import bogwarden.BogMod;
+import bogwarden.cards.AbstractBogCard;
 import bogwarden.cards.Blast;
 import bogwarden.vfx.IncantationEffect;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText.PotionFlavorFields;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -21,6 +24,8 @@ public class BogWater extends CustomPotion {
     public BogWater() {
         super(potionStrings.NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionColor.SWIFT);
         labOutlineColor = BogMod.characterColor;
+        PotionFlavorFields.boxColor.set(this, AbstractBogCard.FLAVOUR_BOX_COLOR);
+        PotionFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     public void initializeData() {

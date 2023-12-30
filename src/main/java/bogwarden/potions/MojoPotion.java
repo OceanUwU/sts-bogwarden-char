@@ -3,8 +3,11 @@ package bogwarden.potions;
 import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import bogwarden.BogMod;
+import bogwarden.cards.AbstractBogCard;
 import bogwarden.powers.Mojo;
 import bogwarden.vfx.MojoFlashEffect;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText.PotionFlavorFields;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -21,6 +24,8 @@ public class MojoPotion extends CustomPotion {
     public MojoPotion() {
         super(potionStrings.NAME, POTION_ID, PotionRarity.COMMON, PotionSize.S, PotionColor.SWIFT);
         labOutlineColor = BogMod.characterColor;
+        PotionFlavorFields.boxColor.set(this, AbstractBogCard.FLAVOUR_BOX_COLOR);
+        PotionFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     public void initializeData() {

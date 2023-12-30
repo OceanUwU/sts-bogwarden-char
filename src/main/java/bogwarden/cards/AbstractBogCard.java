@@ -28,7 +28,7 @@ import static bogwarden.util.Wiz.att;
 public abstract class AbstractBogCard extends CustomCard {
     protected static AbstractGameAction.AttackEffect BLAST_EFFECT = FlashAtkImgPatches.BOGWARDEN_BLAST_EFFECT;
     protected final CardStrings cardStrings;
-    private static final Color FLAVOUR_BOX_COLOR = new Color(0.53f, 0.37f, 0.69f, 1f);
+    public static final Color FLAVOUR_BOX_COLOR = new Color(0.53f, 0.37f, 0.69f, 1f);
 
     public int secondMagic = -1;
     public int baseSecondMagic = -1;

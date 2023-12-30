@@ -3,7 +3,10 @@ package bogwarden.potions;
 import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import bogwarden.BogMod;
+import bogwarden.cards.AbstractBogCard;
 import bogwarden.powers.Maledict;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText.PotionFlavorFields;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,6 +26,8 @@ public class MaledictPotion extends CustomPotion {
         labOutlineColor = BogMod.characterColor;
         isThrown = true;
         this.targetRequired = true;
+        PotionFlavorFields.boxColor.set(this, AbstractBogCard.FLAVOUR_BOX_COLOR);
+        PotionFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     public void initializeData() {

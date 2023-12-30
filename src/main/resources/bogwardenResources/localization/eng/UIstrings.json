@@ -14,6 +14,16 @@
       " NL Beta Artist: "
     ]
   },
+  "${ModID}:ExplosivePotionPlusFlavorText": {
+    "TEXT": [
+      "Instability tuned up to the max!!"
+    ]
+  },
+  "${ModID}:FirePotionPlusFlavorText": {
+    "TEXT": [
+      "Sip at your own risk."
+    ]
+  },
 
   "${ModID}:NonAttackPack": {
     "TEXT": ["Step Back", "Defeat enemies from a range using non-attack damage.", "occultpyromancer, ocean"]

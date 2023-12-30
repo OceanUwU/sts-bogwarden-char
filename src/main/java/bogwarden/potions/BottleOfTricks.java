@@ -5,8 +5,11 @@ import basemod.ReflectionHacks;
 import basemod.abstracts.CustomPotion;
 import bogwarden.BogMod;
 import bogwarden.actions.TriggerTrapAction;
+import bogwarden.cards.AbstractBogCard;
 import bogwarden.cards.AbstractTrapCard;
 import bogwarden.util.TexLoader;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText.PotionFlavorFields;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -35,6 +38,8 @@ public class BottleOfTricks extends CustomPotion {
         super(potionStrings.NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.BOTTLE, PotionColor.SWIFT);
         ReflectionHacks.setPrivate(this, AbstractPotion.class, "containerImg", TexLoader.getTexture(makeImagePath("potions/BottleOfTricks.png")));
         labOutlineColor = BogMod.characterColor;
+        PotionFlavorFields.boxColor.set(this, AbstractBogCard.FLAVOUR_BOX_COLOR);
+        PotionFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     public void initializeData() {
