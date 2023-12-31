@@ -1,31 +1,22 @@
-/*package bogwarden.multiplayer;
+package bogwarden.multiplayer;
 
 import basemod.ReflectionHacks;
 import bogwarden.BogMod;
 import bogwarden.characters.TheBogwarden;
 import bogwarden.util.TexLoader;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.esotericsoftware.spine.AnimationState;
-import com.esotericsoftware.spine.AnimationStateData;
-import com.esotericsoftware.spine.Skeleton;
-import com.esotericsoftware.spine.SkeletonData;
-import com.esotericsoftware.spine.SkeletonJson;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
+import skindex.registering.SkindexRegistry;
+import skindex.skins.player.PlayerSkin;
 import spireTogether.SpireTogetherMod;
-import spireTogether.Unlockable;
 import spireTogether.modcompat.generic.energyorbs.CustomizableEnergyOrbCustom;
 import spireTogether.monsters.CharacterEntity;
 import spireTogether.monsters.playerChars.NetworkCharPreset;
-import spireTogether.skins.PlayerSkin;
 import spireTogether.ui.elements.presets.Nameplate;
-import spireTogether.util.BundleManager;
 
+import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 
 public class NetworkBogwarden extends NetworkCharPreset {
@@ -47,28 +38,15 @@ public class NetworkBogwarden extends NetworkCharPreset {
             }
         };
         loadAnimation(makeImagePath("char/mainChar/bogwarden.atlas"), makeImagePath("char/mainChar/bogwarden.json"), 1f);
-        lobbyScale = 0.5f;
+        lobbyScale = 1.6f;
     }
 
     public String GetThreeLetterID() {
         return "BOG";
     }
 
-    public void GetSkins() {
-        skins.add(GetDefaultSkin());
-        skins.add(new BogwardenSkin("RED", Unlockable.UnlockMethod.FREE, playerClass));
-        skins.add(new BogwardenSkin("BLUE", Unlockable.UnlockMethod.FREE, playerClass));
-        skins.add(new BogwardenSkin("YELLOW", Unlockable.UnlockMethod.FREE, playerClass));
-        skins.add(GetGhostSkin());
-        skins.add(new BogwardenSkin("HEARTSLAYER", Unlockable.UnlockMethod.ACHIEVEMENT, playerClass));
-    }
-  
-    public PlayerSkin GetDefaultSkin() {
-        return new BogwardenSkin("BASE", Unlockable.UnlockMethod.FREE, playerClass);
-    }
-
     public PlayerSkin GetGhostSkin() {
-        return new BogwardenSkin("GHOST", Unlockable.UnlockMethod.ACHIEVEMENT, playerClass).SetBundles(BundleManager.GHOST);
+        return SkindexRegistry.getPlayerSkinByClassAndId(playerClass, makeID("ghost"));
     }
 
     public CharacterEntity CreateNew() {
@@ -94,26 +72,6 @@ public class NetworkBogwarden extends NetworkCharPreset {
     public Color GetCharColor() {
         return BogMod.characterColor.cpy();
     }
-
-    @Override
-    public void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
-        atlas = new TextureAtlas(Gdx.files.internal(atlasUrl));
-        SkeletonJson json = new SkeletonJson(this.atlas);
-        json.setScale(Settings.renderScale / scale);
-        SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal(skeletonUrl));
-        skeleton = new Skeleton(skeletonData);
-        skeleton.setColor(Color.WHITE);
-        stateData = new AnimationStateData(skeletonData);
-        state = new AnimationState(this.stateData);
-
-        ReflectionHacks.setPrivate(source, AbstractCreature.class, "skeleton", skeleton);
-        ReflectionHacks.setPrivate(source, AbstractCreature.class, "stateData", stateData);
-        source.state = new AnimationState(ReflectionHacks.getPrivate(source, AbstractCreature.class, "stateData"));
-
-        AnimationState.TrackEntry track = setStateAnimation(0, "idle", true);
-        track.setTimeScale(TheBogwarden.ANIMATION_SPEED);
-        setStateDataMix("hit", "idle", 0.5f);
-    }
   
     @SpirePatch(clz=SpireTogetherMod.class, method="RegisterModdedChars", requiredModId="spireTogether")
     public static class Register {
@@ -121,4 +79,4 @@ public class NetworkBogwarden extends NetworkCharPreset {
             SpireTogetherMod.allCharacterEntities.put(TheBogwarden.Enums.THE_BOGWARDEN_OCEAN, new NetworkBogwarden());
         }
     }
-}*/
+}

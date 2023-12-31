@@ -15,11 +15,13 @@ import bogwarden.util.BogAudio;
 import bogwarden.util.CardAugmentsLoader;
 import bogwarden.util.ModManager;
 import bogwarden.util.PackLoader;
+import bogwarden.util.Skindexer;
 import bogwarden.util.TexLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -92,6 +94,8 @@ public class BogMod implements
         BaseMod.subscribe(this);
         if (ModManager.isPackmasterLoaded)
             SpireAnniversary5Mod.subscribe(new PackLoader());
+        if (Loader.isModLoaded("skindex") || Loader.isModLoaded("spireTogether"))
+            Skindexer.register();
 
         BaseMod.addColor(TheBogwarden.Enums.OCEAN_BOGWARDEN_COLOR, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
