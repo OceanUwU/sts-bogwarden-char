@@ -2,7 +2,6 @@ package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.util.BogAudio;
-import bogwarden.vfx.IncantationEffect;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -32,7 +31,6 @@ public class VengefulTotem extends AbstractTrapCard {
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         applyToEnemyTop(m, new VengeancePower(m, isEliteOrBoss() ? secondMagic : magicNumber));
-        vfxTop(new IncantationEffect());
     }
 
     public static class VengeancePower extends AbstractBogPower {
