@@ -253,7 +253,7 @@
   },
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block or !${ModID}:m2! if ${ModID}:Big_Game. NL Exhaust.",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block. NL Exhaust.",
     "FLAVOR": "Depicts a malicious du-vu spirit, known for its love of stabbing."
   },
   "${ModID}:HexingTotem": {

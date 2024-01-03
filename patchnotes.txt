@@ -1,5 +1,5 @@
 - Removed Bad Medicine
-- Vengeful Totem: Reworked. now reads "Trap. Whenever this enemy loses HP, gain 2 (3) Block. 3 (4) if Big Game."
+- Vengeful Totem: Reworked. now reads "Trap. Whenever this enemy loses HP, gain 2 (3) Block."
 - Blending In: No longer looks at enemy intents, now activates at the end of your turn if you played no attacks during that turn
 - Snapper Trap: Damage 8 > 10
 - Spinning Blades: Damage 4 > 6

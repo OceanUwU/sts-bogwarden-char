@@ -3,7 +3,6 @@ package bogwarden.cards;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.util.BogAudio;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -20,17 +19,12 @@ public class VengefulTotem extends AbstractTrapCard {
     public VengefulTotem() {
         super(ID, CardRarity.UNCOMMON);
         setMagic(2, +1);
-        setSecondMagic(3, +1);
         setExhaust(true);
         sfx = BogAudio.TOTEM_TRIGGER;
     }
-  
-    public void triggerOnGlowCheck() {
-        this.glowColor = isEliteOrBoss() ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
-    }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
-        applyToEnemyTop(m, new VengeancePower(m, isEliteOrBoss() ? secondMagic : magicNumber));
+        applyToEnemyTop(m, new VengeancePower(m, magicNumber));
     }
 
     public static class VengeancePower extends AbstractBogPower {
