@@ -30,15 +30,15 @@
 - Poison Nova: VFX (when you play the blasts)
 - Camp Out: VFX (while you're choosing the card)
 - Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block & Entangling Vines
-- Added a few flavour texts for cards
-- Added placeholder flavour texts for all 8 potions
+- Removed flavour text for snapper trap, added one for hoodwink
 - Added custom "landing sound"s for 7 relics (the thing that plays when you click it)
 - When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
+- Fire potions & Explosive potions now display the damage buff they gain from mojo when hovered (like blasts)
 - Reworded Blowpipe
 - Reworded Portents & Stalker
 - Reworded "trigger your next trap" to "Trigger your leftmost trap" on Snip, Watch & Learn, Bag & Tag, Incarcerate
 
-- Fixed together in spire skins
+- Fixed together in spire skins + compatibility
 - Bugfix: Ending a combat with Unstable Concoction now gives you the potion
 - Fairy Chimera Modifier can no longer show up when you have Glove of Zapping
 - Removed Downfall bosses for now (i cant be bothered to design them)

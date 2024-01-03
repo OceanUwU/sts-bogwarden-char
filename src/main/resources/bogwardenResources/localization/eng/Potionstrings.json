@@ -5,7 +5,7 @@
             "Gain #b",
             " #yMojo."
         ],
-        "FLAVOR": "Perfectly brewed!"
+        "FLAVOR": ""
     },
     "${ModID}:BogWater": {
         "NAME": "Bog Water",
@@ -13,7 +13,7 @@
             "Add #b",
             " #yBlasts+ into your hand."
         ],
-        "FLAVOR": "Far from the first time the Bogwarden's had to stomach this."
+        "FLAVOR": ""
     },
     "${ModID}:BottleOfTricks": {
         "NAME": "Bottle of Tricks",
@@ -23,7 +23,7 @@
             " copies to your hand.",
             " Trigger all #yTraps in your hand."
         ],
-        "FLAVOR": "Sleeve not included."
+        "FLAVOR": ""
     },
     "${ModID}:MaledictPotion": {
         "NAME": "Withering Potion",
@@ -31,7 +31,7 @@
             "Apply #b",
             " #yMaledict."
         ],
-        "FLAVOR": "Containing evil in a bottle is an easier task than you'd think."
+        "FLAVOR": ""
     },
     "${ModID}:TempMojoPotion": {
         "NAME": "Pact Potion",
@@ -40,7 +40,7 @@
             " #yMojo. At the end of your turn, lose #b",
             " #yMojo."
         ],
-        "FLAVOR": "Once you make this deal, there's no going back..."
+        "FLAVOR": ""
     },
     "${ModID}:SpinesPotion": {
         "NAME": "Briar Tonic",
@@ -48,6 +48,6 @@
             "Gain #b",
             " #ySpines."
         ],
-        "FLAVOR": "The greatest thorn smoothie you'll ever taste!"
+        "FLAVOR": ""
     }
 }

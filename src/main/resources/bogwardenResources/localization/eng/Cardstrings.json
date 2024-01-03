@@ -10,7 +10,7 @@
   "${ModID}:SnapperTrap": {
     "NAME": "Snapper Trap",
     "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage.",
-	  "FLAVOR": "A cruel device, turned against those who thought to tame the Fogland Wilds."
+	  "FLAVOR": ""
   },
   "${ModID}:TrapCard": {
     "NAME": "",
@@ -32,7 +32,7 @@
   "${ModID}:Blast": {
     "NAME": "Blast",
     "DESCRIPTION": "{@@}Retain. NL Deal !D! damage{!${ModID}:m2!|>0= and apply !${ModID}:m2! Poison} to a random enemy. NL Exhaust.",
-    "FLAVOR": "With a touch of primordial magic, a splash of water can turn into a chaotic manifest of spirit energy."
+    "FLAVOR": ""
   },
   "${ModID}:RefinedBlast": {
     "NAME": "Refined Blast",
@@ -42,7 +42,7 @@
   "${ModID}:ShadowFont": {
     "NAME": "Shadow Font",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Add a *Blast{!Upgrades!|>0=+} into your hand.",
-    "FLAVOR": "Only the most skillful du-vu shamans can extract the raw power from these monuments."
+    "FLAVOR": ""
   },
   "${ModID}:SpinyShawl": {
     "NAME": "Urticating Spines",
@@ -71,7 +71,7 @@
   "${ModID}:PressurePlate": {
     "NAME": "Pressure Plate",
     "DESCRIPTION": "${ModID}:Trap. NL Apply !M! *Mark. NL ALL enemies lose HP equal to their *Mark.",
-    "FLAVOR": "The schematics for this paralyzing dart trap were pilfered off fallen Watchers."
+    "FLAVOR": ""
   },
   "${ModID}:EntanglingVines": {
     "NAME": "Entangling Vines",
@@ -86,7 +86,7 @@
   "${ModID}:Incantation": {
     "NAME": "Incantation",
     "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL If all cards were discarded, add !M! *Blast{!M!|>1=s} into your hand.",
-    "FLAVOR": "An ancient du-vu ritual, turning material loss into spiritual power."
+    "FLAVOR": ""
   },
   "${ModID}:DarkPact": {
     "NAME": "Dark Pact",
@@ -101,7 +101,7 @@
   "${ModID}:Bushwhack": {
     "NAME": "Bushwhack",
     "DESCRIPTION": "{@@}Gain !B! Block. If you have played less than !${ModID}:m3! cards this combat, gain !${ModID}:m2! *Plated *Armor.{!M!|1= NL (!M! card played.)|0,>1= NL (!M! cards played.)}",
-    "FLAVOR": "The Bogwarden makes traversing the Fogland Wilds look easy."
+    "FLAVOR": ""
   },
   "${ModID}:LineUp": {
     "NAME": "Line Up",
@@ -121,7 +121,7 @@
   "${ModID}:TheRumble": {
     "NAME": "The Rumble",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Big_Game: Repeat.",
-    "FLAVOR": "For a woman of her cunning, the Bogwarden is not afraid of a little rough-and-tumble."
+    "FLAVOR": ""
   },
   "${ModID}:BagAndTag": {
     "NAME": "Bag and Tag",
@@ -136,7 +136,7 @@
   "${ModID}:Blunderbuss": {
     "NAME": "Blunderbuss",
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each Retain card in your hand.",
-    "FLAVOR": "Although learning how to use it absolutely terrified the Bogwarden, it remains a potent tool in her arsenal."
+    "FLAVOR": ""
   },
   "${ModID}:HeavyStick": {
     "NAME": "Heavy Stick",
@@ -190,12 +190,12 @@
   "${ModID}:Portents": {
     "NAME": "Portents",
     "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block.",
-    "FLAVOR": "LI: AWAKENED"
+    "FLAVOR": ""
   },
   "${ModID}:IllIntendedSchemes": {
     "NAME": "Cruel Schemes",
     "DESCRIPTION": "Whenever a card is Retained, gain !M! Block.",
-    "FLAVOR": "The ill-intended schemes of the Bogwarden require careful planning."
+    "FLAVOR": ""
   },
   "${ModID}:OthersiderForm": {
     "NAME": "Othersider Form",
@@ -224,7 +224,7 @@
   "${ModID}:BriarPatch": {
     "NAME": "Briar Patch",
     "DESCRIPTION": "Gain !M! ${ModID}:Spines. NL Whenever you are attacked, deal damage back equal to !${ModID}:m2!% of your total ${ModID}:Spines.",
-    "FLAVOR": "The Fogland Wilds are bordered by a nigh-impenetrable thicket of choking briars."
+    "FLAVOR": ""
   },
   "${ModID}:CampOut": {
     "NAME": "Camp Out",
@@ -254,17 +254,17 @@
   "${ModID}:VengefulTotem": {
     "NAME": "Vengeful Totem",
     "DESCRIPTION": "{@@}${ModID}:Trap. NL Whenever this enemy loses HP, gain !M! Block. NL Exhaust.",
-    "FLAVOR": "Depicts a malicious du-vu spirit, known for its love of stabbing."
+    "FLAVOR": ""
   },
   "${ModID}:HexingTotem": {
     "NAME": "Ritual Totem",
     "DESCRIPTION": "${ModID}:Trap. NL Heal !M! HP. NL Gain !${ModID}:m2! ${ModID}:Mojo. NL Exhaust.",
-    "FLAVOR": "The visage of impending doom."
+    "FLAVOR": ""
   },
   "${ModID}:WardingTotem": {
     "NAME": "Warding Totem",
     "DESCRIPTION": "${ModID}:Trap. NL Gain !${ModID}:m2! Artifact. NL Gain !M! *Plated *Armor. NL Exhaust.",
-    "FLAVOR": "This fearsome totem was carved in reverence of the Du-Vu tribe's armor-clad allies."
+    "FLAVOR": ""
   },
   "${ModID}:CageOfSerpents": {
     "NAME": "Cage of Serpents",
@@ -308,7 +308,7 @@
   "${ModID}:Stalker": {
     "NAME": "Stalker",
     "DESCRIPTION": "Deal !D! damage. NL If discarded via Scry, play this and increase its damage by !M!.",
-    "FLAVOR": "I see you."
+    "FLAVOR": ""
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
@@ -333,12 +333,12 @@
   "${ModID}:Geyser": {
     "NAME": "Geyser",
     "DESCRIPTION": "{@@}Deal !D! damage. Add !M! *Blast{!M!|>1=s} into your hand.",
-    "FLAVOR": "Beneath the Fog-Shroud Crags, primordial energy lashes and churns as if it were molten lava."
+    "FLAVOR": ""
   },
   "${ModID}:JarOfSpiders": {
     "NAME": "Jar of Spiders",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. They lose !M! HP at the start of their next turn.",
-    "FLAVOR": "The spiders are highly territorial with an unspeakably painful bite."
+    "FLAVOR": ""
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
@@ -398,7 +398,7 @@
   "${ModID}:BackfiringTrap": {
     "NAME": "Backfiring Trap",
     "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP. NL Exhaust.",
-    "FLAVOR": "The Bogwarden wasn't always so adept at reverse engineering."
+    "FLAVOR": ""
   },
   "${ModID}:DollsCurse": {
     "NAME": "Doll's Curse",
@@ -442,7 +442,7 @@
   "${ModID}:Implode": {
     "NAME": "Implode",
     "DESCRIPTION": "Gain !B! Block and !M! ${ModID}:Blur. NL A random enemy gains !${ModID}:m2! Block and !${ModID}:m3! ${ModID}:Blur.",
-    "FLAVOR": "Even slightly adjusting the rituals that result in Blast creation can have drastically differing results."
+    "FLAVOR": ""
   },
   "${ModID}:TinShield": {
     "NAME": "Canned Block",

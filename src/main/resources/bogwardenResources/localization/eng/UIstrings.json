@@ -16,12 +16,12 @@
   },
   "${ModID}:ExplosivePotionPlusFlavorText": {
     "TEXT": [
-      "Instability tuned up to the max!!"
+      ""
     ]
   },
   "${ModID}:FirePotionPlusFlavorText": {
     "TEXT": [
-      "Sip at your own risk."
+      ""
     ]
   },
 
