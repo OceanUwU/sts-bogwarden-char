@@ -11,6 +11,7 @@ import bogwarden.cards.cardvars.*;
 import bogwarden.characters.TheBogwarden;
 import bogwarden.potions.*;
 import bogwarden.relics.AbstractBogRelic;
+import bogwarden.util.AspirationSkillbookAdder;
 import bogwarden.util.BogAudio;
 import bogwarden.util.CardAugmentsLoader;
 import bogwarden.util.ModManager;
@@ -160,17 +161,19 @@ public class BogMod implements
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-                .packageFilter(AbstractBogRelic.class)
-                .any(AbstractBogRelic.class, (info, relic) -> {
-                    if (relic.color == null) {
-                        BaseMod.addRelic(relic, RelicType.SHARED);
-                    } else {
-                        BaseMod.addRelicToCustomPool(relic, relic.color);
-                    }
-                    if (!info.seen) {
-                        UnlockTracker.markRelicAsSeen(relic.relicId);
-                    }
-                });
+            .packageFilter(AbstractBogRelic.class)
+            .any(AbstractBogRelic.class, (info, relic) -> {
+                if (relic.color == null) {
+                    BaseMod.addRelic(relic, RelicType.SHARED);
+                } else {
+                    BaseMod.addRelicToCustomPool(relic, relic.color);
+                }
+                if (!info.seen) {
+                    UnlockTracker.markRelicAsSeen(relic.relicId);
+                }
+            });
+        if (Loader.isModLoaded("aspiration"))
+            AspirationSkillbookAdder.add();
     }
 
     @Override

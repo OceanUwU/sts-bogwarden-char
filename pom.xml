@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>bogwarden</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
     <name>Bogwarden (The)</name>
     <description>a slay the spire character! surprise!</description>
 
@@ -76,6 +76,13 @@
             <version>5.0.9</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1610056683/downfall.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>watdis</groupId>
+            <artifactId>WatDis</artifactId>
+            <version>1.9.5</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1611701846/Aspiration.jar</systemPath>
         </dependency>
     </dependencies>
 

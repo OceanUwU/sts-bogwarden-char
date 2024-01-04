@@ -45,9 +45,11 @@ public class Implode extends AbstractBogCard {
             public void update() {
                 isDone = true;
                 AbstractMonster mo = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-                applyToEnemyTop(mo, new BlurPower(mo, thirdMagic));
-                att(new GainBlockAction(mo, p, secondMagic));
-                vfxTop(new ExplodeEffect(mo.hb.cX, mo.hb.cY));
+                if (mo != null) {
+                    applyToEnemyTop(mo, new BlurPower(mo, thirdMagic));
+                    att(new GainBlockAction(mo, p, secondMagic));
+                    vfxTop(new ExplodeEffect(mo.hb.cX, mo.hb.cY));
+                }
             } 
         });
     }

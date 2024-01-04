@@ -99,5 +99,15 @@
     "DESCRIPTIONS": [
       "Attacks deal non-attack damage."
     ]
+  },
+  "${ModID}:BogwardenSkillbook": {
+    "NAME": "Bogwarden's Skillbook",
+    "FLAVOR": "Its pages are filled with the secret techniques of the Foglands' shamans. Should you have stolen this?",
+    "DESCRIPTIONS": [
+      " NL NL #yMulticlass Bogwarden",
+      "At the end of your turn, if you played fewer than #b",
+      " cards, deal #b",
+      " damage to ALL enemies."
+    ]
   }
 }
