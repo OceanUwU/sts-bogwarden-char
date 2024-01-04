@@ -201,8 +201,8 @@
   "${ModID}:BarbedLassoPower": {
     "NAME": "Lassoed",
     "DESCRIPTIONS": [
-      "Whenever you play a skill, loses #b",
-      " HP."
+      "The next time #ySnared wears off, gains #b",
+      " #ySnared."
     ]
   },
   "${ModID}:JarOfSpidersPower": {

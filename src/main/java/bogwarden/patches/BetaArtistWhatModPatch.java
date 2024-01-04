@@ -29,6 +29,9 @@ public class BetaArtistWhatModPatch {
             PressurePlate.class, DarkPact.class, VengefulTotem.class, HexingTotem.class, WardingTotem.class, OthersiderForm.class, SpiritualJourney.class, Bonfire.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "Dark_Brick");
         for (Class<?> c : new Class<?>[] {
+            CageOfSerpents.class, FlockOfBats.class
+        }) artists.put((Class<? extends AbstractBogCard>)c, "Isaiah Shipp");
+        for (Class<?> c : new Class<?>[] {
             DeathWard.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "Mezix");
         for (Class<?> c : new Class<?>[] {
@@ -52,7 +55,6 @@ public class BetaArtistWhatModPatch {
         for (Class<?> c : new Class<?>[] {
             DarkRitual.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "Zorgrox");
-        artists.put(Strike.class, "occultpyromancer");
     }
 
     public static SpireReturn<String> Prefix(Class<?>... cls) {

@@ -36,7 +36,7 @@
   },
   "${ModID}:RefinedBlast": {
     "NAME": "Refined Blast",
-    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= Apply !${ModID}:m2! Poison to them.} NL Draw !M! card{!M!|>1=s}. NL Exhaust.",
+    "DESCRIPTION": "{@@}Retain. NL A random enemy loses !D! HP.{!${ModID}:m2!|>0= Apply !${ModID}:m2! Poison to them. NL} Draw !M! card{!M!|>1=s}. NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:ShadowFont": {
@@ -297,7 +297,7 @@
   },
   "${ModID}:BarbedLasso": {
     "NAME": "Barbed Lasso",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a Skill this turn, the enemy loses !M! HP.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Snared. NL ${ModID}:Big_Game: When it wears off, apply !${ModID}:m2! more.",
     "FLAVOR": ""
   },
   "${ModID}:SpitefulStaff": {

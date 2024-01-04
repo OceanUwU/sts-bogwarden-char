@@ -1,5 +1,6 @@
 - Removed Bad Medicine
-- Vengeful Totem: Reworked. now reads "Trap. Whenever this enemy loses HP, gain 2 (3) Block."
+- Vengeful Totem: Reworked. Now reads "Trap. Whenever this enemy loses HP, gain 2 (3) Block."
+- (WIP) Barbed Lasso: Reworked. Now reads "Deal 6 damage. Apply 5 snared. Big Game: something or other"
 - Blending In: No longer looks at enemy intents, now activates at the end of your turn if you played no attacks during that turn
 - Snapper Trap: Damage 8 > 10
 - Spinning Blades: Damage 4 > 6
@@ -13,7 +14,6 @@
 - Corpse Flies: Damage 6 (8) > 7 (8)
 - Backfiring Trap: HP Loss 4 > 3
 - Blunderbuss: Upgrade no longer upgrades damage, now upgrades damage per retain card by 2
-- Barbed Lasso debuff: Now deals damage AFTER card effects resolve
 - Tripwire: now applies the agile buff to you this turn rather than next (still behaves the same when triggered during the enemy turn)
 
 - Eagle Eyes & Incantation & Line Up & Darkvision & Walkabout: VFX
@@ -29,7 +29,7 @@
 - Restless Spirits: VFX (kinda sucks but w/e)
 - Poison Nova: VFX (when you play the blasts)
 - Camp Out: VFX (while you're choosing the card)
-- Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block & Entangling Vines
+- (ALL BETA ART DONE!) Added beta art for Bonfire & Snip & Hurl & Bramble Shield & Canned Block & Entangling Vines & Cage of Serpents & Flock of Bats
 - Removed flavour text for snapper trap, added one for hoodwink
 - Added custom "landing sound"s for 7 relics (the thing that plays when you click it)
 - When looking at a card with beta art on in the big single card view in the collection, the "What mod is this from?" tooltip now contains the card's beta art's artist's name
@@ -37,6 +37,7 @@
 - Reworded Blowpipe
 - Reworded Portents & Stalker
 - Reworded "trigger your next trap" to "Trigger your leftmost trap" on Snip, Watch & Learn, Bag & Tag, Incarcerate
+- Removed a line break from Refined Blast's description cause it looked weird
 
 - Fixed together in spire skins + compatibility
 - Bugfix: Ending a combat with Unstable Concoction now gives you the potion

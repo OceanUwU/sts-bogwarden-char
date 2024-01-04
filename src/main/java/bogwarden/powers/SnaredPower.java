@@ -1,6 +1,7 @@
 package bogwarden.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.util.Wiz.*;
+
+import bogwarden.cards.BarbedLasso.BarbedLassoPower;
 
 public class SnaredPower extends AbstractBogPower implements NonStackablePower {
     public static String POWER_ID = makeID("SnaredPower");
@@ -42,7 +45,12 @@ public class SnaredPower extends AbstractBogPower implements NonStackablePower {
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer || amount2 <= 0)
+        if (isPlayer || amount2 <= 0) {
             atb(new RemoveSpecificPowerAction(owner, owner, this));
+            if (owner.hasPower(BarbedLassoPower.POWER_ID)) {
+                atb(new ApplyPowerAction(owner, adp(), new SnaredPower(owner, pwrAmt(owner, BarbedLassoPower.POWER_ID))));
+                atb(new RemoveSpecificPowerAction(owner, owner, BarbedLassoPower.POWER_ID));
+            }
+        }
     }
 }

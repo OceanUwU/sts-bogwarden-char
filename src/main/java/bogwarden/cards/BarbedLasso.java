@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import bogwarden.powers.SnaredPower;
 import bogwarden.vfx.LassoEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,14 +24,21 @@ public class BarbedLasso extends AbstractBogCard {
 
     public BarbedLasso() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(5, +1);
-        setMagic(3, +1);
+        setDamage(6, +1);
+        setMagic(5, +2);
+        setSecondMagic(3, +1);
+    }
+  
+    public void triggerOnGlowCheck() {
+        this.glowColor = isEliteOrBoss() ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new LassoEffect(p.hb.x + p.hb.width, p.hb.cY, m.hb.cX, m.hb.cY, new Color(0.15f, 0.2f, 0.3f, 1f)), LassoEffect.DURATION - 0.3f);
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        applyToEnemy(m, new BarbedLassoPower(m, magicNumber));
+        applyToEnemy(m, new SnaredPower(m, magicNumber));
+        if (isEliteOrBoss())
+            applyToEnemy(m, new BarbedLassoPower(m, secondMagic));
     }
 
     public static class BarbedLassoPower extends AbstractBogPower {
@@ -43,17 +51,6 @@ public class BarbedLasso extends AbstractBogCard {
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
-        }
-  
-        public void onUseCard(AbstractCard card, UseCardAction action) {
-            if (card.type == AbstractCard.CardType.SKILL) {
-                flash();
-                addToBot(new DamageAction(owner, new DamageInfo(adp(), amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            } 
-        }
-  
-        public void atStartOfTurn() {
-            atb(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
 }
