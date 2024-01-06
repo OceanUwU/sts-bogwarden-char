@@ -11,16 +11,19 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import skindex.registering.SkindexRegistry;
 import skindex.skins.player.PlayerSkin;
 import spireTogether.SpireTogetherMod;
+import spireTogether.UnlockableItem.UnlockMethod;
 import spireTogether.modcompat.generic.energyorbs.CustomizableEnergyOrbCustom;
 import spireTogether.monsters.CharacterEntity;
 import spireTogether.monsters.playerChars.NetworkCharPreset;
 import spireTogether.ui.elements.presets.Nameplate;
+import spireTogether.util.UIElements;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 
 public class NetworkBogwarden extends NetworkCharPreset {
     private static final float ORB_SCALE = ReflectionHacks.getPrivateStatic(CustomizableEnergyOrbCustom.class, "ORB_IMG_SCALE");
+    public static Nameplate rewardNameplate = (Nameplate)new Nameplate("reward_bogwarden", Color.valueOf("2B2B2B"), Color.valueOf("2B2B2B"), UnlockMethod.ACHIEVEMENT).SetUnlockDescription("This nameplate is unlocked by beating RECOMMENDED with The Bogwarden");
 
     public NetworkBogwarden() {
         super(new TheBogwarden(TheBogwarden.characterStrings.NAMES[1], TheBogwarden.Enums.THE_BOGWARDEN_OCEAN));
@@ -66,7 +69,7 @@ public class NetworkBogwarden extends NetworkCharPreset {
     }
 
     public Nameplate GetNameplateUnlock() {
-        return null;
+        return rewardNameplate;
     }
 
     public Color GetCharColor() {
@@ -77,6 +80,15 @@ public class NetworkBogwarden extends NetworkCharPreset {
     public static class Register {
         public static void Postfix() {
             SpireTogetherMod.allCharacterEntities.put(TheBogwarden.Enums.THE_BOGWARDEN_OCEAN, new NetworkBogwarden());
+        }
+    }
+  
+    @SpirePatch(clz=UIElements.Nameplates.class, method="Init", requiredModId="spireTogether")
+    public static class AddNameplate {
+        public static void Postfix() {
+            UIElements.Nameplates.nameplates.add(rewardNameplate);
+            for (String s : new String[] {"briarpatch"})
+                UIElements.Nameplates.nameplates.add(new Nameplate(s, Color.valueOf("2B2B2B"), Color.valueOf("2B2B2B"), UnlockMethod.FREE));
         }
     }
 }

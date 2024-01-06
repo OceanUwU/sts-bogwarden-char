@@ -1,3 +1,1 @@
-- Added Aspiration mod cross content: "Bogwarden Skillbook" relic
-
-- Bugfix: Using Implode while awakened one is dead no longer crashes the game (thanks cany)
+- Added 1 unlockable and 1 free nameplate for Together in Spire
