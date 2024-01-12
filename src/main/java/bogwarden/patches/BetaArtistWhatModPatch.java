@@ -41,7 +41,7 @@ public class BetaArtistWhatModPatch {
             Tripwire.class, PlagueOfToads.class, Blunderbuss.class, AcidCloud.class, WildMagic.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "NuclearCyborg");
         for (Class<?> c : new Class<?>[] {
-            Strike.class, Defend.class, SnapperTrap.class, SnareTrap.class, Incantation.class, TheRumble.class, BolaToss.class, BlendingIn.class, RestlessSpirits.class, Darkvision.class, LineUp.class, BrambleShield.class, Walkabout.class, Hurl.class, Bide.class, Hoodwink.class, StickerbrushStrike.class, JarOfSpiders.class, Friends.class, BriarPatch.class, RefinedBlast.class, NightTerror.class, Incarcerate.class, CorpseFlies.class, TinShield.class
+            Strike.class, Defend.class, SnapperTrap.class, SnareTrap.class, Incantation.class, TheRumble.class, BolaToss.class, BlendingIn.class, RestlessSpirits.class, BarbedLasso.class, Darkvision.class, LineUp.class, BrambleShield.class, Walkabout.class, Hurl.class, Bide.class, Hoodwink.class, StickerbrushStrike.class, JarOfSpiders.class, Friends.class, BriarPatch.class, RefinedBlast.class, NightTerror.class, Incarcerate.class, CorpseFlies.class, TinShield.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "occultpyromancer");
         for (Class<?> c : new Class<?>[] {
             Snip.class, Attunement.class, WitchingHour.class, Stalker.class, BoulderTrap.class
@@ -50,7 +50,7 @@ public class BetaArtistWhatModPatch {
             ShadowFont.class, WatchAndLearn.class, Submerge.class, SpitefulStaff.class, HairTrigger.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "TheLethargicWeirdo");
         for (Class<?> c : new Class<?>[] {
-            Jinx.class, Blowpipe.class, ViperStrike.class, SpinyShawl.class, Portents.class, EagleEyes.class, Survey.class, Sap.class, BarbedLasso.class, BroilingFlames.class, BagAndTag.class, SludgeBomb.class 
+            Jinx.class, Blowpipe.class, ViperStrike.class, SpinyShawl.class, Portents.class, EagleEyes.class, Survey.class, Sap.class, BroilingFlames.class, BagAndTag.class, SludgeBomb.class 
         }) artists.put((Class<? extends AbstractBogCard>)c, "Vex'd");
         for (Class<?> c : new Class<?>[] {
             DarkRitual.class

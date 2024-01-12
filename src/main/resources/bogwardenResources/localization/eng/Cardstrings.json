@@ -26,7 +26,7 @@
   },
   "${ModID}:Attunement": {
     "NAME": "Attunement",
-    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Mojo.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Maledict to ALL enemies.}",
+    "DESCRIPTION": "{@@}Gain !M! ${ModID}:Mojo.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! ${ModID}:Maledict to ALL enemies.}",
     "FLAVOR": ""
   },
   "${ModID}:Blast": {
@@ -296,7 +296,7 @@
     "FLAVOR": ""
   },
   "${ModID}:BarbedLasso": {
-    "NAME": "Barbed Lasso",
+    "NAME": "Lasso Up",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Snared. NL ${ModID}:Big_Game: When it wears off, apply !${ModID}:m2! more.",
     "FLAVOR": ""
   },

@@ -1,1 +1,2 @@
+- Barbed Lasso: Changed name to "Lasso Up", changed art, changed beta art to old formal art
 - Added 1 unlockable and 1 free nameplate for Together in Spire
