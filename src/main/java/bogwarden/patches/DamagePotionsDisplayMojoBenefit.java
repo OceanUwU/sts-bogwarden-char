@@ -16,7 +16,7 @@ import static bogwarden.util.Wiz.*;
 public class DamagePotionsDisplayMojoBenefit {
     public static void Postfix(AbstractPotion __instance) {
         int mojo = pwrAmt(adp(), Mojo.POWER_ID);
-        if (mojo > 0 && AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase.equals(RoomPhase.COMBAT)) {
+        if (mojo > 0 && AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase.equals(RoomPhase.COMBAT) && !Mojo.noCombat) {
             __instance.description = __instance.description.replace(Integer.toString(__instance.getPotency()), Integer.toString(__instance.getPotency() + mojo)).replace("#b", "#g");
             __instance.tips.clear();
             __instance.tips.add(new PowerTip(__instance.name, __instance.description));

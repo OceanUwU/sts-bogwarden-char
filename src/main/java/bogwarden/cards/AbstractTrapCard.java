@@ -30,6 +30,7 @@ public abstract class AbstractTrapCard extends AbstractBogCard {
         damageType = damageTypeForTurn = DamageType.THORNS;
     }
   
+    @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         cantUseMessage = trapStrings.EXTENDED_DESCRIPTION[0];
         return false;

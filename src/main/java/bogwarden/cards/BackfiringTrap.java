@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.MedicalKit;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 import static bogwarden.BogMod.makeID;
@@ -20,6 +21,11 @@ public class BackfiringTrap extends AbstractTrapCard {
         setMagic(3);
         setExhaust(true);
         sfx = BogAudio.BACKFIRE_TRIGGER;
+    }
+  
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return super.canUse(p, m) || p.hasRelic(MedicalKit.ID);
     }
 
     public boolean canUpgrade() {
