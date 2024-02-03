@@ -1,4 +1,5 @@
 - Barbed Lasso: Changed name to "Lasso Up", changed art, changed beta art to old formal art
+- Spiritual Journey: VFX
 - Tinning Kit: new art
 - Added 1 unlockable and 1 free nameplate for Together in Spire
 - Bugfix: Backfiring Trap can now be correctly played with Medical Kit
