@@ -80,10 +80,8 @@ public class SpiritualJourney extends AbstractBogCard {
                         isDone = true;
                         owner.decreaseMaxHealth(1);
                         for (AbstractGameEffect e : AbstractDungeon.effectList)
-                            if (e instanceof SpiritualEffect) {
+                            if (e instanceof SpiritualEffect)
                                 ((SpiritualEffect)e).removeOrb();
-                                return;
-                            }
                         AbstractDungeon.effectsQueue.add(new DamageNumberEffect(owner, owner.hb.cX, owner.hb.cY, 1));
                         for(int i = 0; i < 50; i++)
                             AbstractDungeon.effectsQueue.add(new DamageImpactCurvyEffect(owner.hb.cX, owner.hb.cY));
