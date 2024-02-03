@@ -37,7 +37,7 @@ public class Mojo extends AbstractBogPower {
     
 
     //show buff on potions
-    public static boolean noCombat;
+    public static boolean isPracticallyZero;
 
     public void onInitialApplication() {
         super.onInitialApplication();
@@ -45,15 +45,17 @@ public class Mojo extends AbstractBogPower {
     }
 
     public void onRemove() {
+        isPracticallyZero = true;
         super.onRemove();
         applyPowersToPotions();
+        isPracticallyZero = false;
     }
 
     public void onVictory() {
-        noCombat = true;
+        isPracticallyZero = true;
         super.onVictory();
         applyPowersToPotions();
-        noCombat = false;
+        isPracticallyZero = false;
     }
 
     public void stackPower(int stackAmount) {
