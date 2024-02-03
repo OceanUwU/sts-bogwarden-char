@@ -84,11 +84,12 @@ public class BriarPatch extends AbstractBogCard {
         public void update() {
             duration += Gdx.graphics.getDeltaTime();
             color.a = 1f;
-            if (duration < 0.2f)
-                color.a = duration / 0.2f;
+            if (duration < 0.3f)
+                color.a = duration / 0.3f;
         }
   
         public void render(SpriteBatch sb) {
+            sb.setColor(color);
             sb.draw(IMG, adp().hb.cX - 200f, adp().hb.cY - 200f, 200, 200, 400, 400, scale, scale, 0f);
         }
 
@@ -105,8 +106,8 @@ public class BriarPatch extends AbstractBogCard {
             public void update() {
                 duration += Gdx.graphics.getDeltaTime();
                 color.a = 1f;
-                if (duration < 0.2f)
-                    color.a = duration / 0.2f;
+                if (duration < 0.3f)
+                    color.a = duration / 0.3f;
             }
     
             public void render(SpriteBatch sb) {
