@@ -2,6 +2,7 @@
 - Spiritual Journey: VFX
 - Briar Patch: VFX
 - Tinning Kit: new art
+- Vengeful Totem: new debuff icon
 - Added 1 unlockable and 1 free nameplate for Together in Spire
 - Bugfix: Backfiring Trap can now be correctly played with Medical Kit
 - Bugfix: Damage number displays on potions affected by mojo are now correctly reset at the end of combat
