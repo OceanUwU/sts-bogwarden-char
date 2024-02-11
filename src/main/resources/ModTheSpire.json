@@ -5,7 +5,7 @@
     "occultpyromancer",
     "ocean"
   ],
-  "credits": "Full credits for Beta Art and SFX can be found on the Steam workshop page.",
+  "credits": "Full credits for SFX can be found on the Steam workshop page.",
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",

@@ -4,9 +4,9 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>bogwarden</artifactId>
-    <version>0.6.2</version>
-    <name>Bogwarden (The)</name>
-    <description>a slay the spire character! surprise!</description>
+    <version>1.0.0</version>
+    <name>The Bogwarden</name>
+    <description>Adds a new character focused on non-attack damage.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

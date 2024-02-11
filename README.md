@@ -1,3 +1,4 @@
 # The Bogwarden
-a slay the spire character mod
-(put workshop link here)
+
+A slay the spire character mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=3158251406
