@@ -9,7 +9,6 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupSelectAction
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -46,18 +45,10 @@ public class WildMagic extends AbstractBogCard {
             public void update() {
                 isDone = true;
                 att(new MultiGroupSelectAction(cardStrings.EXTENDED_DESCRIPTION[0], (cards, groups) -> cards.stream().forEach(c -> {
-                    AbstractCard.CardRarity cardRarity;
-                    int roll = AbstractDungeon.cardRandomRng.random(99);
-                    if (roll < 55)
-                        cardRarity = AbstractCard.CardRarity.COMMON;
-                    else if (roll < 85)
-                        cardRarity = AbstractCard.CardRarity.UNCOMMON;
-                    else
-                        cardRarity = AbstractCard.CardRarity.RARE;
                     CardGroup anyCard = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                     AbstractCard.CardColor colorrr = p.getCardColor();
                     CardLibrary.cards.values().stream()
-                        .filter(c2 -> c2.rarity.equals(cardRarity) && c2.type != AbstractCard.CardType.CURSE && c2.type != AbstractCard.CardType.STATUS && !UnlockTracker.isCardLocked(c2.cardID) && !c2.hasTag(AbstractCard.CardTags.HEALING) && !c2.cardID.equals(HandOfGreed.ID))
+                        .filter(c2 -> (c2.rarity.equals(CardRarity.COMMON) || c2.rarity.equals(CardRarity.UNCOMMON) || c2.rarity.equals(CardRarity.RARE)) && c2.type != AbstractCard.CardType.CURSE && c2.type != AbstractCard.CardType.STATUS && !UnlockTracker.isCardLocked(c2.cardID) && !c2.hasTag(AbstractCard.CardTags.HEALING) && !c2.cardID.equals(HandOfGreed.ID))
                         .filter(BogMod.useModdedPools ? c2 -> true : c2 -> coloursAvailable.contains(c2.color) || c2.color.equals(colorrr))
                         .forEach(c2 -> anyCard.addToTop(c2));
                     anyCard.shuffle(AbstractDungeon.cardRandomRng);

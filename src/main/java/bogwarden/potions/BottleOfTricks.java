@@ -105,7 +105,7 @@ public class BottleOfTricks extends CustomPotion {
             ArrayList<AbstractCard> cardsList = new ArrayList<>();
             ArrayList<AbstractCard> selectionsList = new ArrayList<>();
             for (AbstractCard q : CardLibrary.getAllCards())
-                if (q instanceof AbstractTrapCard && !q.hasTag(AbstractCard.CardTags.HEALING) && !(q.color == AbstractCard.CardColor.COLORLESS || q.color == AbstractCard.CardColor.CURSE)) {
+                if (q instanceof AbstractTrapCard && !q.hasTag(AbstractCard.CardTags.HEALING) && !(q.color == AbstractCard.CardColor.COLORLESS || q.color == AbstractCard.CardColor.CURSE || q.rarity == AbstractCard.CardRarity.BASIC || q.rarity == AbstractCard.CardRarity.SPECIAL)) {
                     AbstractCard r = q.makeCopy();
                     cardsList.add(r);
                 }
