@@ -342,7 +342,7 @@
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!Location!|0,1,2,3= NL (Triggered !M! times.)}",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!M!|0= NL (Not ready yet.)|>0= NL (Ready!)|@=}",
     "FLAVOR": ""
   },
   "${ModID}:SludgeBomb": {

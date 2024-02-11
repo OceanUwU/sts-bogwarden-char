@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>bogwarden</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>The Bogwarden</name>
     <description>Adds a new character focused on non-attack damage.</description>
 

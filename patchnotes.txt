@@ -1,10 +1,1 @@
-- Wild Magic: Rarity is no longer taken into account - every card is just as likely to show up, like normal transforming
-- Barbed Lasso: Changed name to "Lasso Up", changed art, changed beta art to old formal art
-- Spiritual Journey: VFX
-- Briar Patch: VFX
-- Tinning Kit: new art
-- Vengeful Totem: new debuff icon
-- Added 1 unlockable and 1 free nameplate for Together in Spire
-- Bugfix: Backfiring Trap can now be correctly played with Medical Kit
-- Bugfix: Damage number displays on potions affected by mojo are now correctly reset at the end of combat
-- Bugfix: Bottle of tricks can no longer give you snapper trap
+- Boulder Trap: damage upgrade +5 > +7, "triggered x times" wording on the in-combat hint reworded to either "not ready yet" or "ready"

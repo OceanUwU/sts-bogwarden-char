@@ -25,9 +25,8 @@ public class BoulderTrap extends AbstractTrapCard {
 
     public BoulderTrap() {
         super(ID, CardRarity.RARE);
-        setDamage(25, +5);
+        setDamage(25, +7);
         setSecondMagic(1);
-        setMagic(0);
         isMultiDamage = true;
     }
 
@@ -37,18 +36,11 @@ public class BoulderTrap extends AbstractTrapCard {
             forAllMonstersLiving(mo -> att(new VFXAction(new BoulderEffect(mo), getEnemies().get(0) == mo ? 0.5f : 0f)));
         }
         magicNumber = ++baseMagicNumber;
-        isMagicNumberModified = magicNumber >= secondMagic;
     }
 
     public void applyPowers() {
         super.applyPowers();
-        isMagicNumberModified = magicNumber >= secondMagic;
-    }
-
-    @Override
-    public void upp() {
-        super.upp();
-        isMagicNumberModified = magicNumber >= secondMagic;
+        magicNumber = baseMagicNumber = Math.max(baseMagicNumber, 0);
     }
 
     public static class BoulderEffect extends AbstractGameEffect {
