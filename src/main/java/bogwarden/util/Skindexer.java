@@ -47,7 +47,7 @@ public class Skindexer implements SkindexPlayerSkinRegistrant {
         @Override
         public boolean loadOnPlayer() {
             if (AbstractDungeon.player != null && AbstractDungeon.player instanceof TheBogwarden)
-                ((TheBogwarden)AbstractDungeon.player).setupAnimation("mainChar/skins/"+id.replace(BogMod.modID + ":", ""));
+                ((TheBogwarden)AbstractDungeon.player).setupAnimation(id.equals(makeID("skinBase")) ? "mainChar" : "mainChar/skins/"+id.replace(BogMod.modID + ":", ""));
             return super.loadOnPlayer();
         }
 
