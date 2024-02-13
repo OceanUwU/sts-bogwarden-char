@@ -26,7 +26,8 @@ public class BogAudio {
         IMPLODE = makeID("IMPLODE"),
         RUSTLE = makeID("RUSTLE"),
         PLANT_PULL = makeID("PLANTPULL"),
-        WHOOSH = makeID("WHOOSH");
+        WHOOSH = makeID("WHOOSH"),
+        BUS = makeID("BUS");
 
     public static void addAudio() {
         try {

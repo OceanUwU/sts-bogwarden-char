@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.red.HeavyBlade;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -16,8 +17,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
@@ -54,11 +57,19 @@ public class Blunderbuss extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         calculateCardDamage(m);
-        vfx(new BlunderbussEffect(m), BlunderbussEffect.DURATION / 2f - 0.05f);
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
-        for (int i = 0; i < 3; i++) {
-            atb(new SFXAction("BLUNT_FAST", 0.02f));
-            vfx(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-100f, 100f) * Settings.scale, m.hb.cY + MathUtils.random(-100f, 100f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.02f);
+        if (Settings.PLAYTESTER_ART_MODE || UnlockTracker.betaCardPref.getBoolean(cardID, false)) {
+            atb(new SFXAction(BogAudio.BUS));
+            vfx(new BlunderbusEffect(m), BlunderbusEffect.DURATION - 0.3f);
+            vfx(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F), BlunderbusEffect.STALL_DURATION);
+            dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+            vfx(new TheRumble.CreatureFlyEffect(m));
+        } else {
+            vfx(new BlunderbussEffect(m), BlunderbussEffect.DURATION / 2f - 0.05f);
+            dmg(m, AbstractGameAction.AttackEffect.NONE);
+            for (int i = 0; i < 3; i++) {
+                atb(new SFXAction("BLUNT_FAST", 0.02f));
+                vfx(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-100f, 100f) * Settings.scale, m.hb.cY + MathUtils.random(-100f, 100f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.02f);
+            }
         }
     }
 
@@ -180,5 +191,39 @@ public class Blunderbuss extends AbstractBogCard {
 
             public void dispose() {}
         }
+    }
+
+    private static class BlunderbusEffect extends AbstractGameEffect {
+        private static TextureAtlas.AtlasRegion IMG = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/bus.png")), 0, 0, 1000, 400);
+        private static float DURATION = 0.6f,
+            STALL_DURATION = 0.2f;
+
+        private float x = -500 * scale, y = AbstractDungeon.floorY + 100f * scale, targetX, timeStalled;
+
+        public BlunderbusEffect(AbstractMonster target) {
+            targetX = target.hb.cX - 400f * scale;
+            duration = DURATION;
+        }
+
+        public void update() {
+            if (duration > 0f)
+                duration = Math.max(duration - Gdx.graphics.getDeltaTime(), 0f);
+            else if (duration == 0f) {
+                timeStalled += Gdx.graphics.getDeltaTime();
+                if (timeStalled > STALL_DURATION)
+                    duration = -0.01f;
+            } else
+                duration -= Gdx.graphics.getDeltaTime();
+            
+            x = targetX + (-400f * scale - targetX) * (duration / DURATION);
+            isDone = x > Settings.WIDTH + 600f * scale;
+        }
+
+        public void render(SpriteBatch sb) {
+            sb.setColor(Color.WHITE);
+            sb.draw(IMG, x - 500f, y - 200f, 500, 200, 1000, 400, scale, scale, rotation);
+        }
+
+        public void dispose() {}
     }
 }
