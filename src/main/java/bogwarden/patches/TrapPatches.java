@@ -32,7 +32,17 @@ public class TrapPatches {
         }
     }
 
-    
+    // safety net for cross-mod compatibility
+    @SpirePatch(clz=AbstractPlayer.class, method="updateCardsOnDamage")
+    public static class TriggerOnUpdateCardsOnDamage {
+        public static void Prefix(AbstractPlayer __instance) {
+            if (!triggeredThisDamage) {
+                triggeredThisDamage = true;
+                att(new TriggerTrapAction(null));
+            }
+        }
+    }
+
     @SpirePatch(clz=PlayerDamage.class, method="Insert", paramtypez={AbstractCreature.class, DamageInfo.class, int[].class, boolean[].class})
     public static class TriggerOnTempHPLoss {
         @SpireInsertPatch(locator=Locator.class)
