@@ -1,3 +1,4 @@
 - Boulder Trap: damage upgrade +5 > +7, "triggered x times" wording on the in-combat hint reworded to either "not ready yet" or "ready"
 - Energy icon on text now has a little border around it so it looks a little less weird
 - Bugfix: Together in Spire no longer crashes when you launch a singleplayer run
+- Bugfix: Traps now trigger correctly with the Nimble mod, and possibly fix other mod incompatibilities with traps (courtesy of Sagil)
