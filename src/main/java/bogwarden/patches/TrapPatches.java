@@ -16,15 +16,20 @@ import static bogwarden.util.Wiz.*;
 
 public class TrapPatches {
     private static boolean triggeredThisDamage = false;
+    private static DamageInfo info;
 
     @SpirePatch(clz=AbstractPlayer.class, method="damage")
     public static class TriggerOnDamage {
-        public static void Prefix() {
+        public static void Prefix(AbstractPlayer __instance, DamageInfo info) {
             triggeredThisDamage = false;
+            TrapPatches.info = info;
         }
+    }
 
-        @SpireInsertPatch(rloc=101)
-        public static void Insert(AbstractPlayer __instance, DamageInfo info) {
+    // safety net for cross-mod compatibility
+    @SpirePatch(clz=AbstractPlayer.class, method="updateCardsOnDamage")
+    public static class TriggerOnUpdateCardsOnDamage {
+        public static void Prefix(AbstractPlayer __instance) {
             if (!triggeredThisDamage) {
                 triggeredThisDamage = true;
                 att(new TriggerTrapAction(info.owner));
@@ -32,7 +37,6 @@ public class TrapPatches {
         }
     }
 
-    
     @SpirePatch(clz=PlayerDamage.class, method="Insert", paramtypez={AbstractCreature.class, DamageInfo.class, int[].class, boolean[].class})
     public static class TriggerOnTempHPLoss {
         @SpireInsertPatch(locator=Locator.class)
