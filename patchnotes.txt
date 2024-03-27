@@ -1,2 +1,4 @@
+- Nature's Wrath & Bramble Shield & Stickerbush Strike & Lasso Up: Improved VFX
 - Briar Patch & Bola Toss & Strike: Tweaked beta art
 - Bugfix: Traps now trigger correctly with the Nimble mod, and possibly fix other mod incompatibilities with traps (courtesy of Sagil)
+- Bugfix: Bogwarden's Skillbook should no longer crash the game when it shows up

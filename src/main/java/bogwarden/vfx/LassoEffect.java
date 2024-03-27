@@ -11,19 +11,20 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import static bogwarden.BogMod.makeImagePath;
 
 public class LassoEffect extends AbstractGameEffect {
-    private static TextureAtlas.AtlasRegion IMG = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/lasso.png")), 0, 0, 800, 100);
     public static final float DURATION = 0.5f;
 
     private float x, y, stretch, length;
     private boolean sounded = false;
+    private TextureAtlas.AtlasRegion img;
 
-    public LassoEffect(float startX, float startY, float endX, float endY, Color color) {
+    public LassoEffect(float startX, float startY, float endX, float endY, Color color, String texPath) {
         duration = DURATION;
         this.color = color.cpy();
         x = startX;
         y = startY;
         rotation = -(float)Math.toDegrees(Math.atan2(endX - startX, endY - startY)) + 90f;
         length = (float)Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2)) / 800f;
+        img = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath(texPath)), 0, 0, 800, 100);
     }
 
     public void update() {
@@ -43,7 +44,7 @@ public class LassoEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(color);
-        sb.draw(IMG, x, y - 50f, 0, 50, 800, 100, length * stretch, scale, rotation);
+        sb.draw(img, x, y - 50f, 0, 50, 800, 100, length * stretch, scale, rotation);
     }
 
     public void dispose() {}

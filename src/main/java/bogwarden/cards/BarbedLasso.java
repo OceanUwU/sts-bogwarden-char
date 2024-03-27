@@ -34,7 +34,7 @@ public class BarbedLasso extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        vfx(new LassoEffect(p.hb.x + p.hb.width, p.hb.cY, m.hb.cX, m.hb.cY, new Color(0.15f, 0.2f, 0.3f, 1f)), LassoEffect.DURATION - 0.3f);
+        vfx(new LassoEffect(p.hb.x + p.hb.width, p.hb.cY, m.hb.cX, m.hb.cY, Color.WHITE, "vfx/lasso.png"), LassoEffect.DURATION - 0.3f);
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         applyToEnemy(m, new SnaredPower(m, magicNumber));
         if (isEliteOrBoss())
