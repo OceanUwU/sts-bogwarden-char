@@ -65,7 +65,7 @@
   },
   "${ModID}:Tripwire": {
     "NAME": "Tripwire",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Next turn, draw !M! additional card{!M!|>1=s}. NL Gain 50% more Block from cards for !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Draw !M! card{!M!|>1=s}. NL Gain 50% more Block from cards for !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
     "FLAVOR": ""
   },
   "${ModID}:PressurePlate": {

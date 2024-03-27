@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import bogwarden.powers.AbstractBogPower;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,7 +25,7 @@ public class Tripwire extends AbstractTrapCard {
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {
         applyToSelfTop(new Agile(p, secondMagic));
-        applyToSelfTop(new DrawCardNextTurnPower(p, magicNumber));
+        att(new DrawCardAction(magicNumber));
     }
 
     public static class NextTurnAgile extends AbstractBogPower {
