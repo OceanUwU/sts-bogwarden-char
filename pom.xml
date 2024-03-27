@@ -17,7 +17,7 @@
 
         <ModID>bogwarden</ModID>
 
-        <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>
+        <Steam.path>/home/ocean/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/</Steam.path>
     </properties>
 
     <dependencies>
@@ -75,7 +75,7 @@
             <artifactId>EvilWithin</artifactId>
             <version>5.0.9</version>
             <scope>system</scope>
-            <systemPath>${Steam.path}/workshop/content/646570/1610056683/downfall.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1610056683/Downfall.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>watdis</groupId>

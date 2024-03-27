@@ -24,7 +24,7 @@ public class AspirationSkillbookAdder {
         BaseMod.addRelic(new BogwardenSkillbook(), RelicType.SHARED);
     }
 
-    private static class BogwardenSkillbook extends SkillbookRelic {
+    public static class BogwardenSkillbook extends SkillbookRelic {
         public static final String ID = makeID("BogwardenSkillbook");
     
         public static final int CARD_THRESHOLD = 6;
