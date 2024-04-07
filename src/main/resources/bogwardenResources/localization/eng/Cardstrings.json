@@ -204,7 +204,7 @@
   },
   "${ModID}:SpiritualJourney": {
     "NAME": "Spiritual Journey",
-    "DESCRIPTION": "Ethereal. NL {@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. Exhaust.",
+    "DESCRIPTION": "Ethereal. NL {@@}Raise your Max HP by !M!. The next !M! time{!M!|>1=s} you play an Attack, lose 1 Max HP. Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:TrapperMaster": {
