@@ -334,6 +334,12 @@ public abstract class AbstractBogCard extends CustomCard {
         att(new DamageAction(m, info, fx));
     }
 
+    protected void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx, boolean muteSfx) {
+        DamageInfo info = new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
+        NonAttackDamagePatches.DamageInfoFields.fromCard.set(info, true);
+        att(new DamageAction(m, info, fx, false, muteSfx));
+    }
+
     private AbstractGameAction dmgRandomAction(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
         return new AbstractGameAction() {
             public void update() {
