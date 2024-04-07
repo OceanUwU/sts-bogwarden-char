@@ -31,8 +31,8 @@ public class Darkvision extends AbstractBogCard {
 
     public Darkvision() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        setMagic(3);
-        setSecondMagic(2, -1);
+        setMagic(2, +1);
+        setSecondMagic(2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

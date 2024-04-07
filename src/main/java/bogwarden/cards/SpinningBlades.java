@@ -16,8 +16,8 @@ public class SpinningBlades extends AbstractTrapCard {
 
     public SpinningBlades() {
         super(ID, CardRarity.UNCOMMON);
-        setDamage(6);
-        setMagic(2, +1);
+        setDamage(5, +2);
+        setMagic(2);
         isMultiDamage = true;
     }
 

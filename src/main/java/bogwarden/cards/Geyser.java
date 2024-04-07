@@ -14,8 +14,8 @@ public class Geyser extends AbstractBogCard {
 
     public Geyser() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(4);
-        setMagic(1, +1);
+        setDamage(4, +2);
+        setMagic(1);
         cardsToPreview = new Blast();
     }
 
@@ -23,5 +23,11 @@ public class Geyser extends AbstractBogCard {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         vfx(new IncantationEffect());
         makeInHand(cardsToPreview, magicNumber);
+    }
+
+    @Override
+    public void upp() {
+        cardsToPreview.upgrade();
+        super.upp();
     }
 }

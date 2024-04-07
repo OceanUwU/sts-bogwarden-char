@@ -16,8 +16,8 @@ public class RefinedBlast extends AbstractBogCard {
 
     public RefinedBlast() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        setDamage(10, +2);
-        setMagic(1, +1);
+        setDamage(9, +5);
+        setMagic(2);
         setSecondMagic(0);
         setRetain(true);
         setExhaust(true);

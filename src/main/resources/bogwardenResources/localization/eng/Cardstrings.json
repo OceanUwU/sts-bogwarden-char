@@ -31,7 +31,7 @@
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
-    "DESCRIPTION": "{@@}Retain. NL Deal !D! damage{!${ModID}:m2!|>0= and apply !${ModID}:m2! Poison} to a random enemy. NL Exhaust.",
+    "DESCRIPTION": "{@@}Retain. NL A rabndom enemy takes !D! damage.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:RefinedBlast": {
@@ -85,7 +85,7 @@
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL If all cards were discarded, add !M! *Blast{!M!|>1=s} into your hand.",
+    "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL Add a *Blast{!Upgrades!|>0=+} into your hand for each Attack discarded this way.",
     "FLAVOR": ""
   },
   "${ModID}:DarkPact": {
@@ -204,7 +204,7 @@
   },
   "${ModID}:SpiritualJourney": {
     "NAME": "Spiritual Journey",
-    "DESCRIPTION": "{@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. NL Exhaust.",
+    "DESCRIPTION": "Ethereal. NL {@@}Raise your Max HP by !M!. The next !${ModID}:m2! time{!${ModID}:m2!|>1=s} you play an Attack, lose 1 Max HP. Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:TrapperMaster": {
@@ -248,7 +248,7 @@
   },
   "${ModID}:SpinningBlades": {
     "NAME": "Spinning Blades",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal !D! damage to ALL enemies !M! time{!M!|>1=s}.",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Deal !D! damage to ALL enemies{!M!|1=|2= twice|@= !M! times}.",
     "FLAVOR": ""
   },
   "${ModID}:VengefulTotem": {

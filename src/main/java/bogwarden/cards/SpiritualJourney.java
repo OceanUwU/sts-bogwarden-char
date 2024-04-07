@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageImpactCurvyEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageNumberEffect;
@@ -32,8 +33,8 @@ public class SpiritualJourney extends AbstractBogCard {
     public SpiritualJourney() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         setMagic(4, +2);
-        setSecondMagic(2, +2);
         setExhaust(true);
+        setEthereal(true);
         tags.add(CardTags.HEALING);
     }
 
@@ -41,13 +42,14 @@ public class SpiritualJourney extends AbstractBogCard {
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
+                if (p.hasPower(ArtifactPower.POWER_ID)) return;
                 for (AbstractGameEffect e : AbstractDungeon.effectList)
                     if (e instanceof SpiritualEffect) {
-                        ((SpiritualEffect)e).addOrbs(secondMagic);
+                        ((SpiritualEffect)e).addOrbs(magicNumber);
                         return;
                     }
                 vfxTop(new SpiritualEffect.SpiritualBehindEffect());
-                vfxTop(new SpiritualEffect(secondMagic));
+                vfxTop(new SpiritualEffect(magicNumber));
             } 
         });
         atb(new AbstractGameAction() {
@@ -56,7 +58,7 @@ public class SpiritualJourney extends AbstractBogCard {
                 p.increaseMaxHp(magicNumber, true);
             } 
         });
-        applyToSelf(new SpiritualJourneyPower(p, secondMagic));
+        applyToSelf(new SpiritualJourneyPower(p, magicNumber));
     }
 
     public static class SpiritualJourneyPower extends AbstractBogPower {
@@ -69,6 +71,17 @@ public class SpiritualJourney extends AbstractBogCard {
         
         public void updateDescription() {
             description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        }
+
+
+        @Override
+        public void onRemove() {
+            for (AbstractGameEffect e : AbstractDungeon.effectList)
+                if (e instanceof SpiritualEffect) {
+                    for (int i = 0; i < amount; i++)
+                        ((SpiritualEffect)e).removeOrb();
+                    return;
+                }
         }
   
         public void onPlayCard(AbstractCard card, AbstractMonster m) {
@@ -107,8 +120,10 @@ public class SpiritualJourney extends AbstractBogCard {
         }
 
         public void removeOrb() {
-            orbs.get(0).timeDir = -1;
-            orbs.get(0).duration = SpiritualOrb.APPEAR_TIME;
+            if (orbs.size() > 0) {
+                orbs.get(0).timeDir = -1;
+                orbs.get(0).duration = SpiritualOrb.APPEAR_TIME;
+            }
         }
 
         public void update() {

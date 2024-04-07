@@ -23,7 +23,7 @@ public class Incarcerate extends AbstractBogCard {
 
     public Incarcerate() {
         super(ID, -1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        setDamage(6);
+        setDamage(5);
         setMagic(0, +1);
     }
 
