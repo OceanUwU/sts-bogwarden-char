@@ -31,7 +31,7 @@
   },
   "${ModID}:Blast": {
     "NAME": "Blast",
-    "DESCRIPTION": "{@@}Retain. NL A rabndom enemy takes !D! damage.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Exhaust.",
+    "DESCRIPTION": "{@@}Retain. NL A random enemy takes !D! damage.{!${ModID}:m2!|>0= NL Apply !${ModID}:m2! Poison to them.} NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:RefinedBlast": {
@@ -85,7 +85,7 @@
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "{@@}Scry !${ModID}:m2!. NL Add a *Blast{!Upgrades!|>0=+} into your hand for each Attack discarded this way.",
+    "DESCRIPTION": "{@@}Scry !M!. NL Add a *Blast{!Upgrades!|>0=+} into your hand for each Attack discarded this way.",
     "FLAVOR": ""
   },
   "${ModID}:DarkPact": {
@@ -332,7 +332,7 @@
   },
   "${ModID}:Geyser": {
     "NAME": "Geyser",
-    "DESCRIPTION": "{@@}Deal !D! damage. Add !M! *Blast{!M!|>1=s} into your hand.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Add {!M!|1=a|@=!M!} *Blast{!M!|>1=s}{!Upgrades!|>0=+} into your hand.",
     "FLAVOR": ""
   },
   "${ModID}:JarOfSpiders": {

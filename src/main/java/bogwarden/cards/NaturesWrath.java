@@ -67,7 +67,7 @@ public class NaturesWrath extends AbstractBogCard {
         public void update() {
             duration -= Gdx.graphics.getDeltaTime();
             if (duration <= 0f) {
-                CardCrawlGame.sound.play(BogAudio.PLANT_PULL);
+                CardCrawlGame.sound.play(BogAudio.NATURESWRATH);
                 forAllMonstersLiving(mo -> AbstractDungeon.effectsQueue.add(new PlantMassacreEffect(mo)));
                 isDone = true;
             }

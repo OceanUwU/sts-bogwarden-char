@@ -34,10 +34,10 @@ public class Incantation extends AbstractBogCard {
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
-                fromIncantation = null;
+                fromIncantation = Incantation.this;
             }
         });
-        atb(new ScryAction(secondMagic));
+        atb(new ScryAction(magicNumber));
         atb(new AbstractGameAction() {
             public void update() {
                 isDone = true;
@@ -54,6 +54,7 @@ public class Incantation extends AbstractBogCard {
     }
 
     private static void makeThem(int amt) {
+        if (amt == 0) return;
         att(new MakeTempCardInHandAction(fromIncantation.cardsToPreview, amt));
         //vfxTop(new IncantationEffect());
         att(new AbstractGameAction() {

@@ -1,18 +1,19 @@
 v1.1.0
-- (TO TEST) Incantation: Scry 2 > 3, no longer adds 1 (2) blasts to your hand, now adds a blast(+) to your hand for each Attack discarded via scry
-- (TO TEST) Spinning blades: hits 2 (3) > 2, damage 6 > 5 (7)
-- (TO TEST) Incarcerate: Damage 6 > 5
-- (TO TEST) Geyser: Damage 4 > 6, Blasts added 1 (2) > 1 (1+)
-- (TO TEST) Refined Blast: Damage 10 (12) > 9 (14), Draw 1 (2) > 2
-- (TO TEST) Darkvision: Scry 3 > 2 (3), Discards required 2 (1) > 2
-- (TO TEST) Spiritual Journey: Now Ethereal, Maximum max HP loss 2 (4) > 4 (6)
+- Incantation: Scry 2 > 3, no longer adds 1 (2) blasts to your hand, now adds a blast(+) to your hand for each Attack discarded via scry
+- Spinning blades: hits 2 (3) > 2, damage 6 > 5 (7)
+- Incarcerate: Damage 6 > 5
+- Geyser: Damage 4 > 6, Blasts added 1 (2) > 1 (1+)
+- Refined Blast: Damage 10 (12) > 9 (14), Draw 1 (2) > 2
+- Darkvision: Scry 3 > 2 (3), Discards required 2 (1) > 2
+- Spiritual Journey: Now Ethereal, Maximum max HP loss 2 (4) > 4 (6)
 - Tripwire: Now draws cards immediately rather than next turn
 
-- (TO TEST) Reworded Blast
-- (TO TEST) Reworded the Trap keyword
+- Reworded Blast
+- Reworded the Trap keyword
 - Nature's Wrath & Bramble Shield & Stickerbush Strike & Lasso Up: Improved VFX
-- Incarcerate: Something...
+- Nature's Wrath: Changed SFX
+- Incarcerate: Beta art VFX
 - Briar Patch & Bola Toss & Strike: Tweaked beta art
 - Bugfix: Traps now trigger correctly with the Nimble mod, and possibly fix other mod incompatibilities with traps (courtesy of Sagil)
 - Bugfix: Bogwarden's Skillbook should no longer crash the game when it shows up
-- (TO TEST) Bugfix: Spiritual Journey debuff VFX should no longer appear if you have artifact
+- Bugfix: Spiritual Journey debuff VFX should no longer appear if you have artifact

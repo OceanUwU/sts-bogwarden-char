@@ -22,9 +22,9 @@ public class StickerbrushStrike extends AbstractBogCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new SFXAction(BogAudio.PLANT_PULL));
+        atb(new SFXAction(BogAudio.NATURESWRATH));
         vfx(new PlantMassacreEffect(m));
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true);
         applyToSelf(new Spines(p, magicNumber));
     }
 }

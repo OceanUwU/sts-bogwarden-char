@@ -78,8 +78,7 @@ public class SpiritualJourney extends AbstractBogCard {
         public void onRemove() {
             for (AbstractGameEffect e : AbstractDungeon.effectList)
                 if (e instanceof SpiritualEffect) {
-                    for (int i = 0; i < amount; i++)
-                        ((SpiritualEffect)e).removeOrb();
+                    ((SpiritualEffect)e).removeAllOrbs();
                     return;
                 }
         }
@@ -123,6 +122,13 @@ public class SpiritualJourney extends AbstractBogCard {
             if (orbs.size() > 0) {
                 orbs.get(0).timeDir = -1;
                 orbs.get(0).duration = SpiritualOrb.APPEAR_TIME;
+            }
+        }
+
+        public void removeAllOrbs() {
+            for (SpiritualOrb orb : orbs) {
+                orb.timeDir = -1;
+                orb.duration = SpiritualOrb.APPEAR_TIME;
             }
         }
 
