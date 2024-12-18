@@ -14,7 +14,7 @@ public class BagAndTag extends AbstractBogCard {
 
     public BagAndTag() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(7, +3);
+        setDamage(6, +4);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

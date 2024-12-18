@@ -75,7 +75,7 @@
   },
   "${ModID}:EntanglingVines": {
     "NAME": "Entangling Vines",
-    "DESCRIPTION": "Apply !M! Weak and ${ModID}:Snared.",
+    "DESCRIPTION": "Apply !${ModID}:m2! Weak. NL Apply !M! ${ModID}:Snared.",
     "FLAVOR": ""
   },
   "${ModID}:Walkabout": {
@@ -189,7 +189,7 @@
   },
   "${ModID}:Portents": {
     "NAME": "Portents",
-    "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block.",
+    "DESCRIPTION": "Whenever a card is discarded via Scry, gain !M! Block and Vigor.",
     "FLAVOR": ""
   },
   "${ModID}:IllIntendedSchemes": {
@@ -203,8 +203,8 @@
     "FLAVOR": ""
   },
   "${ModID}:SpiritualJourney": {
-    "NAME": "Spiritual Journey",
-    "DESCRIPTION": "Ethereal. NL {@@}Raise your Max HP by !M!. The next !M! time{!M!|>1=s} you play an Attack, lose 1 Max HP. Exhaust.",
+    "NAME": "Spirit Seeker",
+    "DESCRIPTION": "{@@}Choose a non-minion enemy. Unless you attack it, this combat's card reward has !M! additional card{!M!|>1=s} to choose from. NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:TrapperMaster": {
@@ -282,7 +282,7 @@
   },
   "${ModID}:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "Apply !M! ${ModID}:Snared and ${ModID}:Venom to ALL enemies. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! ${ModID}:Snared and !${ModID}:m2! ${ModID}:Venom to ALL enemies. NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:BrambleShield": {
@@ -312,7 +312,7 @@
   },
   "${ModID}:Incarcerate": {
     "NAME": "Incarcerate",
-    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your leftmost ${ModID}:Trap X{!M!|>0=+!M!} times.",
+    "DESCRIPTION": "{@@}Deal !D! damage X times. NL Trigger your leftmost ${ModID}:Trap X{!M!|>0=+!M!} times. NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:HairTrigger": {
@@ -342,8 +342,12 @@
   },
   "${ModID}:BoulderTrap": {
     "NAME": "Boulder Trap",
-    "DESCRIPTION": "{@@}${ModID}:Trap. NL First {!${ModID}:m2!|1=trigger does|@=!${ModID}:m2!triggers do} nothing, then deal !D! damage to ALL enemies.{!M!|0= NL (Not ready yet.)|>0= NL (Ready!)|@=}",
+    "DESCRIPTION": "{@@}${ModID}:Trap. NL Shuffle {!M!|1=a|@=!M!} *Boulder{!M!|>1=s}{!Upgrades!|>0=+} into your draw pile. NL Exhaust.",
     "FLAVOR": ""
+  },
+  "${ModID}:Boulder": {
+    "NAME": "Boulder",
+    "DESCRIPTION": "${ModID}:Trap. NL Deal !M! damage to ALL enemies."
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",

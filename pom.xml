@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>bogwarden</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <name>The Bogwarden</name>
     <description>Adds a new character focused on non-attack damage.</description>
 
@@ -17,7 +17,7 @@
 
         <ModID>bogwarden</ModID>
 
-        <Steam.path>/home/ocean/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/</Steam.path>
+        <Steam.path>/home/ocean/.local/share/Steam/steamapps/</Steam.path>
     </properties>
 
     <dependencies>

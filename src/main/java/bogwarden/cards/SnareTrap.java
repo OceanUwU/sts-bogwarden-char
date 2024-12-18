@@ -12,7 +12,7 @@ public class SnareTrap extends AbstractTrapCard {
 
     public SnareTrap() {
         super(ID, CardRarity.COMMON);
-        setMagic(8, +4);
+        setMagic(9, +4);
     }
 
     public void trigger(AbstractPlayer p, AbstractMonster m) {

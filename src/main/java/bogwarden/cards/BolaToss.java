@@ -21,7 +21,7 @@ public class BolaToss extends AbstractBogCard {
 
     public BolaToss() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        setDamage(2, +1);
+        setDamage(3, +1);
         setMagic(2, +1);
     }
 

@@ -15,12 +15,13 @@ public class EntanglingVines extends AbstractBogCard {
 
     public EntanglingVines() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        setMagic(2, +1);
+        setMagic(3);
+        setSecondMagic(1, +1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new LassoEffect(p.hb.x + p.hb.width, p.hb.cY, m.hb.cX, m.hb.cY, new Color(0.15f, 0.4f, 0.2f, 1f), "vfx/vine2.png"), LassoEffect.DURATION - 0.3f);
-        applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        applyToEnemy(m, new WeakPower(m, secondMagic, false));
         applyToEnemy(m, new SnaredPower(m, magicNumber));
     }
 }

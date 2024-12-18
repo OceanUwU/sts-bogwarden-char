@@ -21,7 +21,8 @@ public class AcidCloud extends AbstractBogCard {
 
     public AcidCloud() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        setMagic(3, +2);
+        setMagic(4, +2);
+        setSecondMagic(2, +1);
         setExhaust(true);
     }
 
@@ -29,7 +30,7 @@ public class AcidCloud extends AbstractBogCard {
         forAllMonstersLiving(mo -> vfx(new AcidCloudEffect(mo.hb.cX, mo.hb.cY)));
         forAllMonstersLiving(mo -> {
             applyToEnemy(mo, new SnaredPower(mo, magicNumber));
-            applyToEnemy(mo, new Venom(mo, magicNumber));
+            applyToEnemy(mo, new Venom(mo, secondMagic));
         });
     }
 

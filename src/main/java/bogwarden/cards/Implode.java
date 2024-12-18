@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -30,9 +29,9 @@ public class Implode extends AbstractBogCard {
 
     public Implode() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL);
-        setBlock(12, +2);
+        setBlock(12, +3);
         setMagic(1);
-        setSecondMagic(14, -4);
+        setSecondMagic(15);
         setThirdMagic(1);
     }
 

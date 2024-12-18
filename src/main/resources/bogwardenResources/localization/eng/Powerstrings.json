@@ -121,10 +121,17 @@
     ]
   },
   "${ModID}:PortentsPower": {
-    "NAME": "Portents",
+    "NAME": "Portents: Block",
     "DESCRIPTIONS": [
       "Whenever you discard a card via #yScry, gain #b",
       " #yBlock."
+    ]
+  },
+  "${ModID}:Portents2Power": {
+    "NAME": "Portents: Vigor",
+    "DESCRIPTIONS": [
+      "Whenever you discard a card via #yScry, gain #b",
+      " #yVigor."
     ]
   },
   "${ModID}:IllIntendedSchemesPower": {
@@ -149,10 +156,19 @@
     ]
   },
   "${ModID}:SpiritualJourneyPower": {
-    "NAME": "Spiritual Journey",
+    "NAME": "Spirits",
     "DESCRIPTIONS": [
-      "The next #b",
-      " times you play an attack, lose #b1 Max HP."
+      "Your first card reward this combat will have #b",
+      " additional card to choose from.",
+      " additional cards to choose from."
+    ]
+  },
+  "${ModID}:SpiritualJourneyEnemyPower": {
+    "NAME": "Seeking",
+    "DESCRIPTIONS": [
+      "Adds #b",
+      " additional card to your first card reward this combat. Removed if hit by an attack.",
+      " additional cards to your first card reward this combat. Removed if hit by an attack."
     ]
   },
   "${ModID}:TrapperMasterPower": {

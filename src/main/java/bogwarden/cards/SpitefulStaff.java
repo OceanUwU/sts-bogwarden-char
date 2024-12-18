@@ -21,7 +21,7 @@ public class SpitefulStaff extends AbstractBogCard {
 
     public SpitefulStaff() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDamage(13);
+        setDamage(10);
         setMagic(1, +1);
     }
 

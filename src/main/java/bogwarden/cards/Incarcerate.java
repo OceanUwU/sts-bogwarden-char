@@ -28,6 +28,7 @@ public class Incarcerate extends AbstractBogCard {
         super(ID, -1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         setDamage(5);
         setMagic(0, +1);
+        setExhaust(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

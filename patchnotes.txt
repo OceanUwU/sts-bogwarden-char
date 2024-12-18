@@ -1,19 +1,17 @@
-v1.1.0
-- Incantation: Scry 2 > 3, no longer adds 1 (2) blasts to your hand, now adds a blast(+) to your hand for each Attack discarded via scry
-- Spinning blades: hits 2 (3) > 2, damage 6 > 5 (7)
-- Incarcerate: Damage 6 > 5
-- Geyser: Damage 4 > 6, Blasts added 1 (2) > 1 (1+)
-- Refined Blast: Damage 10 (12) > 9 (14), Draw 1 (2) > 2
-- Darkvision: Scry 3 > 2 (3), Discards required 2 (1) > 2
-- Spiritual Journey: Now Ethereal, Maximum max HP loss 2 (4) > 4 (6)
-- Tripwire: Now draws cards immediately rather than next turn
-
-- Reworded Blast
-- Reworded the Trap keyword
-- Nature's Wrath & Bramble Shield & Stickerbush Strike & Lasso Up: Improved VFX
-- Nature's Wrath: Changed SFX
-- Incarcerate: Beta art VFX
-- Briar Patch & Bola Toss & Strike: Tweaked beta art
-- Bugfix: Traps now trigger correctly with the Nimble mod, and possibly fix other mod incompatibilities with traps (courtesy of Sagil)
-- Bugfix: Bogwarden's Skillbook should no longer crash the game when it shows up
-- Bugfix: Spiritual Journey debuff VFX should no longer appear if you have artifact
+1.1.1
+- Bola Toss: damage 2 > 3
+- Entangling Vines: Weak 2 (3) > 1 (2), Snared 2 (3) > 3
+- Snare Trap: Snared 8 > 9
+- Bag and Tag: Damage 7 (10) > 6 (10)
+- Acid Cloud: Venom 3 (5) > 2 (3), Snared 3 (5) > 4 (6)
+- Bide Time: Block 9 (12) > 9 (11)
+- Hair Trigger: Damage 6 (10) > 8 (10), Draw 2 > 1 (2)
+- Implode: Self block 12 (14) > 12 (15), Enemy block 14 (10) > 15 (15)
+- Spiteful Staff: Damage 13 > 10
+- Boulder Trap reworked: now shuffles a Boulder(+) into your draw pile and exhausts.
+    - Boulder: Trap. Deal 25 (32) damage to ALL enemies. 
+- Incarcerate: now exhausts
+- Portents: Block 3 (4) > 2 (3), now also gives 2 (3) Vigor per discard
+- Spiritual Journey reworked: now reads "Choose a non-minion enemy. Unless you attack it, this combat's card reward has 1 (2) additional card(s) to choose from. Exhaust."
+    - Renamed to "Spirit Seeker"
+    - Currently not save-safe!!!

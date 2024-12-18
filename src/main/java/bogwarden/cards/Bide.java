@@ -20,7 +20,7 @@ public class Bide extends AbstractBogCard {
 
     public Bide() {
         super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        setBlock(9, +3);
+        setBlock(9, +2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
