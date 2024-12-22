@@ -347,7 +347,7 @@
   },
   "${ModID}:Boulder": {
     "NAME": "Boulder",
-    "DESCRIPTION": "${ModID}:Trap. NL Deal !M! damage to ALL enemies."
+    "DESCRIPTION": "${ModID}:Trap. NL Deal !D! damage to ALL enemies."
   },
   "${ModID}:SludgeBomb": {
     "NAME": "Sludge Bomb",

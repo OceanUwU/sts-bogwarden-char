@@ -15,3 +15,6 @@
 - Spiritual Journey reworked: now reads "Choose a non-minion enemy. Unless you attack it, this combat's card reward has 1 (2) additional card(s) to choose from. Exhaust."
     - Renamed to "Spirit Seeker"
     - Currently not save-safe!!!
+    - Can crash your game if you have too much of it (tries to generate more unique cards than there are in the pool)
+    - Can carry between runs
+- Dark pact & Bushwhack: new art
