@@ -20,3 +20,5 @@
     - Can carry between runs
 - Dark pact & Bushwhack & Flock of Bats: new art
 - Wild magic, bewitch, & flock of bats: sfx changed
+- Natures wrath: vfx updated
+- Bola toss: vfx sped up

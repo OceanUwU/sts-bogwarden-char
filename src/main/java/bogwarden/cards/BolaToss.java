@@ -34,7 +34,7 @@ public class BolaToss extends AbstractBogCard {
     private static class BolaTossEffect extends AbstractGameEffect {
         private static TextureAtlas.AtlasRegion IMG = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/bola.png")), 0, 0, 84, 84);
         private static final float ROTATIONAL_VEL = 580f;
-        private static final float DURATION = 0.8f;
+        private static final float DURATION = 0.6f;
         private static final float UPPIES = 200f * Settings.scale;
 
         private float x, y;

@@ -1,6 +1,7 @@
 package bogwarden.cards;
 
 import bogwarden.BogMod;
+import bogwarden.cards.Bushwhack.LeafSprayEffect;
 import bogwarden.characters.TheBogwarden;
 import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.vfx.SparkleHelixEffect;

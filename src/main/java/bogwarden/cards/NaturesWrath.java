@@ -22,6 +22,8 @@ import static bogwarden.BogMod.makeID;
 import static bogwarden.BogMod.makeImagePath;
 import static bogwarden.util.Wiz.*;
 
+import bogwarden.cards.Bushwhack.LeafSprayEffect;
+
 public class NaturesWrath extends AbstractBogCard {
     public final static String ID = makeID("NaturesWrath");
 
@@ -68,7 +70,12 @@ public class NaturesWrath extends AbstractBogCard {
             duration -= Gdx.graphics.getDeltaTime();
             if (duration <= 0f) {
                 CardCrawlGame.sound.play(BogAudio.NATURESWRATH);
-                forAllMonstersLiving(mo -> AbstractDungeon.effectsQueue.add(new PlantMassacreEffect(mo)));
+                forAllMonstersLiving(mo -> {
+                    AbstractDungeon.effectsQueue.add(new PlantMassacreEffect(mo));
+                    int leaves = MathUtils.random(1, 3);
+                    for (int i = 0; i < leaves; i++)
+                        AbstractDungeon.effectsQueue.add(new LeafSprayEffect(mo.hb.cX, mo.hb.cY));
+                });
                 isDone = true;
             }
         }
