@@ -29,6 +29,8 @@ public class BogAudio {
         WHOOSH = makeID("WHOOSH"),
         BUS = makeID("BUS"),
         NATURESWRATH = makeID("NATURESWRATH"),
+        WILD_MAGIC = makeID("WILDMAGIC"),
+        BEWITCH = makeID("BEWITCH"),
         INCARCERATE = makeID("INCARCERATE");
 
     public static void addAudio() {

@@ -15,7 +15,7 @@ public class EntanglingVines extends AbstractBogCard {
 
     public EntanglingVines() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        setMagic(3);
+        setMagic(3, +1);
         setSecondMagic(1, +1);
     }
 

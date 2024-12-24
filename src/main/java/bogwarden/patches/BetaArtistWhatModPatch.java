@@ -55,6 +55,9 @@ public class BetaArtistWhatModPatch {
         for (Class<?> c : new Class<?>[] {
             DarkRitual.class
         }) artists.put((Class<? extends AbstractBogCard>)c, "Zorgrox");
+        for (Class<?> c : new Class<?>[] {
+            Boulder.class
+        }) artists.put((Class<? extends AbstractBogCard>)c, "lobbien");
     }
 
     public static SpireReturn<String> Prefix(Class<?>... cls) {

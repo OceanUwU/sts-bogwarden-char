@@ -1,5 +1,6 @@
 package bogwarden.cards;
 
+import bogwarden.patches.FlashAtkImgPatches;
 import bogwarden.powers.AbstractBogPower;
 import bogwarden.vfx.SparkleHelixEffect;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
@@ -28,7 +29,7 @@ public class WitchingHour extends AbstractBogCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         vfx(new SparkleHelixEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), SparkleHelixEffect.DURATION - 0.2f);
-        dmg(m, BLAST_EFFECT);
+        dmg(m, FlashAtkImgPatches.BOGWARDEN_BEWITCH_EFFECT);
         applyToEnemy(m, new WitchingHourPower(m, magicNumber));
     }
 

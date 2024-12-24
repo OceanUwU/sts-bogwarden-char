@@ -401,7 +401,7 @@
   },
   "${ModID}:BackfiringTrap": {
     "NAME": "Backfiring Trap",
-    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP. NL Exhaust.",
+    "DESCRIPTION": "${ModID}:Trap. NL Lose !M! HP.",
     "FLAVOR": ""
   },
   "${ModID}:DollsCurse": {

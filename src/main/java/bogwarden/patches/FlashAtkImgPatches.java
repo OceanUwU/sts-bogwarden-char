@@ -27,6 +27,10 @@ public class FlashAtkImgPatches {
     public static AbstractGameAction.AttackEffect BOGWARDEN_WILD_MAGIC_EFFECT;
     private static TextureAtlas.AtlasRegion WILD_MAGIC_IMAGE;
 
+    @SpireEnum
+    public static AbstractGameAction.AttackEffect BOGWARDEN_BEWITCH_EFFECT;
+    private static TextureAtlas.AtlasRegion BEWITCH_IMAGE;
+
     private static boolean effectIs(Object obj, AbstractGameAction.AttackEffect ...effects) {
         AbstractGameAction.AttackEffect effect = ((AbstractGameAction.AttackEffect)ReflectionHacks.getPrivate(obj, obj instanceof DamageHeartEffect ? DamageHeartEffect.class : FlashAtkImgEffect.class, "effect"));
         for (AbstractGameAction.AttackEffect e : effects)
@@ -50,6 +54,10 @@ public class FlashAtkImgPatches {
                 if (WILD_MAGIC_IMAGE == null)
                     WILD_MAGIC_IMAGE = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/wildmagic.png")), 0, 0, 512, 512);
                 return SpireReturn.Return(WILD_MAGIC_IMAGE);
+            } else if (effectIs(__instance, BOGWARDEN_BEWITCH_EFFECT)) {
+                if (BEWITCH_IMAGE == null)
+                    BEWITCH_IMAGE = new TextureAtlas.AtlasRegion(TexLoader.getTexture(makeImagePath("vfx/bewitch.png")), 0, 0, 512, 512);
+                return SpireReturn.Return(BEWITCH_IMAGE);
             }
             return SpireReturn.Continue();
         }
@@ -59,11 +67,17 @@ public class FlashAtkImgPatches {
     @SpirePatch(clz=DamageHeartEffect.class, method="playSound")
     public static class Audio {
         public static SpireReturn<Void> Prefix(Object __instance) {
-            if (effectIs(__instance, BOGWARDEN_BLAST_EFFECT, BOGWARDEN_WILD_MAGIC_EFFECT)) {
+            if (effectIs(__instance, BOGWARDEN_BLAST_EFFECT)) {
                 CardCrawlGame.sound.play(BogAudio.BLAST);
+                return SpireReturn.Return();
+            } else if (effectIs(__instance, BOGWARDEN_WILD_MAGIC_EFFECT)) {
+                CardCrawlGame.sound.play(BogAudio.WILD_MAGIC);
                 return SpireReturn.Return();
             } else if (effectIs(__instance, BOGWARDEN_REFINED_BLAST_EFFECT)) {
                 CardCrawlGame.sound.play(BogAudio.REFINED_BLAST);
+                return SpireReturn.Return();
+            } else if (effectIs(__instance, BOGWARDEN_BEWITCH_EFFECT)) {
+                CardCrawlGame.sound.play(BogAudio.BEWITCH);
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
