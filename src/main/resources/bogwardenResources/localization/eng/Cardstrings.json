@@ -203,8 +203,8 @@
     "FLAVOR": ""
   },
   "${ModID}:SpiritualJourney": {
-    "NAME": "Spirit Seeker",
-    "DESCRIPTION": "{@@}Choose a non-minion enemy. Unless you attack it, this combat's card reward has !M! additional card{!M!|>1=s} to choose from. NL Exhaust.",
+    "NAME": "Spiritual Journey",
+    "DESCRIPTION": "{@@}Ethereal. Raise your Max HP by !M!. NL Whenever you play an attack, lose !${ModID}:m2! Max HP. NL Exhaust.",
     "FLAVOR": ""
   },
   "${ModID}:TrapperMaster": {

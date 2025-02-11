@@ -1,4 +1,4 @@
-1.1.1
+1.2.0
 - Bola Toss: damage 2 > 3
 - Entangling Vines: Weak 2 (3) > 1 (2), Snared 2 (3) > 3
 - Snare Trap: Snared 8 > 9
@@ -13,11 +13,7 @@
 - Incarcerate: now exhausts
 - Portents: Block 3 (4) > 2 (3), now also gives 2 (3) Vigor per discard
 - Backfiring Trap: no longer exhausts, HP loss 3 > 4
-- Spiritual Journey reworked: now reads "Choose a non-minion enemy. Unless you attack it, this combat's card reward has 1 (2) additional card(s) to choose from. Exhaust."
-    - Renamed to "Spirit Seeker"
-    - Currently not save-safe!!!
-    - Can crash your game if you have too much of it (tries to generate more unique cards than there are in the pool)
-    - Can carry between runs
+- Spiritual Journey: Cost 1 > 0, Now ethereal, Max HP given 4 (6) > 3, Max HP loss per attack played 1 > 2 (1), Max HP loss now uncapped
 - Dark pact & Bushwhack & Flock of Bats: new art
 - Wild magic, bewitch, & flock of bats: sfx changed
 - Natures wrath: vfx updated

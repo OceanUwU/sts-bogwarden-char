@@ -158,9 +158,8 @@
   "${ModID}:SpiritualJourneyPower": {
     "NAME": "Spirits",
     "DESCRIPTIONS": [
-      "Your first card reward this combat will have #b",
-      " additional card to choose from.",
-      " additional cards to choose from."
+      "Whenever you play an Attack, lose #b",
+      " Max HP."
     ]
   },
   "${ModID}:SpiritualJourneyEnemyPower": {
